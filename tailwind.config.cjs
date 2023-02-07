@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        cloud: "url('/src/assets/images/icon-cloud.svg')",
+      },
       colors: {
         lakegreen: "#a6e2c5",
         lightgreen: "#20d371",
