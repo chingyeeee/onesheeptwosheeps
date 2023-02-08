@@ -1,7 +1,7 @@
 import { lazy, Fragment, useState } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
 import Menu from "../images/icon-menu-sheep.svg";
-import Finger from "../images/icon-finger.svg";
+import { ReactComponent as Finger } from "../images/icon-finger.svg";
 import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
 const Background = lazy(() => import("../components/Background"));
@@ -10,7 +10,15 @@ const Home = () => {
   const [isIntro, setIsIntro] = useState(true);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   //toggle開關
-  const [enabled, setEnabled] = useState(false);
+  const [logoEnabled, setLogoEnabled] = useState(true);
+  const [welcomeToEnabled, setWelcomeToEnabled] = useState(true);
+  const [dreamCardEnabled, setDreamCardEnabled] = useState(true);
+  const [aboutUsEnabled, setAboutUsEnabled] = useState(true);
+  const [emotionEnabled, setEmotionEnabled] = useState(false);
+  const [addItemsEnabled, setAddItemsEnabled] = useState(true);
+  const [downloadEnabled, setDownloadEnabled] = useState(true);
+  //color
+  const [color, setColor] = useState("color-default.svg");
 
   //關閉introduction
   function closeIntro() {
@@ -31,11 +39,175 @@ const Home = () => {
     return classes.filter(Boolean).join(" ");
   }
 
+  //根據word render對應的input
+  function handleSwitchInput(word) {
+    switch (word) {
+      case "LOGOTYPE":
+        return (
+          <Switch
+            value={logoEnabled}
+            checked={logoEnabled}
+            onChange={setLogoEnabled}
+            onClick={() => console.log(word, !logoEnabled)}
+            className={`${logoEnabled ? "bg-black" : "bg-gray-300"}
+          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                logoEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+            pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+      case "WELCOME TO":
+        return (
+          <Switch
+            value={welcomeToEnabled}
+            checked={welcomeToEnabled}
+            onChange={setWelcomeToEnabled}
+            onClick={() => console.log(word, !welcomeToEnabled)}
+            className={`${welcomeToEnabled ? "bg-black" : "bg-gray-300"}
+            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                welcomeToEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+              pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+      case "DREAM CARD":
+        return (
+          <Switch
+            value={dreamCardEnabled}
+            checked={dreamCardEnabled}
+            onChange={setDreamCardEnabled}
+            onClick={() => console.log(word, !dreamCardEnabled)}
+            className={`${dreamCardEnabled ? "bg-black" : "bg-gray-300"}
+            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                dreamCardEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+              pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+      case "ABOUT US":
+        return (
+          <Switch
+            value={aboutUsEnabled}
+            checked={aboutUsEnabled}
+            onChange={setAboutUsEnabled}
+            onClick={() => console.log(word, !aboutUsEnabled)}
+            className={`${aboutUsEnabled ? "bg-black" : "bg-gray-300"}
+              relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                aboutUsEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+                pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+      case "EMOTIONS":
+        return (
+          <Switch
+            value={emotionEnabled}
+            checked={emotionEnabled}
+            onChange={setEmotionEnabled}
+            onClick={() => console.log(word, !emotionEnabled)}
+            className={`${emotionEnabled ? "bg-black" : "bg-gray-300"}
+                relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                emotionEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+                  pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+      case "ADD ITEMS":
+        return (
+          <Switch
+            value={addItemsEnabled}
+            checked={addItemsEnabled}
+            onChange={setAddItemsEnabled}
+            onClick={() => console.log(word, !addItemsEnabled)}
+            className={`${addItemsEnabled ? "bg-black" : "bg-gray-300"}
+                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                addItemsEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+                    pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+      case "DOWNLOAD":
+        return (
+          <Switch
+            value={downloadEnabled}
+            checked={downloadEnabled}
+            onChange={setDownloadEnabled}
+            onClick={() => console.log(word, !downloadEnabled)}
+            className={`${downloadEnabled ? "bg-black" : "bg-gray-300"}
+                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          >
+            <span className="sr-only">Use {word}</span>
+            <span
+              aria-hidden="true"
+              className={`${
+                downloadEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
+              }
+                    pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            />
+          </Switch>
+        );
+    }
+  }
+
+  //根據color傳入對應style
+  function handleNavItemStyle() {
+    switch (color) {
+      case "color-default.svg":
+        return "text-black border-black";
+      case "color1.svg":
+        return "text-lightgreen border-lightgreen stroke-lightgreen fill-lightgreen";
+      case "color2.svg":
+        return "text-black border-black";
+      case "color3.svg":
+        return "text-lightpurple border-lightpurple stroke-lightpurple fill-lightpurple";
+      case "color4.svg":
+        return "text-yellow border-yellow stroke-yellow fill-yellow";
+      case "color5.svg":
+        return "text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
+    }
+  }
+
   return (
     <>
       <div className="h-screen flex overflow-hidden flex-col justify-between relative">
         <div className="">
-          <Background />
+          <Background color={color} />
           <div
             className="absolute z-10 w-[15%] top-[30%] flex flex-col gap items-center cursor-pointer"
             onClick={openMenu}
@@ -118,10 +290,10 @@ const Home = () => {
                               {TabData["BACKGROUND"].color.map((background) => {
                                 return (
                                   <img
-                                    className="w-[12%]"
+                                    className="w-[12%] cursor-pointer"
                                     key={background}
                                     src={getImageUrl("cardColors", background)}
-                                    onClick={() => console.log(background)}
+                                    onClick={() => setColor(background)}
                                   />
                                 );
                               })}
@@ -138,27 +310,7 @@ const Home = () => {
                                     className="rounded-md border-2 border-black p-2 flex justify-between items-center"
                                   >
                                     <p className="text-lg font-bold">{word}</p>
-                                    <Switch
-                                      checked={enabled}
-                                      onChange={setEnabled}
-                                      className={`${
-                                        enabled ? "bg-black" : "bg-gray-300"
-                                      }
-          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-                                    >
-                                      <span className="sr-only">
-                                        Use setting
-                                      </span>
-                                      <span
-                                        aria-hidden="true"
-                                        className={`${
-                                          enabled
-                                            ? "translate-x-[1.6rem]"
-                                            : "translate-x-0"
-                                        }
-            pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
-                                      />
-                                    </Switch>
+                                    {handleSwitchInput(word)}
                                   </div>
                                 );
                               })}
@@ -173,19 +325,30 @@ const Home = () => {
             </Dialog>
           </Transition>
         </div>
-        <div className="absolute flex items-center justify-between p-6 bottom-0">
-          <div className="flex gap-4 items-center cursor-pointer">
-            <img className="w-[15%]" src={Finger} alt="finger" />
-            <p className="border-b-4 border-black text-5xl lg:text-7xl">
-              ABOUT US
-            </p>
-          </div>
-          <div className="flex gap-4 items-center cursor-pointer">
-            <img className="ml-auto w-[15%]" src={Finger} alt="finger" />
-            <p className="border-b-4 border-black text-5xl lg:text-7xl">
-              DREAM CARD
-            </p>
-          </div>
+        <div className="absolute flex items-center justify-between p-6 bottom-2 w-full">
+          {aboutUsEnabled && (
+            <div
+              className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto`}
+            >
+              <Finger className={`w-[15%] ${handleNavItemStyle()}`} />
+
+              <p
+                className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle()}`}
+              >
+                ABOUT US
+              </p>
+            </div>
+          )}
+          {dreamCardEnabled && (
+            <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end">
+              <Finger className={`w-[15%] ${handleNavItemStyle()}`} />
+              <p
+                className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle()}`}
+              >
+                DREAM CARD
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
