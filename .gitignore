@@ -25,3 +25,6 @@ dist-ssr
 
 #images
 src/assets/images
+
+#data
+src/assets/data
