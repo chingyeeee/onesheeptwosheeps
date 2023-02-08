@@ -210,13 +210,11 @@ const Home = () => {
     <>
       <div className="h-screen flex overflow-hidden flex-col justify-between relative">
         <div className="">
-          <Background color={color} />
-          <div
-            className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer"
-            onClick={openMenu}
-          >
+          <Background color={color} welcomeToEnabled={welcomeToEnabled} />
+
+          <div className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
             {addItemsEnabled && (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2" onClick={openMenu}>
                 <Menu />
                 <p className="border-b border-black">add items</p>
               </div>
@@ -278,7 +276,20 @@ const Home = () => {
                           ))}
                         </Tab.List>
                         <Tab.Panels className="p-6 max-h-[65vh] overflow-y-auto">
-                          <Tab.Panel>Content 1</Tab.Panel>
+                          <Tab.Panel>
+                            <div className="flex flex-wrap mt-6">
+                              {TabData["STiCKERS"].map((sticker) => {
+                                return (
+                                  <img
+                                    className="w-[20%] m-auto"
+                                    key={sticker}
+                                    src={getImageUrl("stickers", sticker)}
+                                    onClick={() => console.log(sticker)}
+                                  />
+                                );
+                              })}
+                            </div>
+                          </Tab.Panel>
                           <Tab.Panel>
                             <h3 className="text-4xl text-left">LOGOTYPES_</h3>
                             <div className="flex flex-col gap-12 mt-6">
