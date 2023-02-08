@@ -86,7 +86,7 @@ const initialRectangles = [
   },
 ];
 
-const Background = ({ welcome, color }) => {
+const Background = ({ welcomeToEnabled, color }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
@@ -124,11 +124,14 @@ const Background = ({ welcome, color }) => {
       onTouchStart={checkDeselect}
     >
       <Layer>
-        <Welcome
-          width={windowWidth}
-          height={windowHeight * 0.5}
-          color={color}
-        />
+        {welcomeToEnabled && (
+          <Welcome
+            width={windowWidth}
+            height={windowHeight * 0.5}
+            color={color}
+          />
+        )}
+
         {rectangles.map((rect, i) => {
           return (
             <Rectangle
