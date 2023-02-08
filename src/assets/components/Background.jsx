@@ -1,6 +1,5 @@
 import { Fragment, useRef, useEffect, useState } from "react";
-import { Stage, Layer, Rect, Transformer, Image } from "react-konva";
-import useImage from "use-image";
+import { Stage, Layer, Rect, Transformer } from "react-konva";
 import Welcome from "./Welcome";
 
 const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
@@ -68,26 +67,26 @@ const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
   );
 };
 
-// const initialRectangles = [
-//   {
-//     x: 10,
-//     y: 10,
-//     width: 100,
-//     height: 100,
-//     fill: "red",
-//     id: "rect1",
-//   },
-//   {
-//     x: 150,
-//     y: 150,
-//     width: 100,
-//     height: 100,
-//     fill: "green",
-//     id: "rect2",
-//   },
-// ];
+const initialRectangles = [
+  {
+    x: 10,
+    y: 10,
+    width: 100,
+    height: 100,
+    fill: "red",
+    id: "rect1",
+  },
+  {
+    x: 150,
+    y: 150,
+    width: 100,
+    height: 100,
+    fill: "green",
+    id: "rect2",
+  },
+];
 
-const Background = () => {
+const Background = ({ welcome, color }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
@@ -106,7 +105,7 @@ const Background = () => {
   // const [logoType, setLogoType] = useState("../images/nav/logo-default.svg");
 
   //cardItems
-  // const [rectangles, setRectangles] = useState(initialRectangles);
+  const [rectangles, setRectangles] = useState(initialRectangles);
   const [selectedId, selectShape] = useState(null);
 
   const checkDeselect = (e) => {
@@ -125,8 +124,12 @@ const Background = () => {
       onTouchStart={checkDeselect}
     >
       <Layer>
-        <Welcome width={windowWidth} height={windowHeight * 0.5} />
-        {/* {rectangles.map((rect, i) => {
+        <Welcome
+          width={windowWidth}
+          height={windowHeight * 0.5}
+          color={color}
+        />
+        {rectangles.map((rect, i) => {
           return (
             <Rectangle
               key={i}
@@ -142,7 +145,7 @@ const Background = () => {
               }}
             />
           );
-        })} */}
+        })}
       </Layer>
     </Stage>
   );
