@@ -18,6 +18,8 @@ const Welcome = ({ width, height, color }) => {
         return "welcome-4.svg";
       case "color5.svg":
         return "welcome-5.svg";
+      case "color6.svg":
+        return "welcome-6.svg";
     }
   }
 
