@@ -1,7 +1,8 @@
 import { lazy, Fragment, useState } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
-import Menu from "../images/icon-menu-sheep.svg";
+import { ReactComponent as Menu } from "../images/icon-menu-sheep.svg";
 import { ReactComponent as Finger } from "../images/icon-finger.svg";
+import { ReactComponent as Download } from "../images/icon-download.svg";
 import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
 const Background = lazy(() => import("../components/Background"));
@@ -199,6 +200,8 @@ const Home = () => {
       case "color4.svg":
         return "text-yellow border-yellow stroke-yellow fill-yellow";
       case "color5.svg":
+        return "text-yellow border-yellow stroke-yellow fill-yellow";
+      case "color6.svg":
         return "text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
     }
   }
@@ -209,11 +212,21 @@ const Home = () => {
         <div className="">
           <Background color={color} />
           <div
-            className="absolute z-10 w-[15%] top-[30%] flex flex-col gap items-center cursor-pointer"
+            className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer"
             onClick={openMenu}
           >
-            <img className="w-[35%]" src={Menu} alt="menu" />
-            <p className="border-b border-black">add items</p>
+            {addItemsEnabled && (
+              <div className="flex flex-col gap-2">
+                <Menu />
+                <p className="border-b border-black">add items</p>
+              </div>
+            )}
+            {downloadEnabled && (
+              <div className="flex flex-col gap-2">
+                <Download />
+                <p className="border-b border-black">download</p>
+              </div>
+            )}
           </div>
           <Transition appear show={isOpenMenu} as={Fragment}>
             <Dialog as="div" className="relative z-10" onClose={closeMenu}>
@@ -290,7 +303,7 @@ const Home = () => {
                               {TabData["BACKGROUND"].color.map((background) => {
                                 return (
                                   <img
-                                    className="w-[12%] cursor-pointer"
+                                    className="w-[10%] cursor-pointer"
                                     key={background}
                                     src={getImageUrl("cardColors", background)}
                                     onClick={() => setColor(background)}
