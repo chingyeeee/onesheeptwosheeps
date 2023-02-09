@@ -20,6 +20,25 @@ const Home = () => {
   const [downloadEnabled, setDownloadEnabled] = useState(true);
   //color
   const [color, setColor] = useState("color-default.svg");
+  //cardItems
+  const [cardItems, setCardItems] = useState([
+    {
+      image: "sticker1.svg",
+      x: 10,
+      y: 10,
+      width: 300,
+      height: 300,
+      id: "sticker1.svg",
+    },
+    {
+      image: "sticker2.svg",
+      x: 150,
+      y: 150,
+      width: 300,
+      height: 300,
+      id: "sticker2.svg",
+    },
+  ]);
 
   //關閉introduction
   function closeIntro() {
@@ -210,7 +229,12 @@ const Home = () => {
     <>
       <div className="h-screen flex overflow-hidden flex-col justify-between relative">
         <div className="">
-          <Background color={color} welcomeToEnabled={welcomeToEnabled} />
+          <Background
+            color={color}
+            welcomeToEnabled={welcomeToEnabled}
+            cardItems={cardItems}
+            setCardItems={setCardItems}
+          />
 
           <div className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
             {addItemsEnabled && (

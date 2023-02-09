@@ -3,28 +3,10 @@ import { Stage, Layer, Image } from "react-konva";
 import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 
-const Background = ({ welcomeToEnabled, color }) => {
+const Background = ({ welcomeToEnabled, color, cardItems, setCardItems }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-  //cardItems
-  const [cardItems, setCardItems] = useState([
-    {
-      image: "sticker1.svg",
-      x: 10,
-      y: 10,
-      width: 300,
-      height: 300,
-      id: "rect1",
-    },
-    {
-      image: "sticker2.svg",
-      x: 150,
-      y: 150,
-      width: 300,
-      height: 300,
-      id: "rect2",
-    },
-  ]);
+
   //selectedItem
   const [selectedId, selectShape] = useState(null);
 
