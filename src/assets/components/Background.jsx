@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { Stage, Layer, Image } from "react-konva";
-import { getImageUrl } from "../utils/getImageUrl";
 import Welcome from "./Welcome";
-import useImage from "use-image";
-import DragAndTransformImage from "./CardImage";
 import MyImage from "./CardImage";
 
 const Background = ({ welcomeToEnabled, color }) => {
@@ -12,6 +9,7 @@ const Background = ({ welcomeToEnabled, color }) => {
   //cardItems
   const [cardItems, setCardItems] = useState([
     {
+      image: "sticker1.svg",
       x: 10,
       y: 10,
       width: 300,
@@ -19,6 +17,7 @@ const Background = ({ welcomeToEnabled, color }) => {
       id: "rect1",
     },
     {
+      image: "sticker2.svg",
       x: 150,
       y: 150,
       width: 300,
@@ -41,8 +40,21 @@ const Background = ({ welcomeToEnabled, color }) => {
     };
   }, []);
 
+  const checkDeselect = (e) => {
+    // deselect when clicked on empty area
+    const clickedOnEmpty = e.target === e.target.getStage();
+    if (clickedOnEmpty) {
+      selectShape(null);
+    }
+  };
+
   return (
-    <Stage width={windowWidth} height={windowHeight}>
+    <Stage
+      width={windowWidth}
+      height={windowHeight}
+      onMouseDown={checkDeselect}
+      onTouchStart={checkDeselect}
+    >
       <Layer>
         {welcomeToEnabled && (
           <Welcome
@@ -51,7 +63,24 @@ const Background = ({ welcomeToEnabled, color }) => {
             color={color}
           />
         )}
-        <MyImage />
+        {/* <MyImage /> */}
+        {cardItems.map((item, i) => {
+          return (
+            <MyImage
+              key={i}
+              shapeProps={item}
+              isSelected={item.id === selectedId}
+              onSelect={() => {
+                selectShape(item.id);
+              }}
+              onChange={(newAttrs) => {
+                const items = cardItems.slice();
+                items[i] = newAttrs;
+                setCardItems(items);
+              }}
+            />
+          );
+        })}
       </Layer>
     </Stage>
   );
