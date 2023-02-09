@@ -7,7 +7,7 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
   const shapeRef = useRef();
   const trRef = useRef();
 
-  const imagePath = getImageUrl("stickers", shapeProps.image);
+  const imagePath = getImageUrl(shapeProps.folder, shapeProps.image);
   const [imageItem] = useImage(imagePath);
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
         height={shapeProps.height}
         image={imageItem}
         draggable
+        onDragStart={(e) => e.target.moveToTop()}
         onDragEnd={(e) => {
-          e.target.moveToTop();
           onChange({
             ...shapeProps,
             x: e.target.x(),
