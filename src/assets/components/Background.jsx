@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
-import { Stage, Layer, Image } from "react-konva";
+import { Stage, Layer, Text, Group } from "react-konva";
 import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 
-const Background = ({ welcomeToEnabled, color, cardItems, setCardItems }) => {
+const Background = ({
+  welcomeToEnabled,
+  color,
+  cardItems,
+  setCardItems,
+  stageRef,
+}) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
@@ -36,8 +42,19 @@ const Background = ({ welcomeToEnabled, color, cardItems, setCardItems }) => {
       height={windowHeight}
       onMouseDown={checkDeselect}
       onTouchStart={checkDeselect}
+      ref={stageRef}
+      className={`relative before:block before:absolute before:-inset-1  before:z-[-1] ${
+        color === "color4.svg" &&
+        "before:bg-purple before:w-[96%] before:m-auto before:h-[93%]"
+      } ${
+        color === "color5.svg" &&
+        "before:bg-lightpurple before:w-[96%] before:ml-[2%] before:h-[95%]"
+      } ${
+        color === "color6.svg" &&
+        "before:bg-darkgreen before:w-[96%] before:m-auto before:h-[95%]"
+      }`}
     >
-      <Layer>
+      <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
         {welcomeToEnabled && (
           <Welcome
             width={windowWidth}
@@ -63,6 +80,9 @@ const Background = ({ welcomeToEnabled, color, cardItems, setCardItems }) => {
             />
           );
         })}
+        <Group>
+          <Text x={150} y={50} text="Your text goes here" fontSize={20} />
+        </Group>
       </Layer>
     </Stage>
   );
