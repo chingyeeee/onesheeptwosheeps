@@ -1,4 +1,4 @@
-import { lazy, Fragment, useState } from "react";
+import { lazy, Fragment, useState, useRef } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
 import { ReactComponent as Menu } from "../images/icon-menu-sheep.svg";
 import { ReactComponent as Finger } from "../images/icon-finger.svg";
@@ -21,24 +21,9 @@ const Home = () => {
   //color
   const [color, setColor] = useState("color-default.svg");
   //cardItems
-  const [cardItems, setCardItems] = useState([
-    {
-      image: "sticker1.svg",
-      x: 10,
-      y: 10,
-      width: 300,
-      height: 300,
-      id: "sticker1.svg",
-    },
-    {
-      image: "sticker2.svg",
-      x: 150,
-      y: 150,
-      width: 300,
-      height: 300,
-      id: "sticker2.svg",
-    },
-  ]);
+  const [cardItems, setCardItems] = useState([]);
+  //stage Ref
+  const stageRef = useRef();
 
   //關閉introduction
   function closeIntro() {
@@ -225,15 +210,29 @@ const Home = () => {
     }
   }
 
+  //download stage as image
+  const handleExport = () => {
+    const uri = stageRef.current.toDataURL();
+    console.log(uri);
+    // we also can save uri as file
+    // but in the demo on Konva website it will not work
+    // because of iframe restrictions
+    // but feel free to use it in your apps:
+    // downloadURI(uri, 'stage.png');
+  };
+
   return (
     <>
-      <div className="h-screen flex overflow-hidden flex-col justify-between relative">
-        <div className="">
+      <div
+        className={`h-screen flex overflow-hidden flex-col justify-between relative`}
+      >
+        <div>
           <Background
             color={color}
             welcomeToEnabled={welcomeToEnabled}
             cardItems={cardItems}
             setCardItems={setCardItems}
+            stageRef={stageRef}
           />
 
           <div className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
@@ -244,7 +243,7 @@ const Home = () => {
               </div>
             )}
             {downloadEnabled && (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2" onClick={handleExport}>
                 <Download />
                 <p className="border-b border-black">download</p>
               </div>
@@ -308,7 +307,20 @@ const Home = () => {
                                     className="w-[20%] m-auto"
                                     key={sticker}
                                     src={getImageUrl("stickers", sticker)}
-                                    onClick={() => console.log(sticker)}
+                                    onClick={() =>
+                                      setCardItems([
+                                        ...cardItems,
+                                        {
+                                          image: sticker,
+                                          x: 150,
+                                          y: 250,
+                                          width: 300,
+                                          height: 300,
+                                          id: sticker,
+                                          folder: "stickers",
+                                        },
+                                      ])
+                                    }
                                   />
                                 );
                               })}
@@ -323,7 +335,20 @@ const Home = () => {
                                     className="w-[80%] m-auto"
                                     key={logo}
                                     src={getImageUrl("cardLogos", logo)}
-                                    onClick={() => console.log(logo)}
+                                    onClick={() =>
+                                      setCardItems([
+                                        ...cardItems,
+                                        {
+                                          image: logo,
+                                          x: 150,
+                                          y: 250,
+                                          width: 500,
+                                          height: 200,
+                                          id: logo,
+                                          folder: "cardLogos",
+                                        },
+                                      ])
+                                    }
                                   />
                                 );
                               })}
