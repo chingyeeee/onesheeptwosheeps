@@ -31,6 +31,7 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
         image={imageItem}
         draggable
         onDragEnd={(e) => {
+          e.target.moveToTop();
           onChange({
             ...shapeProps,
             x: e.target.x(),
