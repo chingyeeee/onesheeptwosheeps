@@ -1,8 +1,8 @@
 import { lazy, Fragment, useState, useRef } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
-import { ReactComponent as Menu } from "../images/icon-menu-sheep.svg";
-import { ReactComponent as Finger } from "../images/icon-finger.svg";
-import { ReactComponent as Download } from "../images/icon-download.svg";
+import { ReactComponent as Menu } from "../images/icons/icon-menu-sheep.svg";
+import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+import { ReactComponent as Download } from "../images/icons/icon-download.svg";
 import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
 const Background = lazy(() => import("../components/Background"));

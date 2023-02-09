@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        cloud: "url('/src/assets/images/icon-cloud.svg')",
+        cloud: "url('/src/assets/images/icons/icon-cloud.svg')",
       },
       colors: {
         lakegreen: "#a6e2c5",
