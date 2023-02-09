@@ -3,50 +3,39 @@ import { Image, Transformer } from "react-konva";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
 
-const MyImage = () => {
-  const [selected, setSelected] = useState(false);
-  const [x, setX] = useState(10);
-  const [y, setY] = useState(10);
-  const [width, setWidth] = useState(300);
-  const [height, setHeight] = useState(300);
-
+const MyImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
   const shapeRef = useRef();
   const trRef = useRef();
 
-  const handleSelect = () => {
-    setSelected(true);
-  };
-
-  const handleDeselect = () => {
-    setSelected(false);
-  };
-
-  const imagePath = getImageUrl("stickers", "sticker1.svg");
+  const imagePath = getImageUrl("stickers", shapeProps.image);
   const [imageItem] = useImage(imagePath);
 
   useEffect(() => {
-    if (selected) {
+    if (isSelected) {
       // we need to attach transformer manually
       trRef.current.nodes([shapeRef.current]);
       trRef.current.getLayer().batchDraw();
     }
-  }, [selected]);
+  }, [isSelected]);
 
   return (
     <>
       <Image
-        x={x}
-        y={y}
+        onClick={onSelect}
+        onTap={onSelect}
         ref={shapeRef}
-        width={width}
-        height={height}
+        x={shapeProps.x}
+        y={shapeProps.y}
+        width={shapeProps.width}
+        height={shapeProps.height}
         image={imageItem}
         draggable
-        onClick={handleSelect}
-        onTap={handleSelect}
         onDragEnd={(e) => {
-          setX(e.target.x());
-          setY(e.target.y());
+          onChange({
+            ...shapeProps,
+            x: e.target.x(),
+            y: e.target.y(),
+          });
         }}
         onTransformEnd={(e) => {
           // transformer is changing scale of the node
@@ -60,15 +49,17 @@ const MyImage = () => {
           // we will reset it back
           node.scaleX(1);
           node.scaleY(1);
-
-          setX(e.target.x());
-          setY(e.target.y());
-          // set minimal value
-          setWidth(Math.max(5, node.width() * scaleX));
-          setHeight(Math.max(node.height() * scaleY));
+          onChange({
+            ...shapeProps,
+            x: node.x(),
+            y: node.y(),
+            // set minimal value
+            width: Math.max(5, node.width() * scaleX),
+            height: Math.max(node.height() * scaleY),
+          });
         }}
       />
-      {selected && (
+      {isSelected && (
         <Transformer
           ref={trRef}
           keepRatio
