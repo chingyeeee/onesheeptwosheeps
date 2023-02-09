@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Stage, Layer, Text, Group } from "react-konva";
+import { Stage, Layer } from "react-konva";
 import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 
@@ -80,9 +80,6 @@ const Background = ({
             />
           );
         })}
-        <Group>
-          <Text x={150} y={50} text="Your text goes here" fontSize={20} />
-        </Group>
       </Layer>
     </Stage>
   );
