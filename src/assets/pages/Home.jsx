@@ -1,7 +1,7 @@
 import { lazy, Fragment, useState, useRef } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
 import { ReactComponent as Menu } from "../images/icons/icon-menu-sheep.svg";
-import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+
 import { ReactComponent as Download } from "../images/icons/icon-download.svg";
 import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
@@ -190,26 +190,6 @@ const Home = () => {
     }
   }
 
-  //根據color傳入對應style
-  function handleNavItemStyle() {
-    switch (color) {
-      case "color-default.svg":
-        return "text-black border-black";
-      case "color1.svg":
-        return "text-lightgreen border-lightgreen stroke-lightgreen fill-lightgreen";
-      case "color2.svg":
-        return "text-black border-black";
-      case "color3.svg":
-        return "text-lightpurple border-lightpurple stroke-lightpurple fill-lightpurple";
-      case "color4.svg":
-        return "text-yellow border-yellow stroke-yellow fill-yellow";
-      case "color5.svg":
-        return "text-yellow border-yellow stroke-yellow fill-yellow";
-      case "color6.svg":
-        return "text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
-    }
-  }
-
   //download stage as image
   const handleExport = () => {
     const uri = stageRef.current.toDataURL();
@@ -233,6 +213,8 @@ const Home = () => {
             cardItems={cardItems}
             setCardItems={setCardItems}
             stageRef={stageRef}
+            aboutUsEnabled={aboutUsEnabled}
+            dreamCardEnabled={dreamCardEnabled}
           />
 
           <div className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
@@ -397,35 +379,6 @@ const Home = () => {
               </div>
             </Dialog>
           </Transition>
-        </div>
-        <div className="absolute flex items-center justify-between p-6 bottom-2 w-full">
-          {aboutUsEnabled && (
-            <div
-              className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto group `}
-            >
-              <Finger
-                className={`w-[15%] group-hover:animate-finger-shake ${handleNavItemStyle()}`}
-              />
-
-              <p
-                className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle()}`}
-              >
-                ABOUT US
-              </p>
-            </div>
-          )}
-          {dreamCardEnabled && (
-            <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end group">
-              <Finger
-                className={`w-[15%] group-hover:animate-finger-shake ${handleNavItemStyle()}`}
-              />
-              <p
-                className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle()}`}
-              >
-                DREAM CARD
-              </p>
-            </div>
-          )}
         </div>
       </div>
 
