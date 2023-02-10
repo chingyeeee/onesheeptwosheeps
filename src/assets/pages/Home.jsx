@@ -304,7 +304,7 @@ const Home = () => {
                               {TabData["STiCKERS"].map((sticker) => {
                                 return (
                                   <img
-                                    className="w-[20%] m-auto"
+                                    className="w-[20%] m-auto cursor-pointer hover:bg-zinc-100"
                                     key={sticker}
                                     src={getImageUrl("stickers", sticker)}
                                     onClick={() =>
@@ -332,7 +332,7 @@ const Home = () => {
                               {TabData["1SHEEP2SLEEP"].map((logo) => {
                                 return (
                                   <img
-                                    className="w-[80%] m-auto"
+                                    className="w-[80%] m-auto cursor-pointer hover:bg-zinc-100"
                                     key={logo}
                                     src={getImageUrl("cardLogos", logo)}
                                     onClick={() =>
@@ -401,9 +401,11 @@ const Home = () => {
         <div className="absolute flex items-center justify-between p-6 bottom-2 w-full">
           {aboutUsEnabled && (
             <div
-              className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto`}
+              className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto group `}
             >
-              <Finger className={`w-[15%] ${handleNavItemStyle()}`} />
+              <Finger
+                className={`w-[15%] group-hover:animate-finger-shake ${handleNavItemStyle()}`}
+              />
 
               <p
                 className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle()}`}
@@ -413,8 +415,10 @@ const Home = () => {
             </div>
           )}
           {dreamCardEnabled && (
-            <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end">
-              <Finger className={`w-[15%] ${handleNavItemStyle()}`} />
+            <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end group">
+              <Finger
+                className={`w-[15%] group-hover:animate-finger-shake ${handleNavItemStyle()}`}
+              />
               <p
                 className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle()}`}
               >
