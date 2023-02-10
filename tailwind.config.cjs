@@ -15,6 +15,15 @@ module.exports = {
         purple: "#a9a9ff",
         darkgreen: "#004943",
       },
+      keyframes: {
+        shake: {
+          "0%": { transform: "translateX(10px)" },
+          "100%": { transform: "translateX(-10px)" },
+        },
+      },
+      animation: {
+        "finger-shake": "shake 0.5s linear infinite alternate",
+      },
     },
     fontFamily: {},
   },
