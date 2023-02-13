@@ -28,11 +28,20 @@ const Background = ({
       setWindowWidth(window.innerWidth);
       setWindowHeight(window.innerHeight);
     };
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Backspace") {
+        handleDeleteSelectedCardItem();
+      }
+    };
+
     window.addEventListener("resize", handleResize);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [selectedId]);
 
   const checkDeselect = (e) => {
     // deselect when clicked on empty area
@@ -60,6 +69,11 @@ const Background = ({
       case "color6.svg":
         return "text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
     }
+  }
+
+  //刪除選擇的cardItem
+  function handleDeleteSelectedCardItem() {
+    setCardItems(cardItems.filter((item) => item.id !== selectedId));
   }
 
   return (
