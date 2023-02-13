@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Stage, Layer } from "react-konva";
+import { Stage, Layer, Group } from "react-konva";
 import { Html } from "react-konva-utils";
 import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+import Logo from "./Logo";
 
 const Background = ({
+  logoEnabled,
   welcomeToEnabled,
   color,
   cardItems,
@@ -67,25 +69,34 @@ const Background = ({
       onMouseDown={checkDeselect}
       onTouchStart={checkDeselect}
       ref={stageRef}
-      className={`relative before:block before:absolute before:-inset-1  before:z-[-1] ${
+      className={`relative before:block before:absolute before:-inset-1 before:z-[-1] ${
         color === "color4.svg" &&
-        "before:bg-purple before:w-[96%] before:m-auto before:h-[93%]"
+        "before:bg-purple before:w-[calc(100%-20px)] before:h-[calc(100%-20px)] before:m-auto "
       } ${
         color === "color5.svg" &&
-        "before:bg-lightpurple before:w-[96%] before:ml-[2%] before:h-[95%]"
+        "before:bg-lightpurple before:w-[calc(100%-20px)] before:h-[calc(100%-60px)] before:mx-auto"
       } ${
         color === "color6.svg" &&
-        "before:bg-darkgreen before:w-[96%] before:m-auto before:h-[95%]"
+        "before:bg-darkgreen before:w-[calc(100%-20px)] before:h-[calc(100%-20px)] before:m-auto"
       }`}
     >
       <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
-        {welcomeToEnabled && (
-          <Welcome
-            width={windowWidth}
-            height={windowHeight * 0.5}
-            color={color}
-          />
-        )}
+        <Group>
+          {welcomeToEnabled && (
+            <Welcome
+              width={windowWidth}
+              height={windowHeight * 0.6}
+              color={color}
+            />
+          )}
+          {logoEnabled && (
+            <Logo
+              width={windowWidth}
+              height={windowHeight * 0.6}
+              color={color}
+            />
+          )}
+        </Group>
         {cardItems.map((item, index) => {
           return (
             <MyImage
@@ -117,10 +128,10 @@ const Background = ({
           <div className="relative flex items-center justify-between p-6 bottom-2 w-full">
             {aboutUsEnabled && (
               <div
-                className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto group `}
+                className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto `}
               >
                 <Finger
-                  className={`w-[15%] group-hover:animate-finger-shake ${handleNavItemStyle(
+                  className={`w-[15%] animate-finger-shake ${handleNavItemStyle(
                     color
                   )}`}
                 />
@@ -135,9 +146,9 @@ const Background = ({
               </div>
             )}
             {dreamCardEnabled && (
-              <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end group">
+              <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end">
                 <Finger
-                  className={`w-[15%] group-hover:animate-finger-shake ${handleNavItemStyle(
+                  className={`w-[15%] animate-finger-shake ${handleNavItemStyle(
                     color
                   )}`}
                 />
