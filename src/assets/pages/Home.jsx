@@ -217,15 +217,15 @@ const Home = () => {
             dreamCardEnabled={dreamCardEnabled}
           />
 
-          <div className="absolute z-10 w-[15%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
+          <div className="absolute z-10 w-[12%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
             {addItemsEnabled && (
-              <div className="flex flex-col gap-2" onClick={openMenu}>
+              <div className="flex flex-col" onClick={openMenu}>
                 <Menu />
                 <p className="border-b border-black">add items</p>
               </div>
             )}
             {downloadEnabled && (
-              <div className="flex flex-col gap-2" onClick={handleExport}>
+              <div className="flex flex-col" onClick={handleExport}>
                 <Download />
                 <p className="border-b border-black">download</p>
               </div>
@@ -246,7 +246,7 @@ const Home = () => {
               </Transition.Child>
 
               <div className="fixed inset-0 overflow-y-auto">
-                <div className="min-h-full p-4">
+                <div className="min-h-full">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -256,18 +256,18 @@ const Home = () => {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-[50%] mr-auto transform overflow-hidden text-center align-middle transition-all absolute top-[20%] left-[12%] border-4 border-black rounded-xl bg-white px-4">
+                    <Dialog.Panel className="w-[50%] min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute top-[20%] left-[12%] border-4 border-black rounded-xl bg-white px-4">
                       <Tab.Group>
-                        <Tab.List className="flex p-4 border-b-4 border-black space-x-1">
+                        <Tab.List className="flex py-4 border-b-4 border-black space-x-0.5">
                           {Object.keys(TabData).map((tab) => (
                             <Tab
                               key={tab}
                               className={({ selected }) =>
                                 classNames(
-                                  "w-full py-2.5 text-md font-medium leading-5",
+                                  "w-full py-2.5 text-2xl font-semibold leading-5",
                                   "ring-white ring-opacity-60 focus:outline-none focus:ring-2",
                                   selected
-                                    ? "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.65] relative inline-block text-white"
+                                    ? "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.8] relative inline-block text-white"
                                     : "text-black",
                                   `${
                                     tab === "1SHEEP2SLEEP" &&
