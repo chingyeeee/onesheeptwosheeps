@@ -86,11 +86,10 @@ const Background = ({
             color={color}
           />
         )}
-        {/* <MyImage /> */}
-        {cardItems.map((item, i) => {
+        {cardItems.map((item, index) => {
           return (
             <MyImage
-              key={i}
+              key={index}
               shapeProps={item}
               isSelected={item.id === selectedId}
               onSelect={() => {
@@ -98,7 +97,7 @@ const Background = ({
               }}
               onChange={(newAttrs) => {
                 const items = cardItems.slice();
-                items[i] = newAttrs;
+                items[index] = newAttrs;
                 setCardItems(items);
               }}
             />
