@@ -213,7 +213,7 @@ const Home = () => {
 
           <div className="absolute z-10 w-[12%] top-[30%] flex flex-col gap-8 items-center">
             <div
-              className={`flex flex-col opacity-0 cursor-auto ${
+              className={`flex flex-col opacity-0 ${
                 addItemsEnabled && "opacity-100 cursor-pointer"
               }`}
               onClick={openMenu}
