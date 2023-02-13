@@ -412,29 +412,29 @@ const Home = () => {
                   className="w-full transform overflow-hidden p-6 text-center align-middle transition-all"
                   onClick={closeIntro}
                 >
-                  <p className="text-xl font-medium leading-6 text-gray-900 p-1">
+                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
                     歡迎來到一隻羊兩隻羊！
                   </p>
-                  <p className="text-xl font-medium leading-6 text-gray-900 p-1">
+                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
                     這裡除了有解夢卡專區之外
                   </p>
-                  <p className="text-xl font-medium leading-6 text-gray-900 p-1">
+                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
                     還有更多值得你探索的地方～
                   </p>
 
-                  <p className="text-xl font-medium leading-6 text-gray-900 mt-6">
+                  <p className="text-lg font-medium leading-6 text-gray-900 mt-6">
                     快動動手指製作屬於自己的桌布及解夢卡吧！
                   </p>
-                  <p className="text-xl font-medium leading-6 text-gray-900 p-1 mt-8">
+                  <p className="text-lg font-medium leading-6 text-gray-900 p-1 mt-8">
                     Welcome to the website of ONE SHEEP, TWO SLEEP.
                   </p>
-                  <p className="text-xl font-medium leading-6 text-gray-900 p-1">
+                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
                     Aside from our DREAMCARD area,
                   </p>
-                  <p className="text-xl font-medium leading-6 text-gray-900 p-1">
+                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
                     here’s more to explore. GO make yourself
                   </p>
-                  <p className="text-xl font-medium leading-6 text-gray-900 mt-6">
+                  <p className="text-lg font-medium leading-6 text-gray-900 mt-6">
                     own “DREAMCARD” and “wallpaper”
                   </p>
                 </Dialog.Panel>
