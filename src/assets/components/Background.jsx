@@ -88,7 +88,7 @@ const Background = ({
         "before:bg-purple before:w-[calc(100%-20px)] before:h-[calc(100%-20px)] before:m-auto "
       } ${
         color === "color5.svg" &&
-        "before:bg-lightpurple before:w-[calc(100%-20px)] before:h-[calc(100%-60px)] before:mx-auto"
+        "before:bg-lightpurple before:w-[calc(100%-20px)] before:h-[calc(100%-20px)] before:m-auto"
       } ${
         color === "color6.svg" &&
         "before:bg-darkgreen before:w-[calc(100%-20px)] before:h-[calc(100%-20px)] before:m-auto"
@@ -99,7 +99,7 @@ const Background = ({
           {welcomeToEnabled && (
             <Welcome
               width={windowWidth}
-              height={windowHeight * 0.6}
+              height={windowHeight * 0.5}
               color={color}
             />
           )}
