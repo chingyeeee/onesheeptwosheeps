@@ -299,7 +299,7 @@ const Home = () => {
                                           y: 250,
                                           width: 200,
                                           height: 350,
-                                          id: sticker,
+                                          id: cardItems.length + 1,
                                           folder: "stickers",
                                         },
                                       ])
@@ -327,7 +327,7 @@ const Home = () => {
                                           y: 250,
                                           width: 600,
                                           height: 200,
-                                          id: logo,
+                                          id: cardItems.length + 1,
                                           folder: "cardLogos",
                                         },
                                       ])
