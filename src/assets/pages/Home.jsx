@@ -297,7 +297,7 @@ const Home = () => {
                                           image: sticker,
                                           x: 800,
                                           y: 250,
-                                          width: 200,
+                                          width: 250,
                                           height: 350,
                                           id: cardItems.length + 1,
                                           folder: "stickers",
