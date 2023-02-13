@@ -23,9 +23,20 @@ const Welcome = ({ width, height, color }) => {
     }
   }
 
-  const logo = getImageUrl("nav", handleWelcomeColor(color));
-  const [image] = useImage(logo);
-  return <Image image={image} width={width} height={height} />;
+  const welcomeImg = getImageUrl("nav", handleWelcomeColor(color));
+  const [image] = useImage(welcomeImg);
+  return (
+    <Image
+      className="w-[50%]"
+      image={image}
+      width={width}
+      scaleX={0.53}
+      scaleY={0.53}
+      height={height}
+      y={10}
+      x={10}
+    />
+  );
 };
 
 export default Welcome;
