@@ -265,10 +265,10 @@ const Home = () => {
                               key={tab}
                               className={({ selected }) =>
                                 classNames(
-                                  "w-full py-2.5 text-2xl font-semibold leading-5",
+                                  "w-full py-2.5 text-lg font-medium leading-5",
                                   "ring-white ring-opacity-60 focus:outline-none focus:ring-2",
                                   selected
-                                    ? "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.8] relative inline-block text-white"
+                                    ? "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.65] relative inline-block text-white"
                                     : "text-black",
                                   `${
                                     tab === "1SHEEP2SLEEP" &&
@@ -310,7 +310,9 @@ const Home = () => {
                             </div>
                           </Tab.Panel>
                           <Tab.Panel>
-                            <h3 className="text-4xl text-left">LOGOTYPES_</h3>
+                            <h3 className="text-5xl text-left font-semibold">
+                              LOGOTYPES_
+                            </h3>
                             <div className="flex flex-col gap-12 mt-6">
                               {TabData["1SHEEP2SLEEP"].map((logo) => {
                                 return (
@@ -338,7 +340,7 @@ const Home = () => {
                             </div>
                           </Tab.Panel>
                           <Tab.Panel>
-                            <h3 className="text-4xl text-left">
+                            <h3 className="text-5xl text-left font-semibold">
                               COLOR <br />
                               CHANGE_
                             </h3>
@@ -354,7 +356,7 @@ const Home = () => {
                                 );
                               })}
                             </div>
-                            <h3 className="text-4xl text-left mt-12">
+                            <h3 className="text-5xl font-semibold text-left mt-12">
                               BACKGROUND <br />
                               WORDS_
                             </h3>
