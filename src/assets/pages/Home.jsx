@@ -440,8 +440,11 @@ const Home = () => {
                   </p>
                 </Dialog.Panel>
               </Transition.Child>
-              <p className="absolute inset-x-0 bottom-12">
+              <p className="absolute inset-x-0 bottom-12 animate-fadeIn">
                 [ 按任意地方進行下一步 ]
+              </p>
+              <p className="absolute inset-x-0 bottom-12 animate-fadeOut">
+                [ Click anywhere to continue ]
               </p>
             </div>
           </div>

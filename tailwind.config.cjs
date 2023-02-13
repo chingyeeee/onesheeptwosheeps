@@ -20,9 +20,19 @@ module.exports = {
           "0%": { transform: "translateX(10px)" },
           "100%": { transform: "translateX(-10px)" },
         },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 100 },
+        },
+        fadeOut: {
+          "0%": { opacity: 100 },
+          "100%": { opacity: 0 },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
+        fadeIn: "fadeIn 3s linear infinite alternate",
+        fadeOut: "fadeOut 3s linear infinite alternate",
       },
     },
     fontFamily: {},
