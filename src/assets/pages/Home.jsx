@@ -53,7 +53,6 @@ const Home = () => {
             value={logoEnabled}
             checked={logoEnabled}
             onChange={setLogoEnabled}
-            onClick={() => console.log(word, !logoEnabled)}
             className={`${logoEnabled ? "bg-black" : "bg-gray-300"}
           relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -73,7 +72,6 @@ const Home = () => {
             value={welcomeToEnabled}
             checked={welcomeToEnabled}
             onChange={setWelcomeToEnabled}
-            onClick={() => console.log(word, !welcomeToEnabled)}
             className={`${welcomeToEnabled ? "bg-black" : "bg-gray-300"}
             relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -93,7 +91,6 @@ const Home = () => {
             value={dreamCardEnabled}
             checked={dreamCardEnabled}
             onChange={setDreamCardEnabled}
-            onClick={() => console.log(word, !dreamCardEnabled)}
             className={`${dreamCardEnabled ? "bg-black" : "bg-gray-300"}
             relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -113,7 +110,6 @@ const Home = () => {
             value={aboutUsEnabled}
             checked={aboutUsEnabled}
             onChange={setAboutUsEnabled}
-            onClick={() => console.log(word, !aboutUsEnabled)}
             className={`${aboutUsEnabled ? "bg-black" : "bg-gray-300"}
               relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -133,7 +129,6 @@ const Home = () => {
             value={emotionEnabled}
             checked={emotionEnabled}
             onChange={setEmotionEnabled}
-            onClick={() => console.log(word, !emotionEnabled)}
             className={`${emotionEnabled ? "bg-black" : "bg-gray-300"}
                 relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -153,7 +148,6 @@ const Home = () => {
             value={addItemsEnabled}
             checked={addItemsEnabled}
             onChange={setAddItemsEnabled}
-            onClick={() => console.log(word, !addItemsEnabled)}
             className={`${addItemsEnabled ? "bg-black" : "bg-gray-300"}
                   relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -173,7 +167,6 @@ const Home = () => {
             value={downloadEnabled}
             checked={downloadEnabled}
             onChange={setDownloadEnabled}
-            onClick={() => console.log(word, !downloadEnabled)}
             className={`${downloadEnabled ? "bg-black" : "bg-gray-300"}
                   relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
@@ -209,6 +202,7 @@ const Home = () => {
         <div>
           <Background
             color={color}
+            logoEnabled={logoEnabled}
             welcomeToEnabled={welcomeToEnabled}
             cardItems={cardItems}
             setCardItems={setCardItems}
@@ -217,15 +211,22 @@ const Home = () => {
             dreamCardEnabled={dreamCardEnabled}
           />
 
-          <div className="absolute z-10 w-[12%] top-[30%] flex flex-col gap-8 items-center cursor-pointer">
-            {addItemsEnabled && (
-              <div className="flex flex-col" onClick={openMenu}>
-                <Menu />
-                <p className="border-b border-black">add items</p>
-              </div>
-            )}
+          <div className="absolute z-10 w-[12%] top-[30%] flex flex-col gap-8 items-center">
+            <div
+              className={`flex flex-col opacity-0 cursor-auto ${
+                addItemsEnabled && "opacity-100 cursor-pointer"
+              }`}
+              onClick={openMenu}
+            >
+              <Menu />
+              <p className="border-b border-black">add items</p>
+            </div>
+
             {downloadEnabled && (
-              <div className="flex flex-col" onClick={handleExport}>
+              <div
+                className="flex flex-col cursor-pointer"
+                onClick={handleExport}
+              >
                 <Download />
                 <p className="border-b border-black">download</p>
               </div>
