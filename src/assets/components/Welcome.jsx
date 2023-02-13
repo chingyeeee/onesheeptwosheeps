@@ -7,19 +7,19 @@ const Welcome = ({ width, height, color }) => {
   function handleWelcomeColor(color) {
     switch (color) {
       case "color-default.svg":
-        return "welcome-default.svg";
+        return "welcome-default.png";
       case "color1.svg":
-        return "welcome-1.svg";
+        return "welcome-1.png";
       case "color2.svg":
-        return "welcome-2.svg";
+        return "welcome-2.png";
       case "color3.svg":
-        return "welcome-3.svg";
+        return "welcome-3.png";
       case "color4.svg":
-        return "welcome-4.svg";
+        return "welcome-4.png";
       case "color5.svg":
-        return "welcome-5.svg";
+        return "welcome-5.png";
       case "color6.svg":
-        return "welcome-6.svg";
+        return "welcome-6.png";
     }
   }
 
@@ -32,7 +32,7 @@ const Welcome = ({ width, height, color }) => {
       width={width}
       scaleX={0.53}
       scaleY={0.53}
-      height={height}
+      height={color === "color2.svg" ? height / 0.45 : height}
       y={10}
       x={10}
     />
