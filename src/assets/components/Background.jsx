@@ -109,7 +109,8 @@ const Background = ({
               position: "absolute",
               top: "auto",
               left: "auto",
-              bottom: "8px",
+              bottom: "16px",
+              width: "100%",
             },
           }}
         >
@@ -125,7 +126,7 @@ const Background = ({
                 />
 
                 <p
-                  className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle(
+                  className={`border-b-4 text-5xl lg:text-[4rem] ${handleNavItemStyle(
                     color
                   )}`}
                 >
@@ -141,7 +142,7 @@ const Background = ({
                   )}`}
                 />
                 <p
-                  className={`border-b-4 text-5xl lg:text-7xl ${handleNavItemStyle(
+                  className={`border-b-4 text-5xl lg:text-[4rem] ${handleNavItemStyle(
                     color
                   )}`}
                 >
