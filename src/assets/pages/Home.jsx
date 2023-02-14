@@ -283,27 +283,27 @@ const Home = () => {
                         </Tab.List>
                         <Tab.Panels className="p-6 max-h-[65vh] overflow-y-auto">
                           <Tab.Panel>
-                            <div className="flex flex-wrap mt-6">
+                            <div className="mt-6">
                               {TabData["STiCKERS"].map((sticker) => {
                                 return (
                                   <img
-                                    className="w-[20%] m-auto cursor-pointer hover:bg-zinc-100"
+                                    className="w-[25%] m-auto float-left cursor-pointer hover:bg-zinc-100"
                                     key={sticker}
                                     src={getImageUrl("stickers", sticker)}
-                                    onClick={() =>
+                                    onClick={(e) => {
                                       setCardItems([
                                         ...cardItems,
                                         {
                                           image: sticker,
                                           x: 800,
                                           y: 250,
-                                          width: 250,
-                                          height: 350,
+                                          width: e.target.width,
+                                          height: e.target.height,
                                           id: cardItems.length + 1,
                                           folder: "stickers",
                                         },
-                                      ])
-                                    }
+                                      ]);
+                                    }}
                                   />
                                 );
                               })}
@@ -320,15 +320,15 @@ const Home = () => {
                                     className="w-[80%] m-auto cursor-pointer hover:bg-zinc-100"
                                     key={logo}
                                     src={getImageUrl("cardLogos", logo)}
-                                    onClick={() =>
+                                    onClick={(e) =>
                                       setCardItems([
                                         ...cardItems,
                                         {
                                           image: logo,
                                           x: 150,
                                           y: 250,
-                                          width: 600,
-                                          height: 200,
+                                          width: e.target.width,
+                                          height: e.target.height,
                                           id: cardItems.length + 1,
                                           folder: "cardLogos",
                                         },
