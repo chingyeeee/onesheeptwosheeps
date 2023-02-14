@@ -139,7 +139,7 @@ const Background = ({
             },
           }}
         >
-          <div className="relative flex items-center justify-between p-6 bottom-2 w-full">
+          <div className="relative flex items-center justify-between p-6 bottom-2 w-[90%] mx-auto">
             {aboutUsEnabled && (
               <div
                 className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto `}
