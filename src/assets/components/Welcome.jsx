@@ -29,12 +29,12 @@ const Welcome = ({ width, height, color }) => {
     <Image
       className="w-[50%]"
       image={image}
-      width={width}
-      scaleX={0.53}
-      scaleY={0.53}
+      width={color === "color2.svg" ? width * 1.12 : width}
+      scaleX={0.45}
+      scaleY={0.45}
       height={color === "color2.svg" ? height / 0.45 : height}
-      y={10}
-      x={10}
+      y={20}
+      x={20}
     />
   );
 };
