@@ -30,8 +30,8 @@ const Welcome = ({ width, height, color }) => {
       className="w-[50%]"
       image={image}
       width={color === "color2.svg" ? width * 1.12 : width}
-      scaleX={0.45}
-      scaleY={0.45}
+      scaleX={0.5}
+      scaleY={0.5}
       height={color === "color2.svg" ? height / 0.45 : height}
       y={20}
       x={20}
