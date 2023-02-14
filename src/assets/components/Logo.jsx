@@ -27,10 +27,10 @@ const Logo = ({ width, height, color }) => {
     <Image
       image={image}
       width={width}
-      x={width * 0.53}
-      y={80}
-      scaleX={0.46}
-      scaleY={0.46}
+      x={width * 0.55}
+      y={40}
+      scaleX={0.4}
+      scaleY={0.4}
       height={height}
     />
   );
