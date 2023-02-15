@@ -14,6 +14,7 @@ module.exports = {
         yellow: "#fffa6f",
         purple: "#a9a9ff",
         darkgreen: "#004943",
+        blue: "#0073f7",
       },
       keyframes: {
         shake: {
@@ -35,7 +36,15 @@ module.exports = {
         fadeOut: "fadeOut 3s linear infinite alternate",
       },
     },
-    fontFamily: {},
+    fontFamily: {
+      adobe: [
+        "Adobe Myungjo",
+        "Noto Serif TC",
+        "serif",
+        "system-ui",
+        "sans-serif",
+      ],
+    },
   },
   plugins: [],
 };

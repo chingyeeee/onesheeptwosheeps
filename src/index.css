@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Adobe Myungjo";
+    src: local("Adobe Myungjo"),
+      url(./fonts/adobe-myungjo-std-M.otf) format("otf");
+  }
+  html {
+    font-family: "PingFang TC", Noto Serif TC, serif, system-ui, sans-serif;
+  }
+}
