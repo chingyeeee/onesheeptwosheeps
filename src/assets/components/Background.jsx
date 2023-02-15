@@ -5,6 +5,7 @@ import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
 import Logo from "./Logo";
+import { useNavigate } from "react-router-dom";
 
 const Background = ({
   logoEnabled,
@@ -21,6 +22,8 @@ const Background = ({
 
   //selectedItem
   const [selectedId, selectShape] = useState(null);
+
+  const navigate = useNavigate();
 
   //配合螢幕調整canvas
   useEffect(() => {
@@ -143,6 +146,7 @@ const Background = ({
             {aboutUsEnabled && (
               <div
                 className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto `}
+                onClick={() => navigate("/aboutus")}
               >
                 <Finger
                   className={`w-[15%] animate-finger-shake ${handleNavItemStyle(
