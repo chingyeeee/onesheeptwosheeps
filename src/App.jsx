@@ -5,6 +5,7 @@ import { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("./assets/pages/Home"));
 const AboutUs = lazy(() => import("./assets/pages/AboutUs"));
+const DreamCard = lazy(() => import("./assets/pages/DreamCard"));
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/dreamcard" element={<DreamCard />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

@@ -164,7 +164,10 @@ const Background = ({
               </div>
             )}
             {dreamCardEnabled && (
-              <div className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end">
+              <div
+                className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end"
+                onClick={() => navigate("/dreamcard")}
+              >
                 <Finger
                   className={`w-[15%] animate-finger-shake ${handleNavItemStyle(
                     color
