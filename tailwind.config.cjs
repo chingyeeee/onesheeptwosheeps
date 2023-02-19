@@ -29,11 +29,19 @@ module.exports = {
           "0%": { opacity: 100 },
           "100%": { opacity: 0 },
         },
+        loaded: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
         fadeIn: "fadeIn 3s linear infinite alternate",
         fadeOut: "fadeOut 3s linear infinite alternate",
+        loaded: "loaded 3s linear alternate",
+      },
+      transitionProperty: {
+        height: "height",
       },
     },
     fontFamily: {
@@ -44,6 +52,7 @@ module.exports = {
         "system-ui",
         "sans-serif",
       ],
+      chakra: ["Chakra Petch", "sans-serif"],
     },
   },
   plugins: [],
