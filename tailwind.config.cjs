@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         cloud: "url('/src/assets/images/icons/icon-cloud.svg')",
+        signBlock: "url('/src/assets/images/sign/signBlock.svg')",
+        reset: "url('/src/assets/images/sign/reset.svg)",
+        hoverreset: "url('/src/assets/images/sign/hoverreset.svg)",
+        save: "url('/src/assets/images/sign/save.svg)",
+        hoversave: "url('/src/assets/images/sign/hoversave.svg)",
       },
       colors: {
         lakegreen: "#a6e2c5",
