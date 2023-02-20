@@ -1296,7 +1296,7 @@ const ShowResult = ({ quizAns, otherAns }) => {
           "有怪獸、大怪獸，一直纏著我～被生活壓的喘不過氣的你是不是要netflix and chill一下？現實生活就像是寶可夢ㄉ世界，面對火箭隊來勢洶洶ㄉ進擊，或許你需要一隻皮卡丘來跟你並肩作戰！試著讓自己放鬆一下吧！",
         ];
       } else if (otherAns[1] === "not threatening") {
-        [
+        return [
           "不存在的生物",
           "undefined mysterious animal",
           "面對外物的紛紛擾擾，我不會眼睜睜讓你去送死，我會閉上眼睛。老話說得好呀：心靜則清，心清則明，當心真正沉靜下來之後，生活隨即而來也將變得輕鬆隨性。",
@@ -1376,7 +1376,9 @@ const ShowResult = ({ quizAns, otherAns }) => {
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pb-8 text-md text-red relative h-[15rem] flex items-end z-[10]">
                   <img
-                    className="max-w-[30%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0"
+                    className={`${
+                      quizAns[0] === "G" ? "max-w-[20%]" : "max-w-[30%]"
+                    }  mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0`}
                     src={getImageUrl("stickers", `${quizAns[0]}.svg`)}
                   />
 
