@@ -3,8 +3,8 @@ import { ReactComponent as Title } from "../images/writeDownYourName/writedownyo
 import { useState, useRef, useEffect } from "react";
 import Reset from "../images/sign/reset.svg";
 import Save from "../images/sign/save.svg";
-import HoverReset from "../images/sign/hoverreset.svg";
-import HoverSave from "../images/sign/hoversave.svg";
+import HoverReset from "../images/sign/hoverReset.svg";
+import HoverSave from "../images/sign/hoverSave.svg";
 
 const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   const [lines, setLines] = useState([]);
