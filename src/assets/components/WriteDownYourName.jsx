@@ -6,14 +6,13 @@ import Save from "../images/sign/save.svg";
 import HoverReset from "../images/sign/hoverreset.svg";
 import HoverSave from "../images/sign/hoversave.svg";
 
-const SignatureCanvas = ({ nextStep }) => {
+const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   const [lines, setLines] = useState([]);
   const isDrawing = useRef(false);
   const stageRef = useRef();
   const backgroundRef = useRef();
   const [color, setColor] = useState("#000000");
   const [canvaWidth, setCanvaWidth] = useState(null);
-  const [signImgPath, setSignImgPath] = useState(null);
 
   const handleMouseDown = () => {
     isDrawing.current = true;
@@ -50,7 +49,7 @@ const SignatureCanvas = ({ nextStep }) => {
 
   const handleSave = () => {
     const dataURL = stageRef.current.toDataURL();
-    console.log(dataURL);
+    setSignImgPath(dataURL);
     lines.length !== 0 && nextStep();
   };
 
@@ -62,7 +61,7 @@ const SignatureCanvas = ({ nextStep }) => {
   }, [backgroundRef.current]);
 
   return (
-    <div className="max-w-[80vw] h-[75vh] mx-auto " ref={backgroundRef}>
+    <div className="max-w-[80vw] h-[75vh] mx-auto" ref={backgroundRef}>
       <div className="bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative">
         <Stage
           width={canvaWidth}
@@ -97,7 +96,7 @@ const SignatureCanvas = ({ nextStep }) => {
       <div className="flex gap-16 justify-center items-center mt-4">
         <div className="flex gap-2">
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-darkgreen cursor-pointer"
+            className={`w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-pointer`}
             onClick={() => handleColorChange("#004943")}
           />
           <div
@@ -157,11 +156,11 @@ const SignatureCanvas = ({ nextStep }) => {
   );
 };
 
-const WriteDownYourName = ({ nextStep }) => {
+const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
     <div className="w-screen">
       <Title />
-      <SignatureCanvas nextStep={nextStep} />
+      <SignatureCanvas nextStep={nextStep} setSignImgPath={setSignImgPath} />
     </div>
   );
 };
