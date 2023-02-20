@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
 import { ReactComponent as Title1 } from "../images/quiz/1/title.svg";
@@ -47,6 +47,13 @@ import LeftMarquee from "../images/quiz/showResult/left-marquee.svg";
 import RightMarquee from "../images/quiz/showResult/right-marquee.svg";
 import { ReactComponent as ChevronUp } from "../images/quiz/showResult/chevronUp.svg";
 import { getImageUrl } from "../utils/getImageUrl";
+import { ReactComponent as Home } from "../images/resultCards/nav/icon-home.svg";
+import { ReactComponent as Download } from "../images/icons/icon-download.svg";
+import { ReactComponent as Share } from "../images/resultCards/nav/icon-share.svg";
+import Arrow from "../images/resultCards/nav/icon-arrow.svg";
+import { Dialog, Transition } from "@headlessui/react";
+import Logo from "../images/resultCards/nav/icon-logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
@@ -1171,10 +1178,7 @@ const GeneratingResult = ({ setQuestionNum }) => {
   );
 };
 
-const ShowResult = ({ quizAns, otherAns }) => {
-  console.log(quizAns);
-  console.log(otherAns);
-
+const ShowResult = ({ quizAns, otherAns, setQuestionNum }) => {
   function getEmotion() {
     switch (quizAns[0]) {
       case "A":
@@ -1363,7 +1367,7 @@ const ShowResult = ({ quizAns, otherAns }) => {
                     {getEmotion()[0]} ）的夢 <br />
                     BASED ON YOUR CHOICE, <br />
                     YOU HAVE A{" "}
-                    <span className="font-padyakke">
+                    <span className="font-padyakke text-red">
                       ({getEmotion()[1]}) {getEmotion()[0]}{" "}
                     </span>
                     DREAM.
@@ -1403,7 +1407,7 @@ const ShowResult = ({ quizAns, otherAns }) => {
                     (2) <br />而{percentageArray[1]}%的人夢境中的主角是（
                     {getCharacter()[0]}） <br />
                     WITH
-                    <span className="font-padyakke">
+                    <span className="font-padyakke text-red">
                       ({getCharacter()[1]}) {getCharacter()[0]}
                     </span>{" "}
                     BECOMING YOUR DREAM’S <br />
@@ -1438,7 +1442,7 @@ const ShowResult = ({ quizAns, otherAns }) => {
                     {percentageArray[1]}%的人做了有關（
                     {getLifeStyle()[0]}） 的夢
                     <br /> AND YOUR DREAM IS ALL ABOUT{""}
-                    <span className="font-padyakke">
+                    <span className="font-padyakke text-red">
                       ({getLifeStyle()[1]}) {getLifeStyle()[0]}
                     </span>
                   </p>
@@ -1464,7 +1468,10 @@ const ShowResult = ({ quizAns, otherAns }) => {
               </>
             )}
           </Disclosure>
-          <div className="px-8 py-2 cursor-pointer border-2 border-black rounded-full w-max mx-auto mt-12 mb-12 hover:bg-black hover:text-white transition">
+          <div
+            className="px-8 py-2 cursor-pointer border-2 border-black rounded-full w-max mx-auto mt-12 mb-12 hover:bg-black hover:text-white transition duration-500"
+            onClick={() => setQuestionNum(9)}
+          >
             生成解夢卡
           </div>
         </div>
@@ -1473,7 +1480,137 @@ const ShowResult = ({ quizAns, otherAns }) => {
   );
 };
 
-const Quiz = () => {
+const ShowResultCard = ({ signImgPath, quizAns }) => {
+  const [resultCardPath, setResultCardPath] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
+  const navigate = useNavigate();
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function getResultCard() {
+    const imgFileName = `${quizAns.join("")}.jpg`;
+    setResultCardPath(imgFileName);
+  }
+
+  const downloadImage = (imageData, fileName) => {
+    const link = document.createElement("a");
+    link.href = imageData;
+    link.download = fileName;
+    link.click();
+    link.remove();
+  };
+
+  useEffect(() => getResultCard(), []);
+
+  return (
+    <div className="h-screen w-screen flex justify-center items-center relative">
+      <img className="w-[80%] mx-auto" src={signImgPath} />
+      <div className="absolute flex justify-center z-[10]">
+        <img
+          className="absolute scale-[0.2] z-[20] -top-14 -left-8"
+          src={signImgPath}
+        />
+        <img
+          className="w-[35%] rotate-3"
+          src={getImageUrl("resultCards", resultCardPath)}
+        />
+      </div>
+      <div className="absolute z-10 bottom-[5%] right-[5%] flex gap-8 items-center">
+        <div
+          className="h-[4.5rem] flex flex-col items-center justify-between cursor-pointer"
+          onClick={() =>
+            downloadImage(
+              getImageUrl("resultCards", resultCardPath),
+              resultCardPath
+            )
+          }
+        >
+          <Download />
+          <p className="underline-offset-1 decoration-black decoration-solid underline">
+            DOWNLOAD
+          </p>
+        </div>
+        <div
+          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-pointer`}
+          onClick={() => navigate("/")}
+        >
+          <Home />
+          <p className="underline-offset-1 decoration-black decoration-solid underline">
+            HOME
+          </p>
+        </div>
+        <div
+          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-pointer`}
+        >
+          <Share />
+          <p className="underline-offset-1 decoration-black decoration-solid underline">
+            SHARE
+          </p>
+        </div>
+      </div>
+
+      {/* modal */}
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-2xl transform rounded-2xl bg-white px-6 pt-24 pb-12 text-left align-middle shadow-xl transition-all text-center relative z-[10]">
+                  <img
+                    className="w-[80%] absolute left-0 right-0 mx-auto -top-[20%] z-[20]"
+                    src={Logo}
+                  />
+                  <div className="flex flex-col gap-4 items-center">
+                    <p className="text-md font-medium">
+                      1.下載屬於你的解夢卡 <br />
+                      CLICK BUTTON TO DOWNLOAD THE DREAMCARD.
+                    </p>
+                    <img className="w-[1.5rem]" src={Arrow} />
+                    <p className="text-md font-medium">
+                      2.追蹤「一隻羊，兩隻羊」IG <br />
+                      FOLLOW OUR INSTARGRAM.
+                    </p>
+
+                    <img className="w-[1.5rem]" src={Arrow} />
+                    <p className="text-md font-medium">
+                      3.分享出去並標記我們！
+                      <br />
+                      REMEMBER TO SHARE AND TAG US!
+                    </p>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+    </div>
+  );
+};
+
+const Quiz = ({ signImgPath }) => {
   const [questionNum, setQuestionNum] = useState(1);
   const [quizAns, setQuizAns] = useState([]);
 
@@ -1543,7 +1680,14 @@ const Quiz = () => {
         <GeneratingResult setQuestionNum={setQuestionNum} />
       )}
       {questionNum === 8 && (
-        <ShowResult quizAns={quizAns} otherAns={otherAns} />
+        <ShowResult
+          quizAns={quizAns}
+          otherAns={otherAns}
+          setQuestionNum={setQuestionNum}
+        />
+      )}
+      {questionNum === 9 && (
+        <ShowResultCard quizAns={quizAns} signImgPath={signImgPath} />
       )}
     </div>
   );
