@@ -53,6 +53,7 @@ module.exports = {
         "sans-serif",
       ],
       chakra: ["Chakra Petch", "sans-serif"],
+      padyakke: ["Padyakke Expanded One", "cursive"],
     },
   },
   plugins: [],
