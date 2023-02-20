@@ -6,13 +6,14 @@ import WriteDownYourName from "../components/WriteDownYourName";
 
 const DreamCard = () => {
   const [step, setStep] = useState(1);
+  const [signImgPath, setSignImgPath] = useState(null);
 
   function nextStep() {
     setStep(step + 1);
   }
 
   return (
-    <div className="h-screen">
+    <div className="h-screen w-screen">
       <Transition
         show={step === 1}
         enter="transition-opacity duration-300"
@@ -35,7 +36,11 @@ const DreamCard = () => {
         leaveTo="opacity-0"
         className={"h-screen"}
       >
-        <WriteDownYourName nextStep={nextStep} step={step} />
+        <WriteDownYourName
+          nextStep={nextStep}
+          step={step}
+          setSignImgPath={setSignImgPath}
+        />
       </Transition>
       <Transition
         show={step === 3}
@@ -47,7 +52,7 @@ const DreamCard = () => {
         leaveTo="opacity-0"
         className={"h-screen"}
       >
-        <Quiz nextStep={nextStep} />
+        <Quiz signImgPath={signImgPath} />
       </Transition>
     </div>
   );
