@@ -282,11 +282,11 @@ const Home = () => {
                         </Tab.List>
                         <Tab.Panels className="p-6 max-h-[65vh] overflow-y-auto">
                           <Tab.Panel>
-                            <div className="mt-6">
-                              {TabData["STiCKERS"].map((sticker) => {
+                            <div className="mt-6 columns-4">
+                              {TabData["STiCKERS"].map((sticker, idx) => {
                                 return (
                                   <img
-                                    className="w-[25%] m-auto float-left cursor-pointer hover:bg-zinc-100"
+                                    className={`w-full cursor-pointer hover:bg-[#a9a9ff40] place-self-start`}
                                     key={sticker}
                                     src={getImageUrl("stickers", sticker)}
                                     onClick={(e) => {
@@ -316,7 +316,7 @@ const Home = () => {
                               {TabData["1SHEEP2SLEEP"].map((logo) => {
                                 return (
                                   <img
-                                    className="w-[80%] m-auto cursor-pointer hover:bg-zinc-100"
+                                    className="w-[80%] cursor-pointer hover:bg-[#a9a9ff40] m-auto"
                                     key={logo}
                                     src={getImageUrl("cardLogos", logo)}
                                     onClick={(e) =>

@@ -1,24 +1,24 @@
 {
   "STiCKERS": [
     "1.svg",
-    "2.svg",
-    "3.svg",
-    "4.svg",
-    "sticker1.svg",
-    "sticker2.svg",
-    "sticker3.svg",
-    "sticker4.svg",
-    "A.svg",
-    "B.svg",
-    "C.svg",
-    "D.svg",
-    "E.svg",
-    "F.svg",
-    "G.svg",
     "H.svg",
+    "2.svg",
     "X.svg",
+    "D.svg",
+    "F.svg",
+    "Z.svg",
+    "4.svg",
+    "A.svg",
+    "sticker1.svg",
+    "E.svg",
+    "sticker3.svg",
     "Y.svg",
-    "Z.svg"
+    "C.svg",
+    "B.svg",
+    "3.svg",
+    "G.svg",
+    "sticker4.svg",
+    "sticker2.svg"
   ],
   "1SHEEP2SLEEP": [
     "logo1.svg",
@@ -33,10 +33,10 @@
   "BACKGROUND": {
     "color": [
       "color1.svg",
-      "color2.svg",
-      "color3.svg",
       "color4.svg",
+      "color2.svg",
       "color5.svg",
+      "color3.svg",
       "color6.svg",
       "color-default.svg"
     ],
