@@ -1,4 +1,3 @@
-import "react-lazy-load-image-component/src/effects/blur.css";
 import useImage from "use-image";
 import { Image } from "react-konva";
 import { getImageUrl } from "../utils/getImageUrl";
@@ -27,7 +26,6 @@ const Welcome = ({ width, height, color }) => {
   const [image] = useImage(welcomeImg);
   return (
     <Image
-      className="w-[50%]"
       image={image}
       width={color === "color2.svg" ? width * 1.12 : width}
       scaleX={0.5}
