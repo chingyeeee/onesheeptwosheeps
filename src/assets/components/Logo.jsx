@@ -1,4 +1,3 @@
-import "react-lazy-load-image-component/src/effects/blur.css";
 import useImage from "use-image";
 import { Image } from "react-konva";
 import { getImageUrl } from "../utils/getImageUrl";
