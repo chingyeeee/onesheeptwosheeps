@@ -28,10 +28,12 @@ module.exports = {
         },
         fadeIn: {
           "0%": { opacity: 0 },
+          "30%": { opacity: 0 },
           "100%": { opacity: 100 },
         },
         fadeOut: {
           "0%": { opacity: 100 },
+          "70%": { opacity: 0 },
           "100%": { opacity: 0 },
         },
         loaded: {
@@ -41,8 +43,8 @@ module.exports = {
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
-        fadeIn: "fadeIn 3s linear infinite alternate",
-        fadeOut: "fadeOut 3s linear infinite alternate",
+        fadeIn: "fadeIn 1.8s linear infinite alternate",
+        fadeOut: "fadeOut 1.8s linear infinite alternate",
         loaded: "loaded 3s linear alternate",
       },
       transitionProperty: {
