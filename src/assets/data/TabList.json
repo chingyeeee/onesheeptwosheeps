@@ -32,12 +32,12 @@
   ],
   "BACKGROUND": {
     "color": [
-      "color1.svg",
       "color4.svg",
+      "color3.svg",
       "color2.svg",
       "color5.svg",
-      "color3.svg",
       "color6.svg",
+      "color1.svg",
       "color-default.svg"
     ],
     "word": [
