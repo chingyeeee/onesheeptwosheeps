@@ -6,6 +6,7 @@ import MyImage from "./CardImage";
 import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
 import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
+import Emotion from "./Emotion";
 
 const Background = ({
   logoEnabled,
@@ -16,6 +17,7 @@ const Background = ({
   stageRef,
   aboutUsEnabled,
   dreamCardEnabled,
+  emotionEnabled,
 }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
@@ -114,6 +116,9 @@ const Background = ({
             />
           )}
         </Group>
+        {emotionEnabled && (
+          <Emotion width={windowWidth} height={windowHeight} />
+        )}
         {cardItems.map((item, index) => {
           return (
             <MyImage
