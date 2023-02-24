@@ -48,7 +48,7 @@ import RightMarquee from "../images/quiz/showResult/right-marquee.svg";
 import { ReactComponent as ChevronUp } from "../images/quiz/showResult/chevronUp.svg";
 import { getImageUrl } from "../utils/getImageUrl";
 import { ReactComponent as Home } from "../images/resultCards/nav/icon-home.svg";
-import { ReactComponent as Download } from "../images/icons/icon-download.svg";
+import { ReactComponent as Download } from "../images/resultCards/nav/icon-download.svg";
 import { ReactComponent as Share } from "../images/resultCards/nav/icon-share.svg";
 import Arrow from "../images/resultCards/nav/icon-arrow.svg";
 import { Dialog, Transition } from "@headlessui/react";
@@ -58,14 +58,16 @@ import { useNavigate } from "react-router-dom";
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={` bg-red flex px-20 flex-col justify-between overflow-hidden absolute w-full ${
-        questionNum === 1 ? "h-[75%] py-16" : "h-[5%]"
+      className={` bg-red flex px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
+        questionNum === 1
+          ? "h-[75%] py-16 animate-zoomIn"
+          : "h-[5%] animate-slideUp"
       }`}
     >
       <p
         className={`${
           questionNum === 1 && "hidden"
-        } text-xl absolute inset-y-0 h-min my-auto font-chakra left-8`}
+        } text-xl absolute inset-y-0 h-min top-1.5 font-chakra left-8`}
       >
         1
       </p>
@@ -309,18 +311,16 @@ const Question2 = ({
 }) => {
   return (
     <div
-      className={` bg-lightgreen flex px-20 flex-col justify-between overflow-hidden absolute w-full ${
-        questionNum === 2
-          ? "h-[75%] py-16 top-[5%]"
-          : questionNum === 1
-          ? "h-[5%] top-[75%]"
-          : "h-[5%] top-[5%]"
+      className={` bg-lightgreen flex px-20 flex-col justify-between overflow-hidden absolute w-full z-[19] ${
+        questionNum <= 2
+          ? "h-[80%] pt-28 pb-16 animate-slideDown"
+          : "h-[10%] animate-slideUp"
       }`}
     >
       <p
         className={`${
           questionNum === 2 && "hidden"
-        } text-xl absolute inset-y-0 h-min my-auto font-chakra left-8`}
+        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
       >
         2
       </p>
@@ -352,7 +352,7 @@ const Question2 = ({
                   yes
                 </span>
                 <Yes
-                  className={`w-[20%] group-hover:fill-lightgreen group-hover:block ${
+                  className={`w-[30%] group-hover:fill-lightgreen group-hover:block ${
                     otherAns[0] === "Y" ? "block fill-lightgreen" : "hidden"
                   }`}
                 />
@@ -378,7 +378,7 @@ const Question2 = ({
                   no
                 </span>
                 <No
-                  className={`w-[20%] group-hover:fill-lightgreen group-hover:block ${
+                  className={`w-[30%] group-hover:fill-lightgreen group-hover:block ${
                     otherAns[0] === "N" ? "block fill-lightgreen" : "hidden"
                   }`}
                 />
@@ -401,18 +401,16 @@ const Question2 = ({
 const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`bg-lakegreen flex px-20 flex-col justify-between overflow-hidden absolute w-full ${
-        questionNum === 3
-          ? "h-[75%] py-16 top-[10%]"
-          : questionNum < 3
-          ? "h-[5%] top-[80%]"
-          : "h-[5%] top-[10%]"
+      className={`bg-lakegreen flex px-20 flex-col justify-between overflow-hidden absolute w-full z-[18] ${
+        questionNum <= 3
+          ? "h-[85%] pt-36 pb-16 animate-slideDown"
+          : "h-[15%] animate-slideUp"
       }`}
     >
       <p
         className={`${
           questionNum === 3 && "hidden"
-        } text-xl absolute inset-y-0 h-min my-auto font-chakra left-8`}
+        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
       >
         3
       </p>
@@ -552,18 +550,16 @@ const Question4 = ({
 }) => {
   return (
     <div
-      className={`bg-purple flex px-20 flex-col justify-between overflow-hidden absolute w-full ${
-        questionNum === 4
-          ? "h-[75%] py-16 top-[15%]"
-          : questionNum < 4
-          ? "h-[5%] top-[85%]"
-          : "h-[5%] top-[15%]"
+      className={`bg-purple flex px-20 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
+        questionNum <= 4
+          ? "h-[90%] pt-48 pb-16 animate-slideDown"
+          : "h-[20%] animate-slideUp"
       }`}
     >
       <p
         className={`${
           questionNum === 4 && "hidden"
-        } text-xl absolute inset-y-0 h-min my-auto font-chakra left-8`}
+        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
       >
         4
       </p>
@@ -875,18 +871,16 @@ const Question4 = ({
 const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`bg-blue flex px-20 flex-col justify-between overflow-hidden absolute w-full ${
-        questionNum === 5
-          ? "h-[75%] py-16 top-[20%]"
-          : questionNum < 5
-          ? "h-[5%] top-[90%]"
-          : "h-[5%] top-[20%]"
+      className={`bg-blue flex px-20 flex-col justify-between overflow-hidden absolute w-full z-[16] ${
+        questionNum <= 5
+          ? "h-[95%] pt-56 pb-16 animate-slideDown"
+          : "h-[25%] animate-slideUp"
       }`}
     >
       <p
         className={`${
           questionNum === 5 && "hidden"
-        } text-xl absolute inset-y-0 h-min my-auto font-chakra left-8`}
+        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
       >
         5
       </p>
@@ -915,10 +909,10 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                       quizAns[2] === "Y" && "hidden"
                     }`}
                   >
-                    normal
+                    daily
                   </span>
                   <Normal
-                    className={`w-[20%] group-hover:block group-hover:fill-blue ${
+                    className={`w-[20%] group-hover:block group-hover:fill-blue translate-y-2 ${
                       quizAns[2] === "Y" ? "block fill-blue" : "hidden"
                     }`}
                   />
@@ -967,7 +961,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                       quizAns[2] === "Z" && "hidden"
                     }`}
                   >
-                    novel
+                    unrealistic
                   </span>
                   <Novel
                     className={`w-[45%] group-hover:block group-hover:fill-blue ${
@@ -1005,18 +999,14 @@ const Question6 = ({
 
   return (
     <div
-      className={`bg-yellow flex px-20 flex-col justify-between overflow-hidden absolute w-full ${
-        questionNum === 6
-          ? "h-[75%] py-16 top-[25%]"
-          : questionNum < 6
-          ? "h-[5%] top-[95%]"
-          : "h-[5%] top-[25%]"
+      className={`bg-yellow flex px-20 flex-col justify-between overflow-hidden absolute w-full z-[15] ${
+        questionNum <= 6 ? "h-[100%] pt-64 pb-16 animate-slideDown" : "h-[25%]"
       }`}
     >
       <p
         className={`${
           questionNum === 6 && "hidden"
-        } text-xl absolute inset-y-0 h-min my-auto font-chakra left-8`}
+        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
       >
         6
       </p>
@@ -1093,62 +1083,65 @@ const Question6 = ({
                 </p>
               </div>
             </div>
-            <div className="w-[30%] ml-[5%] flex flex-col font-semibold h-full">
-              <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  otherAns[3] === "open" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(3, "open")}
-              >
-                <span
-                  className={`group-hover:hidden text-2xl ${
-                    otherAns[3] === "open" && "hidden"
+            {otherAns[2] !== undefined && (
+              <div className="w-[30%] ml-[5%] flex flex-col font-semibold h-full">
+                <div
+                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    otherAns[3] === "open" && "bg-black"
                   }`}
+                  onClick={() => handleSaveAns(3, "open")}
                 >
-                  open
-                </span>
-                <Open
-                  className={`w-[30%] group-hover:block group-hover:fill-yellow ${
-                    otherAns[3] === "open" ? "block fill-yellow" : "hidden"
+                  <span
+                    className={`group-hover:hidden text-2xl ${
+                      otherAns[3] === "open" && "hidden"
+                    }`}
+                  >
+                    open
+                  </span>
+                  <Open
+                    className={`w-[30%] group-hover:block group-hover:fill-yellow ${
+                      otherAns[3] === "open" ? "block fill-yellow" : "hidden"
+                    }`}
+                  />
+                  <p
+                    className={`group-hover:text-yellow ${
+                      otherAns[3] === "open" && "text-yellow"
+                    }`}
+                  >
+                    開放
+                  </p>
+                </div>
+                <div
+                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    otherAns[3] === "sealed" && "bg-black"
                   }`}
-                />
-                <p
-                  className={`group-hover:text-yellow ${
-                    otherAns[3] === "open" && "text-yellow"
-                  }`}
+                  onClick={() => handleSaveAns(3, "sealed")}
                 >
-                  開放
-                </p>
+                  <span
+                    className={`group-hover:hidden text-2xl ${
+                      otherAns[3] === "sealed" && "hidden"
+                    }`}
+                  >
+                    sealed
+                  </span>
+                  <Sealed
+                    className={`w-[30%] group-hover:block group-hover:fill-yellow ${
+                      otherAns[3] === "sealed" ? "block fill-yellow" : "hidden"
+                    }`}
+                  />
+                  <p
+                    className={`group-hover:text-yellow ${
+                      otherAns[3] === "sealed" && "text-yellow"
+                    }`}
+                  >
+                    密閉
+                  </p>
+                </div>
               </div>
-              <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  otherAns[3] === "sealed" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(3, "sealed")}
-              >
-                <span
-                  className={`group-hover:hidden text-2xl ${
-                    otherAns[3] === "sealed" && "hidden"
-                  }`}
-                >
-                  sealed
-                </span>
-                <Sealed
-                  className={`w-[30%] group-hover:block group-hover:fill-yellow ${
-                    otherAns[3] === "sealed" ? "block fill-yellow" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-yellow ${
-                    otherAns[3] === "sealed" && "text-yellow"
-                  }`}
-                >
-                  密閉
-                </p>
-              </div>
-            </div>
+            )}
+
             <div
-              className="bg-blue w-min ml-auto px-6 py-3 rounded-full cursor-pointer"
+              className="bg-blue w-min ml-auto px-6 py-3 rounded-full cursor-pointer animate-remind-lightening transition hover:animate-lightening"
               onClick={checkNotEmptyAns}
             >
               <Finger className="w-[56px] h-[25px] fill-yellow" />
@@ -1178,7 +1171,7 @@ const GeneratingResult = ({ setQuestionNum }) => {
   );
 };
 
-const ShowResult = ({ quizAns, otherAns, setQuestionNum }) => {
+const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
   function getEmotion() {
     switch (quizAns[0]) {
       case "A":
@@ -1239,15 +1232,16 @@ const ShowResult = ({ quizAns, otherAns, setQuestionNum }) => {
   }
 
   const percentageArray = [
-    getRandomPercentage(100, 1),
-    getRandomPercentage(100, 1),
-    getRandomPercentage(100, 1),
+    getRandomPercentage(94, 70),
+    getRandomPercentage(80, 50),
+    getRandomPercentage(94, 70),
   ];
+
   const twoChoices = getRandomPercentage(3, 2);
   const fourChoices = getRandomPercentage(5, 2);
 
   function getRandomPercentage(max, min) {
-    return Math.trunc(Math.random() * max + min);
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
   function getCharacter() {
@@ -1344,19 +1338,30 @@ const ShowResult = ({ quizAns, otherAns, setQuestionNum }) => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <div className="bg-blue">
+      <div className="bg-blue h-[5rem]">
         <img src={Marquee} />
       </div>
-      <div className="bg-yellow absolute left-0 w-[77px] h-min">
+      <div className="bg-yellow absolute left-0 w-[5rem] h-min">
         <img className="object-fit" src={LeftMarquee} />
       </div>
-      <div className="bg-purple absolute right-0 w-[77px] h-min">
+      <div className="bg-purple absolute right-0 w-[5rem] h-min">
         <img src={RightMarquee} />
       </div>
-      <img src={Loading5} className={"absolute right-0 top-0 w-[4.83rem]"} />
-      <img src={Loading2} className={"absolute left-0 top-0 w-[4.83rem]"} />
-      {/*  */}
-      <div className="w-full px-4 py-12 h-screen overflow-scroll">
+      <img
+        src={Loading5}
+        className={"absolute right-0 top-0 w-[5rem] h-[5rem]"}
+      />
+      <img
+        src={Loading2}
+        className={"absolute left-0 top-0 w-[5rem] h-[5rem]"}
+      />
+
+      <div className="w-full px-4 pt-6 pb-12 h-screen overflow-scroll">
+        <img
+          className="m-auto h-[8rem] mb-2"
+          src={signImgPath}
+          alt="yourName"
+        />
         <div className="mx-auto w-full max-w-3xl bg-white px-2 pb-8">
           <Disclosure>
             {({ open }) => (
@@ -1436,7 +1441,7 @@ const ShowResult = ({ quizAns, otherAns, setQuestionNum }) => {
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className="flex w-full justify-between border-t-2 border-blue px-4 py-8 text-left text-sm font-medium focus:outline-none relative z-[20]">
+                <Disclosure.Button className="flex w-full justify-between border-t-2 border-b-2 border-blue px-4 py-8 text-left text-sm font-medium focus:outline-none relative z-[20]">
                   <p className="text-lg text-blue">
                     (3) <br />
                     {percentageArray[1]}%的人做了有關（
@@ -1469,7 +1474,7 @@ const ShowResult = ({ quizAns, otherAns, setQuestionNum }) => {
             )}
           </Disclosure>
           <div
-            className="px-8 py-2 cursor-pointer border-2 border-black rounded-full w-max mx-auto mt-12 mb-12 hover:bg-black hover:text-white transition duration-500"
+            className="px-8 py-2 cursor-pointer border-2 border-black rounded-full w-max mx-auto mt-12 mb-12 animate-shake hover:bg-black hover:text-white transition duration-500"
             onClick={() => setQuestionNum(9)}
           >
             生成解夢卡
@@ -1509,7 +1514,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       <img className="w-[80%] mx-auto" src={signImgPath} />
       <div className="absolute flex justify-center z-[10]">
         <img
-          className="absolute scale-[0.2] z-[20] -top-14 -left-8"
+          className="absolute scale-[0.2] z-[20] -top-12 -left-8"
           src={signImgPath}
         />
         <img
@@ -1684,6 +1689,7 @@ const Quiz = ({ signImgPath }) => {
           quizAns={quizAns}
           otherAns={otherAns}
           setQuestionNum={setQuestionNum}
+          signImgPath={signImgPath}
         />
       )}
       {questionNum === 9 && (

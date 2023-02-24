@@ -51,6 +51,29 @@ module.exports = {
           "0%": { opacity: "0%", scale: "3" },
           "100%": { opacity: "100%", scale: "1" },
         },
+        slideDown: {
+          "0%": { height: "10%", opacity: 0.3 },
+          "100%": { height: "80%", opacity: 1 },
+        },
+        slideUp: {
+          "0%": { height: "80%", opacity: 1 },
+          "100%": { height: "10%", opacity: 0 },
+        },
+        slideUp: {
+          "0%": { height: "80%", opacity: 1 },
+          "100%": { height: "10%", opacity: 0 },
+        },
+        shake: {
+          "0%": {
+            transform: "translateX(5px)",
+          },
+          "50%": {
+            transform: "translateX(-5px)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
@@ -60,6 +83,9 @@ module.exports = {
         "remind-lightening": "lightening 2s 6s linear infinite alternate",
         lightening: "lightening 0.5s linear infinite alternate",
         zoomIn: "zoomIn 1s linear",
+        slideDown: "slideDown 0.8s linear",
+        slideUp: "slideUp 0.8s linear",
+        shake: "shake 0.15s 20s linear infinite",
       },
       transitionProperty: {
         height: "height",
