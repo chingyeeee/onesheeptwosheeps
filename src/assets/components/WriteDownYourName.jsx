@@ -61,7 +61,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   }, [backgroundRef.current]);
 
   return (
-    <div className="max-w-[80vw] h-[75vh] mx-auto" ref={backgroundRef}>
+    <div className="w-[80%] h-[75vh] mx-auto" ref={backgroundRef}>
       <div className="bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative">
         <Stage
           width={canvaWidth}
@@ -111,6 +111,10 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
             className="w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-pointer"
             onClick={() => handleColorChange("#a6e2c5")}
           />
+          <div
+            className="w-[1.5rem] h-[1.5rem] bg-white"
+            onClick={() => handleColorChange("#fff")}
+          />
         </div>
         <div className="flex gap-4">
           <div
@@ -150,6 +154,10 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
             className="w-[1.5rem] h-[1.5rem] bg-purple cursor-pointer"
             onClick={() => handleColorChange("#a9a9ff")}
           />
+          <div
+            className="w-[1.5rem] h-[1.5rem] bg-black cursor-pointer"
+            onClick={() => handleColorChange("#000")}
+          />
         </div>
       </div>
     </div>
@@ -158,7 +166,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
-    <div className="w-screen">
+    <div className="h-full flex flex-col justify-center items-center">
       <Title />
       <SignatureCanvas nextStep={nextStep} setSignImgPath={setSignImgPath} />
     </div>
