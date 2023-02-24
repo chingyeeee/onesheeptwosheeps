@@ -40,12 +40,26 @@ module.exports = {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
+        lightening: {
+          "0%": { boxShadow: "0 0 12px rgba(0, 115, 247, 0.5)" },
+          "100%": {
+            boxShadow:
+              "0 0 5px rgba(0, 115, 247, 0.9),0 0 18px rgba(0, 115, 247, 0.9)",
+          },
+        },
+        zoomIn: {
+          "0%": { opacity: "0%", scale: "3" },
+          "100%": { opacity: "100%", scale: "1" },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
         fadeIn: "fadeIn 1.8s linear infinite alternate",
         fadeOut: "fadeOut 1.8s linear infinite alternate",
         loaded: "loaded 3s linear alternate",
+        "remind-lightening": "lightening 2s 6s linear infinite alternate",
+        lightening: "lightening 0.5s linear infinite alternate",
+        zoomIn: "zoomIn 1s linear",
       },
       transitionProperty: {
         height: "height",
@@ -61,6 +75,7 @@ module.exports = {
       ],
       chakra: ["Chakra Petch", "sans-serif"],
       padyakke: ["Padyakke Expanded One", "cursive"],
+      nanum: ["Nanum Myeongjo", "serif"],
     },
   },
   plugins: [],
