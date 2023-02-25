@@ -64,13 +64,16 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           : "h-[5%] animate-slideUp"
       }`}
     >
-      <p
+      <div
         className={`${
           questionNum === 1 && "hidden"
-        } text-xl absolute inset-y-0 h-min top-1.5 font-chakra left-8`}
+        } flex justify-between text-xl absolute inset-x-0 h-min top-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        onClick={() => setQuestionNum(1)}
       >
-        1
-      </p>
+        <p>I.</p>
+        <p>ONE</p>
+      </div>
+
       {questionNum === 1 && (
         <>
           <div className="flex gap-6 max-w-1/2 items-end">
@@ -317,13 +320,15 @@ const Question2 = ({
           : "h-[10%] animate-slideUp"
       }`}
     >
-      <p
+      <div
         className={`${
           questionNum === 2 && "hidden"
-        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        onClick={() => setQuestionNum(2)}
       >
-        2
-      </p>
+        <p>II.</p>
+        <p>SECOND</p>
+      </div>
       {questionNum === 2 && (
         <>
           <div className="flex gap-6 max-w-1/2 items-start">
@@ -407,13 +412,16 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           : "h-[15%] animate-slideUp"
       }`}
     >
-      <p
+      <div
         className={`${
           questionNum === 3 && "hidden"
-        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        onClick={() => setQuestionNum(3)}
       >
-        3
-      </p>
+        <p>III.</p>
+        <p>THIRD</p>
+      </div>
+
       {questionNum === 3 && (
         <>
           <div className="flex gap-6 items-center justify-between">
@@ -556,13 +564,16 @@ const Question4 = ({
           : "h-[20%] animate-slideUp"
       }`}
     >
-      <p
+      <div
         className={`${
           questionNum === 4 && "hidden"
-        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        onClick={() => setQuestionNum(4)}
       >
-        4
-      </p>
+        <p>IV.</p>
+        <p>FOURTH</p>
+      </div>
+
       {questionNum === 4 && (
         <>
           <div className="flex flex-col gap-6 items-center justify-center text-center">
@@ -877,13 +888,15 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           : "h-[25%] animate-slideUp"
       }`}
     >
-      <p
+      <div
         className={`${
           questionNum === 5 && "hidden"
-        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra  px-8 hover:italic cursor-pointer`}
+        onClick={() => setQuestionNum(5)}
       >
-        5
-      </p>
+        <p>V.</p>
+        <p>FIFTH</p>
+      </div>
       {questionNum === 5 && (
         <>
           <div className="flex items-end justify-center h-full">
@@ -1003,13 +1016,15 @@ const Question6 = ({
         questionNum <= 6 ? "h-[100%] pt-64 pb-16 animate-slideDown" : "h-[25%]"
       }`}
     >
-      <p
+      <div
         className={`${
           questionNum === 6 && "hidden"
-        } text-xl absolute h-min bottom-1.5 font-chakra left-8`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        onClick={() => setQuestionNum(6)}
       >
-        6
-      </p>
+        <p>VI.</p>
+        <p>SIXTH</p>
+      </div>
       {questionNum === 6 && (
         <>
           <div className="flex gap-6 items-start justify-between">
@@ -1441,7 +1456,11 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className="flex w-full justify-between border-t-2 border-b-2 border-blue px-4 py-8 text-left text-sm font-medium focus:outline-none relative z-[20]">
+                <Disclosure.Button
+                  className={`flex w-full justify-between border-t-2  border-blue px-4 py-8 text-left text-sm font-medium focus:outline-none relative z-[20] ${
+                    !open && "border-b-2"
+                  }`}
+                >
                   <p className="text-lg text-blue">
                     (3) <br />
                     {percentageArray[1]}%的人做了有關（
@@ -1457,7 +1476,11 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pb-8 text-md text-red relative h-[15rem] flex items-end z-[10]">
+                <Disclosure.Panel
+                  className={`px-4 pb-8 text-md text-red relative h-[15rem] flex items-end z-[10] ${
+                    open && "border-b-2 border-blue"
+                  }`}
+                >
                   <img
                     className="max-w-[30%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0"
                     src={getImageUrl("stickers", `${quizAns[2]}.svg`)}
