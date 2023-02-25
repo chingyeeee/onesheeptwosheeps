@@ -3,8 +3,10 @@ import { ReactComponent as Title } from "../images/writeDownYourName/writedownyo
 import { useState, useRef, useEffect } from "react";
 import Reset from "../images/sign/reset.svg";
 import Save from "../images/sign/save.svg";
+import PrevStep from "../images/sign/prevStep.svg";
 import HoverReset from "../images/sign/hoverReset.svg";
 import HoverSave from "../images/sign/hoverSave.svg";
+import HoverPrevStep from "../images/sign/hoverPrevStep.svg";
 
 const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   const [lines, setLines] = useState([]);
@@ -46,6 +48,12 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   const handleClear = () => {
     setLines([]);
   };
+
+  const returnPrevStep = () => {
+    const newLines = lines.slice(0, -1);
+    setLines(newLines);
+  };
+  console.log(lines);
 
   const handleSave = () => {
     const dataURL = stageRef.current.toDataURL();
@@ -126,6 +134,21 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
               className={`hidden group-hover:block`}
               src={HoverReset}
               alt="reset"
+            />
+          </div>
+          <div
+            className="w-[3.5rem] cursor-pointer group"
+            onClick={returnPrevStep}
+          >
+            <img
+              className={`group-hover:hidden`}
+              src={PrevStep}
+              alt="prevStep"
+            />
+            <img
+              className={`hidden group-hover:block`}
+              src={HoverPrevStep}
+              alt="prevStep"
             />
           </div>
           <div className="w-[3.5rem] cursor-pointer group" onClick={handleSave}>
