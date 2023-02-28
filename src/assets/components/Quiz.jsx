@@ -1353,14 +1353,29 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <div className="bg-blue h-[5rem]">
-        <img src={Marquee} />
+      <div className="bg-blue h-[5rem] relative overflow-hidden">
+        <div className="absolute inset-y-0 m-auto flex animate-marquee w-[200%]">
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+        </div>
       </div>
-      <div className="bg-yellow absolute left-0 w-[5rem] h-min">
-        <img className="object-fit" src={LeftMarquee} />
+      <div className="bg-yellow absolute left-0 w-[5rem] h-screen overflow-hidden">
+        <div className="absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]">
+          <img className="h-[100%] w-auto" src={LeftMarquee} />
+          <img className="h-[100%] w-auto" src={LeftMarquee} />
+          <img className="h-[100%] w-auto" src={LeftMarquee} />
+          <img className="h-[100%] w-auto" src={LeftMarquee} />
+        </div>
       </div>
-      <div className="bg-purple absolute right-0 w-[5rem] h-min">
-        <img src={RightMarquee} />
+      <div className="bg-purple absolute right-0 w-[5rem] h-screen overflow-hidden">
+        <div className="absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]">
+          <img className="h-[100%] w-auto" src={RightMarquee} />
+          <img className="h-[100%] w-auto" src={RightMarquee} />
+          <img className="h-[100%] w-auto" src={RightMarquee} />
+          <img className="h-[100%] w-auto" src={RightMarquee} />
+        </div>
       </div>
       <img
         src={Loading5}
@@ -1400,10 +1415,8 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pb-8 text-md text-red relative h-[15rem] flex items-end z-[10]">
                   <img
-                    className={`${
-                      quizAns[0] === "G" ? "max-w-[20%]" : "max-w-[30%]"
-                    }  mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0`}
-                    src={getImageUrl("stickers", `${quizAns[0]}.svg`)}
+                    className={`max-w-[50%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0`}
+                    src={getImageUrl("quiz/showResult", `${quizAns[0]}.svg`)}
                   />
 
                   <p className="underline-offset-1 decoration-red decoration-solid underline">
@@ -1441,8 +1454,8 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 pb-8 text-md text-red relative h-[15rem] flex items-end z-[10] w-full">
                   <img
-                    className="max-w-[30%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0"
-                    src={getImageUrl("stickers", `${quizAns[1]}.svg`)}
+                    className="max-w-[50%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0"
+                    src={getImageUrl("quiz/showResult", `${quizAns[1]}.svg`)}
                   />
                   <p className="underline-offset-1 decoration-red decoration-solid underline">
                     {otherAns[1] === "significant other"
@@ -1482,9 +1495,10 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   }`}
                 >
                   <img
-                    className="max-w-[30%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0"
-                    src={getImageUrl("stickers", `${quizAns[2]}.svg`)}
+                    className="max-w-[50%] mx-auto absolute z-[-1] -translate-y-[5rem] left-0 right-0"
+                    src={getImageUrl("quiz/showResult", `${quizAns[2]}.svg`)}
                   />
+
                   <p className="underline-offset-1 decoration-red decoration-solid underline">
                     {quizAns[2] === "Y"
                       ? getLifeStyle()[fourChoices]

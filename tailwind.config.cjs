@@ -74,6 +74,22 @@ module.exports = {
             transform: "translateX(0)",
           },
         },
+        marquee: {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100% ": {
+            transform: "translateX(-50%)",
+          },
+        },
+        marqueeV: {
+          "0%": {
+            transform: "translateY(-50%)",
+          },
+          "100% ": {
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
@@ -86,6 +102,8 @@ module.exports = {
         slideDown: "slideDown 0.8s linear",
         slideUp: "slideUp 0.8s linear",
         shake: "shake 0.15s 20s linear infinite",
+        marquee: "marquee 10s linear infinite",
+        marqueeV: "marqueeV 10s linear infinite",
       },
       transitionProperty: {
         height: "height",
