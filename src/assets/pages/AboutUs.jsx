@@ -40,24 +40,191 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-        <img
-          src={Profile1}
-          className="fixed z-20 w-[140px] h-[180x] top-[25%] left-[10%]"
-        />
-        <img
-          src={Profile2}
-          className="fixed z-20 w-[140px] h-[180x] bottom-[10%] left-[26%]"
-        />
-        <img
-          src={Profile3}
-          className="fixed z-20 w-[140px] h-[180x] top-[5%] right-[13%]"
-        />
-        <img
-          src={Profile4}
-          className="fixed z-20 w-[140px] h-[180x] bottom-[25%] right-[10%]"
-        />
+
+        <div className="fixed z-20 top-[18%] left-[10%] group">
+          <div className="absolute text-left p-6 bg-blue rounded-xl w-max hidden group-hover:animate-expandLT group-hover:block transition-500">
+            <div className="flex flex-col gap-12">
+              <div className="flex gap-4">
+                <img className="w-[140px] h-[180px] opacity-0" src={Profile1} />
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">name/</p>
+                    <p className="text-lg">J-wei</p>
+                  </div>
+                  <div className="flex gap-6">
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">age/</p>
+                      <p className="text-lg">22</p>
+                    </div>
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">zodiac sign/</p>
+                      <p className="text-lg">aquarius</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">role assignment/</p>
+                    <p className="text-md">
+                      主視覺、標準字及變體字設計、 解夢書製作
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">website/</p>
+                    <p className="text-md">
+                      https://www.instagram.com/j_wei_wei/
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p className="text-md">
+                基隆人、水瓶座、不敢吃蒜頭、喜歡看動漫）
+              </p>
+            </div>
+          </div>
+          <div className="p-6 relative z-[20]">
+            <img
+              className="w-[140px] h-[180px] cursor-pointer"
+              src={Profile1}
+            />
+          </div>
+        </div>
+        <div className="fixed z-20 top-[55%] left-[22%] group">
+          <div className="absolute text-left p-6 bg-red rounded-xl w-max hidden group-hover:animate-expandLT group-hover:block transition-500">
+            <div className="flex flex-col gap-12">
+              <div className="flex gap-4">
+                <img className="w-[140px] h-[180px] opacity-0" src={Profile2} />
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">name/</p>
+                    <p className="text-lg">王溫蒂</p>
+                  </div>
+                  <div className="flex gap-6">
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">age/</p>
+                      <p className="text-lg">21</p>
+                    </div>
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">zodiac sign/</p>
+                      <p className="text-lg">gemini</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">role assignment/</p>
+                    <p className="text-md">轉卡小卡製作、企劃文案、報告</p>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">website/</p>
+                    <p className="text-md">https://www.instagram.com/uxwn.n/</p>
+                  </div>
+                </div>
+              </div>
+              <p className="text-md">
+                很愛睡覺 幾乎每天做夢，最近喜歡亮晶晶或綠色的東西
+                <br />
+                有著雙子座的善變，喜歡夏天的氛圍但也喜歡冬天的被窩。
+              </p>
+            </div>
+          </div>
+          <div className="p-6 relative z-[20]">
+            <img
+              className="w-[140px] h-[180px] cursor-pointer"
+              src={Profile2}
+            />
+          </div>
+        </div>
+        <div className="fixed z-20 top-[5%] right-[13%] group">
+          <div className="absolute text-left p-6 bg-lakegreen rounded-xl right-[0] w-max hidden group-hover:animate-expandRT group-hover:block transition-500">
+            <div className="flex flex-col gap-12">
+              <div className="flex gap-4">
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">name/</p>
+                    <p className="text-lg">tedd chen</p>
+                  </div>
+                  <div className="flex gap-6">
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">age/</p>
+                      <p className="text-lg">22</p>
+                    </div>
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">zodiac sign/</p>
+                      <p className="text-lg">aquarius</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">role assignment/</p>
+                    <p className="text-md">網頁介面設計、企劃發想、影片剪輯</p>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">website/</p>
+                    <p className="text-md">https://www.instagram.com/t1ddey/</p>
+                  </div>
+                </div>
+                <img className="w-[140px] h-[180px] opacity-0" src={Profile3} />
+              </div>
+              <p className="text-md">
+                土生土長ㄉ嘉義人，喜歡到處social，嘴巴似乎沒有停下來的一天。
+                <br />
+                不管是在講話還是吃：）
+              </p>
+            </div>
+          </div>
+          <div className="p-6 relative z-[20]">
+            <img
+              className="w-[140px] h-[180px] cursor-pointer"
+              src={Profile3}
+            />
+          </div>
+        </div>
+        <div className="fixed z-20 bottom-[25%] right-[10%] group">
+          <div className="absolute text-left p-6 bg-lightpurple rounded-xl right-[0] w-max hidden group-hover:animate-expandRT group-hover:block transition-500">
+            <div className="flex flex-col gap-12">
+              <div className="flex gap-4">
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">name/</p>
+                    <p className="text-lg">Chien</p>
+                  </div>
+                  <div className="flex gap-6">
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">age/</p>
+                      <p className="text-lg">22</p>
+                    </div>
+                    <div className="flex flex-col gap">
+                      <p className="text-sm">zodiac sign/</p>
+                      <p className="text-lg">gemini</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">role assignment/</p>
+                    <p className="text-md">
+                      組長、解夢卡、許願包製作、文案撰寫
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap">
+                    <p className="text-sm">website/</p>
+                    <p className="text-md">
+                      https://www.instagram.com/o6.ycww_11/
+                    </p>
+                  </div>
+                </div>
+                <img className="w-[140px] h-[180px] opacity-0" src={Profile4} />
+              </div>
+              <p className="text-md">
+                養了一隻約克夏，聽說狗會像主人，矛盾又善變，懶惰又勤勞
+                <br />
+                偶爾軟趴趴的像坨泥巴，偶爾瘋瘋癲癲很愛亂叫，但這是狗狗不是我。
+              </p>
+            </div>
+          </div>
+          <div className="p-6 relative z-[20]">
+            <img
+              className="w-[140px] h-[180px] cursor-pointer"
+              src={Profile4}
+            />
+          </div>
+        </div>
       </div>
-      <div className="w-screen bg-purple sticky top-0 min-h-[8vh] flex items-center z-10">
+      <div className="w-screen bg-purple sticky top-0 min-h-[8vh] flex items-center z-10 overflow-hidden">
         <div className="absolute inset-y-0 m-auto flex animate-marquee w-[200%]">
           <img className="w-[50%] h-auto" src={Marquee} />
           <img className="w-[50%] h-auto" src={Marquee} />
@@ -65,7 +232,7 @@ const AboutUs = () => {
           <img className="w-[50%] h-auto" src={Marquee} />
         </div>
       </div>
-      <div className="mx-4 px-6 pt-12 pb-6 bg-darkgreen text-center rounded-b-3xl min-h-[95vh] relative flex flex-col">
+      <div className="mx-4 px-6 pt-12 pb-6 mb-6 bg-darkgreen text-center rounded-b-3xl min-h-[95vh] relative flex flex-col">
         <div className="relative flex-1">
           <p className="text-blue text-4xl mt-6 font-light text-justify font-padyakke leading-normal">
             EVERY DAY WE STEP INTO THE DIMENSION OF DREAMS, AN INFINITE SPACE

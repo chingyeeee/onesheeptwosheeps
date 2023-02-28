@@ -90,6 +90,30 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        expandFromLeftTop: {
+          "0%": {
+            transform: "scale(0)",
+            "transform-origin": "top left",
+            opacity: "0",
+          },
+          "100% ": {
+            transform: "scale(1)",
+            "transform-origin": "top left",
+            opacity: "1",
+          },
+        },
+        expandFromRightTop: {
+          "0%": {
+            transform: "scale(0)",
+            "transform-origin": "top right",
+            opacity: "0",
+          },
+          "100% ": {
+            transform: "scale(1)",
+            "transform-origin": "top right",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
@@ -104,6 +128,8 @@ module.exports = {
         shake: "shake 0.15s 20s linear infinite",
         marquee: "marquee 10s linear infinite",
         marqueeV: "marqueeV 10s linear infinite",
+        expandLT: "expandFromLeftTop .5s linear",
+        expandRT: "expandFromRightTop .5s linear",
       },
       transitionProperty: {
         height: "height",
