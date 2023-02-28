@@ -1,9 +1,15 @@
-import { useState, useRef, useEffect } from "react";
-import { Image, Transformer } from "react-konva";
+import { useRef, useEffect } from "react";
+import { Image, Transformer, Text, Circle } from "react-konva";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
 
-const MyImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
+const MyImage = ({
+  shapeProps,
+  isSelected,
+  onSelect,
+  onChange,
+  handleDeleteSelectedCardItem,
+}) => {
   const shapeRef = useRef();
   const trRef = useRef();
 
@@ -61,17 +67,37 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
         }}
       />
       {isSelected && (
-        <Transformer
-          ref={trRef}
-          keepRatio
-          boundBoxFunc={(oldBox, newBox) => {
-            // limit resize
-            if (newBox.width < 50 || newBox.height < 50) {
-              return oldBox;
-            }
-            return newBox;
-          }}
-        />
+        <>
+          <Transformer
+            ref={trRef}
+            keepRatio
+            boundBoxFunc={(oldBox, newBox) => {
+              // limit resize
+              if (newBox.width < 50 || newBox.height < 50) {
+                return oldBox;
+              }
+              return newBox;
+            }}
+          />
+          <Circle
+            x={shapeProps.x + shapeProps.width}
+            y={shapeProps.y}
+            radius={15}
+            fill="black"
+          />
+          <Text
+            text="X"
+            fontSize={16}
+            fill="white"
+            onClick={handleDeleteSelectedCardItem}
+            onTap={handleDeleteSelectedCardItem}
+            fontStyle="bold"
+            width={150}
+            height={150}
+            x={shapeProps.x + shapeProps.width - 5}
+            y={shapeProps.y - 6}
+          />
+        </>
       )}
     </>
   );
