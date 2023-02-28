@@ -120,6 +120,7 @@ module.exports = {
       chakra: ["Chakra Petch", "sans-serif"],
       padyakke: ["Padyakke Expanded One", "cursive"],
       nanum: ["Nanum Myeongjo", "serif"],
+      courier: ["Courier Prime", "monospace"],
     },
   },
   plugins: [],
