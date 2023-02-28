@@ -1,5 +1,6 @@
 import { useEffect, useState, Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
+import html2canvas from "html2canvas";
 import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
 import { ReactComponent as Title1 } from "../images/quiz/1/title.svg";
 import { ReactComponent as Title2 } from "../images/quiz/2/title.svg";
@@ -1526,6 +1527,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   const [resultCardPath, setResultCardPath] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(true);
+  const [combinedImgSrc, setCombinedImgSrc] = useState(null);
   const navigate = useNavigate();
 
   function closeModal() {
@@ -1537,12 +1539,17 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     setResultCardPath(imgFileName);
   }
 
-  const downloadImage = (imageData, fileName) => {
-    const link = document.createElement("a");
-    link.href = imageData;
-    link.download = fileName;
-    link.click();
-    link.remove();
+  const downloadImage = () => {
+    const element = document.getElementById("combinedImg");
+    html2canvas(element).then((canvas) => {
+      const imgSrc = canvas.toDataURL();
+      const link = document.createElement("a");
+      link.download = "combined-image.png";
+      link.href = imgSrc;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
   };
 
   useEffect(() => {
@@ -1554,9 +1561,9 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   return (
     <div className="h-screen w-screen flex justify-center items-center relative">
       <img className="w-[80%] mx-auto" src={signImgPath} />
-      <div className="absolute flex justify-center z-[10]">
+      <div className="absolute flex justify-center z-[10]" id="combinedImg">
         <img
-          className="absolute scale-[0.2] z-[20] -top-12 -left-8"
+          className="absolute scale-[0.2] z-[20] -top-14 -left-8 -rotate-5"
           src={signImgPath}
         />
         <img
@@ -1567,12 +1574,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       <div className="absolute z-10 bottom-[5%] right-[5%] flex gap-8 items-center">
         <div
           className="h-[4.5rem] flex flex-col items-center justify-between cursor-pointer"
-          onClick={() =>
-            downloadImage(
-              getImageUrl("resultCards", resultCardPath),
-              resultCardPath
-            )
-          }
+          onClick={downloadImage}
         >
           <Download />
           <p className="underline-offset-1 decoration-black decoration-solid underline">
