@@ -4,6 +4,8 @@ import { ReactComponent as Menu } from "../images/icons/icon-menu-sheep.svg";
 import { ReactComponent as Download } from "../images/icons/icon-download.svg";
 import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
+import html2canvas from "html2canvas";
+
 const Background = lazy(() => import("../components/Background"));
 
 const Home = () => {
@@ -184,13 +186,17 @@ const Home = () => {
 
   //download stage as image
   const handleExport = () => {
-    const uri = stageRef.current.toDataURL();
-    console.log(uri);
-    // we also can save uri as file
-    // but in the demo on Konva website it will not work
-    // because of iframe restrictions
-    // but feel free to use it in your apps:
-    // downloadURI(uri, 'stage.png');
+    const element = stageRef.current;
+
+    html2canvas(element).then((canvas) => {
+      const imgSrc = canvas.toDataURL();
+      const link = document.createElement("a");
+      link.download = "oneSheepTwoSleep.png";
+      link.href = imgSrc;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
   };
 
   return (
@@ -198,7 +204,7 @@ const Home = () => {
       <div
         className={`h-screen flex overflow-hidden flex-col justify-between relative`}
       >
-        <div>
+        <>
           <Background
             color={color}
             logoEnabled={logoEnabled}
@@ -295,7 +301,7 @@ const Home = () => {
                                         ...cardItems,
                                         {
                                           image: sticker,
-                                          x: 800,
+                                          x: 1000,
                                           y: 250,
                                           width: e.target.width,
                                           height: e.target.height,
@@ -325,7 +331,7 @@ const Home = () => {
                                         ...cardItems,
                                         {
                                           image: logo,
-                                          x: 150,
+                                          x: 800,
                                           y: 250,
                                           width: e.target.width,
                                           height: e.target.height,
@@ -382,7 +388,7 @@ const Home = () => {
               </div>
             </Dialog>
           </Transition>
-        </div>
+        </>
       </div>
 
       {/* Introduction Modal */}
