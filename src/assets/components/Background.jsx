@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { Stage, Layer, Group } from "react-konva";
-import { Html } from "react-konva-utils";
+import { Stage, Layer, Group, Text } from "react-konva";
 import Welcome from "./Welcome";
 import MyImage from "./CardImage";
-import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
 import Logo from "./Logo";
-import { useNavigate } from "react-router-dom";
 import Emotion from "./Emotion";
+import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+import { useNavigate } from "react-router-dom";
 
 const Background = ({
   logoEnabled,
@@ -15,9 +14,9 @@ const Background = ({
   cardItems,
   setCardItems,
   stageRef,
+  emotionEnabled,
   aboutUsEnabled,
   dreamCardEnabled,
-  emotionEnabled,
 }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
@@ -60,19 +59,19 @@ const Background = ({
   function handleNavItemStyle(color) {
     switch (color) {
       case "color-default.svg":
-        return "text-black border-black";
+        return "decoration-black text-black border-black";
       case "color1.svg":
-        return "text-lightgreen border-lightgreen stroke-lightgreen fill-lightgreen";
+        return "decoration-lightgreen text-lightgreen border-lightgreen stroke-lightgreen fill-lightgreen";
       case "color2.svg":
-        return "text-black border-black";
+        return "decoration-black text-black border-black";
       case "color3.svg":
-        return "text-lightpurple border-lightpurple stroke-lightpurple fill-lightpurple";
+        return "decoration-lightpurple text-lightpurple border-lightpurple stroke-lightpurple fill-lightpurple";
       case "color4.svg":
-        return "text-yellow border-yellow stroke-yellow fill-yellow";
+        return "decoration-yellow text-yellow border-yellow stroke-yellow fill-yellow";
       case "color5.svg":
-        return "text-yellow border-yellow stroke-yellow fill-yellow";
+        return "decoration-yellow text-yellow border-yellow stroke-yellow fill-yellow";
       case "color6.svg":
-        return "text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
+        return "decoration-lakegreen text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
     }
   }
 
@@ -82,115 +81,105 @@ const Background = ({
   }
 
   return (
-    <Stage
-      width={windowWidth}
-      height={windowHeight}
-      onMouseDown={checkDeselect}
-      onTouchStart={checkDeselect}
-      ref={stageRef}
-      className={`relative before:block before:absolute before:-inset-1 before:z-[-1] ${
-        color === "color4.svg" &&
-        "before:bg-purple before:w-[calc(100%-40px)] before:h-[calc(100%-40px)] before:m-auto "
-      } ${
-        color === "color5.svg" &&
-        "before:bg-lightpurple before:w-[calc(100%-40px)] before:h-[calc(100%-40px)] before:m-auto"
-      } ${
-        color === "color6.svg" &&
-        "before:bg-darkgreen before:w-[calc(100%-40px)] before:h-[calc(100%-40px)] before:m-auto"
-      }`}
-    >
-      <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
-        <Group>
-          {welcomeToEnabled && (
-            <Welcome
-              width={windowWidth}
-              height={windowHeight * 0.45}
-              color={color}
-            />
+    <div ref={stageRef}>
+      <Stage
+        width={windowWidth}
+        height={windowHeight}
+        onMouseDown={checkDeselect}
+        onTouchStart={checkDeselect}
+        className={`relative before:block before:absolute before:-inset-1 before:z-[-1] ${
+          color === "color4.svg" &&
+          "before:bg-purple before:w-[calc(100%-40px)] before:h-[calc(100%-40px)] before:m-auto "
+        } ${
+          color === "color5.svg" &&
+          "before:bg-lightpurple before:w-[calc(100%-40px)] before:h-[calc(100%-40px)] before:m-auto"
+        } ${
+          color === "color6.svg" &&
+          "before:bg-darkgreen before:w-[calc(100%-40px)] before:h-[calc(100%-40px)] before:m-auto"
+        }`}
+      >
+        <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
+          <Group>
+            {welcomeToEnabled && (
+              <Welcome
+                width={windowWidth}
+                height={windowHeight * 0.45}
+                color={color}
+              />
+            )}
+            {logoEnabled && (
+              <Logo
+                width={windowWidth}
+                height={windowHeight * 0.5}
+                color={color}
+              />
+            )}
+          </Group>
+          {emotionEnabled && (
+            <Emotion width={windowWidth} height={windowHeight} />
           )}
-          {logoEnabled && (
-            <Logo
-              width={windowWidth}
-              height={windowHeight * 0.5}
-              color={color}
+          {cardItems.map((item, index) => {
+            return (
+              <MyImage
+                key={index}
+                shapeProps={item}
+                isSelected={item.id === selectedId}
+                onSelect={() => {
+                  selectShape(item.id);
+                }}
+                onChange={(newAttrs) => {
+                  const items = cardItems.slice();
+                  items[index] = newAttrs;
+                  setCardItems(items);
+                }}
+                handleDeleteSelectedCardItem={handleDeleteSelectedCardItem}
+              />
+            );
+          })}
+        </Layer>
+      </Stage>
+      <div className="absolute flex items-center justify-center gap-36 bottom-12 bottom-2 mx-auto w-full">
+        {aboutUsEnabled && (
+          <div
+            className={`flex gap-4 items-center cursor-pointer ml-auto w-min`}
+            onClick={() => navigate("/aboutus")}
+          >
+            <Finger
+              className={`w-[6.5rem] h-auto animate-finger-shake ${handleNavItemStyle(
+                color
+              )}`}
             />
-          )}
-        </Group>
-        {emotionEnabled && (
-          <Emotion width={windowWidth} height={windowHeight} />
-        )}
-        {cardItems.map((item, index) => {
-          return (
-            <MyImage
-              key={index}
-              shapeProps={item}
-              isSelected={item.id === selectedId}
-              onSelect={() => {
-                selectShape(item.id);
-              }}
-              onChange={(newAttrs) => {
-                const items = cardItems.slice();
-                items[index] = newAttrs;
-                setCardItems(items);
-              }}
-            />
-          );
-        })}
-        <Html
-          divProps={{
-            style: {
-              position: "absolute",
-              top: "auto",
-              left: "auto",
-              bottom: "16px",
-              width: "100%",
-            },
-          }}
-        >
-          <div className="relative flex items-center justify-between p-6 bottom-2 w-[90%] mx-auto">
-            {aboutUsEnabled && (
-              <div
-                className={`flex gap-4 items-center cursor-pointer w-[50%] mr-auto `}
-                onClick={() => navigate("/aboutus")}
-              >
-                <Finger
-                  className={`w-[15%] animate-finger-shake ${handleNavItemStyle(
-                    color
-                  )}`}
-                />
 
-                <p
-                  className={`border-b-4 text-5xl lg:text-[4rem] ${handleNavItemStyle(
-                    color
-                  )}`}
-                >
-                  ABOUT US
-                </p>
-              </div>
-            )}
-            {dreamCardEnabled && (
-              <div
-                className="flex gap-4 items-center cursor-pointer w-[50%] ml-auto justify-end"
-                onClick={() => navigate("/dreamcard")}
-              >
-                <Finger
-                  className={`w-[15%] animate-finger-shake ${handleNavItemStyle(
-                    color
-                  )}`}
-                />
-                <p
-                  className={`border-b-4 text-5xl lg:text-[4rem] ${handleNavItemStyle(
-                    color
-                  )}`}
-                >
-                  DREAM CARD
-                </p>
-              </div>
-            )}
+            <p
+              className={`underline-offset-8 decoration-4 decoration-solid underline w-max text-5xl lg:text-[4rem] ${handleNavItemStyle(
+                color
+              )}`}
+            >
+              ABOUT US
+            </p>
           </div>
-        </Html>
-      </Layer>
-    </Stage>
+        )}
+        {dreamCardEnabled && (
+          <div
+            className="flex gap-4 items-center cursor-pointer w-min mr-auto"
+            onClick={() => navigate("/dreamcard")}
+          >
+            <Finger
+              className={`w-[6.5rem] h-auto animate-finger-shake ${handleNavItemStyle(
+                color
+              )}`}
+            />
+            <p
+              className={`underline-offset-8 decoration-4 decoration-solid underline w-max text-5xl lg:text-[4rem] ${handleNavItemStyle(
+                color
+              )}`}
+            >
+              DREAM CARD
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 
