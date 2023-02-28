@@ -1527,6 +1527,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   const [resultCardPath, setResultCardPath] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(true);
+  const [cardNo, setCardNo] = useState(1);
   const navigate = useNavigate();
 
   function closeModal() {
@@ -1543,11 +1544,12 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     html2canvas(element).then((canvas) => {
       const imgSrc = canvas.toDataURL();
       const link = document.createElement("a");
-      link.download = "combined-image.png";
+      link.download = `sheep_${String(cardNo).padStart(3, "0")}.png`;
       link.href = imgSrc;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      setCardNo(cardNo + 1);
     });
   };
 
@@ -1560,9 +1562,12 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   return (
     <div className="h-screen w-screen flex justify-center items-center relative">
       <img className="w-[80%] mx-auto" src={signImgPath} />
-      <div className="absolute flex justify-center z-[10]" id="combinedImg">
+      <div
+        className="absolute flex justify-center z-[10] py-8"
+        id="combinedImg"
+      >
         <img
-          className="absolute scale-[0.2] z-[20] -top-14 -left-8 -rotate-5"
+          className="absolute scale-[0.2] z-[20] -top-4 -left-8 -rotate-5"
           src={signImgPath}
         />
         <img
