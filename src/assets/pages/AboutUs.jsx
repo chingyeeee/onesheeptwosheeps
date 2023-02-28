@@ -13,14 +13,14 @@ const AboutUs = () => {
     <div>
       <div className="mx-4 mt-4 p-6 bg-lightgreen text-center rounded-t-3xl min-h-[90vh] relative">
         <BackFinger
-          className="absolute w-[5%] top-8 cursor-pointer"
+          className="absolute w-[5%] top-8 cursor-pointer animate-finger-shake"
           onClick={() => navigate("/")}
         />
         <h3 className="border-black border-b bg-red font-normal text-6xl inline-block mx-auto">
           ABOUT US
         </h3>
         <div className="relative">
-          <p className="text-red text-4xl mt-6 font-light text-justify font-adobe leading-relaxed">
+          <p className="text-red text-4xl mt-6 font-light text-justify font-nanum leading-normal">
             ONE SHEEP, TWO SHEEP ARE COMPOSED OF FOUR MEMBERS OF THE WIND
             DIRECTION CONSTELLATION, THE TWINS WITH MULTIPLE PERSONALITIES AND
             THE ECCENTRIC WATER BOTTLE, WHO OFTEN COME UP WITH SOME
@@ -58,11 +58,16 @@ const AboutUs = () => {
         />
       </div>
       <div className="w-screen bg-purple sticky top-0 min-h-[8vh] flex items-center z-10">
-        <img src={Marquee} alt="onesheeptwosleep" />
+        <div className="absolute inset-y-0 m-auto flex animate-marquee w-[200%]">
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+        </div>
       </div>
       <div className="mx-4 px-6 pt-12 pb-6 bg-darkgreen text-center rounded-b-3xl min-h-[95vh] relative flex flex-col">
         <div className="relative flex-1">
-          <p className="text-blue text-4xl mt-6 font-light text-justify font-adobe leading-relaxed">
+          <p className="text-blue text-4xl mt-6 font-light text-justify font-padyakke leading-normal">
             EVERY DAY WE STEP INTO THE DIMENSION OF DREAMS, AN INFINITE SPACE
             WHERE WE CAN REVEAL OUR TRUEST SELVES AND RELEASE OUR BURIED DEEPEST
             DESIRES; WHETHER IT IS A DREAM OF HAPPINESS OR SADNESS OR FEAR, IT
