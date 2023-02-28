@@ -804,7 +804,7 @@ const Question4 = ({
                         otherAns[1] === "threatening" && "text-purple"
                       }`}
                     >
-                      正向的
+                      具威脅性
                     </p>
                   </div>
                 </div>
@@ -834,7 +834,7 @@ const Question4 = ({
                         otherAns[1] === "not threatening" && "text-purple"
                       }`}
                     >
-                      負面的
+                      具威脅性
                     </p>
                   </div>
                 </div>
@@ -1511,7 +1511,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             )}
           </Disclosure>
           <div
-            className="px-8 py-2 cursor-pointer border-2 border-black rounded-full w-max mx-auto mt-12 mb-12 animate-shake hover:bg-black hover:text-white transition duration-500"
+            className="px-8 py-2 cursor-pointer text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 animate-shake hover:bg-darkgreen hover:text-white transition duration-500"
             onClick={() => setQuestionNum(9)}
           >
             生成解夢卡
@@ -1524,7 +1524,8 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
 
 const ShowResultCard = ({ signImgPath, quizAns }) => {
   const [resultCardPath, setResultCardPath] = useState(null);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isShow, setIsShow] = useState(true);
   const navigate = useNavigate();
 
   function closeModal() {
@@ -1544,7 +1545,11 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     link.remove();
   };
 
-  useEffect(() => getResultCard(), []);
+  useEffect(() => {
+    getResultCard();
+    setTimeout(() => setIsShow(false), 2000);
+    setTimeout(() => setIsOpen(true), 2100);
+  }, []);
 
   return (
     <div className="h-screen w-screen flex justify-center items-center relative">
@@ -1593,7 +1598,47 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
         </div>
       </div>
 
-      {/* modal */}
+      {/* 1st modal */}
+      <Transition appear show={isShow} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-2xl transform rounded-2xl bg-white px-6  py-8 text-left align-middle shadow-xl transition-all text-center relative z-[10]">
+                  <div className="flex flex-col gap-4 items-center">
+                    <p className="text-md font-medium">
+                      獨一無二の解夢卡出爐啦！ <br />
+                      YOUR ONE AND ONLY DREAMCARD IS NOW READY!
+                    </p>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+
+      {/* 2nd modal */}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
