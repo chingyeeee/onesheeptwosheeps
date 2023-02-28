@@ -1541,6 +1541,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
   const downloadImage = () => {
     const element = document.getElementById("combinedImg");
+
     html2canvas(element).then((canvas) => {
       const imgSrc = canvas.toDataURL();
       const link = document.createElement("a");
