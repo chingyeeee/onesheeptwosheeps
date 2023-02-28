@@ -53,7 +53,6 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
     const newLines = lines.slice(0, -1);
     setLines(newLines);
   };
-  console.log(lines);
 
   const handleSave = () => {
     const dataURL = stageRef.current.toDataURL();
