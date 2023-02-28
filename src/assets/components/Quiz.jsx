@@ -1527,7 +1527,6 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   const [resultCardPath, setResultCardPath] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(true);
-  const [combinedImgSrc, setCombinedImgSrc] = useState(null);
   const navigate = useNavigate();
 
   function closeModal() {
