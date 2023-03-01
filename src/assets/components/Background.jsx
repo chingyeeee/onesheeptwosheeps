@@ -138,7 +138,7 @@ const Background = ({
           })}
         </Layer>
       </Stage>
-      <div className="absolute flex items-center justify-center gap-36 bottom-12 bottom-2 mx-auto w-full">
+      <div className="absolute flex items-center justify-center gap-36 bottom-10 bottom-2 mx-auto w-full">
         {aboutUsEnabled && (
           <div
             className={`flex gap-4 items-center cursor-pointer ml-auto w-min`}
