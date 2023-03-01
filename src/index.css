@@ -14,4 +14,7 @@
     font-family: "PingFang TC", "Noto Sans TC", Noto Serif TC, serif, system-ui,
       sans-serif;
   }
+  body {
+    cursor: url(/src/assets/images/cursor-default.png), default;
+  }
 }
