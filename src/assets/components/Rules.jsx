@@ -54,7 +54,7 @@ const Rules = ({ nextStep }) => {
         <TypingText onTypingFinish={handleTypingFinish} />
         {isTypingFinish && (
           <div
-            className="bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-pointer animate-remind-lightening transition hover:animate-lightening"
+            className="bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening"
             onClick={nextStep}
           >
             <Finger className="w-[56px] h-[25px] fill-yellow" />

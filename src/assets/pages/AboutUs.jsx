@@ -10,10 +10,10 @@ const AboutUs = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div className="mx-4 mt-4 p-6 bg-lightgreen text-center rounded-t-3xl min-h-[90vh] relative">
         <BackFinger
-          className="absolute w-[5%] top-8 cursor-pointer animate-finger-shake"
+          className="absolute w-[5%] top-8 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-finger-shake"
           onClick={() => navigate("/")}
         />
         <h3 className="border-black border-b bg-red font-normal text-6xl inline-block mx-auto">
@@ -82,7 +82,7 @@ const AboutUs = () => {
           </div>
           <div className="p-6 relative z-[20]">
             <img
-              className="w-[140px] h-[180px] cursor-pointer"
+              className="w-[140px] h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile1}
             />
           </div>
@@ -126,7 +126,7 @@ const AboutUs = () => {
           </div>
           <div className="p-6 relative z-[20]">
             <img
-              className="w-[140px] h-[180px] cursor-pointer"
+              className="w-[140px] h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile2}
             />
           </div>
@@ -170,7 +170,7 @@ const AboutUs = () => {
           </div>
           <div className="p-6 relative z-[20]">
             <img
-              className="w-[140px] h-[180px] cursor-pointer"
+              className="w-[140px] h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile3}
             />
           </div>
@@ -218,7 +218,7 @@ const AboutUs = () => {
           </div>
           <div className="p-6 relative z-[20]">
             <img
-              className="w-[140px] h-[180px] cursor-pointer"
+              className="w-[140px] h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile4}
             />
           </div>

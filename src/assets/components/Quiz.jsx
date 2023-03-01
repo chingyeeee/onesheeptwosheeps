@@ -68,7 +68,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 1 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min top-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        } flex justify-between text-xl absolute inset-x-0 h-min top-1.5 font-chakra px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(1)}
       >
         <p>I.</p>
@@ -90,7 +90,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           <div className="flex justify-between h-[62%]">
             <div className="w-[45%] flex flex-col font-semibold">
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "A" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "A")}
@@ -116,7 +116,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "B" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "B")}
@@ -142,7 +142,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "C" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "C")}
@@ -168,7 +168,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "D" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "D")}
@@ -196,7 +196,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <div className="w-[45%] flex flex-col font-semibold">
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "E" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "E")}
@@ -222,7 +222,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "F" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "F")}
@@ -248,7 +248,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "G" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "G")}
@@ -274,7 +274,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "H" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "H")}
@@ -324,7 +324,7 @@ const Question2 = ({
       <div
         className={`${
           questionNum === 2 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(2)}
       >
         <p>II.</p>
@@ -345,7 +345,7 @@ const Question2 = ({
           <div className="flex justify-between h-[28%]">
             <div className="w-[20%] mr-12 ml-auto flex flex-col font-semibold">
               <div
-                className={`flex justify-between text-xl px-4 py-4 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-4 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   otherAns[0] === "Y" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "Y")}
@@ -371,7 +371,7 @@ const Question2 = ({
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-4 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-4 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   otherAns[0] === "N" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "N")}
@@ -416,7 +416,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 3 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(3)}
       >
         <p>III.</p>
@@ -439,7 +439,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           <div className="flex justify-between h-[62%]">
             <div className="w-[60%] flex flex-col font-semibold">
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[1] === "2" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(1, "2")}
@@ -465,7 +465,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[1] === "3" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(1, "3")}
@@ -491,7 +491,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[1] === "1" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(1, "1")}
@@ -517,7 +517,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[1] === "4" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(1, "4")}
@@ -568,7 +568,7 @@ const Question4 = ({
       <div
         className={`${
           questionNum === 4 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(4)}
       >
         <p>IV.</p>
@@ -595,7 +595,7 @@ const Question4 = ({
               <>
                 <div className="w-[40%] flex flex-col font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "myself" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "myself")}
@@ -623,7 +623,7 @@ const Question4 = ({
                     </p>
                   </div>
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "strangers" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "strangers")}
@@ -653,7 +653,7 @@ const Question4 = ({
                 </div>
                 <div className="w-[40%] flex flex-col font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "acquaintance" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "acquaintance")}
@@ -681,7 +681,7 @@ const Question4 = ({
                     </p>
                   </div>
                   <div
-                    className={`flex justify-between px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "significant other" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "significant other")}
@@ -717,7 +717,7 @@ const Question4 = ({
               <>
                 <div className="w-[40%] flex flex-col font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "positive" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "positive")}
@@ -747,7 +747,7 @@ const Question4 = ({
                 </div>
                 <div className="w-[40%] flex flex-col font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "negative" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "negative")}
@@ -781,7 +781,7 @@ const Question4 = ({
               <>
                 <div className="w-[40%] flex flex-col font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "threatening" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "threatening")}
@@ -811,7 +811,7 @@ const Question4 = ({
                 </div>
                 <div className="w-[40%] flex flex-col font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "not threatening" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "not threatening")}
@@ -845,7 +845,7 @@ const Question4 = ({
               <>
                 <div className="w-[40%] mx-auto font-semibold">
                   <div
-                    className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                    className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                       otherAns[1] === "none" && "bg-black"
                     }`}
                     onClick={() => handleSaveAns(1, "none")}
@@ -892,7 +892,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 5 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra  px-8 hover:italic cursor-pointer`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra  px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(5)}
       >
         <p>V.</p>
@@ -913,7 +913,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             <div className="flex justify-center gap-24 w-[55%] h-[48%]">
               <div className="w-full flex flex-col font-semibold">
                 <div
-                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "Y" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(2, "Y")}
@@ -939,7 +939,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                   </p>
                 </div>
                 <div
-                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "X" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(2, "X")}
@@ -965,7 +965,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                   </p>
                 </div>
                 <div
-                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "Z" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(2, "Z")}
@@ -1020,7 +1020,7 @@ const Question6 = ({
       <div
         className={`${
           questionNum === 6 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-pointer`}
+        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1.5 font-chakra px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(6)}
       >
         <p>VI.</p>
@@ -1045,7 +1045,7 @@ const Question6 = ({
           <div className="flex items-end justify-between h-[36%]">
             <div className="w-[30%] flex flex-col font-semibold h-full">
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   otherAns[2] === "recognize" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(2, "recognize")}
@@ -1071,7 +1071,7 @@ const Question6 = ({
                 </p>
               </div>
               <div
-                className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   otherAns[2] === "not recognized" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(2, "not recognized")}
@@ -1102,7 +1102,7 @@ const Question6 = ({
             {otherAns[2] !== undefined && (
               <div className="w-[30%] ml-[5%] flex flex-col font-semibold h-full">
                 <div
-                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     otherAns[3] === "open" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(3, "open")}
@@ -1128,7 +1128,7 @@ const Question6 = ({
                   </p>
                 </div>
                 <div
-                  className={`flex justify-between text-xl px-4 py-3 cursor-pointer border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between text-xl px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     otherAns[3] === "sealed" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(3, "sealed")}
@@ -1157,7 +1157,7 @@ const Question6 = ({
             )}
 
             <div
-              className="bg-blue w-min ml-auto px-6 py-3 rounded-full cursor-pointer animate-remind-lightening transition hover:animate-lightening"
+              className="bg-blue w-min ml-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening"
               onClick={checkNotEmptyAns}
             >
               <Finger className="w-[56px] h-[25px] fill-yellow" />
@@ -1512,7 +1512,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             )}
           </Disclosure>
           <div
-            className="px-8 py-2 cursor-pointer text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 animate-shake hover:bg-darkgreen hover:text-white transition duration-500"
+            className="px-8 py-2 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 animate-shake hover:bg-darkgreen hover:text-white transition duration-500"
             onClick={() => setQuestionNum(9)}
           >
             生成解夢卡
@@ -1578,7 +1578,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       </div>
       <div className="absolute z-10 bottom-[5%] right-[5%] flex gap-8 items-center">
         <div
-          className="h-[4.5rem] flex flex-col items-center justify-between cursor-pointer"
+          className="h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
           onClick={downloadImage}
         >
           <Download />
@@ -1587,7 +1587,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           </p>
         </div>
         <div
-          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-pointer`}
+          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => navigate("/")}
         >
           <Home />
@@ -1596,7 +1596,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           </p>
         </div>
         <div
-          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-pointer`}
+          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         >
           <Share />
           <p className="underline-offset-1 decoration-black decoration-solid underline">

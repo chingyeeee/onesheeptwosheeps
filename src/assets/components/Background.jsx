@@ -138,10 +138,10 @@ const Background = ({
           })}
         </Layer>
       </Stage>
-      <div className="absolute flex items-center justify-center gap-36 bottom-10 bottom-2 mx-auto w-full">
+      <div className="absolute flex items-center justify-center gap-36 bottom-10 mx-auto w-full">
         {aboutUsEnabled && (
           <div
-            className={`flex gap-4 items-center cursor-pointer ml-auto w-min`}
+            className={`flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
             onClick={() => navigate("/aboutus")}
           >
             <Finger
@@ -161,7 +161,7 @@ const Background = ({
         )}
         {dreamCardEnabled && (
           <div
-            className="flex gap-4 items-center cursor-pointer w-min mr-auto"
+            className="flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
             onClick={() => navigate("/dreamcard")}
           >
             <Finger

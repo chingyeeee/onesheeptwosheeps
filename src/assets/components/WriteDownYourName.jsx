@@ -103,19 +103,19 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
       <div className="flex gap-16 justify-center items-center mt-4">
         <div className="flex gap-2">
           <div
-            className={`w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-pointer`}
+            className={`w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#004943")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-lightpurple cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#ff00c9")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-blue cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#0073f7")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#a6e2c5")}
           />
           <div
@@ -125,7 +125,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </div>
         <div className="flex gap-4">
           <div
-            className="w-[3.5rem] cursor-pointer group"
+            className="w-[3.5rem] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] group"
             onClick={handleClear}
           >
             <img className={`group-hover:hidden`} src={Reset} alt="reset" />
@@ -136,7 +136,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
             />
           </div>
           <div
-            className="w-[3.5rem] cursor-pointer group"
+            className="w-[3.5rem] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] group"
             onClick={returnPrevStep}
           >
             <img
@@ -150,7 +150,10 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
               alt="prevStep"
             />
           </div>
-          <div className="w-[3.5rem] cursor-pointer group" onClick={handleSave}>
+          <div
+            className="w-[3.5rem] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] group"
+            onClick={handleSave}
+          >
             <img className={`group-hover:hidden`} src={Save} alt="save" />
             <img
               className={`hidden group-hover:block`}
@@ -161,23 +164,23 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </div>
         <div className="flex gap-2">
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-yellow cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#fffa6f")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-lightgreen cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#20d371")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-red cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#ff4a03")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-purple cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#a9a9ff")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-black cursor-pointer"
+            className="w-[1.5rem] h-[1.5rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#000")}
           />
         </div>

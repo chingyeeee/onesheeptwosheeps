@@ -55,7 +55,7 @@ const Home = () => {
             checked={logoEnabled}
             onChange={setLogoEnabled}
             className={`${logoEnabled ? "bg-black" : "bg-gray-300"}
-          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -74,7 +74,7 @@ const Home = () => {
             checked={welcomeToEnabled}
             onChange={setWelcomeToEnabled}
             className={`${welcomeToEnabled ? "bg-black" : "bg-gray-300"}
-            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -93,7 +93,7 @@ const Home = () => {
             checked={dreamCardEnabled}
             onChange={setDreamCardEnabled}
             className={`${dreamCardEnabled ? "bg-black" : "bg-gray-300"}
-            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -112,7 +112,7 @@ const Home = () => {
             checked={aboutUsEnabled}
             onChange={setAboutUsEnabled}
             className={`${aboutUsEnabled ? "bg-black" : "bg-gray-300"}
-              relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+              relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -131,7 +131,7 @@ const Home = () => {
             checked={emotionEnabled}
             onChange={setEmotionEnabled}
             className={`${emotionEnabled ? "bg-black" : "bg-gray-300"}
-                relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -150,7 +150,7 @@ const Home = () => {
             checked={addItemsEnabled}
             onChange={setAddItemsEnabled}
             className={`${addItemsEnabled ? "bg-black" : "bg-gray-300"}
-                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -169,7 +169,7 @@ const Home = () => {
             checked={downloadEnabled}
             onChange={setDownloadEnabled}
             className={`${downloadEnabled ? "bg-black" : "bg-gray-300"}
-                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
           >
             <span className="sr-only">Use {word}</span>
             <span
@@ -202,7 +202,7 @@ const Home = () => {
   return (
     <>
       <div
-        className={`h-screen flex overflow-hidden flex-col justify-between relative`}
+        className={`h-screen flex overflow-hidden flex-col justify-between relative cursor-[url('/src/assets/images/cursor-default.svg'),_default]`}
       >
         <>
           <Background
@@ -220,7 +220,8 @@ const Home = () => {
           <div className="absolute z-10 w-[12%] top-[30%] flex flex-col gap-8 items-center">
             <div
               className={`flex flex-col opacity-0 ${
-                addItemsEnabled && "opacity-100 cursor-pointer"
+                addItemsEnabled &&
+                "opacity-100 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               }`}
               onClick={openMenu}
             >
@@ -230,7 +231,7 @@ const Home = () => {
 
             {downloadEnabled && (
               <div
-                className="flex flex-col cursor-pointer"
+                className="flex flex-col cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
                 onClick={handleExport}
               >
                 <Download />
@@ -293,7 +294,7 @@ const Home = () => {
                               {TabData["STiCKERS"].map((sticker, idx) => {
                                 return (
                                   <img
-                                    className={`w-full cursor-pointer hover:bg-[#a9a9ff40] place-self-start`}
+                                    className={`w-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] hover:bg-[#a9a9ff40] place-self-start`}
                                     key={sticker}
                                     src={getImageUrl("stickers", sticker)}
                                     onClick={(e) => {
@@ -323,7 +324,7 @@ const Home = () => {
                               {TabData["1SHEEP2SLEEP"].map((logo) => {
                                 return (
                                   <img
-                                    className="w-[80%] cursor-pointer hover:bg-[#a9a9ff40] m-auto"
+                                    className="w-[80%] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] hover:bg-[#a9a9ff40] m-auto"
                                     key={logo}
                                     src={getImageUrl("cardLogos", logo)}
                                     onClick={(e) =>
@@ -354,7 +355,7 @@ const Home = () => {
                               {TabData["BACKGROUND"].color.map((background) => {
                                 return (
                                   <img
-                                    className="w-[10%] cursor-pointer"
+                                    className="w-[10%] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
                                     key={background}
                                     src={getImageUrl("cardColors", background)}
                                     onClick={() => setColor(background)}
