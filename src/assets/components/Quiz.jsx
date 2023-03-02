@@ -68,7 +68,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 1 && "hidden"
-        } flex justify-between text-xl absolute inset-0 h-min m-auto font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+        } flex justify-between md:text-xl absolute inset-0 h-min m-auto font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(1)}
       >
         <p>I.</p>
@@ -324,7 +324,7 @@ const Question2 = ({
       <div
         className={`${
           questionNum === 2 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+        } flex justify-between md:text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(2)}
       >
         <p>II.</p>
@@ -409,14 +409,14 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
     <div
       className={`bg-lakegreen flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[18] ${
         questionNum <= 3
-          ? "h-[88%] md:h-[85%] pt-24 md:pt-36 pb-16 animate-slideDown"
+          ? "h-[88%] md:h-[85%] pt-20 md:pt-36 pb-16 animate-slideDown"
           : "h-[12%] md:h-[15%] animate-slideUp"
       }`}
     >
       <div
         className={`${
           questionNum === 3 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+        } flex justify-between md:text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(3)}
       >
         <p>III.</p>
@@ -439,7 +439,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <Title3 className="w-[25%] mr-6 md:w-[10%]" />
           </div>
-          <div className="flex justify-between md:h-[62%]">
+          <div className="flex justify-between md:h-[62%] mt-6 md:mt-0">
             <div className="w-full md:w-[60%] flex flex-col font-semibold">
               <div
                 className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
@@ -564,14 +564,14 @@ const Question4 = ({
     <div
       className={`bg-purple flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
         questionNum <= 4
-          ? "h-[92%] md:h-[90%] pt-48 pb-16 animate-slideDown"
+          ? "h-[92%] md:h-[90%] pt-36 md:pt-48 pb-16 animate-slideDown"
           : "h-[16%] md:h-[20%] animate-slideUp"
       }`}
     >
       <div
         className={`${
           questionNum === 4 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+        } flex justify-between md:text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(4)}
       >
         <p>IV.</p>
@@ -582,7 +582,7 @@ const Question4 = ({
         <>
           <div className="flex flex-col gap-6 items-center justify-center text-center">
             <Title4 className="w-[40%] md:w-[12%]" />
-            <div className="text-xl font-light">
+            <div className="md:text-xl font-light">
               <p>承上題，請選擇以下項目</p>
               <p className="font-medium mt-2">
                 FOLLOWING THE PREVIOUS QUESTION, WHAT SPECIFIC IT IS?
@@ -836,7 +836,7 @@ const Question4 = ({
                         otherAns[1] === "not threatening" && "text-purple"
                       }`}
                     >
-                      具威脅性
+                      不具威脅性
                     </p>
                   </div>
                 </div>
@@ -886,14 +886,14 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
     <div
       className={`bg-blue flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[16] ${
         questionNum <= 5
-          ? "h-[96%] md:h-[95%] pt-48 md:pt-56 pb-16 animate-slideDown"
+          ? "h-[96%] md:h-[95%] pt-40 md:pt-56 pb-16 animate-slideDown"
           : "h-[20%] md:h-[25%] animate-slideUp"
       }`}
     >
       <div
         className={`${
           questionNum === 5 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+        } flex justify-between md:text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(5)}
       >
         <p>V.</p>
@@ -902,15 +902,15 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 5 && (
         <>
           <div className="flex flex-col justify-between h-full">
-            <div className="text-xl font-light">
+            <div className="md:text-xl font-light">
               <p>該夢境的主要走向是?</p>
               <p className="font-medium mt-2">
                 HOW DOES THE DREAM’S PLOT DEVELOPES?
               </p>
             </div>
             <div className="flex flex-col-reverse items-start md:flex-row md:items-end justify-center md:justify-between gap-16 md:gap-24 w-[100%] mx-auto md:h-[48%]">
-              <Title5 className="w-[25%] ml-auto md:w-[15%] md:ml-0" />
-              <div className="w-full md:w-[55%] flex flex-col font-semibold">
+              <Title5 className="w-[20%] ml-auto md:w-[15%] md:ml-0" />
+              <div className="w-full md:w-[55%] flex flex-col font-semibold mt-4 md:mt-0">
                 <div
                   className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "Y" && "bg-black"
@@ -1014,14 +1014,14 @@ const Question6 = ({
     <div
       className={`bg-yellow flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[15] ${
         questionNum <= 6
-          ? "h-[100%] pt-52 md:pt-64 pb-16 animate-slideDown"
+          ? "h-[100%] pt-44 md:pt-52 md:pt-64 pb-16 animate-slideDown"
           : "h-[24%] md:h-[25%]"
       }`}
     >
       <div
         className={`${
           questionNum === 6 && "hidden"
-        } flex justify-between text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+        } flex justify-between md:text-xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
         onClick={() => setQuestionNum(6)}
       >
         <p>VI.</p>
@@ -1029,8 +1029,8 @@ const Question6 = ({
       </div>
       {questionNum === 6 && (
         <>
-          <div className="flex flex-col-reverse md:flex-row gap-6 items-start justify-between">
-            <div className="md:text-xl font-light">
+          <div className="flex flex-col-reverse md:flex-row gap-2 md:gap-6 items-start justify-between">
+            <div className="text-sm md:text-xl font-light">
               <p>
                 該夢境發生在什麼樣的場景?是認得的空間嗎？開放或是密閉的？（四選二）
               </p>
@@ -1043,10 +1043,10 @@ const Question6 = ({
             </div>
             <Title6 className="w-[30%] md:w-[15%] ml-auto md:ml-0" />
           </div>
-          <div className="md:flex items-end justify-between md:h-[36%] mt-8 md:mt-0">
+          <div className="md:flex items-end justify-between md:h-[36%] mt-4 md:mt-0">
             <div className="w-[60%] md:w-[30%] flex flex-col font-semibold md:h-full">
               <div
-                className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
+                className={`flex justify-between md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
                   otherAns[2] === "recognize" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(2, "recognize")}
@@ -1072,7 +1072,7 @@ const Question6 = ({
                 </p>
               </div>
               <div
-                className={`flex justify-between  md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
+                className={`flex justify-between  md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
                   otherAns[2] === "not recognized" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(2, "not recognized")}
@@ -1103,7 +1103,7 @@ const Question6 = ({
             {otherAns[2] !== undefined && (
               <div className="w-[60%] md:w-[30%] md:ml-[5%] flex flex-col font-semibold md:h-full">
                 <div
-                  className={`flex justify-between  md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] md:border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
+                  className={`flex justify-between  md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] md:border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
                     otherAns[3] === "open" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(3, "open")}
@@ -1158,7 +1158,7 @@ const Question6 = ({
             )}
 
             <div
-              className="bg-blue mt-6 md:mt-0 w-min ml-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening"
+              className="bg-blue mt-6 md:mt-0 w-min ml-auto px-6 py-2 md:py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening"
               onClick={checkNotEmptyAns}
             >
               <Finger className="w-[56px] h-[25px] fill-yellow" />
