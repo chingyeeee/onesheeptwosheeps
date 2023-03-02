@@ -114,6 +114,14 @@ module.exports = {
             opacity: "1",
           },
         },
+        rotate360: {
+          "0%": {
+            transform: "scaleX(0)",
+          },
+          "100% ": {
+            transform: "scaleX(-1)",
+          },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
@@ -130,6 +138,7 @@ module.exports = {
         marqueeV: "marqueeV 10s linear infinite",
         expandLT: "expandFromLeftTop .5s linear",
         expandRT: "expandFromRightTop .5s linear",
+        rotate360: "rotate360 1.5s linear infinite alternate",
       },
       transitionProperty: {
         height: "height",

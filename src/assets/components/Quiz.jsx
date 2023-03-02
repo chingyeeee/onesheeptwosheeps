@@ -1569,7 +1569,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     <div className="h-screen w-screen flex justify-center items-center relative">
       <img className="w-full md:w-[80%] mx-auto" src={signImgPath} />
       <div
-        className="absolute flex justify-center z-[10] py-8"
+        className="absolute flex justify-center z-[10] py-8 animate-rotate360 translate-y-[30%]"
         id="combinedImg"
       >
         <img
@@ -1581,7 +1581,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           src={getImageUrl("resultCards", resultCardPath)}
         />
       </div>
-      <div className="absolute z-10 bottom-[5%] right-[5%] flex gap-8 items-center">
+      <div className="absolute z-10 bottom-[10%] right-[5%] flex gap-8 items-center">
         <div
           className="h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
           onClick={downloadImage}
