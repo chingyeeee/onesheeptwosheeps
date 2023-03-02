@@ -1,6 +1,6 @@
 import { Stage, Layer, Line } from "react-konva";
 import Title from "../images/writeDownYourName/writedownyourname.svg";
-import TitleM from "../images/writeDownYourName/writedownyournameM.svg";
+import TitleM from "../images/writeDownYourName/titleM.svg";
 import { useState, useRef, useEffect } from "react";
 import Reset from "../images/sign/reset.svg";
 import Save from "../images/sign/save.svg";
