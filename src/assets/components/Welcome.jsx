@@ -1,8 +1,6 @@
-import useImage from "use-image";
-import { Image } from "react-konva";
 import { getImageUrl } from "../utils/getImageUrl";
 
-const Welcome = ({ width, height, color }) => {
+const Welcome = ({ color }) => {
   function handleWelcomeColor(color) {
     switch (color) {
       case "color-default.svg":
@@ -22,18 +20,17 @@ const Welcome = ({ width, height, color }) => {
     }
   }
 
+  //desktop
   const welcomeImg = getImageUrl("nav", handleWelcomeColor(color));
-  const [image] = useImage(welcomeImg);
+
+  //mobile
+  const welcomeImgM = getImageUrl("mobile/nav", handleWelcomeColor(color));
+
   return (
-    <Image
-      image={image}
-      width={color === "color2.svg" ? width * 1.12 : width}
-      scaleX={0.5}
-      scaleY={0.5}
-      height={color === "color2.svg" ? height / 0.45 : height}
-      y={20}
-      x={20}
-    />
+    <>
+      <img className="hidden md:block" src={welcomeImg} alt="welcome" />
+      <img className="md:hidden block" src={welcomeImgM} alt="welcome" />
+    </>
   );
 };
 

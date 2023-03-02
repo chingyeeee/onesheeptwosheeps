@@ -1,37 +1,50 @@
-import useImage from "use-image";
-import { Image } from "react-konva";
 import { getImageUrl } from "../utils/getImageUrl";
 
-const Logo = ({ width, height, color }) => {
+const Logo = ({ color }) => {
   function handleLogoColor(color) {
     switch (color) {
       case "color-default.svg":
       case "color2.svg":
-        return "logo-default.svg";
+        return "logo-default.png";
       case "color1.svg":
-        return "logo-1.svg";
+        return "logo-1.png";
       case "color3.svg":
       case "color4.svg":
-        return "logo-3.svg";
+        return "logo-3.png";
       case "color5.svg":
-        return "logo-5.svg";
+        return "logo-5.png";
       case "color6.svg":
-        return "logo-6.svg";
+        return "logo-6.png";
+    }
+  }
+
+  function handleMobileLogoColor(color) {
+    switch (color) {
+      case "color-default.svg":
+        return "logo-default.png";
+      case "color2.svg":
+        return "logo-2.png";
+      case "color1.svg":
+        return "logo-1.png";
+      case "color3.svg":
+      case "color4.svg":
+        return "logo-3.png";
+      case "color5.svg":
+        return "logo-5.png";
+      case "color6.svg":
+        return "logo-6.png";
     }
   }
 
   const logoImg = getImageUrl("nav", handleLogoColor(color));
-  const [image] = useImage(logoImg);
+
+  const logoImgM = getImageUrl("mobile/nav", handleMobileLogoColor(color));
+
   return (
-    <Image
-      image={image}
-      width={width}
-      x={width * 0.52}
-      y={60}
-      scaleX={0.45}
-      scaleY={0.45}
-      height={height}
-    />
+    <>
+      <img className="hidden md:block" src={logoImg} alt="logo" />
+      <img className="md:hidden block" src={logoImgM} alt="logo" />
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { ReactComponent as Download } from "../images/icons/icon-download.svg";
 import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
 import html2canvas from "html2canvas";
+import Cloud from "../images/icons/icon-cloud.svg";
 
 const Background = lazy(() => import("../components/Background"));
 
@@ -202,7 +203,7 @@ const Home = () => {
   return (
     <>
       <div
-        className={`h-screen flex overflow-hidden flex-col justify-between relative cursor-[url('/src/assets/images/cursor-default.svg'),_default]`}
+        className={`h-screen flex overflow-hidden flex-col justify-between relative`}
       >
         <>
           <Background
@@ -217,7 +218,7 @@ const Home = () => {
             emotionEnabled={emotionEnabled}
           />
 
-          <div className="absolute z-10 w-[12%] top-[30%] flex flex-col gap-8 items-center">
+          <div className="absolute z-[30] w-[12%] bottom-[10%] left-8 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
             <div
               className={`flex flex-col opacity-0 ${
                 addItemsEnabled &&
@@ -226,7 +227,7 @@ const Home = () => {
               onClick={openMenu}
             >
               <Menu />
-              <p className="border-b border-black">add items</p>
+              <p className="border-b border-black w-max">add items</p>
             </div>
 
             {downloadEnabled && (
@@ -240,7 +241,7 @@ const Home = () => {
             )}
           </div>
           <Transition appear show={isOpenMenu} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={closeMenu}>
+            <Dialog as="div" className="relative z-[31]" onClose={closeMenu}>
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -253,7 +254,7 @@ const Home = () => {
                 <div className="fixed inset-0 bg-white bg-opacity-50" />
               </Transition.Child>
 
-              <div className="fixed inset-0 overflow-y-auto">
+              <div className="fixed inset-0 overflow-x-hidden overflow-y-auto">
                 <div className="min-h-full">
                   <Transition.Child
                     as={Fragment}
@@ -264,22 +265,22 @@ const Home = () => {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-[50%] min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute top-[20%] left-[12%] border-4 border-black rounded-xl bg-white px-4">
+                    <Dialog.Panel className="w-[110%] md:w-[50%] min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute top-[60%] md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4">
                       <Tab.Group>
-                        <Tab.List className="flex py-4 border-b-4 border-black space-x-0.5">
+                        <Tab.List className="flex py-2 md:py-4 border-b-2 md:border-b-4 border-black space-x-0.5">
                           {Object.keys(TabData).map((tab) => (
                             <Tab
                               key={tab}
                               className={({ selected }) =>
                                 classNames(
-                                  "w-full py-2.5 text-lg font-medium leading-5",
+                                  "w-full py-1 md:py-2.5 text-xs md:text-lg font-medium leading-5",
                                   "ring-white ring-opacity-60 focus:outline-none focus:ring-2",
                                   selected
                                     ? "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.65] relative inline-block text-white"
                                     : "text-black",
                                   `${
                                     tab === "1SHEEP2SLEEP" &&
-                                    "border-x-4 border-black "
+                                    "border-x-2 md:border-x-4 border-black "
                                   }`
                                 )
                               }
@@ -290,7 +291,7 @@ const Home = () => {
                         </Tab.List>
                         <Tab.Panels className="p-6 max-h-[65vh] overflow-y-auto">
                           <Tab.Panel>
-                            <div className="mt-6 columns-4">
+                            <div className="mt-6 columns-3 md:columns-4">
                               {TabData["STiCKERS"].map((sticker, idx) => {
                                 return (
                                   <img
@@ -302,8 +303,8 @@ const Home = () => {
                                         ...cardItems,
                                         {
                                           image: sticker,
-                                          x: 1000,
-                                          y: 250,
+                                          x: 10,
+                                          y: 10,
                                           width: e.target.width,
                                           height: e.target.height,
                                           id: cardItems.length + 1,
@@ -332,8 +333,8 @@ const Home = () => {
                                         ...cardItems,
                                         {
                                           image: logo,
-                                          x: 800,
-                                          y: 250,
+                                          x: 10,
+                                          y: 10,
                                           width: e.target.width,
                                           height: e.target.height,
                                           id: cardItems.length + 1,
@@ -394,7 +395,7 @@ const Home = () => {
 
       {/* Introduction Modal */}
       <Transition appear show={isIntro} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeIntro}>
+        <Dialog as="div" className="relative z-[32]" onClose={closeIntro}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -407,8 +408,8 @@ const Home = () => {
             <div className="fixed inset-0 bg-purple bg-opacity-95" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center bg-cloud bg-no-repeat bg-center bg-contain">
+          <div className="fixed inset-0 overflow-x-hidden overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center text-center md:bg-cloud bg-no-repeat bg-center bg-contain">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -419,32 +420,42 @@ const Home = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className="w-full transform overflow-hidden p-6 text-center align-middle transition-all"
+                  className="w-full transform md:overflow-hidden p-6 text-center align-middle transition-all"
                   onClick={closeIntro}
                 >
-                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
+                  <img
+                    className="md:hidden scale-[1.4] absolute z-[-1] top-0 -left-2"
+                    src={Cloud}
+                    alt="cloud"
+                  />
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
                     歡迎來到一隻羊兩隻羊！
                   </p>
-                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
                     這裡除了有解夢卡專區之外
                   </p>
-                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
                     還有更多值得你探索的地方～
                   </p>
 
-                  <p className="text-lg font-medium leading-6 text-gray-900 mt-6">
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 mt-6">
                     快動動手指製作屬於自己的桌布及解夢卡吧！
                   </p>
-                  <p className="text-lg font-medium leading-6 text-gray-900 p-1 mt-8">
+                  <img
+                    className="md:hidden scale-[1.4] absolute z-[-1] bottom-0 -right-2 -scale-x-[1.4]"
+                    src={Cloud}
+                    alt="cloud"
+                  />
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1 mt-24 md:mt-8">
                     Welcome to the website of ONE SHEEP, TWO SLEEP.
                   </p>
-                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
                     Aside from our DREAMCARD area,
                   </p>
-                  <p className="text-lg font-medium leading-6 text-gray-900 p-1">
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
                     here’s more to explore. GO make yourself
                   </p>
-                  <p className="text-lg font-medium leading-6 text-gray-900 mt-6">
+                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 mt-6">
                     own “DREAMCARD” and “wallpaper”
                   </p>
                 </Dialog.Panel>

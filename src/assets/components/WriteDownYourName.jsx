@@ -1,5 +1,6 @@
 import { Stage, Layer, Line } from "react-konva";
-import { ReactComponent as Title } from "../images/writeDownYourName/writedownyourname.svg";
+import Title from "../images/writeDownYourName/writedownyourname.svg";
+import TitleM from "../images/writeDownYourName/writedownyournameM.svg";
 import { useState, useRef, useEffect } from "react";
 import Reset from "../images/sign/reset.svg";
 import Save from "../images/sign/save.svg";
@@ -68,14 +69,19 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   }, [backgroundRef.current]);
 
   return (
-    <div className="w-[80%] h-[75vh] mx-auto" ref={backgroundRef}>
+    <div className="w-[90%] md:w-[80%] md:h-[75vh] mx-auto" ref={backgroundRef}>
       <div className="bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative">
         <Stage
           width={canvaWidth}
-          height={window.innerHeight * 0.6}
+          height={
+            window.innerWidth < 768 ? `${180}` : `${window.innerHeight * 0.6}`
+          }
           ref={stageRef}
           onMouseDown={handleMouseDown}
+          onTouchStart={handleMouseDown}
+          onTouchMove={handleMouseMove}
           onMouseMove={handleMouseMove}
+          onTouchEnd={handleMouseUp}
           onMouseUp={handleMouseUp}
           className="mx-auto"
         >
@@ -101,7 +107,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </p>
       </div>
       <div className="flex gap-16 justify-center items-center mt-4">
-        <div className="flex gap-2">
+        <div className="md:flex gap-2 hidden">
           <div
             className={`w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#004943")}
@@ -162,7 +168,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
             />
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="md:flex gap-2 hidden">
           <div
             className="w-[1.5rem] h-[1.5rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
             onClick={() => handleColorChange("#fffa6f")}
@@ -185,14 +191,61 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
           />
         </div>
       </div>
+      <div className="flex md:hidden flex-wrap mt-12 gap-8 w-[90%] mx-auto">
+        <div
+          className={`w-[2rem] h-[2rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          onClick={() => handleColorChange("#004943")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#ff00c9")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#0073f7")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#a6e2c5")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#fffa6f")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#20d371")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#ff4a03")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#a9a9ff")}
+        />
+        <div
+          className="w-[2rem] h-[2rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          onClick={() => handleColorChange("#000")}
+        />
+      </div>
     </div>
   );
 };
 
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <Title />
+    <div className="h-screen w-screen flex flex-col justify-center items-center overflow-hidden">
+      <img
+        className="max-w-[90%] mx-auto hidden md:block"
+        src={Title}
+        alt="Write Down Your Name"
+      />
+      <img
+        className="max-w-[90%] mx-auto md:hidden"
+        src={TitleM}
+        alt="Write Down Your Name"
+      />
       <SignatureCanvas nextStep={nextStep} setSignImgPath={setSignImgPath} />
     </div>
   );
