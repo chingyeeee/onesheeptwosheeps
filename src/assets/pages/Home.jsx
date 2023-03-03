@@ -203,7 +203,7 @@ const Home = () => {
   return (
     <>
       <div
-        className={`h-screen flex overflow-hidden flex-col justify-between relative`}
+        className={`h-full flex overflow-hidden flex-col justify-between relative`}
       >
         <>
           <Background
