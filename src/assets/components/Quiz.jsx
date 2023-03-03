@@ -1566,7 +1566,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center relative">
+    <div className="h-full w-screen flex justify-center items-center relative">
       <img className="w-full md:w-[80%] mx-auto" src={signImgPath} />
       <div
         className="absolute flex justify-center z-[10] py-8 animate-rotate360 translate-y-[30%]"
