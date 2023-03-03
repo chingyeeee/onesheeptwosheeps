@@ -203,7 +203,7 @@ const Home = () => {
   return (
     <>
       <div
-        className={`h-[98vh] flex overflow-hidden flex-col justify-between relative`}
+        className={`h-[85vh] md:h-screen flex overflow-hidden flex-col justify-between relative`}
       >
         <>
           <Background
@@ -218,7 +218,7 @@ const Home = () => {
             emotionEnabled={emotionEnabled}
           />
 
-          <div className="absolute z-[30] w-[12%] bottom-[10%] left-8 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
+          <div className="absolute z-[30] w-[12%] bottom-0 left-8 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
             <div
               className={`flex flex-col opacity-0 ${
                 addItemsEnabled &&
