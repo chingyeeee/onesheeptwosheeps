@@ -1547,7 +1547,9 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   const downloadImage = () => {
     const element = document.getElementById("combinedImg");
 
-    html2canvas(element).then((canvas) => {
+    element.classList.remove("animate-rotate360");
+
+    html2canvas(element, { backgroundColor: null }).then((canvas) => {
       const imgSrc = canvas.toDataURL();
       const link = document.createElement("a");
       link.download = `sheep_${String(cardNo).padStart(3, "0")}.png`;
@@ -1557,6 +1559,8 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       document.body.removeChild(link);
       setCardNo(cardNo + 1);
     });
+
+    element.classList.add("animate-rotate360");
   };
 
   useEffect(() => {
@@ -1569,7 +1573,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     <div className="h-full w-screen flex justify-center items-center relative">
       <img className="w-full md:w-[80%] mx-auto" src={signImgPath} />
       <div
-        className="absolute flex justify-center z-[10] py-8 animate-rotate360 translate-y-[30%]"
+        className="absolute flex justify-center z-[10] py-8 animate-rotate360 translate-y-[30%] bg-transparent"
         id="combinedImg"
       >
         <img
