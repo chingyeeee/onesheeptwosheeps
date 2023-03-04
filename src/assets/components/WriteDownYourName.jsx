@@ -109,19 +109,27 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
       <div className="flex gap-16 justify-center items-center mt-4">
         <div className="md:flex gap-2 hidden">
           <div
-            className={`w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            className={`${
+              color === "#004943" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#004943")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#ff00c9" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#ff00c9")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#0073f7" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#0073f7")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#a6e2c5" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#a6e2c5")}
           />
           <div
@@ -170,63 +178,91 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </div>
         <div className="md:flex gap-2 hidden">
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#fffa6f" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#fffa6f")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#20d371" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#20d371")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#ff4a03" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#ff4a03")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+            className={`${
+              color === "#a9a9ff" && "border-4 p-2 border-black border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
             onClick={() => handleColorChange("#a9a9ff")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
-            onClick={() => handleColorChange("#000")}
+            className={`${
+              color === "#000000" && "border-4 p-2 border-grey border-solid"
+            } w-[1.5rem] h-[1.5rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            onClick={() => handleColorChange("#000000")}
           />
         </div>
       </div>
       <div className="flex md:hidden flex-wrap mt-12 gap-8 w-[90%] mx-auto">
         <div
-          className={`w-[2rem] h-[2rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          className={`${
+            color === "#004943" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] `}
           onClick={() => handleColorChange("#004943")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`w-[2rem] h-[2rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ${
+            color === "#ff00c9" && "border-2 border-black border-double"
+          }`}
           onClick={() => handleColorChange("#ff00c9")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`w-[2rem] h-[2rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ${
+            color === "#0073f7" && "border-2 border-black border-double"
+          }`}
           onClick={() => handleColorChange("#0073f7")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`${
+            color === "#a6e2c5" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => handleColorChange("#a6e2c5")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`${
+            color === "#fffa6f" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => handleColorChange("#fffa6f")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`${
+            color === "#20d371" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => handleColorChange("#20d371")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`${
+            color === "#ff4a03" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => handleColorChange("#ff4a03")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className={`${
+            color === "#a9a9ff" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => handleColorChange("#a9a9ff")}
         />
         <div
-          className="w-[2rem] h-[2rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
-          onClick={() => handleColorChange("#000")}
+          className={`${
+            color === "#000000" && "border-4 p-2 border-black border-solid"
+          } w-[2rem] h-[2rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          onClick={() => handleColorChange("#000000")}
         />
       </div>
     </div>
