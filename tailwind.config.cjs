@@ -26,16 +26,6 @@ module.exports = {
           "0%": { transform: "translateX(10px)" },
           "100%": { transform: "translateX(-10px)" },
         },
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "30%": { opacity: 0 },
-          "100%": { opacity: 100 },
-        },
-        fadeOut: {
-          "0%": { opacity: 100 },
-          "70%": { opacity: 0 },
-          "100%": { opacity: 0 },
-        },
         loaded: {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
@@ -125,8 +115,6 @@ module.exports = {
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
-        fadeIn: "fadeIn 1.8s linear infinite alternate",
-        fadeOut: "fadeOut 1.8s linear infinite alternate",
         loaded: "loaded 3s linear alternate",
         "remind-lightening": "lightening 2s 6s linear infinite alternate",
         lightening: "lightening 0.5s linear infinite alternate",

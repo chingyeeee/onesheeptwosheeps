@@ -1,4 +1,4 @@
-import { lazy, Fragment, useState, useRef } from "react";
+import { lazy, Fragment, useState, useRef, useEffect } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
 import { ReactComponent as Menu } from "../images/icons/icon-menu-sheep.svg";
 import { ReactComponent as Download } from "../images/icons/icon-download.svg";
@@ -6,6 +6,7 @@ import TabData from "../data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
 import html2canvas from "html2canvas";
 import Cloud from "../images/icons/icon-cloud.svg";
+import ToggleText from "../components/ToggleText";
 
 const Background = lazy(() => import("../components/Background"));
 
@@ -460,12 +461,8 @@ const Home = () => {
                   </p>
                 </Dialog.Panel>
               </Transition.Child>
-              <p className="absolute inset-x-0 bottom-12 animate-fadeIn">
-                [ 按任意地方進行下一步 ]
-              </p>
-              <p className="absolute inset-x-0 bottom-12 animate-fadeOut">
-                [ Click anywhere to continue ]
-              </p>
+
+              <ToggleText />
             </div>
           </div>
         </Dialog>
