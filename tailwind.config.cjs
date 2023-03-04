@@ -104,6 +104,30 @@ module.exports = {
             opacity: "1",
           },
         },
+        collapseLT: {
+          "0%": {
+            transform: "scale(1)",
+            "transform-origin": "top left",
+            opacity: "1",
+          },
+          "100% ": {
+            transform: "scale(0)",
+            "transform-origin": "top left",
+            opacity: "0",
+          },
+        },
+        collapseRT: {
+          "0%": {
+            transform: "scale(1)",
+            "transform-origin": "top right",
+            opacity: "1",
+          },
+          "100% ": {
+            transform: "scale(0)",
+            "transform-origin": "top right",
+            opacity: "0",
+          },
+        },
         rotate360: {
           "0%": {
             transform: "scaleX(0)",
@@ -124,8 +148,10 @@ module.exports = {
         shake: "shake 0.15s 20s linear infinite",
         marquee: "marquee 10s linear infinite",
         marqueeV: "marqueeV 10s linear infinite",
-        expandLT: "expandFromLeftTop .5s linear",
-        expandRT: "expandFromRightTop .5s linear",
+        expandLT: "expandFromLeftTop .2s ease-in-out",
+        expandRT: "expandFromRightTop .2s ease-in-out",
+        collapseRT: "collapseRT .2s ease-in-out forwards",
+        collapseLT: "collapseLT .2s ease-in-out forwards",
         rotate360: "rotate360 1.5s linear infinite alternate",
       },
       transitionProperty: {

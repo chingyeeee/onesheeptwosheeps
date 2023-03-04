@@ -5,10 +5,14 @@ import Profile2 from "../images/aboutus/profile-2.jpg";
 import Profile3 from "../images/aboutus/profile-3.jpg";
 import Profile4 from "../images/aboutus/profile-4.jpg";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const AboutUs = () => {
   const navigate = useNavigate();
+  const [is1Expanded, setIs1Expanded] = useState(false);
+  const [is2Expanded, setIs2Expanded] = useState(false);
+  const [is3Expanded, setIs3Expanded] = useState(false);
+  const [is4Expanded, setIs4Expanded] = useState(false);
 
   return (
     <div className="overflow-x-hidden">
@@ -17,11 +21,11 @@ const AboutUs = () => {
           className="absolute w-[10%] md:w-[5%] top-8 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-finger-shake"
           onClick={() => navigate("/")}
         />
-        <h3 className="border-black border-b bg-red font-normal text-2xl md:text-6xl inline-block mx-auto">
+        <h3 className="border-black border-b md:border-b-4 bg-red font-normal text-2xl md:text-6xl inline-block mx-auto">
           ABOUT US
         </h3>
         <div className="relative">
-          <p className="text-red text-[19px] md:text-4xl mt-6 font-light text-justify font-nanum leading-normal">
+          <p className="text-red text-[19px] md:text-5xl mt-6 font-light text-justify font-adobe leading-normal">
             ONE SHEEP, TWO SHEEP ARE COMPOSED OF FOUR MEMBERS OF THE WIND
             DIRECTION CONSTELLATION, THE TWINS WITH MULTIPLE PERSONALITIES AND
             THE ECCENTRIC WATER BOTTLE, WHO OFTEN COME UP WITH SOME
@@ -42,8 +46,16 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="fixed z-[21] top-[20%] md:top-[18%] left-0 md:left-[10%] group">
-          <div className="absolute text-left p-4 md:p-6 bg-blue rounded-xl w-min md:w-max hidden group-hover:animate-expandLT group-hover:block transition-500">
+        <div
+          className="fixed z-[21] top-[20%] md:top-[18%] left-0 md:left-[10%] group"
+          onMouseEnter={() => setIs1Expanded(true)}
+          onMouseLeave={() => setIs1Expanded(false)}
+        >
+          <div
+            className={`absolute text-left p-4 md:p-6 bg-blue rounded-xl w-min md:w-max group-hover:block transition-500 ${
+              is1Expanded ? "animate-expandLT" : "animate-collapseLT"
+            }`}
+          >
             <div className="flex flex-col gap-12">
               <div className="flex gap-4">
                 <img
@@ -73,9 +85,13 @@ const AboutUs = () => {
                   </div>
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
-                    <p className="text-sm md:text-base break-words">
+                    <a
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      href="https://www.instagram.com/j_wei_wei/"
+                      target="_blank"
+                    >
                       https://www.instagram.com/j_wei_wei/
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -91,8 +107,16 @@ const AboutUs = () => {
             />
           </div>
         </div>
-        <div className="fixed z-20 top-[55%] left-[8%] md:top-[55%] md:left-[22%]  group">
-          <div className="absolute text-left p-4 md:p-6 bg-red rounded-xl w-min md:w-max hidden group-hover:animate-expandLT group-hover:block transition-500">
+        <div
+          className="fixed z-20 top-[55%] left-[8%] md:top-[55%] md:left-[22%] group"
+          onMouseEnter={() => setIs2Expanded(true)}
+          onMouseLeave={() => setIs2Expanded(false)}
+        >
+          <div
+            className={`absolute text-left p-4 md:p-6 bg-red rounded-xl w-min md:w-max group-hover:block transition-500 ${
+              is2Expanded ? "animate-expandLT" : "animate-collapseLT"
+            }`}
+          >
             <div className="flex flex-col gap-12">
               <div className="flex gap-4">
                 <img
@@ -122,9 +146,13 @@ const AboutUs = () => {
                   </div>
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
-                    <p className="text-sm md:text-base break-words">
+                    <a
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      href="https://www.instagram.com/uxwn.n/"
+                      target="_blank"
+                    >
                       https://www.instagram.com/uxwn.n/
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -142,8 +170,16 @@ const AboutUs = () => {
             />
           </div>
         </div>
-        <div className="fixed z-20 right-[5%] top-[5%] md:right-[13%] group">
-          <div className="absolute text-left p-4 md:p-6 bg-lakegreen rounded-xl right-[0] w-min md:w-max hidden group-hover:animate-expandRT group-hover:block transition-500">
+        <div
+          className="fixed z-20 right-[5%] top-[5%] md:right-[13%] group"
+          onMouseEnter={() => setIs3Expanded(true)}
+          onMouseLeave={() => setIs3Expanded(false)}
+        >
+          <div
+            className={`absolute text-left p-4 md:p-6 bg-lakegreen rounded-xl right-[0] w-min md:w-max group-hover:block transition-500 ${
+              is3Expanded ? "animate-expandRT" : "animate-collapseRT"
+            }`}
+          >
             <div className="flex flex-col gap-12">
               <div className="flex gap-4">
                 <div className="flex flex-col gap-3 w-[70%] md:w-auto">
@@ -169,9 +205,13 @@ const AboutUs = () => {
                   </div>
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
-                    <p className="text-sm md:text-base break-words">
+                    <a
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      href="https://www.instagram.com/t1ddey/"
+                      target="_blank"
+                    >
                       https://www.instagram.com/t1ddey/
-                    </p>
+                    </a>
                   </div>
                 </div>
                 <img
@@ -193,8 +233,16 @@ const AboutUs = () => {
             />
           </div>
         </div>
-        <div className="fixed z-20 bottom-[35%] right-[5%] md:bottom-[25%] md:right-[10%] group">
-          <div className="absolute text-left p-6 bg-lightpurple rounded-xl right-[0] w-min md:w-max hidden group-hover:animate-expandRT group-hover:block transition-500">
+        <div
+          className="fixed z-20 bottom-[35%] right-[5%] md:bottom-[25%] md:right-[10%] group"
+          onMouseEnter={() => setIs4Expanded(true)}
+          onMouseLeave={() => setIs4Expanded(false)}
+        >
+          <div
+            className={`absolute text-left p-6 bg-lightpurple rounded-xl right-[0] w-min md:w-max transition-500 ${
+              is4Expanded ? "animate-expandRT" : "animate-collapseRT"
+            }`}
+          >
             <div className="flex flex-col gap-12">
               <div className="flex gap-4">
                 <div className="flex flex-col gap-3 w-[70%] md:w-auto">
@@ -220,9 +268,13 @@ const AboutUs = () => {
                   </div>
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
-                    <p className="text-sm md:text-base break-words">
+                    <a
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      href="https://www.instagram.com/o6.ycww_11/"
+                      target="_blank"
+                    >
                       https://www.instagram.com/o6.ycww_11/
-                    </p>
+                    </a>
                   </div>
                 </div>
                 <img
@@ -245,7 +297,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="w-screen bg-purple sticky -top-1 h-[3rem] md:h-[8vh] flex items-center z-10 overflow-hidden">
+      <div className="w-screen bg-purple sticky -top-1 flex items-center z-10 overflow-hidden">
         <div className="inset-y-0 m-auto flex animate-marquee w-[200%]">
           <img className="w-[100%] h-auto" src={Marquee} />
           <img className="w-[100%] h-auto" src={Marquee} />
