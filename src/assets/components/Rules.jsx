@@ -6,7 +6,7 @@ function TypingText({ onTypingFinish }) {
   const [text, setText] = useState("");
   const content =
     "請試著回想一個讓你印象深刻的夢，可以是任何的情境；\n 不管傷心難過、開心快樂甚至是難以啟齒的夢，都請回答接下來的問題！\n Please try to recall a dream that impressed you, it can be any situation; \n Regardless of whether you are sad, happy or even unspeakable dreams, \n please answer the following questions!";
-  const speed = 100;
+  const speed = 50;
 
   useEffect(() => {
     let i = 0;
@@ -48,18 +48,22 @@ const Rules = ({ nextStep }) => {
   };
 
   return (
-    <div className="h-full flex justify-center items-center animate-zoomIn">
+    <div
+      className="h-full flex justify-center items-center animate-zoomIn"
+      onClick={() => setIsTypingFinish(true)}
+    >
       <div className="w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-36 md:p-12 text-center min-h-[50%]">
         <RulesLogo className="w-[40%] m-auto" />
         <TypingText onTypingFinish={handleTypingFinish} />
-        {isTypingFinish && (
-          <div
-            className="bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening"
-            onClick={nextStep}
-          >
-            <Finger className="w-[42px] h-[20px] md:w-[56px] md:h-[25px] fill-yellow" />
-          </div>
-        )}
+
+        <div
+          className={`bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening ${
+            isTypingFinish ? "opacity-1" : "opacity-0"
+          }`}
+          onClick={nextStep}
+        >
+          <Finger className="w-[42px] h-[20px] md:w-[56px] md:h-[25px] fill-yellow" />
+        </div>
       </div>
     </div>
   );
