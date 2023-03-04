@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { Image, Transformer, Text, Circle } from "react-konva";
+import { Image, Transformer, Text, Circle, Group } from "react-konva";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
 
@@ -12,9 +12,16 @@ const MyImage = ({
 }) => {
   const shapeRef = useRef();
   const trRef = useRef();
+  const deleteButtonRef = useRef(null);
 
   const imagePath = getImageUrl(shapeProps.folder, shapeProps.image);
   const [imageItem] = useImage(imagePath);
+
+  const styles = {
+    cursor: isSelected
+      ? "url(/src/assets/images/cursor-move.png), move"
+      : "default",
+  };
 
   useEffect(() => {
     if (isSelected) {
@@ -25,7 +32,20 @@ const MyImage = ({
   }, [isSelected]);
 
   return (
-    <>
+    <Group
+      onDragStart={() => {
+        document.body.style.cursor =
+          "url(/src/assets/images/cursor-move.png), move";
+      }}
+      onDragEnd={() => {
+        document.body.style.cursor =
+          "url(/src/assets/images/cursor-default.png), default";
+      }}
+      onClick={() => {
+        document.body.style.cursor =
+          "url(/src/assets/images/cursor-move.png), move";
+      }}
+    >
       <Image
         onClick={onSelect}
         onTap={onSelect}
@@ -34,8 +54,8 @@ const MyImage = ({
         y={shapeProps.y}
         width={shapeProps.width}
         height={shapeProps.height}
-        image={imageItem}
         draggable
+        image={imageItem}
         onDragStart={(e) => e.target.moveToTop()}
         onDragEnd={(e) => {
           onChange({
@@ -79,28 +99,29 @@ const MyImage = ({
               return newBox;
             }}
           />
-          <Circle
-            x={shapeProps.x + shapeProps.width}
-            y={shapeProps.y}
-            radius={15}
-            fill="black"
-          />
-          <Text
-            text="X"
-            fontSize={16}
-            fill="white"
-            onClick={handleDeleteSelectedCardItem}
-            onTap={handleDeleteSelectedCardItem}
-            fontStyle="bold"
-            width={150}
-            height={150}
-            x={shapeProps.x + shapeProps.width - 5}
-            y={shapeProps.y - 6}
-          />
+          <Group ref={deleteButtonRef}>
+            <Circle
+              x={shapeProps.x + shapeProps.width}
+              y={shapeProps.y}
+              radius={15}
+              fill="black"
+            />
+            <Text
+              text="X"
+              fontSize={16}
+              fill="white"
+              onClick={handleDeleteSelectedCardItem}
+              onTap={handleDeleteSelectedCardItem}
+              fontStyle="bold"
+              width={150}
+              height={150}
+              x={shapeProps.x + shapeProps.width - 5}
+              y={shapeProps.y - 6}
+            />
+          </Group>
         </>
       )}
-    </>
+    </Group>
   );
 };
-
 export default MyImage;
