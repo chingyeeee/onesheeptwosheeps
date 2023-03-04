@@ -82,9 +82,16 @@ const Background = ({
   return (
     <div
       ref={stageRef}
-      className={`relative m-6 ${color === "color4.svg" ? "bg-purple" : ""} ${
-        color === "color5.svg" ? "bg-lightpurple" : ""
-      } ${color === "color6.svg" ? "bg-darkgreen" : ""}`}
+      className={`relative m-6 before:block before:absolute before:-inset-1 before:z-[-1] ${
+        color === "color4.svg" &&
+        "before:bg-purple before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
+      } ${
+        color === "color5.svg" &&
+        "before:bg-lightpurple before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
+      } ${
+        color === "color6.svg" &&
+        "before:bg-darkgreen before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
+      }`}
     >
       {welcomeToEnabled && (
         <div className="absolute z-[10] w-full md:w-[55%]">
@@ -132,7 +139,7 @@ const Background = ({
 
       {aboutUsEnabled && (
         <div
-          className={`absolute z-[21] left-[5%] md:left-[10%] top-[22%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
+          className={`absolute z-[21] left-[5%] top-[22%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
           onClick={() => navigate("/aboutus")}
         >
           <Finger
@@ -152,7 +159,7 @@ const Background = ({
       )}
       {dreamCardEnabled && (
         <div
-          className="absolute z-[21] top-[15%] right-[5%] md:top-auto md:right-[10%] md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
+          className="absolute z-[21] top-[15%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
           onClick={() => navigate("/dreamcard")}
         >
           <Finger
