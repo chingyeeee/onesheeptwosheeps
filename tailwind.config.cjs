@@ -47,11 +47,11 @@ module.exports = {
         },
         slideUp: {
           "0%": { height: "80%", opacity: 1 },
-          "100%": { height: "10%", opacity: 0 },
+          "100%": { height: "10%", opacity: 1 },
         },
-        slideUp: {
-          "0%": { height: "80%", opacity: 1 },
-          "100%": { height: "10%", opacity: 0 },
+        fadeSlideIn: {
+          "0%": { height: "0%", opacity: 0 },
+          "100%": { height: "100%", opacity: 1 },
         },
         shake: {
           "0%": {
@@ -143,8 +143,8 @@ module.exports = {
         "remind-lightening": "lightening 2s 6s linear infinite alternate",
         lightening: "lightening 0.5s linear infinite alternate",
         zoomIn: "zoomIn 1s linear",
-        slideDown: "slideDown 0.8s linear",
-        slideUp: "slideUp 0.8s linear",
+        slideDown: "slideDown 0.3s linear",
+        slideUp: "slideUp 0.3s linear",
         shake: "shake 0.15s 20s linear infinite",
         marquee: "marquee 10s linear infinite",
         marqueeV: "marqueeV 10s linear infinite",
@@ -153,6 +153,7 @@ module.exports = {
         collapseRT: "collapseRT .2s ease-in-out forwards",
         collapseLT: "collapseLT .2s ease-in-out forwards",
         rotate360: "rotate360 1.5s linear infinite alternate",
+        fadeSlideIn: "fadeSlideIn 0.8s linear",
       },
       transitionProperty: {
         height: "height",

@@ -61,7 +61,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
     <div
       className={` bg-red flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
         questionNum === 1
-          ? "h-[80%] md:h-[75%] py-6 md:py-16 animate-zoomIn"
+          ? "h-[80%] md:h-[75%] py-6 md:py-16 animate-slideDown"
           : "h-[4%] md:h-[5%] animate-slideUp"
       }`}
     >
@@ -342,8 +342,8 @@ const Question2 = ({
               </p>
             </div>
           </div>
-          <div className="flex justify-between md:h-[28%]">
-            <div className="w-[70%] md:w-[20%] md:mr-12 ml-auto flex flex-col font-semibold">
+          <div className="flex justify-between md:h-[35%]">
+            <div className="w-[70%] md:w-[20%] md:mr-12 ml-auto h-full justify-between flex flex-col font-semibold">
               <div
                 className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-4 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   otherAns[0] === "Y" && "bg-black"
@@ -358,7 +358,7 @@ const Question2 = ({
                   yes
                 </span>
                 <Yes
-                  className={`w-[30%] group-hover:fill-lightgreen group-hover:block ${
+                  className={`w-[40%] group-hover:fill-lightgreen group-hover:block ${
                     otherAns[0] === "Y" ? "block fill-lightgreen" : "hidden"
                   }`}
                 />
@@ -384,7 +384,7 @@ const Question2 = ({
                   no
                 </span>
                 <No
-                  className={`w-[30%] group-hover:fill-lightgreen group-hover:block ${
+                  className={`w-[40%] group-hover:fill-lightgreen group-hover:block ${
                     otherAns[0] === "N" ? "block fill-lightgreen" : "hidden"
                   }`}
                 />
@@ -910,7 +910,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <div className="flex flex-col-reverse items-start md:flex-row md:items-end justify-center md:justify-between gap-16 md:gap-24 w-[100%] mx-auto md:h-[48%]">
               <Title5 className="w-[20%] ml-auto md:w-[15%] md:ml-0" />
-              <div className="w-full md:w-[55%] flex flex-col font-semibold mt-4 md:mt-0">
+              <div className="w-full md:w-[55%] h-full justify-between flex flex-col font-semibold mt-4 md:mt-0">
                 <div
                   className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "Y" && "bg-black"
@@ -1156,9 +1156,12 @@ const Question6 = ({
                 </div>
               </div>
             )}
-
             <div
-              className="bg-blue mt-6 md:mt-0 w-min ml-auto px-6 py-2 md:py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening"
+              className={`bg-blue mt-6 md:mt-0 w-min ml-auto px-6 py-2 md:py-3 rounded-full animate-remind-lightening transition hover:animate-lightening ${
+                otherAns[3] !== undefined
+                  ? "opacity-1 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                  : "opacity-0"
+              }`}
               onClick={checkNotEmptyAns}
             >
               <Finger className="w-[56px] h-[25px] fill-yellow" />
@@ -1189,6 +1192,8 @@ const GeneratingResult = ({ setQuestionNum }) => {
 };
 
 const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
+  const [isShaking, setIsShaking] = useState(false);
+
   function getEmotion() {
     switch (quizAns[0]) {
       case "A":
@@ -1419,9 +1424,9 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pb-8 text-sm md:text-md text-red relative h-[15rem] flex items-end z-[10]">
+                <Disclosure.Panel className="px-4 py-8 text-sm md:text-md text-red relative flex items-end z-[10]">
                   <img
-                    className={`max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[7.5rem] md:-translate-y-[5rem] left-0 right-0`}
+                    className={`max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[2.5rem] md:translate-y-0 left-0 right-0`}
                     src={getImageUrl("quiz/showResult", `${quizAns[0]}.svg`)}
                   />
 
@@ -1458,9 +1463,9 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pb-8 text-sm md:text-md text-red relative h-[15rem] flex items-end z-[10] w-full">
+                <Disclosure.Panel className="px-4 py-8 text-sm md:text-md text-red relative flex items-end z-[10] w-full">
                   <img
-                    className="max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[7.5rem] md:-translate-y-[5rem] left-0 right-0"
+                    className="max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[2.5rem] md:translate-y-0 left-0 right-0"
                     src={getImageUrl("quiz/showResult", `${quizAns[1]}.svg`)}
                   />
                   <p className="underline-offset-1 decoration-red decoration-solid underline">
@@ -1496,12 +1501,12 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel
-                  className={`px-4 pb-8 text-sm md:text-md text-red relative h-[15rem] flex items-end z-[10] ${
+                  className={`px-4 py-8 text-sm md:text-md text-red relative flex items-end z-[10] ${
                     open && "border-b-2 border-blue"
                   }`}
                 >
                   <img
-                    className="max-w-[100%] max-w-[50%] mx-auto absolute z-[-1] -translate-y-[7.5rem] md:-translate-y-[5rem] left-0 right-0"
+                    className="max-w-[100%] max-w-[50%] mx-auto absolute z-[-1] -translate-y-[2.5rem] md:translate-y-0 left-0 right-0"
                     src={getImageUrl("quiz/showResult", `${quizAns[2]}.svg`)}
                   />
 
@@ -1517,7 +1522,8 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             )}
           </Disclosure>
           <div
-            className="px-8 py-2 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 animate-shake hover:bg-darkgreen hover:text-white transition duration-500"
+            ref={buttonRef}
+            className={`px-8 py-2 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 hover:bg-darkgreen hover:text-white transition duration-500 animate-shake`}
             onClick={() => setQuestionNum(9)}
           >
             生成解夢卡
@@ -1741,7 +1747,7 @@ const Quiz = ({ signImgPath }) => {
   return (
     <div className="flex flex-col h-screen relative">
       {questionNum <= 6 && (
-        <>
+        <div className="animate-fadeSlideIn">
           <Question1
             questionNum={questionNum}
             setQuestionNum={setQuestionNum}
@@ -1780,7 +1786,7 @@ const Quiz = ({ signImgPath }) => {
             handleSaveAns={handleSaveAns}
             otherAns={otherAns}
           />
-        </>
+        </div>
       )}
       {questionNum === 7 && (
         <GeneratingResult setQuestionNum={setQuestionNum} />
