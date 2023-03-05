@@ -1398,7 +1398,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
 
       <div className="w-[80%] mx-auto md:w-full px-4 md:pt-6 pb-12 h-screen overflow-scroll">
         <img
-          className="m-auto h-[8rem] mb-2"
+          className="m-auto h-[8rem] md:h-[12rem] mb-2"
           src={signImgPath}
           alt="yourName"
         />
