@@ -69,7 +69,10 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   }, [backgroundRef.current]);
 
   return (
-    <div className="w-[90%] md:w-[80%] md:h-[75vh] mx-auto" ref={backgroundRef}>
+    <div
+      className="w-[90%] md:w-[80%] md:h-[75vh] mx-auto  -translate-y-6"
+      ref={backgroundRef}
+    >
       <div className="bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative">
         <Stage
           width={canvaWidth}
@@ -209,7 +212,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
           />
         </div>
       </div>
-      <div className="flex md:hidden flex-wrap mt-12 gap-8 w-[90%] mx-auto">
+      <div className="flex md:hidden flex-wrap mt-12 gap-8 justify-center">
         <div
           className={`${
             color === "#004943" && "border-4 p-2 border-black border-solid"
@@ -218,13 +221,13 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         />
         <div
           className={`w-[2rem] h-[2rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ${
-            color === "#ff00c9" && "border-2 border-black border-double"
+            color === "#ff00c9" && "border-4 border-black border-solid"
           }`}
           onClick={() => handleColorChange("#ff00c9")}
         />
         <div
           className={`w-[2rem] h-[2rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ${
-            color === "#0073f7" && "border-2 border-black border-double"
+            color === "#0073f7" && "border-4 border-black border-solid"
           }`}
           onClick={() => handleColorChange("#0073f7")}
         />
@@ -260,10 +263,11 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         />
         <div
           className={`${
-            color === "#000000" && "border-4 p-2 border-black border-solid"
+            color === "#000000" && "border-4 p-2 border-grey border-solid"
           } w-[2rem] h-[2rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
           onClick={() => handleColorChange("#000000")}
         />
+        <div className={` w-[2rem] h-[2rem] bg-transparent`} />
       </div>
     </div>
   );
@@ -278,7 +282,7 @@ const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
         alt="Write Down Your Name"
       />
       <img
-        className="max-w-[90%] mx-auto md:hidden"
+        className="max-w-[80%] -translate-y-6 mx-auto md:hidden"
         src={TitleM}
         alt="Write Down Your Name"
       />
