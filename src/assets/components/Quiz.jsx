@@ -78,8 +78,8 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 1 && (
         <>
           <div className="md:flex gap-6 md:max-w-1/2 items-end">
-            <Title1 className="w-[30%] md:w-[10%]" />
-            <div className="text-base mt-4 md:mt-0 md:text-xl font-light">
+            <Title1 className="w-[25%] md:w-[10%]" />
+            <div className="text-sm mt-4 md:mt-0 md:text-xl font-light">
               <p>請試著回憶你的夢境，當下的情緒是？</p>
               <p className="font-medium mt-2">
                 TRY TO RECALL YOUR DREAM, <br />
@@ -87,7 +87,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
               </p>
             </div>
           </div>
-          <div className="md:flex justify-between mt-6 md:mt-0 md:h-[62%] overflow-x-scroll">
+          <div className="md:flex justify-between mt-3 md:mt-0 md:h-[62%] overflow-x-scroll">
             <div className="w-full md:w-[45%] flex flex-col font-medium md:font-semibold">
               <div
                 className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
@@ -116,7 +116,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "B" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "B")}
@@ -142,7 +142,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "C" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "C")}
@@ -168,7 +168,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "D" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "D")}
@@ -196,7 +196,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <div className="w-full md:w-[45%] flex flex-col font-semibold">
               <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] md:border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] md:border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "E" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "E")}
@@ -222,7 +222,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "F" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "F")}
@@ -248,7 +248,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "G" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "G")}
@@ -274,7 +274,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 </p>
               </div>
               <div
-                className={`flex justify-between text-base md:text-base md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between text-base md:text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   quizAns[0] === "H" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "H")}
@@ -334,7 +334,7 @@ const Question2 = ({
         <>
           <div className="md:flex gap-6 max-w-1/2 items-start">
             <Title2 className="w-[20%] md:w-[10%]" />
-            <div className="mt-6 md:mt-0 md:text-xl font-light">
+            <div className="text-sm mt-6 md:mt-0 md:text-xl font-light">
               <p>是否曾經發生在現實生活中，這個夢是你的真實回憶嗎？</p>
               <p className="font-medium mt-2">
                 HAS IT EVER HAPPENED IN THE REAL LIFE? <br />
@@ -345,7 +345,7 @@ const Question2 = ({
           <div className="flex justify-between md:h-[35%]">
             <div className="w-[70%] md:w-[20%] md:mr-12 ml-auto h-full justify-between flex flex-col font-semibold">
               <div
-                className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-4 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-2 md:py-4 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                   otherAns[0] === "Y" && "bg-black"
                 }`}
                 onClick={() => handleSaveAns(0, "Y")}
@@ -426,7 +426,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 3 && (
         <>
           <div className="flex flex-col-reverse md:flex-row gap-6 items-end md:items-center justify-between">
-            <div className="md:text-xl font-light">
+            <div className="text-sm md:text-xl font-light">
               <p>
                 該夢境中的主角是？
                 <br /> 可以是自己、物品或動物。
@@ -582,7 +582,7 @@ const Question4 = ({
         <>
           <div className="flex flex-col gap-6 items-center justify-center text-center">
             <Title4 className="w-[40%] md:w-[12%]" />
-            <div className="md:text-xl font-light">
+            <div className="text-sm md:text-xl font-light">
               <p>承上題，請選擇以下項目</p>
               <p className="font-medium mt-2">
                 FOLLOWING THE PREVIOUS QUESTION, WHAT SPECIFIC IT IS?
@@ -902,17 +902,17 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 5 && (
         <>
           <div className="flex flex-col justify-between h-full">
-            <div className="md:text-xl font-light">
+            <div className="text-sm md:text-xl font-light">
               <p>該夢境的主要走向是?</p>
               <p className="font-medium mt-2">
                 HOW DOES THE DREAM’S PLOT DEVELOPES?
               </p>
             </div>
             <div className="flex flex-col-reverse items-start md:flex-row md:items-end justify-center md:justify-between gap-16 md:gap-24 w-[100%] mx-auto md:h-[48%]">
-              <Title5 className="w-[20%] ml-auto md:w-[15%] md:ml-0" />
+              <Title5 className="w-[25%] ml-auto md:w-[15%] md:ml-0" />
               <div className="w-full md:w-[55%] h-full justify-between flex flex-col font-semibold mt-4 md:mt-0">
                 <div
-                  className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between md:text-xl px-2 md:px-4 py-1 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "Y" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(2, "Y")}
@@ -938,7 +938,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                   </p>
                 </div>
                 <div
-                  className={`flex justify-between  md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between  md:text-xl px-2 md:px-4 py-1 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "X" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(2, "X")}
@@ -964,7 +964,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                   </p>
                 </div>
                 <div
-                  className={`flex justify-between  md:text-xl px-2 md:px-4 py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+                  className={`flex justify-between  md:text-xl px-2 md:px-4 py-1 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
                     quizAns[2] === "Z" && "bg-black"
                   }`}
                   onClick={() => handleSaveAns(2, "Z")}
@@ -1012,7 +1012,7 @@ const Question6 = ({
 
   return (
     <div
-      className={`bg-yellow flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[15] ${
+      className={`bg-yellow flex px-4 md:px-20 flex-col overflow-hidden absolute w-full z-[15] ${
         questionNum <= 6
           ? "h-[100%] pt-44 md:pt-52 md:pt-64 pb-16 animate-slideDown"
           : "h-[24%] md:h-[25%]"
@@ -1043,7 +1043,7 @@ const Question6 = ({
             </div>
             <Title6 className="w-[30%] md:w-[15%] ml-auto md:ml-0" />
           </div>
-          <div className="md:flex items-end justify-between md:h-[36%] mt-4 md:mt-0">
+          <div className="md:flex items-end justify-between md:h-[36%] mt-8 md:mt-0">
             <div className="w-[60%] md:w-[30%] flex flex-col font-semibold md:h-full">
               <div
                 className={`flex justify-between md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
@@ -1157,14 +1157,14 @@ const Question6 = ({
               </div>
             )}
             <div
-              className={`bg-blue mt-6 md:mt-0 w-min ml-auto px-6 py-2 md:py-3 rounded-full animate-remind-lightening transition hover:animate-lightening ${
+              className={`bg-blue mt-6 md:mt-0 w-min ml-auto px-5 md:px-6 py-3 rounded-full animate-remind-lightening transition hover:animate-lightening ${
                 otherAns[3] !== undefined
                   ? "opacity-1 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
                   : "opacity-0"
               }`}
               onClick={checkNotEmptyAns}
             >
-              <Finger className="w-[56px] h-[25px] fill-yellow" />
+              <Finger className="w-[42px] h-[20px] md:w-[56px] md:h-[25px] fill-yellow" />
             </div>
           </div>
         </>
@@ -1385,13 +1385,13 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
       <img
         src={Loading5}
         className={
-          "absolute -right-[0.1rem] -top-[0.1rem] w-[2rem] h-[2rem] md:w-[5.1rem] md:h-[5.2rem]"
+          "absolute -right-[0.1rem] -top-[0.1rem] w-[2.13rem] h-[2.13rem] md:w-[5.1rem] md:h-[5.2rem]"
         }
       />
       <img
         src={Loading2}
         className={
-          "absolute -left-[0.1rem] -top-[0.1rem] w-[2rem] h-[2rem] md:w-[5.1rem] md:h-[5.2rem]"
+          "absolute -left-[0.1rem] -top-[0.1rem] w-[2.13rem] h-[2.13rem] md:w-[5.13rem] md:h-[5.2rem]"
         }
       />
 
@@ -1579,11 +1579,12 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
         src={signImgPath}
       />
       <div
-        className="absolute flex justify-center z-[10] py-8 bg-transparent"
+        className="absolute flex justify-center z-[10] py-8 animate-rotate360 bg-transparent"
         id="combinedImg"
+        onLongPress={downloadImage}
       >
         <img
-          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-8 -left-6 md:-top-3 md:-left-8 rotate-6"
+          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-6 -left-4 md:-top-3 md:-left-8 rotate-6"
           src={signImgPath}
         />
         <img
@@ -1593,7 +1594,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       </div>
       <div className="absolute z-10 bottom-[15%] md:bottom-[10%] right-[5%] flex gap-8 items-center">
         <div
-          className="h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+          className="h-[3.5rem] md:h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-sm md:text-base"
           onClick={downloadImage}
         >
           <Download />
@@ -1602,7 +1603,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           </p>
         </div>
         <div
-          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          className={`h-[3.5rem] md:h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]  text-sm md:text-base`}
           onClick={() => navigate("/")}
         >
           <Home />
@@ -1611,7 +1612,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           </p>
         </div>
         <div
-          className={`h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          className={`h-[3.5rem] md:h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]  text-sm md:text-base`}
         >
           <Share />
           <p className="underline-offset-1 decoration-black decoration-solid underline">
