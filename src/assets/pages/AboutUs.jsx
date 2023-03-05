@@ -25,7 +25,7 @@ const AboutUs = () => {
           ABOUT US
         </h3>
         <div className="relative">
-          <p className="text-red text-[19px] md:text-5xl mt-6 font-light text-justify font-adobe leading-normal">
+          <p className="text-red text-[19px] md:text-4xl mt-6 font-light text-justify font-adobe leading-normal md:leading-relaxed">
             ONE SHEEP, TWO SHEEP ARE COMPOSED OF FOUR MEMBERS OF THE WIND
             DIRECTION CONSTELLATION, THE TWINS WITH MULTIPLE PERSONALITIES AND
             THE ECCENTRIC WATER BOTTLE, WHO OFTEN COME UP WITH SOME
@@ -108,7 +108,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div
-          className="fixed z-20 top-[52%] left-[8%] md:top-[55%] md:left-[22%] group"
+          className="fixed z-20 top-[52%] left-[8%] md:top-[50%] md:left-[22%] group"
           onMouseEnter={() => setIs2Expanded(true)}
           onMouseLeave={() => setIs2Expanded(false)}
         >
@@ -171,7 +171,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div
-          className="fixed z-20 right-[5%] top-[5%] md:right-[13%] group"
+          className="fixed z-[21] right-[5%] top-[5%] md:right-[13%] group"
           onMouseEnter={() => setIs3Expanded(true)}
           onMouseLeave={() => setIs3Expanded(false)}
         >
