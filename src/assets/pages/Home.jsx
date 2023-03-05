@@ -457,7 +457,6 @@ const Home = () => {
                   </p>
                 </Dialog.Panel>
               </Transition.Child>
-
               <ToggleText />
             </div>
           </div>

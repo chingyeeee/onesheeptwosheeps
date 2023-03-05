@@ -136,6 +136,10 @@ module.exports = {
             transform: "rotateY(180deg)",
           },
         },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 100 },
+        },
       },
       animation: {
         "finger-shake": "shake 0.5s linear infinite alternate",
@@ -154,6 +158,7 @@ module.exports = {
         collapseLT: "collapseLT .2s ease-in-out forwards",
         rotate360: "rotate360 1.5s linear infinite alternate",
         fadeSlideIn: "fadeSlideIn 0.8s linear",
+        fadeIn: "fadeIn 1s linear alternate infinite",
       },
       transitionProperty: {
         height: "height",
