@@ -99,7 +99,7 @@ const Background = ({
         </div>
       )}
       {logoEnabled && (
-        <div className="absolute z-[10] right-2 bottom-[20%] w-[38%] md:right-2 md:top-16">
+        <div className="absolute z-[10] right-2 top-48 w-[35%] md:right-2 md:top-16">
           <Logo color={color} />
         </div>
       )}
@@ -139,7 +139,7 @@ const Background = ({
 
       {aboutUsEnabled && (
         <div
-          className={`absolute z-[21] left-[5%] top-[22%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
+          className={`absolute z-[21] left-[5%] top-[25%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
           onClick={() => navigate("/aboutus")}
         >
           <Finger
@@ -159,7 +159,7 @@ const Background = ({
       )}
       {dreamCardEnabled && (
         <div
-          className="absolute z-[21] top-[15%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
+          className="absolute z-[21] top-[18%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
           onClick={() => navigate("/dreamcard")}
         >
           <Finger

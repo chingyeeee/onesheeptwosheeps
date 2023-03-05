@@ -219,25 +219,29 @@ const Home = () => {
             emotionEnabled={emotionEnabled}
           />
 
-          <div className="absolute z-[30] w-[12%] bottom-0 left-8 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
+          <div className="absolute z-[30] w-[10%] bottom-0 left-8 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
             <div
-              className={`flex flex-col opacity-0 ${
+              className={`flex flex-col opacity-0 items-center ${
                 addItemsEnabled &&
                 "opacity-100 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               }`}
               onClick={openMenu}
             >
-              <Menu />
-              <p className="border-b border-black w-max">add items</p>
+              <Menu className="w-[70%] md:w-auto" />
+              <p className="text-sm md:text-base border-b border-black w-max">
+                add items
+              </p>
             </div>
 
             {downloadEnabled && (
               <div
-                className="flex flex-col cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                className="flex flex-col items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
                 onClick={handleExport}
               >
-                <Download />
-                <p className="border-b border-black">download</p>
+                <Download className="w-[70%] md:w-auto" />
+                <p className="text-sm md:text-base border-b border-black w-max">
+                  download
+                </p>
               </div>
             )}
           </div>
@@ -421,7 +425,7 @@ const Home = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className="w-full transform md:overflow-hidden p-6 text-center align-middle transition-all"
+                  className="w-full transform md:overflow-hidden p-6 text-center align-middle transition-all text-sm md:text-lg md:font-medium leading-6 text-gray-900"
                   onClick={closeIntro}
                 >
                   <img
@@ -429,17 +433,11 @@ const Home = () => {
                     src={Cloud}
                     alt="cloud"
                   />
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
-                    歡迎來到一隻羊兩隻羊！
-                  </p>
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
-                    這裡除了有解夢卡專區之外
-                  </p>
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
-                    還有更多值得你探索的地方～
-                  </p>
+                  <p className=" p-1">歡迎來到一隻羊兩隻羊！</p>
+                  <p className=" p-1">這裡除了有解夢卡專區之外</p>
+                  <p className=" p-1">還有更多值得你探索的地方～</p>
 
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 mt-6">
+                  <p className="mt-2 md:mt-6">
                     快動動手指製作屬於自己的桌布及解夢卡吧！
                   </p>
                   <img
@@ -447,16 +445,14 @@ const Home = () => {
                     src={Cloud}
                     alt="cloud"
                   />
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1 mt-24 md:mt-8">
+                  <p className=" p-1 mt-24 md:mt-8">
                     Welcome to the website of ONE SHEEP, TWO SLEEP.
                   </p>
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
-                    Aside from our DREAMCARD area,
-                  </p>
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 p-1">
+                  <p className=" p-1">Aside from our DREAMCARD area,</p>
+                  <p className=" p-1">
                     here’s more to explore. GO make yourself
                   </p>
-                  <p className="md:text-lg md:font-medium leading-6 text-gray-900 mt-6">
+                  <p className="mt-2 md:mt-6">
                     own “DREAMCARD” and “wallpaper”
                   </p>
                 </Dialog.Panel>
