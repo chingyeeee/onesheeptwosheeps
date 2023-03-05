@@ -22,7 +22,7 @@ function TypingText({ onTypingFinish }) {
   }, []);
 
   return (
-    <div className="w-[70%] mx-auto mt-6 md:leading-8 text-sm md:text-lg">
+    <div className="w-[70%] h-[220px] md:h-[170px] mx-auto mt-6 md:leading-8 text-sm md:text-lg">
       {text.split("").map((char, index) => {
         if (char === "\n") {
           return <br key={index} />;
@@ -52,7 +52,7 @@ const Rules = ({ nextStep }) => {
       className="h-full flex justify-center items-center animate-zoomIn"
       onClick={() => setIsTypingFinish(true)}
     >
-      <div className="w-[90%] md:w-[70%] h-[70vh] bg-yellow rounded-[150px] md:rounded-full py-24 md:py-36 md:p-12 text-center min-h-[50%]">
+      <div className="w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-24 md:py-24 md:p-12 text-center min-h-[50%]">
         <RulesLogo className="w-[40%] m-auto" />
         <TypingText onTypingFinish={handleTypingFinish} />
 
