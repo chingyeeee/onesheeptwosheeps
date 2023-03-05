@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function TypingText({ onTypingFinish }) {
   const [text, setText] = useState("");
   const content =
-    "請試著回想一個讓你印象深刻的夢，可以是任何的情境；\n 不管傷心難過、開心快樂甚至是難以啟齒的夢，都請回答接下來的問題！\n Please try to recall a dream that impressed you, it can be any situation; \n Regardless of whether you are sad, happy or even unspeakable dreams, \n please answer the following questions!";
+    "請試著回想一個讓你印象深刻的夢，可以是任何的情境\n 不管傷心難過、開心快樂甚至是難以啟齒的夢，都請回答接下來的問題！\n Please try to recall a dream that impressed you, it can be any situation, \n Regardless of whether you are sad, happy or even unspeakable dreams, \n please answer the following questions!";
   const speed = 50;
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function TypingText({ onTypingFinish }) {
   }, []);
 
   return (
-    <div className="w-[90%] md:max-w-[70%] mx-auto mt-6 leading-8 text-sm md:text-lg">
+    <div className="w-[70%] mx-auto mt-6 md:leading-8 text-sm md:text-lg">
       {text.split("").map((char, index) => {
         if (char === "\n") {
           return <br key={index} />;
@@ -52,7 +52,7 @@ const Rules = ({ nextStep }) => {
       className="h-full flex justify-center items-center animate-zoomIn"
       onClick={() => setIsTypingFinish(true)}
     >
-      <div className="w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-36 md:p-12 text-center min-h-[50%]">
+      <div className="w-[90%] md:w-[70%] h-[70vh] bg-yellow rounded-[150px] md:rounded-full py-24 md:py-36 md:p-12 text-center min-h-[50%]">
         <RulesLogo className="w-[40%] m-auto" />
         <TypingText onTypingFinish={handleTypingFinish} />
 
