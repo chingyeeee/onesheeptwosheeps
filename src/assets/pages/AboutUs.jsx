@@ -36,7 +36,7 @@ const AboutUs = () => {
             CHARACTERISTICS OF THE FOUR OF US IN THE LAST YEAR OF UNIVERSITY.
             TOPIC.
           </p>
-          <div className="bg-yellow max-w-[90%] md:max-w-[50%] m-auto absolute inset-0 md:text-xl font-medium h-min md:tracking-[0.5rem] -translate-y-8">
+          <div className="bg-yellow max-w-[75%] md:max-w-[50%] m-auto absolute inset-0 text-sm md:text-xl font-medium h-min md:tracking-[0.5rem] -translate-y-8">
             <p className="text-justify mb-6">
               一隻羊，兩隻羊由四位風向星座的成員組成，多重人格的雙子及古靈精怪的水瓶，時常蹦出一些天馬行空的想法，愛好自由、出遊和睡覺。
             </p>
@@ -52,18 +52,18 @@ const AboutUs = () => {
           onMouseLeave={() => setIs1Expanded(false)}
         >
           <div
-            className={`absolute text-left p-4 md:p-6 bg-blue rounded-xl w-min md:w-max group-hover:block transition-500 ${
+            className={`absolute text-left p-2 md:p-6 bg-blue rounded-xl w-min md:w-max group-hover:block transition-500 ${
               is1Expanded ? "animate-expandLT" : "animate-collapseLT"
             }`}
           >
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-6 md:gap-12">
               <div className="flex gap-4">
                 <img
                   className="w-[80px] h-[100px] md:w-[140px] md:h-[180px] opacity-0"
                   src={Profile1}
                 />
-                <div className="flex flex-col gap-3 w-[70%] md:w-auto">
-                  <div className="flex flex-col gap">
+                <div className="flex flex-col gap-1 md:gap-3 w-[65%] md:w-auto">
+                  <div className="flex flex-col">
                     <p className="text-xs md:text-sm">name/</p>
                     <p className="md:text-lg">J-wei</p>
                   </div>
@@ -100,7 +100,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="p-4 md:p-6 relative z-[20]">
+          <div className="p-2 md:p-6 relative z-[20]">
             <img
               className="w-[80px] h-[100px] md:w-[140px] md:h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile1}
@@ -108,22 +108,22 @@ const AboutUs = () => {
           </div>
         </div>
         <div
-          className="fixed z-20 top-[55%] left-[8%] md:top-[55%] md:left-[22%] group"
+          className="fixed z-20 top-[52%] left-[8%] md:top-[55%] md:left-[22%] group"
           onMouseEnter={() => setIs2Expanded(true)}
           onMouseLeave={() => setIs2Expanded(false)}
         >
           <div
-            className={`absolute text-left p-4 md:p-6 bg-red rounded-xl w-min md:w-max group-hover:block transition-500 ${
+            className={`absolute text-left p-2 md:p-6 bg-red rounded-xl w-min md:w-max group-hover:block transition-500 ${
               is2Expanded ? "animate-expandLT" : "animate-collapseLT"
             }`}
           >
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-6 md:gap-12">
               <div className="flex gap-4">
                 <img
                   className="w-[80px] h-[100px] md:w-[140px] md:h-[180px] opacity-0"
                   src={Profile2}
                 />
-                <div className="flex flex-col gap-3 w-[70%] md:w-auto">
+                <div className="flex flex-col gap-1 md:gap-3 w-[65%] md:w-auto">
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">name/</p>
                     <p className="md:text-lg">王溫蒂</p>
@@ -163,7 +163,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="p-4 md:p-6 relative z-[20]">
+          <div className="p-2 md:p-6 relative z-[20]">
             <img
               className="w-[80px] h-[100px] md:w-[140px] md:h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile2}
@@ -176,13 +176,13 @@ const AboutUs = () => {
           onMouseLeave={() => setIs3Expanded(false)}
         >
           <div
-            className={`absolute text-left p-4 md:p-6 bg-lakegreen rounded-xl right-[0] w-min md:w-max group-hover:block transition-500 ${
+            className={`absolute text-left p-2 md:p-6 bg-lakegreen rounded-xl right-[0] w-min md:w-max group-hover:block transition-500 ${
               is3Expanded ? "animate-expandRT" : "animate-collapseRT"
             }`}
           >
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-6 md:gap-12">
               <div className="flex gap-4">
-                <div className="flex flex-col gap-3 w-[70%] md:w-auto">
+                <div className="flex flex-col gap-1 md:gap-3 w-[65%] md:w-auto">
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">name/</p>
                     <p className="md:text-lg">tedd chen</p>
@@ -239,13 +239,13 @@ const AboutUs = () => {
           onMouseLeave={() => setIs4Expanded(false)}
         >
           <div
-            className={`absolute text-left p-6 bg-lightpurple rounded-xl right-[0] w-min md:w-max transition-500 ${
+            className={`absolute text-left p-2 md:p-6 bg-lightpurple rounded-xl right-[0] w-min md:w-max transition-500 ${
               is4Expanded ? "animate-expandRT" : "animate-collapseRT"
             }`}
           >
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-6 md:gap-12">
               <div className="flex gap-4">
-                <div className="flex flex-col gap-3 w-[70%] md:w-auto">
+                <div className="flex flex-col gap-1 md:gap-3 w-[65%] md:w-auto">
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">name/</p>
                     <p className="md:text-lg">Chien</p>
@@ -289,7 +289,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className="p-6 relative z-[20]">
+          <div className="p-2 md:p-6 relative z-[20]">
             <img
               className="w-[80px] h-[100px] md:w-[140px] md:h-[180px] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
               src={Profile4}
@@ -297,12 +297,12 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="w-screen bg-purple sticky -top-1 flex items-center z-10 overflow-hidden">
-        <div className="inset-y-0 m-auto flex animate-marquee w-[200%]">
-          <img className="w-[100%] h-auto" src={Marquee} />
-          <img className="w-[100%] h-auto" src={Marquee} />
-          <img className="w-[100%] h-auto" src={Marquee} />
-          <img className="w-[100%] h-auto" src={Marquee} />
+      <div className="bg-purple h-[2rem] md:h-[5rem] sticky -top-3 overflow-hidden">
+        <div className="absolute inset-y-0 m-auto flex animate-marquee w-[200%]">
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
+          <img className="w-[50%] h-auto" src={Marquee} />
         </div>
       </div>
       <div className="mx-4 px-6 pt-12 pb-6 mb-6 bg-darkgreen text-center rounded-b-3xl min-h-[95vh] relative flex flex-col">
