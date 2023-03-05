@@ -55,6 +55,7 @@ import Arrow from "../images/resultCards/nav/icon-arrow.svg";
 import { Dialog, Transition } from "@headlessui/react";
 import Logo from "../images/resultCards/nav/icon-logo.svg";
 import { useNavigate } from "react-router-dom";
+import { useLongPress } from "use-long-press";
 
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
@@ -1572,6 +1573,11 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     setTimeout(() => setIsOpen(true), 2100);
   }, []);
 
+  //長按儲存
+  const onLongPressDownload = useLongPress(() => {
+    downloadImage();
+  });
+
   return (
     <div className="h-full w-screen md:flex justify-center items-center relative">
       <img
@@ -1581,7 +1587,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       <div
         className="absolute flex justify-center z-[10] py-8 animate-rotate360 bg-transparent"
         id="combinedImg"
-        onLongPress={downloadImage}
+        {...onLongPressDownload()}
       >
         <img
           className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-6 -left-4 md:-top-3 md:-left-8 rotate-6"
