@@ -1013,7 +1013,7 @@ const Question6 = ({
 
   return (
     <div
-      className={`bg-yellow flex px-4 md:px-20 flex-col overflow-hidden absolute w-full z-[15] ${
+      className={`bg-yellow flex px-4 md:px-20 flex-col md:justify-between overflow-hidden absolute w-full z-[15] ${
         questionNum <= 6
           ? "h-[100%] pt-44 md:pt-52 md:pt-64 pb-16 animate-slideDown"
           : "h-[24%] md:h-[25%]"
@@ -1413,8 +1413,9 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     BASED ON YOUR CHOICE, <br />
                     YOU HAVE A{" "}
                     <span className="font-padyakke text-red">
-                      ({getEmotion()[1]}) {getEmotion()[0]}{" "}
+                      ({getEmotion()[1]})
                     </span>
+                    <span className="text-red"> {getEmotion()[0]} </span>
                     DREAM.
                   </p>
                   <ChevronUp
@@ -1451,8 +1452,9 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     {getCharacter()[0]}） <br />
                     WITH
                     <span className="font-padyakke text-red">
-                      ({getCharacter()[1]}) {getCharacter()[0]}
-                    </span>{" "}
+                      ({getCharacter()[1]})
+                    </span>
+                    <span className="text-red">{getCharacter()[0]}</span>
                     BECOMING YOUR DREAM’S <br />
                     MAIN OBJECT.{" "}
                   </p>
@@ -1490,8 +1492,9 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     {getLifeStyle()[0]}） 的夢
                     <br /> AND YOUR DREAM IS ALL ABOUT{""}
                     <span className="font-padyakke text-red">
-                      ({getLifeStyle()[1]}) {getLifeStyle()[0]}
+                      ({getLifeStyle()[1]})
                     </span>
+                    <span className="text-red">{getLifeStyle()[0]}</span>
                   </p>
                   <ChevronUp
                     className={`${
@@ -1598,7 +1601,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           src={getImageUrl("resultCards", resultCardPath)}
         />
       </div>
-      <div className="absolute z-10 bottom-[15%] md:bottom-[10%] right-[5%] flex gap-8 items-center">
+      <div className="absolute z-10 bottom-[15%] md:bottom-[10%] right-[5%] flex gap-4 md:gap-8 items-center">
         <div
           className="h-[3.5rem] md:h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-sm md:text-base"
           onClick={downloadImage}
@@ -1629,7 +1632,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
       {/* 1st modal */}
       <Transition appear show={isShow} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-20" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -1669,7 +1672,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
       {/* 2nd modal */}
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-20" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
