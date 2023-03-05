@@ -1192,8 +1192,6 @@ const GeneratingResult = ({ setQuestionNum }) => {
 };
 
 const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
-  const [isShaking, setIsShaking] = useState(false);
-
   function getEmotion() {
     switch (quizAns[0]) {
       case "A":
@@ -1387,13 +1385,13 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
       <img
         src={Loading5}
         className={
-          "absolute right-0 top-0 w-[2rem] h-[2rem] md:w-[5rem] md:h-[5rem]"
+          "absolute -right-[0.1rem] -top-[0.1rem] w-[2rem] h-[2rem] md:w-[5.1rem] md:h-[5.2rem]"
         }
       />
       <img
         src={Loading2}
         className={
-          "absolute left-0 top-0 w-[2rem] h-[2rem] md:w-[5rem] md:h-[5rem]"
+          "absolute -left-[0.1rem] -top-[0.1rem] w-[2rem] h-[2rem] md:w-[5.1rem] md:h-[5.2rem]"
         }
       />
 
@@ -1522,7 +1520,6 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             )}
           </Disclosure>
           <div
-            ref={buttonRef}
             className={`px-8 py-2 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 hover:bg-darkgreen hover:text-white transition duration-500 animate-shake`}
             onClick={() => setQuestionNum(9)}
           >
@@ -1582,11 +1579,11 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
         src={signImgPath}
       />
       <div
-        className="absolute flex justify-center z-[10] py-8 animate-rotate360 bg-transparent"
+        className="absolute flex justify-center z-[10] py-8 bg-transparent"
         id="combinedImg"
       >
         <img
-          className="absolute scale-[0.3] z-[20] top-5 -left-2 md:top-10 md:left-40 md: -rotate-5"
+          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-8 -left-6 md:-top-3 md:-left-8 rotate-6"
           src={signImgPath}
         />
         <img

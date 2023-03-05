@@ -130,10 +130,10 @@ module.exports = {
         },
         rotate360: {
           "0%": {
-            transform: "scaleX(0)",
+            transform: "rotateY(0deg)",
           },
           "100% ": {
-            transform: "scaleX(-1)",
+            transform: "rotateY(180deg)",
           },
         },
       },
