@@ -270,7 +270,7 @@ const Home = () => {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-[110%] md:w-[50%] min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute top-[60%] md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4">
+                    <Dialog.Panel className="w-[110%] md:w-[50%] min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 md:bottom-auto md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4">
                       <Tab.Group>
                         <Tab.List className="flex py-2 md:py-4 border-b-2 md:border-b-4 border-black space-x-0.5">
                           {Object.keys(TabData).map((tab) => (
