@@ -1558,28 +1558,41 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
     html2canvas(element, { backgroundColor: null }).then((canvas) => {
       const imgSrc = canvas.toDataURL();
-      const link = document.createElement("a");
-      link.download = `sheep_${String(cardNo).padStart(3, "0")}.png`;
-      link.href = imgSrc;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+
+      // 使用 FileTransfer 插件下載圖片
+      const fileTransfer = new FileTransfer();
+      const fileName = `sheep_${String(cardNo).padStart(3, "0")}.png`;
+      const fileUrl =
+        cordova.file.externalRootDirectory + "DCIM/Camera/" + fileName;
+      const uri = encodeURI(imgSrc);
+      fileTransfer.download(
+        uri,
+        fileUrl,
+        (entry) => {
+          console.log("Download success: " + entry.toURL());
+        },
+        (error) => {
+          console.log("Download error: " + error);
+        },
+        false
+      );
+
       setCardNo(cardNo + 1);
     });
 
     element.classList.add("animate-rotate360");
   };
 
+  //長按儲存
+  const onLongPressDownload = useLongPress(() => {
+    downloadImage();
+  });
+
   useEffect(() => {
     getResultCard();
     setTimeout(() => setIsShow(false), 2000);
     setTimeout(() => setIsOpen(true), 2100);
   }, []);
-
-  //長按儲存
-  const onLongPressDownload = useLongPress(() => {
-    downloadImage();
-  });
 
   return (
     <div className="h-full w-screen md:flex justify-center items-center relative">
