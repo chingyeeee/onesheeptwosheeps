@@ -127,9 +127,11 @@ module.exports = {
         rotate360: {
           "0%": {
             transform: "rotateY(0deg)",
+            zIndex: "1",
           },
           "100% ": {
             transform: "rotateY(180deg)",
+            zIndex: "1",
           },
         },
         fadeIn: {
