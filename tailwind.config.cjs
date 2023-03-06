@@ -37,6 +37,13 @@ module.exports = {
               "0 0 5px rgba(0, 115, 247, 0.9),0 0 18px rgba(0, 115, 247, 0.9)",
           },
         },
+        lightening2: {
+          "0%": { boxShadow: "0 0 12px rgba(0, 73, 67, 0.2)" },
+          "100%": {
+            boxShadow:
+              "0 0 5px rgba(0, 73, 67, 0.5),0 0 18px rgba(0, 73, 67, 0.5)",
+          },
+        },
         zoomIn: {
           "0%": { opacity: "0%", scale: "3" },
           "100%": { opacity: "100%", scale: "1" },
@@ -52,17 +59,6 @@ module.exports = {
         fadeSlideIn: {
           "0%": { height: "0%", opacity: 0 },
           "100%": { height: "100%", opacity: 1 },
-        },
-        shake: {
-          "0%": {
-            transform: "translateX(5px)",
-          },
-          "50%": {
-            transform: "translateX(-5px)",
-          },
-          "100%": {
-            transform: "translateX(0)",
-          },
         },
         marquee: {
           "0%": {
@@ -146,10 +142,10 @@ module.exports = {
         loaded: "loaded 3s linear alternate",
         "remind-lightening": "lightening 2s 6s linear infinite alternate",
         lightening: "lightening 0.5s linear infinite alternate",
+        lightening2: "lightening2 0.6s 20s linear infinite alternate",
         zoomIn: "zoomIn 1s linear",
         slideDown: "slideDown 0.3s linear",
         slideUp: "slideUp 0.3s linear",
-        shake: "shake 0.15s 20s linear infinite",
         marquee: "marquee 10s linear infinite",
         marqueeV: "marqueeV 10s linear infinite",
         expandLT: "expandFromLeftTop .2s ease-in-out",
