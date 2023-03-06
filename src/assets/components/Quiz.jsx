@@ -1632,7 +1632,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
       {/* 1st modal */}
       <Transition appear show={isShow} as={Fragment}>
-        <Dialog as="div" className="relative z-20" onClose={closeModal}>
+        <Dialog as="div" className="relative z-[30]" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -1672,7 +1672,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
       {/* 2nd modal */}
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-20" onClose={closeModal}>
+        <Dialog as="div" className="relative z-[30]" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
