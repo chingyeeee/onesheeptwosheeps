@@ -1588,7 +1588,9 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
         src={signImgPath}
       />
       <div
-        className="absolute flex justify-center py-8 animate-rotate360 bg-transparent"
+        className={`absolute flex justify-center py-8 ${
+          !isShow && !isOpen && "animate-rotate360"
+        } bg-transparent`}
         id="combinedImg"
         {...onLongPressDownload()}
       >
