@@ -101,7 +101,7 @@ const MyImage = ({
           />
           <Group ref={deleteButtonRef}>
             <Circle
-              x={shapeProps.x + shapeProps.width}
+              x={shapeProps.x}
               y={shapeProps.y}
               radius={15}
               fill="black"
@@ -115,7 +115,7 @@ const MyImage = ({
               fontStyle="bold"
               width={150}
               height={150}
-              x={shapeProps.x + shapeProps.width - 5}
+              x={shapeProps.x - 5}
               y={shapeProps.y - 6}
             />
           </Group>
