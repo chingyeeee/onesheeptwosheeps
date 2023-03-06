@@ -1426,7 +1426,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 py-8 text-sm md:text-md text-red relative flex items-end z-[10]">
                   <img
-                    className={`max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[2.5rem] md:translate-y-0 left-0 right-0`}
+                    className={`max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[3rem] md:translate-y-0 left-0 right-0`}
                     src={getImageUrl("quiz/showResult", `${quizAns[0]}.svg`)}
                   />
 
@@ -1466,7 +1466,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 </Disclosure.Button>
                 <Disclosure.Panel className="px-4 py-8 text-sm md:text-md text-red relative flex items-end z-[10] w-full">
                   <img
-                    className="max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[2.5rem] md:translate-y-0 left-0 right-0"
+                    className="max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[3rem] md:translate-y-0 left-0 right-0"
                     src={getImageUrl("quiz/showResult", `${quizAns[1]}.svg`)}
                   />
                   <p className="underline-offset-1 decoration-red decoration-solid underline">
@@ -1508,7 +1508,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   }`}
                 >
                   <img
-                    className="max-w-[100%] max-w-[50%] mx-auto absolute z-[-1] -translate-y-[2.5rem] md:translate-y-0 left-0 right-0"
+                    className="max-w-[100%] md:max-w-[50%] mx-auto absolute z-[-1] -translate-y-[3rem] md:translate-y-0 left-0 right-0"
                     src={getImageUrl("quiz/showResult", `${quizAns[2]}.svg`)}
                   />
 
@@ -1524,7 +1524,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             )}
           </Disclosure>
           <div
-            className={`px-8 py-2 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 hover:bg-darkgreen hover:text-white transition duration-500 animate-shake`}
+            className={`px-8 py-2 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-darkgreen border-2 border-darkgreen rounded-full w-max mx-auto mt-12 mb-12 hover:bg-darkgreen hover:text-white transition animate-lightening2`}
             onClick={() => setQuestionNum(9)}
           >
             生成解夢卡
