@@ -17,12 +17,6 @@ const MyImage = ({
   const imagePath = getImageUrl(shapeProps.folder, shapeProps.image);
   const [imageItem] = useImage(imagePath);
 
-  const styles = {
-    cursor: isSelected
-      ? "url(/src/assets/images/cursor-move.png), move"
-      : "default",
-  };
-
   useEffect(() => {
     if (isSelected) {
       // we need to attach transformer manually
@@ -32,20 +26,7 @@ const MyImage = ({
   }, [isSelected]);
 
   return (
-    <Group
-      onDragStart={() => {
-        document.body.style.cursor =
-          "url(/src/assets/images/cursor-move.png), move";
-      }}
-      onDragEnd={() => {
-        document.body.style.cursor =
-          "url(/src/assets/images/cursor-default.png), default";
-      }}
-      onClick={() => {
-        document.body.style.cursor =
-          "url(/src/assets/images/cursor-move.png), move";
-      }}
-    >
+    <Group>
       <Image
         onClick={onSelect}
         onTap={onSelect}
@@ -56,13 +37,19 @@ const MyImage = ({
         height={shapeProps.height}
         draggable
         image={imageItem}
-        onDragStart={(e) => e.target.moveToTop()}
+        onDragStart={(e) => {
+          e.target.moveToTop();
+          document.body.style.cursor =
+            "url(/src/assets/images/cursor-move.png),move";
+        }}
         onDragEnd={(e) => {
           onChange({
             ...shapeProps,
             x: e.target.x(),
             y: e.target.y(),
           });
+          document.body.style.cursor =
+            "url(/src/assets/images/cursor-default.png),default";
         }}
         onTransformEnd={(e) => {
           // transformer is changing scale of the node
@@ -84,6 +71,8 @@ const MyImage = ({
             width: Math.max(5, node.width() * scaleX),
             height: Math.max(node.height() * scaleY),
           });
+          document.body.style.cursor =
+            "url(/src/assets/images/cursor-default.png),default";
         }}
       />
       {isSelected && (
