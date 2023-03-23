@@ -350,11 +350,11 @@ const Home = () => {
                                         ...cardItems,
                                         {
                                           image: logo,
-                                          x: 10,
-                                          y: 10,
+                                          x: posX,
+                                          y: posY,
                                           width: e.target.width,
                                           height: e.target.height,
-                                          id: cardItems.length + 1,
+                                          id: uuidv4(),
                                           folder: "cardLogos",
                                         },
                                       ])
