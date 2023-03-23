@@ -230,7 +230,7 @@ const Home = () => {
             emotionEnabled={emotionEnabled}
           />
 
-          <div className="absolute z-[30] w-[10%] bottom-0 left-8 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
+          <div className="absolute z-[30] w-[10%] bottom-[20%] left-10 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
             <div
               className={`flex flex-col opacity-0 items-center ${
                 addItemsEnabled &&
@@ -270,7 +270,7 @@ const Home = () => {
                 <div className="fixed inset-0 bg-white bg-opacity-50" />
               </Transition.Child>
 
-              <div className="fixed inset-0 overflow-x-hidden overflow-y-auto">
+              <div className="fixed inset-0 overflow-hidden">
                 <div className="min-h-full">
                   <Transition.Child
                     as={Fragment}
@@ -281,7 +281,7 @@ const Home = () => {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-[110%] md:w-[50%] min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 md:bottom-auto md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4">
+                    <Dialog.Panel className="w-[110%] md:w-[50%] max-h-[50vh] md:min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 md:bottom-auto md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4">
                       <Tab.Group>
                         <Tab.List className="flex py-2 md:py-4 border-b-2 md:border-b-4 border-black space-x-0.5">
                           {Object.keys(TabData).map((tab) => (
@@ -305,7 +305,7 @@ const Home = () => {
                             </Tab>
                           ))}
                         </Tab.List>
-                        <Tab.Panels className="p-6 max-h-[65vh] overflow-y-auto">
+                        <Tab.Panels className="p-6 max-h-[40vh] md:max-h-[65vh] overflow-y-auto">
                           <Tab.Panel>
                             <div className="mt-6 columns-3 md:columns-4">
                               {TabData["STiCKERS"].map((sticker, idx) => {
