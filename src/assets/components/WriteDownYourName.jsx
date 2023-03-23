@@ -212,7 +212,8 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
           />
         </div>
       </div>
-      <div className="flex md:hidden flex-wrap mt-12 gap-8 justify-center">
+
+      <div className="w-[85%] m-auto flex md:hidden flex-wrap mt-12 gap-8 justify-around">
         <div
           className={`${
             color === "#004943" && "border-4 p-2 border-black border-solid"
@@ -276,14 +277,14 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
     <div className="w-full h-full flex flex-col relative justify-center items-center overflow-hidden">
-      <div className="">
+      <div>
         <img
           className="max-w-[90%] mx-auto hidden md:block"
           src={Title}
           alt="Write Down Your Name"
         />
         <img
-          className="max-w-[70%] mt-6 mx-auto md:hidden"
+          className="max-w-[90%] mx-auto mb-12 md:hidden"
           src={TitleM}
           alt="Write Down Your Name"
         />
