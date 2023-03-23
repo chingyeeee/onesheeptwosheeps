@@ -80,7 +80,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
         <>
           <div className="md:flex gap-6 md:max-w-1/2 items-end">
             <Title1 className="w-[25%] md:w-[10%]" />
-            <div className="text-sm mt-4 md:mt-0 md:text-xl font-light">
+            <div className="text-sm mt-4 md:mt-0 md:text-xl font-medium">
               <p>請試著回憶你的夢境，當下的情緒是？</p>
               <p className="font-medium mt-2">
                 TRY TO RECALL YOUR DREAM, <br />
@@ -335,7 +335,7 @@ const Question2 = ({
         <>
           <div className="md:flex gap-6 max-w-1/2 items-start">
             <Title2 className="w-[20%] md:w-[10%]" />
-            <div className="text-sm mt-6 md:mt-0 md:text-xl font-light">
+            <div className="text-sm mt-6 md:mt-0 md:text-xl font-medium">
               <p>是否曾經發生在現實生活中，這個夢是你的真實回憶嗎？</p>
               <p className="font-medium mt-2">
                 HAS IT EVER HAPPENED IN THE REAL LIFE? <br />
@@ -427,8 +427,8 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 3 && (
         <>
           <div className="flex flex-col-reverse md:flex-row gap-6 items-end md:items-center justify-between">
-            <div className="text-sm md:text-xl font-light">
-              <p>
+            <div className="text-sm md:text-xl">
+              <p className="font-medium">
                 該夢境中的主角是？
                 <br /> 可以是自己、物品或動物。
               </p>
@@ -583,7 +583,7 @@ const Question4 = ({
         <>
           <div className="flex flex-col gap-6 items-center justify-center text-center">
             <Title4 className="w-[40%] md:w-[12%]" />
-            <div className="text-sm md:text-xl font-light">
+            <div className="text-sm md:text-xl font-medium">
               <p>承上題，請選擇以下項目</p>
               <p className="font-medium mt-2">
                 FOLLOWING THE PREVIOUS QUESTION, WHAT SPECIFIC IT IS?
@@ -705,7 +705,7 @@ const Question4 = ({
                       }`}
                     />
                     <p
-                      className={`group-hover:text-purple text-sm md:text-base ${
+                      className={`group-hover:text-purple text-[8px] md:text-base ${
                         otherAns[1] === "significant other" && "text-purple"
                       }`}
                     >
@@ -903,7 +903,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 5 && (
         <>
           <div className="flex flex-col justify-between h-full">
-            <div className="text-sm md:text-xl font-light">
+            <div className="text-sm md:text-xl font-medium">
               <p>該夢境的主要走向是?</p>
               <p className="font-medium mt-2">
                 HOW DOES THE DREAM’S PLOT DEVELOPES?
@@ -1031,7 +1031,7 @@ const Question6 = ({
       {questionNum === 6 && (
         <>
           <div className="flex flex-col-reverse md:flex-row gap-2 md:gap-6 items-start justify-between">
-            <div className="text-sm md:text-xl font-light">
+            <div className="text-sm md:text-xl font-medium">
               <p>
                 該夢境發生在什麼樣的場景?是認得的空間嗎？開放或是密閉的？（四選二）
               </p>
