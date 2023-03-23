@@ -1,21 +1,9 @@
 import { ReactComponent as RulesLogo } from "../images/rules/rules.svg";
 import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
-import { useState } from "react";
 
 const Rules = ({ nextStep }) => {
-  const [isTypingFinished, setIsTypingFinished] = useState(false);
-
-  const handleScreenClick = () => {
-    if (!isTypingFinished) {
-      setIsTypingFinished(true);
-    }
-  };
-
   return (
-    <div
-      className="h-full flex justify-center items-center animate-zoomIn"
-      onClick={handleScreenClick}
-    >
+    <div className="h-full flex justify-center items-center animate-zoomIn">
       <div className="w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-24 md:py-24 md:p-12 text-center min-h-[50%]">
         <RulesLogo className="w-[40%] m-auto" />
         <div className="w-[70%] h-[220px] md:h-[170px] mx-auto mt-6 md:leading-8 text-sm md:text-lg">
@@ -34,9 +22,7 @@ const Rules = ({ nextStep }) => {
         </div>
 
         <div
-          className={`bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening ${
-            isTypingFinished ? "opacity-1" : "opacity-0"
-          }`}
+          className={`bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-remind-lightening transition hover:animate-lightening opacity-1`}
           onClick={nextStep}
         >
           <Finger className="w-[42px] h-[20px] md:w-[56px] md:h-[25px] fill-yellow" />
