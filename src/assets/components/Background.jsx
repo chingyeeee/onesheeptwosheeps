@@ -100,7 +100,7 @@ const Background = ({
         </div>
       )}
       {logoEnabled && (
-        <div className="absolute z-[10] right-2 top-64 w-[35%] md:w-[45%] md:right-2 md:top-16">
+        <div className="absolute z-[10] right-2 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16">
           <Logo color={color} />
         </div>
       )}
