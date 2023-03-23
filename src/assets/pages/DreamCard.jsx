@@ -13,7 +13,7 @@ const DreamCard = () => {
   }
 
   return (
-    <div className="h-[80vh] md:h-screen w-screen">
+    <div className="h-screen w-screen">
       <Transition
         show={step === 1}
         enter="transition-opacity duration-300"
@@ -22,7 +22,7 @@ const DreamCard = () => {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className={"h-[80vh] md:h-screen"}
+        className={"h-screen"}
       >
         <Rules nextStep={nextStep} step={step} />
       </Transition>
@@ -34,7 +34,7 @@ const DreamCard = () => {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className={"h-[80vh] md:h-screen"}
+        className={"h-screen"}
       >
         <WriteDownYourName
           nextStep={nextStep}
@@ -50,7 +50,7 @@ const DreamCard = () => {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className={"h-[85vh] md:h-screen"}
+        className={"h-screen"}
       >
         <Quiz signImgPath={signImgPath} />
       </Transition>
