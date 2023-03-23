@@ -30,14 +30,15 @@ const Home = () => {
   const [cardItems, setCardItems] = useState([]);
   //stage Ref
   const stageRef = useRef();
+  const pngRef = useRef();
 
   useEffect(() => {
     if (window.screen.width > 1024) {
       setPosX(window.screen.width / 2 + 200);
       setPosY(300);
     } else {
-      setPosX(window.screen.width / 2);
-      setPosY(20);
+      setPosX(50);
+      setPosY(270);
     }
   }, []);
 
@@ -201,7 +202,7 @@ const Home = () => {
 
   //download stage as image
   const handleExport = () => {
-    const element = stageRef.current;
+    const element = pngRef.current;
 
     html2canvas(element).then((canvas) => {
       const imgSrc = canvas.toDataURL();
@@ -216,7 +217,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={`h-screen p-6 overflow-hidden relative`}>
+      <div className={`h-screen p-6 overflow-hidden relative`} ref={pngRef}>
         <>
           <Background
             color={color}
