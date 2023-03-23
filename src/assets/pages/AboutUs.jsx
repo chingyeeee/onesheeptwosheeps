@@ -1,4 +1,4 @@
-import Marquee from "../images/aboutus/marquee.svg";
+import Marquee from "../images/aboutus/marquee.png";
 import { ReactComponent as BackFinger } from "../images/aboutus/icon-back.svg";
 import Profile1 from "../images/aboutus/profile-1.jpg";
 import Profile2 from "../images/aboutus/profile-2.jpg";
@@ -16,7 +16,7 @@ const AboutUs = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <div className="mx-4 mt-4 p-6 bg-lightgreen text-center rounded-t-3xl min-h-[95vh] md:min-h-[90vh] relative">
+      <div className="mx-4 mt-4 p-6 bg-lightgreen text-center rounded-t-3xl min-h-[94.3vh] md:min-h-[89vh] relative">
         <BackFinger
           className="absolute w-[10%] md:w-[5%] top-8 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-finger-shake"
           onClick={() => navigate("/")}
@@ -297,12 +297,12 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="bg-purple h-[2rem] md:h-[5rem] sticky -top-3 overflow-hidden">
-        <div className="absolute inset-y-0 m-auto flex animate-marquee w-[200%]">
-          <img className="w-[50%] h-auto" src={Marquee} />
-          <img className="w-[50%] h-auto" src={Marquee} />
-          <img className="w-[50%] h-auto" src={Marquee} />
-          <img className="w-[50%] h-auto" src={Marquee} />
+      <div className="bg-purple h-[2rem] md:h-[5rem] sticky bottom-0 overflow-hidden">
+        <div className="absolute inset-y-0 h-min m-auto flex animate-marquee w-[200%]">
+          <img className="w-[50%] md:w-[25%] h-auto" src={Marquee} />
+          <img className="w-[50%] md:w-[25%] h-auto" src={Marquee} />
+          <img className="w-[50%] md:w-[25%] h-auto" src={Marquee} />
+          <img className="w-[50%] md:w-[25%] h-auto" src={Marquee} />
         </div>
       </div>
       <div className="mx-4 px-6 pt-12 pb-6 mb-6 bg-darkgreen text-center rounded-b-3xl min-h-[95vh] relative flex flex-col">
