@@ -105,6 +105,8 @@ const Background = ({
         </div>
       )}
 
+      {emotionEnabled && <Emotion />}
+
       <div className="relative z-[20] -top-6 -left-6">
         <Stage
           width={windowWidth}
@@ -113,9 +115,6 @@ const Background = ({
           onTouchStart={checkDeselect}
         >
           <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
-            {emotionEnabled && (
-              <Emotion width={windowWidth} height={windowHeight} />
-            )}
             {cardItems.map((item, index) => {
               return (
                 <MyImage

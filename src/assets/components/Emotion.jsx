@@ -1,12 +1,15 @@
-import useImage from "use-image";
-import { Image } from "react-konva";
 import { getImageUrl } from "../utils/getImageUrl";
 
-const Emotion = ({ width, height }) => {
+const Emotion = () => {
   const EmotionImg = getImageUrl("emotions", "emotion-bg.png");
-  const [image] = useImage(EmotionImg);
+  const EmotionImgM = getImageUrl("emotions", "emotion-bg-m.png");
 
-  return <Image image={image} width={width} height={height} y={20} x={20} />;
+  return (
+    <div className="absolute z-[-1] inset-0">
+      <img className="hidden md:block" src={EmotionImg} alt="logo" />
+      <img className="md:hidden block" src={EmotionImgM} alt="logo" />
+    </div>
+  );
 };
 
 export default Emotion;
