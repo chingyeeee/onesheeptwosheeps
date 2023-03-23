@@ -16,12 +16,12 @@ const AboutUs = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <div className="mx-4 mt-4 p-6 bg-lightgreen text-center rounded-t-3xl min-h-[94.3vh] md:min-h-[89vh] relative">
+      <div className="mx-4 mt-4 p-6 bg-lightgreen text-center rounded-t-3xl min-h-[94.3vh] md:min-h-[91vh] relative">
         <BackFinger
           className="absolute w-[10%] md:w-[5%] top-8 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] animate-finger-shake"
           onClick={() => navigate("/")}
         />
-        <h3 className="border-black border-b md:border-b-4 bg-red font-normal text-2xl md:text-6xl inline-block mx-auto">
+        <h3 className="border-black border-b-2 md:border-b-4 bg-red font-normal text-2xl md:text-6xl inline-block mx-auto">
           ABOUT US
         </h3>
         <div className="relative">
@@ -47,7 +47,9 @@ const AboutUs = () => {
         </div>
 
         <div
-          className="fixed z-[21] top-[20%] md:top-[18%] left-0 md:left-[10%] group"
+          className={`fixed top-[28%] md:top-[18%] left-[10%] md:left-[10%] group ${
+            is1Expanded ? "z-[30]" : "z-[21]"
+          }`}
           onMouseEnter={() => setIs1Expanded(true)}
           onMouseLeave={() => setIs1Expanded(false)}
         >
@@ -86,7 +88,7 @@ const AboutUs = () => {
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
                     <a
-                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] underline decoration-yellow decoration-solid underline-offset-4"
                       href="https://www.instagram.com/j_wei_wei/"
                       target="_blank"
                     >
@@ -108,13 +110,15 @@ const AboutUs = () => {
           </div>
         </div>
         <div
-          className="fixed z-20 top-[52%] left-[8%] md:top-[50%] md:left-[22%] group"
+          className={`fixed top-[54%] left-[20%] md:top-[50%] md:left-[22%] group ${
+            is2Expanded ? "z-[30]" : "z-20"
+          }`}
           onMouseEnter={() => setIs2Expanded(true)}
           onMouseLeave={() => setIs2Expanded(false)}
         >
           <div
             className={`absolute text-left p-2 md:p-6 bg-red rounded-xl w-min md:w-max group-hover:block transition-500 ${
-              is2Expanded ? "animate-expandLT" : "animate-collapseLT"
+              is2Expanded ? "animate-expandLT " : "animate-collapseLT"
             }`}
           >
             <div className="flex flex-col gap-6 md:gap-12">
@@ -147,7 +151,7 @@ const AboutUs = () => {
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
                     <a
-                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] underline decoration-blue decoration-solid underline-offset-4"
                       href="https://www.instagram.com/uxwn.n/"
                       target="_blank"
                     >
@@ -171,7 +175,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div
-          className="fixed z-[21] right-[5%] top-[5%] md:right-[13%] group"
+          className="fixed z-[21] right-[15%] top-[15%] md:top-[5%] md:right-[13%] group"
           onMouseEnter={() => setIs3Expanded(true)}
           onMouseLeave={() => setIs3Expanded(false)}
         >
@@ -206,7 +210,7 @@ const AboutUs = () => {
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
                     <a
-                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] underline decoration-lightpurple decoration-solid underline-offset-4"
                       href="https://www.instagram.com/t1ddey/"
                       target="_blank"
                     >
@@ -269,7 +273,7 @@ const AboutUs = () => {
                   <div className="flex flex-col gap">
                     <p className="text-xs md:text-sm">website/</p>
                     <a
-                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                      className="text-sm md:text-base break-words cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] underline decoration-purple decoration-solid underline-offset-4"
                       href="https://www.instagram.com/o6.ycww_11/"
                       target="_blank"
                     >
@@ -316,7 +320,7 @@ const AboutUs = () => {
             THAT PEOPLE CAN FACE THE DIFFICULTIES IN LIFE WITH THE POSITIVE
             ENERGY OBTAINED THROUGH DREAM INTERPRETATION.
           </p>
-          <div className="bg-lakegreen text-red max-w-[90%] md:max-w-[50%] m-auto absolute inset-0 md:text-xl font-medium h-min md:tracking-[0.5rem] -translate-y-24">
+          <div className="bg-lakegreen text-red max-w-[75%] md:max-w-[50%] m-auto absolute inset-0 text-sm md:text-xl font-medium h-min md:tracking-[0.5rem] -translate-y-24">
             <p className="text-justify mb-6">
               每一天我們都會踏進夢的維度，一個可以展現最真實的自我、釋放埋藏深處的慾望的無限空間；不管是開心或是傷心害怕的夢，在醒來之後都會隨時間淡忘。
             </p>
