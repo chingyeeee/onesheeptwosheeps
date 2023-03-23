@@ -231,7 +231,7 @@ const Home = () => {
             emotionEnabled={emotionEnabled}
           />
 
-          <div className="absolute z-[30] w-[10%] bottom-[20%] left-10 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
+          <div className="absolute z-[30] w-[10%] bottom-[15%] left-10 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
             <div
               className={`flex flex-col opacity-0 items-center ${
                 addItemsEnabled &&
@@ -239,8 +239,8 @@ const Home = () => {
               }`}
               onClick={openMenu}
             >
-              <Menu className="w-[70%] md:w-auto" />
-              <p className="text-sm md:text-base border-b border-black w-max">
+              <Menu className="w-[100%] md:w-auto" />
+              <p className="text-[8px] md:text-base underline underline-black w-max">
                 add items
               </p>
             </div>
@@ -250,8 +250,8 @@ const Home = () => {
                 className="flex flex-col items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
                 onClick={handleExport}
               >
-                <Download className="w-[70%] md:w-auto" />
-                <p className="text-sm md:text-base border-b border-black w-max">
+                <Download className="w-[100%] md:w-auto" />
+                <p className="text-[8px] md:text-base underline underline-black w-max">
                   download
                 </p>
               </div>
