@@ -21,12 +21,24 @@ const Home = () => {
   const [emotionEnabled, setEmotionEnabled] = useState(false);
   const [addItemsEnabled, setAddItemsEnabled] = useState(true);
   const [downloadEnabled, setDownloadEnabled] = useState(true);
+  const [posX, setPosX] = useState(null);
+  const [posY, setPosY] = useState(null);
   //color
   const [color, setColor] = useState("color-default.svg");
   //cardItems
   const [cardItems, setCardItems] = useState([]);
   //stage Ref
   const stageRef = useRef();
+
+  useEffect(() => {
+    if (window.screen.width > 1024) {
+      setPosX(window.screen.width / 2 + 200);
+      setPosY(100);
+    } else {
+      setPosX(window.screen.width / 2);
+      setPosY(20);
+    }
+  }, []);
 
   //關閉introduction
   function closeIntro() {
@@ -308,8 +320,8 @@ const Home = () => {
                                         ...cardItems,
                                         {
                                           image: sticker,
-                                          x: 10,
-                                          y: 10,
+                                          x: posX,
+                                          y: posY,
                                           width: e.target.width,
                                           height: e.target.height,
                                           id: cardItems.length + 1,
