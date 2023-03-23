@@ -275,18 +275,20 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
-    <div className="h-[80vh] md:h-screen w-screen flex flex-col relative justify-center items-center overflow-hidden">
-      <img
-        className="max-w-[90%] mx-auto hidden md:block"
-        src={Title}
-        alt="Write Down Your Name"
-      />
-      <img
-        className="max-w-[70%] mt-6 mx-auto md:hidden"
-        src={TitleM}
-        alt="Write Down Your Name"
-      />
-      <SignatureCanvas nextStep={nextStep} setSignImgPath={setSignImgPath} />
+    <div className="w-full h-full flex flex-col relative justify-center items-center overflow-hidden">
+      <div className="">
+        <img
+          className="max-w-[90%] mx-auto hidden md:block"
+          src={Title}
+          alt="Write Down Your Name"
+        />
+        <img
+          className="max-w-[70%] mt-6 mx-auto md:hidden"
+          src={TitleM}
+          alt="Write Down Your Name"
+        />
+        <SignatureCanvas nextStep={nextStep} setSignImgPath={setSignImgPath} />
+      </div>
     </div>
   );
 };
