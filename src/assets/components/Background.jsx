@@ -79,10 +79,11 @@ const Background = ({
   function handleDeleteSelectedCardItem() {
     setCardItems(cardItems.filter((item) => item.id !== selectedId));
   }
+
   return (
     <div
       ref={stageRef}
-      className={`relative m-6 before:block before:absolute before:-inset-1 before:z-[-1] ${
+      className={`relative before:block before:absolute before:-inset-1 before:z-[-1] ${
         color === "color4.svg" &&
         "before:bg-purple before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
       } ${
@@ -104,7 +105,7 @@ const Background = ({
         </div>
       )}
 
-      <div className="relative z-[20]">
+      <div className="relative z-[20] -top-6 -left-6">
         <Stage
           width={windowWidth}
           height={windowHeight}

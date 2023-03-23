@@ -7,6 +7,7 @@ import { getImageUrl } from "../utils/getImageUrl";
 import html2canvas from "html2canvas";
 import Cloud from "../images/icons/icon-cloud.svg";
 import ToggleText from "../components/ToggleText";
+import { v4 as uuidv4 } from "uuid";
 
 const Background = lazy(() => import("../components/Background"));
 
@@ -33,7 +34,7 @@ const Home = () => {
   useEffect(() => {
     if (window.screen.width > 1024) {
       setPosX(window.screen.width / 2 + 200);
-      setPosY(100);
+      setPosY(300);
     } else {
       setPosX(window.screen.width / 2);
       setPosY(20);
@@ -215,9 +216,7 @@ const Home = () => {
 
   return (
     <>
-      <div
-        className={`h-[80vh] md:h-screen flex overflow-hidden flex-col justify-between relative`}
-      >
+      <div className={`h-screen p-6 overflow-hidden relative`}>
         <>
           <Background
             color={color}
@@ -324,7 +323,7 @@ const Home = () => {
                                           y: posY,
                                           width: e.target.width,
                                           height: e.target.height,
-                                          id: cardItems.length + 1,
+                                          id: uuidv4(),
                                           folder: "stickers",
                                         },
                                       ]);
