@@ -436,11 +436,11 @@ const Home = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className="w-full transform md:overflow-hidden p-6 text-center align-middle transition-all text-sm md:text-lg md:font-medium leading-6 text-gray-900"
+                  className="w-full transform md:overflow-hidden p-6 text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900"
                   onClick={closeIntro}
                 >
                   <img
-                    className="md:hidden scale-[1.4] absolute z-[-1] top-0 -left-2"
+                    className="md:hidden scale-[1.5] absolute z-[-1] top-0 inset-x-0 "
                     src={Cloud}
                     alt="cloud"
                   />
@@ -452,11 +452,11 @@ const Home = () => {
                     快動動手指製作屬於自己的桌布及解夢卡吧！
                   </p>
                   <img
-                    className="md:hidden scale-[1.4] absolute z-[-1] bottom-0 -right-2 -scale-x-[1.4]"
+                    className="md:hidden scale-[1.5] absolute z-[-1] -bottom-3  inset-x-0 -scale-x-[1.5]"
                     src={Cloud}
                     alt="cloud"
                   />
-                  <p className=" p-1 mt-24 md:mt-8">
+                  <p className="p-1 mt-24 md:mt-8">
                     Welcome to the website of ONE SHEEP, TWO SLEEP.
                   </p>
                   <p className=" p-1">Aside from our DREAMCARD area,</p>
