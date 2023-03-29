@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Stage, Layer, Group, Text } from "react-konva";
+import { Stage, Layer } from "react-konva";
 import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 import Logo from "./Logo";
