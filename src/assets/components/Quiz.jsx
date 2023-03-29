@@ -1628,7 +1628,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
           src={getImageUrl("resultCards", resultCardPath)}
         />
       </div>
-      <div className="absolute z-10 bottom-[15%] md:bottom-[10%] right-[5%] flex gap-4 md:gap-8 items-center">
+      <div className="absolute z-10 bottom-[15%] md:bottom-[10%] right-[5%] flex flex-col md:flex-row gap-2 md:gap-4 md:gap-8 items-center">
         <div
           className="h-[3.5rem] md:h-[4.5rem] flex flex-col items-center justify-between cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] text-sm md:text-base"
           onClick={downloadImage}
