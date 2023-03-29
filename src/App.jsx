@@ -17,6 +17,8 @@ function App() {
             <Route path="/" index element={<Home />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/dreamcard" element={<DreamCard />} />
+            <Route path="/undefined" element={<Home />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
