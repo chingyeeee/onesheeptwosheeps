@@ -1553,6 +1553,23 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
   const downloadImage = () => {
     const element = document.getElementById("combinedImg");
+    element.classList.remove("animate-rotate360");
+    html2canvas(element, { backgroundColor: null }).then((canvas) => {
+      const imgSrc = canvas.toDataURL();
+      const link = document.createElement("a");
+      link.download = `sheep_${String(cardNo).padStart(3, "0")}.png`;
+      link.href = imgSrc;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setCardNo(cardNo + 1);
+    });
+    element.classList.add("animate-rotate360");
+  };
+
+  //長按儲存
+  const onLongPressDownload = useLongPress(() => {
+    const element = document.getElementById("combinedImg");
 
     element.classList.remove("animate-rotate360");
 
@@ -1581,11 +1598,6 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
     });
 
     element.classList.add("animate-rotate360");
-  };
-
-  //長按儲存
-  const onLongPressDownload = useLongPress(() => {
-    downloadImage();
   });
 
   useEffect(() => {
