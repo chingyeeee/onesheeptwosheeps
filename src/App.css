@@ -1,3 +1,13 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .typing-text {
   font-size: 20px;
   white-space: pre-wrap;
@@ -21,5 +31,19 @@
   }
   50% {
     border-color: black;
+  }
+}
+
+.min-safe-h-screen {
+  /* equivalent to 100dvh in major browsers */
+  min-height: calc(
+    100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
+  );
+}
+
+@supports (-webkit-touch-callout: none) {
+  .min-safe-h-screen {
+    /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+    min-height: -webkit-fill-available;
   }
 }

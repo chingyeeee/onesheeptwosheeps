@@ -1358,7 +1358,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-safe-h-screen overflow-hidden">
       <div className="bg-blue h-[2rem] md:h-[5rem] relative overflow-hidden">
         <div className="absolute inset-y-0 m-auto flex animate-marquee w-[200%]">
           <img className="w-[50%] h-auto" src={Marquee} />
@@ -1367,7 +1367,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <img className="w-[50%] h-auto" src={Marquee} />
         </div>
       </div>
-      <div className="bg-yellow absolute left-0 w-[2rem] md:w-[5rem] h-screen overflow-hidden">
+      <div className="bg-yellow absolute left-0 w-[2rem] md:w-[5rem] min-safe-h-screen overflow-hidden">
         <div className="absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]">
           <img className="h-[50%] md:h-[100%] w-auto" src={LeftMarquee} />
           <img className="h-[50%] md:h-[100%] w-auto" src={LeftMarquee} />
@@ -1375,7 +1375,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <img className="h-[50%] md:h-[100%] w-auto" src={LeftMarquee} />
         </div>
       </div>
-      <div className="bg-purple absolute right-0 w-[2rem] md:w-[5rem] h-screen overflow-hidden">
+      <div className="bg-purple absolute right-0 w-[2rem] md:w-[5rem] min-safe-h-screen overflow-hidden">
         <div className="absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]">
           <img className="h-[50%] md:h-[100%] w-auto" src={RightMarquee} />
           <img className="h-[50%] md:h-[100%] w-auto" src={RightMarquee} />
@@ -1396,7 +1396,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
         }
       />
 
-      <div className="w-[80%] mx-auto md:w-full px-4 md:pt-6 pb-12 h-screen overflow-scroll">
+      <div className="w-[80%] mx-auto md:w-full px-4 md:pt-6 pb-12 min-safe-h-screen overflow-scroll">
         <img
           className="m-auto h-[8rem] md:h-[12rem] mb-2"
           src={signImgPath}
@@ -1779,7 +1779,7 @@ const Quiz = ({ signImgPath }) => {
   }
 
   return (
-    <div className="flex flex-col h-screen relative">
+    <div className="flex flex-col min-safe-h-screen relative">
       {questionNum <= 6 && (
         <div className="animate-fadeSlideIn">
           <Question1
