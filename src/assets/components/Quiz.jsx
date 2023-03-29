@@ -1570,6 +1570,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   //長按儲存
   const onLongPressDownload = useLongPress(() => {
     const element = document.getElementById("combinedImg");
+
     element.classList.remove("animate-rotate360");
 
     html2canvas(element, { backgroundColor: null }).then((canvas) => {
@@ -1580,9 +1581,9 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
       const fileName = `sheep_${String(cardNo).padStart(3, "0")}.png`;
       const fileUrl =
         cordova.file.externalRootDirectory + "DCIM/Camera/" + fileName;
-      const uri = encodeURI(imgSrc);
+
       fileTransfer.download(
-        uri,
+        imgSrc,
         fileUrl,
         (entry) => {
           console.log("Download success: " + entry.toURL());
@@ -1606,19 +1607,17 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   }, []);
 
   return (
-    <div
-      className="h-full w-screen md:flex justify-center items-center relative"
-      {...onLongPressDownload()}
-    >
+    <div className="h-full w-screen md:flex justify-center items-center relative">
       <img
         className="absolute md:static inset-y-0 h-min w-full -top-36 md:w-[80%] m-auto"
         src={signImgPath}
       />
       <div
-        className={`absolute flex justify-center py-8 ${
+        className={`absolute top-24 flex justify-center py-8 ${
           !isShow && !isOpen && "animate-rotate360"
         } bg-transparent`}
         id="combinedImg"
+        {...onLongPressDownload()}
       >
         <img
           className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-6 -left-4 md:-top-3 md:-left-8 rotate-6"
