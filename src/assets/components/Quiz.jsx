@@ -1601,8 +1601,8 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
   useEffect(() => {
     getResultCard();
-    setTimeout(() => setIsShow(false), 2000);
-    setTimeout(() => setIsOpen(true), 2100);
+    setTimeout(() => setIsShow(false), 1500);
+    setTimeout(() => setIsOpen(true), 1600);
   }, []);
 
   return (
