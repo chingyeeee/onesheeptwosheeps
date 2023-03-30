@@ -1367,7 +1367,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <img className="w-[50%] h-auto" src={Marquee} />
         </div>
       </div>
-      <div className="bg-yellow absolute left-0 w-[2rem] md:w-[5rem] h-screen overflow-hidden">
+      <div className="bg-yellow absolute left-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden">
         <div className="absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]">
           <img className="h-[50%] md:h-[100%] w-auto" src={LeftMarquee} />
           <img className="h-[50%] md:h-[100%] w-auto" src={LeftMarquee} />
@@ -1375,7 +1375,7 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <img className="h-[50%] md:h-[100%] w-auto" src={LeftMarquee} />
         </div>
       </div>
-      <div className="bg-purple absolute right-0 w-[2rem] md:w-[5rem] h-screen overflow-hidden">
+      <div className="bg-purple absolute right-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden">
         <div className="absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]">
           <img className="h-[50%] md:h-[100%] w-auto" src={RightMarquee} />
           <img className="h-[50%] md:h-[100%] w-auto" src={RightMarquee} />
@@ -1607,20 +1607,20 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
   }, []);
 
   return (
-    <div className="h-full w-screen md:flex justify-center items-center relative">
+    <div className="min-h-inherit w-screen md:flex justify-center items-center relative">
       <img
-        className="absolute md:static inset-y-0 h-min w-full -top-36 md:w-[80%] m-auto"
+        className="absolute md:static inset-y-0 h-min w-full md:w-[80%] m-auto"
         src={signImgPath}
       />
       <div
-        className={`absolute flex justify-center py-8 ${
+        className={`absolute inset-y-0 h-min m-auto flex justify-center py-8 ${
           !isShow && !isOpen && "animate-rotate360"
         } bg-transparent`}
         id="combinedImg"
         {...onLongPressDownload()}
       >
         <img
-          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-6 -left-4 md:-top-3 md:-left-8 rotate-6"
+          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-12 -left-6 md:top-4 md:-left-6 rotate-6"
           src={signImgPath}
         />
         <img
