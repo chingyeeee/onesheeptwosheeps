@@ -22,7 +22,7 @@ const DreamCard = () => {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className={"h-safe-screen "}
+        className={"min-h-inherit"}
       >
         <Rules nextStep={nextStep} step={step} />
       </Transition>
