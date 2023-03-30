@@ -139,7 +139,7 @@ const Background = ({
 
       {aboutUsEnabled && (
         <div
-          className={`absolute z-[21] left-0 top-[23%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
+          className={`absolute z-[21] left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
           onClick={() => navigate("/aboutus")}
         >
           <Finger
@@ -159,7 +159,7 @@ const Background = ({
       )}
       {dreamCardEnabled && (
         <div
-          className="absolute z-[21] top-[17%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
+          className="absolute z-[21] top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
           onClick={() => navigate("/dreamcard")}
         >
           <Finger
