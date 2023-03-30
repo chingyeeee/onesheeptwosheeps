@@ -218,7 +218,7 @@ const Home = () => {
   return (
     <>
       <div
-        className={`h-safe-screen p-6 overflow-hidden relative`}
+        className={`min-safe-h-screen md:h-screen p-6 overflow-hidden relative`}
         ref={pngRef}
       >
         <>
