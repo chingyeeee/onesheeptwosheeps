@@ -70,7 +70,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
   return (
     <div
-      className="w-[90%] md:w-[80%] md:h-[75vh] mx-auto relative bottom-5"
+      className="w-[90%] md:w-[100%] min-h-inherit mx-auto relative bottom-5"
       ref={backgroundRef}
     >
       <div className="bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative">
@@ -276,8 +276,8 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
-    <div className="w-full min-h-inherit flex flex-col relative justify-center items-center overflow-hidden">
-      <div>
+    <div className="w-full min-safe-h-screen h-full flex flex-col relative justify-center items-center overflow-hidden">
+      <div className="w-full h-full">
         <img
           className="max-w-[90%] mx-auto hidden md:block"
           src={Title}
