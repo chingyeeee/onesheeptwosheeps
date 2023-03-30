@@ -1620,7 +1620,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
         {...onLongPressDownload()}
       >
         <img
-          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-12 -left-6 md:top-4 md:-left-6 rotate-6"
+          className="absolute scale-[0.3] md:scale-[0.2] z-[20] top-6 -left-2 md:top-4 md:-left-8 rotate-6"
           src={signImgPath}
         />
         <img

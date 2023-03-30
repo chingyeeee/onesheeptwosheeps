@@ -22,7 +22,7 @@ const DreamCard = () => {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className={"min-safe-h-screen "}
+        className={"h-safe-screen "}
       >
         <Rules nextStep={nextStep} step={step} />
       </Transition>
@@ -34,7 +34,7 @@ const DreamCard = () => {
         leave="transition-opacity duration-300"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
-        className={"min-safe-h-screen"}
+        className={"h-safe-screen"}
       >
         <WriteDownYourName
           nextStep={nextStep}
