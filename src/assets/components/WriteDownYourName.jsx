@@ -276,7 +276,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
-    <div className="w-full h-full flex flex-col relative justify-center items-center overflow-hidden">
+    <div className="w-full min-h-inherit flex flex-col relative justify-center items-center overflow-hidden">
       <div>
         <img
           className="max-w-[90%] mx-auto hidden md:block"

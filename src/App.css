@@ -8,11 +8,8 @@ html {
   box-sizing: border-box;
 }
 
-.typing-text {
-  font-size: 20px;
-  white-space: pre-wrap;
-  overflow: hidden;
-  animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+.min-h-inherit {
+  min-height: inherit;
 }
 
 @keyframes typing {
