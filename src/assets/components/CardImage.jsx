@@ -3,13 +3,7 @@ import { Image, Transformer, Text, Circle, Group } from "react-konva";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
 
-const MyImage = ({
-  shapeProps,
-  isSelected,
-  onSelect,
-  onChange,
-  handleDeleteSelectedCardItem,
-}) => {
+const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelectedCardItem }) => {
   const shapeRef = useRef();
   const trRef = useRef();
   const deleteButtonRef = useRef(null);
@@ -39,8 +33,7 @@ const MyImage = ({
         image={imageItem}
         onDragStart={(e) => {
           e.target.moveToTop();
-          document.body.style.cursor =
-            "url(/src/assets/images/cursor-move.png),move";
+          document.body.style.cursor = "url(/src/assets/images/cursor-move.png),move";
         }}
         onDragEnd={(e) => {
           onChange({
@@ -48,8 +41,7 @@ const MyImage = ({
             x: e.target.x(),
             y: e.target.y(),
           });
-          document.body.style.cursor =
-            "url(/src/assets/images/cursor-default.png),default";
+          document.body.style.cursor = "url(/src/assets/images/cursor-default.png),default";
         }}
         onTransformEnd={(e) => {
           // transformer is changing scale of the node
@@ -71,8 +63,7 @@ const MyImage = ({
             width: Math.max(5, node.width() * scaleX),
             height: Math.max(node.height() * scaleY),
           });
-          document.body.style.cursor =
-            "url(/src/assets/images/cursor-default.png),default";
+          document.body.style.cursor = "url(/src/assets/images/cursor-default.png),default";
         }}
       />
       {isSelected && (
@@ -80,6 +71,7 @@ const MyImage = ({
           <Transformer
             ref={trRef}
             keepRatio
+            resizeEnabled
             boundBoxFunc={(oldBox, newBox) => {
               // limit resize
               if (newBox.width < 50 || newBox.height < 50) {
@@ -89,19 +81,14 @@ const MyImage = ({
             }}
           />
           <Group ref={deleteButtonRef}>
-            <Circle
-              x={shapeProps.x}
-              y={shapeProps.y}
-              radius={15}
-              fill="black"
-            />
+            <Circle x={shapeProps.x} y={shapeProps.y} radius={15} fill='black' />
             <Text
-              text="X"
+              text='X'
               fontSize={16}
-              fill="white"
+              fill='white'
               onClick={handleDeleteSelectedCardItem}
               onTap={handleDeleteSelectedCardItem}
-              fontStyle="bold"
+              fontStyle='bold'
               width={150}
               height={150}
               x={shapeProps.x - 5}

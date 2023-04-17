@@ -13,45 +13,38 @@ const DreamCard = () => {
   }
 
   return (
-    <div className="min-safe-h-screen w-screen">
+    <div className='min-safe-h-screen w-screen'>
       <Transition
         show={step === 1}
-        enter="transition-opacity duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className={"min-h-inherit"}
-      >
+        enter='transition-opacity duration-300'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transition-opacity duration-300'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+        className={"min-h-inherit"}>
         <Rules nextStep={nextStep} step={step} />
       </Transition>
       <Transition
         show={step === 2}
-        enter="transition-opacity duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className={"h-safe-screen"}
-      >
-        <WriteDownYourName
-          nextStep={nextStep}
-          step={step}
-          setSignImgPath={setSignImgPath}
-        />
+        enter='transition-opacity duration-300'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transition-opacity duration-300'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+        className={"h-safe-screen"}>
+        <WriteDownYourName nextStep={nextStep} step={step} setSignImgPath={setSignImgPath} />
       </Transition>
       <Transition
         show={step === 3}
-        enter="transition-opacity duration-300"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-300"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className={"h-screen"}
-      >
+        enter='transition-opacity duration-300'
+        enterFrom='opacity-0'
+        enterTo='opacity-100'
+        leave='transition-opacity duration-300'
+        leaveFrom='opacity-100'
+        leaveTo='opacity-0'
+        className={"h-screen"}>
         <Quiz signImgPath={signImgPath} />
       </Transition>
     </div>

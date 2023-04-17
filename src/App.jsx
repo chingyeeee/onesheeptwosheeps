@@ -10,15 +10,15 @@ const DreamCard = lazy(() => import("./assets/pages/DreamCard"));
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/" index element={<Home />} />
-            <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/dreamcard" element={<DreamCard />} />
-            <Route path="/undefined" element={<Home />} />
-            <Route path="*" element={<Home />} />
+            <Route path='/' index element={<Home />} />
+            <Route path='aboutus' element={<AboutUs />} />
+            <Route path='dreamcard' element={<DreamCard />} />
+            <Route path='undefined' element={<Home />} />
+            <Route path='*' element={<Home />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
