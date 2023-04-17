@@ -312,7 +312,11 @@ const AboutUs = () => {
         </div>
         <div className='flex justify-between text-yellow md:text-5xl'>
           <p>CONTACT US:</p>
-          <p className='border-b md:border-b-2 border-yellow'>@1SHEEP.2SLEEP</p>
+          <a
+            href='https://instagram.com/onesheep_twosleep?igshid=YmMyMTA2M2Y='
+            className='border-b md:border-b-2 border-yellow'>
+            @ONESHEEP_TWOSLEEP
+          </a>
         </div>
       </div>
     </div>
