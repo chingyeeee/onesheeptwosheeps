@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 import Logo from "./Logo";
 import Emotion from "./Emotion";
-import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg";
 import { useNavigate } from "react-router-dom";
 
 const Background = ({

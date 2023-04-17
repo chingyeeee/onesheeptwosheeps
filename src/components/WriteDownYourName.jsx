@@ -1,13 +1,13 @@
 import { Stage, Layer, Line } from "react-konva";
-import Title from "../images/writeDownYourName/writedownyourname.svg";
-import TitleM from "../images/writeDownYourName/titleM.svg";
+import Title from "../assets/images/writeDownYourName/writedownyourname.svg";
+import TitleM from "../assets/images/writeDownYourName/titleM.svg";
 import { useState, useRef, useEffect } from "react";
-import Reset from "../images/sign/reset.svg";
-import Save from "../images/sign/save.svg";
-import PrevStep from "../images/sign/prevStep.svg";
-import HoverReset from "../images/sign/hoverReset.svg";
-import HoverSave from "../images/sign/hoverSave.svg";
-import HoverPrevStep from "../images/sign/hoverPrevStep.svg";
+import Reset from "../assets/images/sign/reset.svg";
+import Save from "../assets/images/sign/save.svg";
+import PrevStep from "../assets/images/sign/prevStep.svg";
+import HoverReset from "../assets/images/sign/hoverReset.svg";
+import HoverSave from "../assets/images/sign/hoverSave.svg";
+import HoverPrevStep from "../assets/images/sign/hoverPrevStep.svg";
 
 const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   const [lines, setLines] = useState([]);

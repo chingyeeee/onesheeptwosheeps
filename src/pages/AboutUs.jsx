@@ -1,9 +1,9 @@
-import Marquee from "../images/aboutus/marquee.png";
-import { ReactComponent as BackFinger } from "../images/aboutus/icon-back.svg";
-import Profile1 from "../images/aboutus/profile-1.jpg";
-import Profile2 from "../images/aboutus/profile-2.jpg";
-import Profile3 from "../images/aboutus/profile-3.jpg";
-import Profile4 from "../images/aboutus/profile-4.jpg";
+import Marquee from "../assets/images/aboutus/marquee.png";
+import { ReactComponent as BackFinger } from "../assets/images/aboutus/icon-back.svg";
+import Profile1 from "../assets/images/aboutus/profile-1.jpg";
+import Profile2 from "../assets/images/aboutus/profile-2.jpg";
+import Profile3 from "../assets/images/aboutus/profile-3.jpg";
+import Profile4 from "../assets/images/aboutus/profile-4.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 

@@ -2,12 +2,12 @@ import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Loading from "./assets/components/Loading";
-import { IntroProvider } from "./assets/context/useIntro";
+import Loading from "./components/Loading";
+import { IntroProvider } from "./context/useIntro";
 
-const Home = lazy(() => import("./assets/pages/Home"));
-const AboutUs = lazy(() => import("./assets/pages/AboutUs"));
-const DreamCard = lazy(() => import("./assets/pages/DreamCard"));
+const Home = lazy(() => import("./pages/Home"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const DreamCard = lazy(() => import("./pages/DreamCard"));
 
 function App() {
   return (

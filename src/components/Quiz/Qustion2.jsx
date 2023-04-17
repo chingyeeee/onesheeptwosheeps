@@ -1,6 +1,6 @@
-import { ReactComponent as No } from "../../images/quiz/2/no.svg";
-import { ReactComponent as Title2 } from "../../images/quiz/2/title.svg";
-import { ReactComponent as Yes } from "../../images/quiz/2/yes.svg";
+import { ReactComponent as No } from "../../assets/images/quiz/2/no.svg";
+import { ReactComponent as Title2 } from "../../assets/images/quiz/2/title.svg";
+import { ReactComponent as Yes } from "../../assets/images/quiz/2/yes.svg";
 
 const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => {
   return (

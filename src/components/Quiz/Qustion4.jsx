@@ -1,13 +1,13 @@
-import { ReactComponent as Acquaintance } from "../../images/quiz/4/acquaintance.svg";
-import { ReactComponent as Myself } from "../../images/quiz/4/myself.svg";
-import { ReactComponent as Negative } from "../../images/quiz/4/negative.svg";
-import { ReactComponent as None } from "../../images/quiz/4/none.svg";
-import { ReactComponent as NotThreatening } from "../../images/quiz/4/notthreatening.svg";
-import { ReactComponent as Other } from "../../images/quiz/4/other.svg";
-import { ReactComponent as Positive } from "../../images/quiz/4/positive.svg";
-import { ReactComponent as Strangers } from "../../images/quiz/4/strangers.svg";
-import { ReactComponent as Threatening } from "../../images/quiz/4/threatening.svg";
-import { ReactComponent as Title4 } from "../../images/quiz/4/title.svg";
+import { ReactComponent as Acquaintance } from "../../assets/images/quiz/4/acquaintance.svg";
+import { ReactComponent as Myself } from "../../assets/images/quiz/4/myself.svg";
+import { ReactComponent as Negative } from "../../assets/images/quiz/4/negative.svg";
+import { ReactComponent as None } from "../../assets/images/quiz/4/none.svg";
+import { ReactComponent as NotThreatening } from "../../assets/images/quiz/4/notthreatening.svg";
+import { ReactComponent as Other } from "../../assets/images/quiz/4/other.svg";
+import { ReactComponent as Positive } from "../../assets/images/quiz/4/positive.svg";
+import { ReactComponent as Strangers } from "../../assets/images/quiz/4/strangers.svg";
+import { ReactComponent as Threatening } from "../../assets/images/quiz/4/threatening.svg";
+import { ReactComponent as Title4 } from "../../assets/images/quiz/4/title.svg";
 const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizAns }) => {
   return (
     <div

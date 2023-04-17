@@ -1,13 +1,13 @@
 import React from "react";
-import { ReactComponent as Choice1 } from "../../images/quiz/1/choice1.svg";
-import { ReactComponent as Choice2 } from "../../images/quiz/1/choice2.svg";
-import { ReactComponent as Choice3 } from "../../images/quiz/1/choice3.svg";
-import { ReactComponent as Choice4 } from "../../images/quiz/1/choice4.svg";
-import { ReactComponent as Choice5 } from "../../images/quiz/1/choice5.svg";
-import { ReactComponent as Choice6 } from "../../images/quiz/1/choice6.svg";
-import { ReactComponent as Choice7 } from "../../images/quiz/1/choice7.svg";
-import { ReactComponent as Choice8 } from "../../images/quiz/1/choice8.svg";
-import { ReactComponent as Title1 } from "../../images/quiz/1/title.svg";
+import { ReactComponent as Choice1 } from "../../assets/images/quiz/1/choice1.svg";
+import { ReactComponent as Choice2 } from "../../assets/images/quiz/1/choice2.svg";
+import { ReactComponent as Choice3 } from "../../assets/images/quiz/1/choice3.svg";
+import { ReactComponent as Choice4 } from "../../assets/images/quiz/1/choice4.svg";
+import { ReactComponent as Choice5 } from "../../assets/images/quiz/1/choice5.svg";
+import { ReactComponent as Choice6 } from "../../assets/images/quiz/1/choice6.svg";
+import { ReactComponent as Choice7 } from "../../assets/images/quiz/1/choice7.svg";
+import { ReactComponent as Choice8 } from "../../assets/images/quiz/1/choice8.svg";
+import { ReactComponent as Title1 } from "../../assets/images/quiz/1/title.svg";
 
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (

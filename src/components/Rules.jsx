@@ -1,5 +1,5 @@
-import { ReactComponent as RulesLogo } from "../images/rules/rules.svg";
-import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+import { ReactComponent as RulesLogo } from "../assets/images/rules/rules.svg";
+import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg";
 
 const Rules = ({ nextStep }) => {
   return (

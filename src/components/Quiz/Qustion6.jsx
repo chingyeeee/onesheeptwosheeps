@@ -1,9 +1,9 @@
-import { ReactComponent as Finger } from "../../images/icons/icon-finger.svg";
-import { ReactComponent as Notrecognized } from "../../images/quiz/6/notrecognized.svg";
-import { ReactComponent as Open } from "../../images/quiz/6/open.svg";
-import { ReactComponent as Recognized } from "../../images/quiz/6/recognized.svg";
-import { ReactComponent as Sealed } from "../../images/quiz/6/sealed.svg";
-import { ReactComponent as Title6 } from "../../images/quiz/6/title.svg";
+import { ReactComponent as Finger } from "../../assets/images/icons/icon-finger.svg";
+import { ReactComponent as Notrecognized } from "../../assets/images/quiz/6/notrecognized.svg";
+import { ReactComponent as Open } from "../../assets/images/quiz/6/open.svg";
+import { ReactComponent as Recognized } from "../../assets/images/quiz/6/recognized.svg";
+import { ReactComponent as Sealed } from "../../assets/images/quiz/6/sealed.svg";
+import { ReactComponent as Title6 } from "../../assets/images/quiz/6/title.svg";
 const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => {
   function checkNotEmptyAns() {
     otherAns[2] !== undefined && otherAns[3] !== undefined && setQuestionNum(questionNum + 1);

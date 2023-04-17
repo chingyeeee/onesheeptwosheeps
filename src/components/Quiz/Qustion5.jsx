@@ -1,7 +1,7 @@
-import { ReactComponent as Natural } from "../../images/quiz/5/natural.svg";
-import { ReactComponent as Normal } from "../../images/quiz/5/normal.svg";
-import { ReactComponent as Novel } from "../../images/quiz/5/novel.svg";
-import { ReactComponent as Title5 } from "../../images/quiz/5/title.svg";
+import { ReactComponent as Natural } from "../../assets/images/quiz/5/natural.svg";
+import { ReactComponent as Normal } from "../../assets/images/quiz/5/normal.svg";
+import { ReactComponent as Novel } from "../../assets/images/quiz/5/novel.svg";
+import { ReactComponent as Title5 } from "../../assets/images/quiz/5/title.svg";
 const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div

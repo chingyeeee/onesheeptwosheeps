@@ -1,8 +1,8 @@
-import { ReactComponent as Animal } from "../../images/quiz/3/animal.svg";
-import { ReactComponent as Ghost } from "../../images/quiz/3/ghost.svg";
-import { ReactComponent as Nonexisted } from "../../images/quiz/3/nonexisted.svg";
-import { ReactComponent as Person } from "../../images/quiz/3/person.svg";
-import { ReactComponent as Title3 } from "../../images/quiz/3/title.svg";
+import { ReactComponent as Animal } from "../../assets/images/quiz/3/animal.svg";
+import { ReactComponent as Ghost } from "../../assets/images/quiz/3/ghost.svg";
+import { ReactComponent as Nonexisted } from "../../assets/images/quiz/3/nonexisted.svg";
+import { ReactComponent as Person } from "../../assets/images/quiz/3/person.svg";
+import { ReactComponent as Title3 } from "../../assets/images/quiz/3/title.svg";
 const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
