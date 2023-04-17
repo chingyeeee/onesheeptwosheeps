@@ -425,20 +425,21 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
 
   //  分享至社交平台
   async function share() {
-    const imgFileName = `${quizAns.join("")}.jpg`;
-    const response = await axios.get(`/resultCards/${imgFileName}`, {
-      responseType: "blob",
+    const element = document.getElementById("combinedImg");
+    element.classList.remove("animate-rotate360");
+    const canvas = await html2canvas(element, { backgroundColor: "black" });
+    canvas.toBlob((blob) => {
+      navigator.share({
+        files: [
+          new File([blob], "share.png", {
+            type: blob.type,
+          }),
+        ],
+        text: "快來超神準心理測驗one sheep two sheep，6個問題測出你的真實模樣&隱藏性格特質",
+        url: "https://onesheeptwosleep.farm/",
+      });
     });
-    const blob = response.data;
-    navigator.share({
-      files: [
-        new File([blob], imgFileName, {
-          type: blob.type,
-        }),
-      ],
-      text: "快來超神準心理測驗one sheep two sheep，6個問題測出你的真實模樣&隱藏性格特質",
-      url: "https://onesheeptwosleep.farm/",
-    });
+    element.classList.add("animate-rotate360");
   }
 
   useEffect(() => {
