@@ -10,11 +10,13 @@ import CloudMobileEn from "../images/icons/icon-cloud-mobile-en.svg";
 import CloudMobileCH from "../images/icons/icon-cloud-mobile-ch.svg";
 import ToggleText from "../components/ToggleText";
 import { v4 as uuidv4 } from "uuid";
+import { useIntro } from "../context/useIntro";
 
 const Background = lazy(() => import("../components/Background"));
 
 const Home = () => {
-  const [isIntro, setIsIntro] = useState(true);
+  // const [isIntro, setIsIntro] = useState(true);
+  const { isIntro, closeIntro } = useIntro();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   //toggle開關
   const [logoEnabled, setLogoEnabled] = useState(true);
@@ -45,9 +47,9 @@ const Home = () => {
   }, []);
 
   //關閉introduction
-  function closeIntro() {
-    setIsIntro(false);
-  }
+  // function closeIntro() {
+  //   setIsIntro(false);
+  // }
 
   //開啓menu
   function openMenu() {
@@ -403,8 +405,8 @@ const Home = () => {
                 <Dialog.Panel
                   className='w-full transform md:overflow-hidden text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900'
                   onClick={closeIntro}>
-                  <img className='w-full md:hidden' src={CloudMobileCH} alt='cloud' />
-                  <img className='w-full md:hidden' src={CloudMobileEn} alt='cloud' />
+                  <img className='scale-90 md:scale-75 md:hidden' src={CloudMobileCH} alt='cloud' />
+                  <img className='scale-90 md:hidden' src={CloudMobileEn} alt='cloud' />
                 </Dialog.Panel>
               </Transition.Child>
               <ToggleText />

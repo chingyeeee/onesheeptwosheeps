@@ -206,26 +206,26 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
     <div className='relative min-safe-h-screen overflow-hidden'>
       <div className='bg-blue h-[2rem] md:h-[5rem] relative overflow-hidden'>
         <div className='absolute inset-y-0 m-auto flex animate-marquee w-[200%]'>
-          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
-          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
-          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
-          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
+          <img className='w-[50%] h-auto' src={Marquee} />
+          <img className='w-[50%] h-auto' src={Marquee} />
+          <img className='w-[50%] h-auto' src={Marquee} />
+          <img className='w-[50%] h-auto' src={Marquee} />
         </div>
       </div>
       <div className='bg-yellow absolute left-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
         <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
-          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
-          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
-          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
-          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
         </div>
       </div>
       <div className='bg-purple absolute right-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
         <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
-          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
-          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
-          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
-          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
         </div>
       </div>
       <img
