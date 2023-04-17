@@ -12,7 +12,7 @@ import { ReactComponent as Title1 } from "../../images/quiz/1/title.svg";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]  group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
@@ -73,8 +73,8 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
           </div>
           <div className='md:flex justify-between mt-3 md:mt-0 md:h-[62%] overflow-x-scroll'>
-            <div className='w-full md:w-[45%] flex flex-col font-medium md:font-semibold'>
-              {options.slice(0, 3).map((option) => {
+            <div className='w-full md:w-[45%] flex flex-col font-medium md:font-semibold divide-y-2 divide-black border-t-2 md:border-b-2 border-black'>
+              {options.slice(0, 4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
                   <Option
@@ -89,8 +89,8 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 );
               })}
             </div>
-            <div className='w-full md:w-[45%] flex flex-col font-semibold'>
-              {options.slice(4, 7).map((option) => {
+            <div className='w-full md:w-[45%] flex flex-col font-semibold divide-y-2 divide-black border-t-2 border-b-2 border-black'>
+              {options.slice(4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
                   <Option
