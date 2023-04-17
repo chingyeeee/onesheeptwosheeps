@@ -209,8 +209,8 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
         <div className='absolute inset-y-0 m-auto flex animate-marquee w-[200%]'>
           <img className='w-[50%] h-auto' src={Marquee} />
           <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} />
+          {/* <img className='w-[50%] h-auto' src={Marquee} />
+          <img className='w-[50%] h-auto' src={Marquee} /> */}
         </div>
       </div>
       <div className='bg-yellow absolute left-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
