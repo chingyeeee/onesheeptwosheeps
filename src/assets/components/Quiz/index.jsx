@@ -24,7 +24,6 @@ import Question3 from "./Qustion3";
 import Question4 from "./Qustion4";
 import Question5 from "./Qustion5";
 import Question6 from "./Qustion6";
-import axios from "axios";
 
 const GeneratingResult = ({ setQuestionNum }) => {
   setTimeout(() => setQuestionNum(8), 3000);
@@ -207,26 +206,26 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
     <div className='relative min-safe-h-screen overflow-hidden'>
       <div className='bg-blue h-[2rem] md:h-[5rem] relative overflow-hidden'>
         <div className='absolute inset-y-0 m-auto flex animate-marquee w-[200%]'>
-          <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} />
-          {/* <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} /> */}
+          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
+          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
+          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
+          <object type='image/svg+xml' data={Marquee} className='w-[50%] h-auto' />
         </div>
       </div>
       <div className='bg-yellow absolute left-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
         <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          {/* <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} /> */}
-          {/* <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} /> */}
+          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <object type='image/svg+xml' data={LeftMarquee} className='h-[50%] md:h-[100%] w-auto' />
         </div>
       </div>
       <div className='bg-purple absolute right-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
         <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          {/* <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} /> */}
+          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
+          <object type='image/svg+xml' data={RightMarquee} className='h-[50%] md:h-[100%] w-auto' />
         </div>
       </div>
       <img
