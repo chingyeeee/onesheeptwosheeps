@@ -217,16 +217,16 @@ const ShowResult = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
         <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
           <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
           <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
+          {/* <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} /> */}
+          {/* <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} /> */}
         </div>
       </div>
       <div className='bg-purple absolute right-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
         <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
           <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
           <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
+          {/* <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
+          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} /> */}
         </div>
       </div>
       <img
