@@ -17,13 +17,15 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       }`}
       onClick={() => handleSaveAns(0, opt)}>
       <span
-        className={`group-hover:hidden text-base md:text-2xl ${quizAns[0] === opt && "hidden"}`}>
+        className={`group-hover:hidden text-base md:text-2xl ${
+          quizAns[0] === opt ? "hidden" : ""
+        }`}>
         <div>{optTextEng}</div>
       </span>
       {
         <Image
-          className={`w-[40%] group-hover:block group-hover:fill-red ${
-            quizAns[0] === opt ? "block fill-red" : "hidden"
+          className={`w-[40%] fill-red group-hover:block ${
+            quizAns[0] === opt ? "block " : "hidden"
           }`}
         />
       }

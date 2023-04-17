@@ -15,7 +15,6 @@ import { useIntro } from "../context/useIntro";
 const Background = lazy(() => import("../components/Background"));
 
 const Home = () => {
-  // const [isIntro, setIsIntro] = useState(true);
   const { isIntro, closeIntro } = useIntro();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   //toggle開關
