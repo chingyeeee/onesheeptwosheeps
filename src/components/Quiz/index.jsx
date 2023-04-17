@@ -434,7 +434,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
             type: blob.type,
           }),
         ],
-        text: "一隻羊兩隻羊，祝你日日是好夢！",
+        text: "一隻羊兩隻羊，祝你日日是好夢！\n點擊以下連結來獲得獨一無二的解夢卡！",
         url: "https://onesheeptwosleep.farm/",
       });
     });
