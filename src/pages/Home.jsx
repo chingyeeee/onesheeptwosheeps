@@ -1,18 +1,21 @@
 import { lazy, Fragment, useState, useRef, useEffect } from "react";
 import { Dialog, Transition, Tab, Switch } from "@headlessui/react";
-import { ReactComponent as Menu } from "../images/icons/icon-menu-sheep.svg";
-import { ReactComponent as Download } from "../images/icons/icon-download.svg";
-import TabData from "../data/TabList.json";
+import { ReactComponent as Menu } from "../assets/images/icons/icon-menu-sheep.svg";
+import { ReactComponent as Download } from "../assets/images/icons/icon-download.svg";
+import TabData from "../assets/data/TabList.json";
 import { getImageUrl } from "../utils/getImageUrl";
 import html2canvas from "html2canvas";
-import Cloud from "../images/icons/icon-cloud.svg";
+import Cloud from "../assets/images/icons/icon-cloud.svg";
+import CloudMobileEn from "../assets/images/icons/icon-cloud-mobile-en.svg";
+import CloudMobileCH from "../assets/images/icons/icon-cloud-mobile-ch.svg";
 import ToggleText from "../components/ToggleText";
 import { v4 as uuidv4 } from "uuid";
+import { useIntro } from "../context/useIntro";
 
 const Background = lazy(() => import("../components/Background"));
 
 const Home = () => {
-  const [isIntro, setIsIntro] = useState(true);
+  const { isIntro, closeIntro } = useIntro();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   //toggle開關
   const [logoEnabled, setLogoEnabled] = useState(true);
@@ -42,11 +45,6 @@ const Home = () => {
     }
   }, []);
 
-  //關閉introduction
-  function closeIntro() {
-    setIsIntro(false);
-  }
-
   //開啓menu
   function openMenu() {
     setIsOpenMenu(true);
@@ -71,14 +69,11 @@ const Home = () => {
             checked={logoEnabled}
             onChange={setLogoEnabled}
             className={`${logoEnabled ? "bg-black" : "bg-gray-300"}
-          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                logoEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${logoEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
             pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -90,14 +85,11 @@ const Home = () => {
             checked={welcomeToEnabled}
             onChange={setWelcomeToEnabled}
             className={`${welcomeToEnabled ? "bg-black" : "bg-gray-300"}
-            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                welcomeToEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${welcomeToEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
               pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -109,14 +101,11 @@ const Home = () => {
             checked={dreamCardEnabled}
             onChange={setDreamCardEnabled}
             className={`${dreamCardEnabled ? "bg-black" : "bg-gray-300"}
-            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+            relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                dreamCardEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${dreamCardEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
               pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -128,14 +117,11 @@ const Home = () => {
             checked={aboutUsEnabled}
             onChange={setAboutUsEnabled}
             className={`${aboutUsEnabled ? "bg-black" : "bg-gray-300"}
-              relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+              relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                aboutUsEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${aboutUsEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
                 pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -147,14 +133,11 @@ const Home = () => {
             checked={emotionEnabled}
             onChange={setEmotionEnabled}
             className={`${emotionEnabled ? "bg-black" : "bg-gray-300"}
-                relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+                relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                emotionEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${emotionEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
                   pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -166,14 +149,11 @@ const Home = () => {
             checked={addItemsEnabled}
             onChange={setAddItemsEnabled}
             className={`${addItemsEnabled ? "bg-black" : "bg-gray-300"}
-                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                addItemsEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${addItemsEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
                     pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -185,14 +165,11 @@ const Home = () => {
             checked={downloadEnabled}
             onChange={setDownloadEnabled}
             className={`${downloadEnabled ? "bg-black" : "bg-gray-300"}
-                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
-          >
-            <span className="sr-only">Use {word}</span>
+                  relative inline-flex h-[28px] w-[54px] shrink-0 cursor-custom rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
+            <span className='sr-only'>Use {word}</span>
             <span
-              aria-hidden="true"
-              className={`${
-                downloadEnabled ? "translate-x-[1.6rem]" : "translate-x-0"
-              }
+              aria-hidden='true'
+              className={`${downloadEnabled ? "translate-x-[1.6rem]" : "translate-x-0"}
                     pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
@@ -217,10 +194,7 @@ const Home = () => {
 
   return (
     <>
-      <div
-        className={`min-safe-h-screen md:h-screen p-6 overflow-hidden relative`}
-        ref={pngRef}
-      >
+      <div className={`min-safe-h-screen md:h-screen p-6 overflow-hidden relative`} ref={pngRef}>
         <>
           <Background
             color={color}
@@ -234,60 +208,49 @@ const Home = () => {
             emotionEnabled={emotionEnabled}
           />
 
-          <div className="absolute z-[30] w-[10%] bottom-[15%] left-10 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center">
+          <div className='absolute z-[30] w-[10%] bottom-[15%] left-10 md:left-auto md:bottom-0 md:top-[30%] flex flex-col gap-8 items-center'>
             <div
               className={`flex flex-col opacity-0 items-center ${
-                addItemsEnabled &&
-                "opacity-100 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                addItemsEnabled && "opacity-100 cursor-custom"
               }`}
-              onClick={openMenu}
-            >
-              <Menu className="w-[100%] md:w-auto" />
-              <p className="text-[8px] md:text-base underline underline-black w-max">
-                add items
-              </p>
+              onClick={openMenu}>
+              <Menu className='w-[100%] md:w-auto' />
+              <p className='text-[8px] md:text-base underline underline-black w-max'>add items</p>
             </div>
 
             {downloadEnabled && (
-              <div
-                className="flex flex-col items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
-                onClick={handleExport}
-              >
-                <Download className="w-[100%] md:w-auto" />
-                <p className="text-[8px] md:text-base underline underline-black w-max">
-                  download
-                </p>
+              <div className='flex flex-col items-center cursor-custom' onClick={handleExport}>
+                <Download className='w-[100%] md:w-auto' />
+                <p className='text-[8px] md:text-base underline underline-black w-max'>download</p>
               </div>
             )}
           </div>
           <Transition appear show={isOpenMenu} as={Fragment}>
-            <Dialog as="div" className="relative z-[31]" onClose={closeMenu}>
+            <Dialog as='div' className='relative z-[31]' onClose={closeMenu}>
               <Transition.Child
                 as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="fixed inset-0 bg-white bg-opacity-50" />
+                enter='ease-out duration-300'
+                enterFrom='opacity-0'
+                enterTo='opacity-100'
+                leave='ease-in duration-200'
+                leaveFrom='opacity-100'
+                leaveTo='opacity-0'>
+                <div className='fixed inset-0 bg-white bg-opacity-50' />
               </Transition.Child>
 
-              <div className="fixed inset-0 overflow-hidden">
-                <div className="min-h-full">
+              <div className='fixed inset-0 overflow-hidden'>
+                <div className='min-h-full'>
                   <Transition.Child
                     as={Fragment}
-                    enter="ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                  >
-                    <Dialog.Panel className="w-[110%] md:w-[50%] max-h-[50vh] md:min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 md:bottom-auto md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4">
+                    enter='ease-out duration-300'
+                    enterFrom='opacity-0 scale-95'
+                    enterTo='opacity-100 scale-100'
+                    leave='ease-in duration-200'
+                    leaveFrom='opacity-100 scale-100'
+                    leaveTo='opacity-0 scale-95'>
+                    <Dialog.Panel className='w-[110%] md:w-[50%] max-h-[50vh] md:min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 md:bottom-auto md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4'>
                       <Tab.Group>
-                        <Tab.List className="flex py-2 md:py-4 border-b-2 md:border-b-4 border-black space-x-0.5">
+                        <Tab.List className='flex py-2 md:py-4 border-b-2 md:border-b-4 border-black space-x-0.5'>
                           {Object.keys(TabData).map((tab) => (
                             <Tab
                               key={tab}
@@ -303,19 +266,18 @@ const Home = () => {
                                     "border-x-2 md:border-x-4 border-black "
                                   }`
                                 )
-                              }
-                            >
+                              }>
                               {tab}
                             </Tab>
                           ))}
                         </Tab.List>
-                        <Tab.Panels className="p-6 max-h-[40vh] md:max-h-[65vh] overflow-y-auto">
+                        <Tab.Panels className='p-6 max-h-[40vh] md:max-h-[65vh] overflow-y-auto'>
                           <Tab.Panel>
-                            <div className="mt-6 columns-3 md:columns-4">
+                            <div className='mt-6 columns-3 md:columns-4'>
                               {TabData["STiCKERS"].map((sticker, idx) => {
                                 return (
                                   <img
-                                    className={`w-full cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] hover:bg-[#a9a9ff40] place-self-start`}
+                                    className={`w-full cursor-custom hover:bg-[#a9a9ff40] place-self-start`}
                                     key={sticker}
                                     src={getImageUrl("stickers", sticker)}
                                     onClick={(e) => {
@@ -338,14 +300,12 @@ const Home = () => {
                             </div>
                           </Tab.Panel>
                           <Tab.Panel>
-                            <h3 className="text-5xl text-left font-semibold">
-                              LOGOTYPES_
-                            </h3>
-                            <div className="flex flex-col gap-12 mt-6">
+                            <h3 className='text-5xl text-left font-semibold'>LOGOTYPES_</h3>
+                            <div className='flex flex-col gap-12 mt-6'>
                               {TabData["1SHEEP2SLEEP"].map((logo) => {
                                 return (
                                   <img
-                                    className="w-[80%] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] hover:bg-[#a9a9ff40] m-auto"
+                                    className='w-[80%] cursor-custom hover:bg-[#a9a9ff40] m-auto'
                                     key={logo}
                                     src={getImageUrl("cardLogos", logo)}
                                     onClick={(e) =>
@@ -368,15 +328,15 @@ const Home = () => {
                             </div>
                           </Tab.Panel>
                           <Tab.Panel>
-                            <h3 className="text-5xl text-left font-semibold">
+                            <h3 className='text-5xl text-left font-semibold'>
                               COLOR <br />
                               CHANGE_
                             </h3>
-                            <div className="flex flex-wrap gap-4 mt-6">
+                            <div className='flex flex-wrap gap-4 mt-6'>
                               {TabData["BACKGROUND"].color.map((background) => {
                                 return (
                                   <img
-                                    className="w-[10%] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]"
+                                    className='w-[10%] cursor-custom'
                                     key={background}
                                     src={getImageUrl("cardColors", background)}
                                     onClick={() => setColor(background)}
@@ -384,18 +344,17 @@ const Home = () => {
                                 );
                               })}
                             </div>
-                            <h3 className="text-5xl font-semibold text-left mt-12">
+                            <h3 className='text-5xl font-semibold text-left mt-12'>
                               BACKGROUND <br />
                               WORDS_
                             </h3>
-                            <div className="flex flex-col gap-4 mt-6">
+                            <div className='flex flex-col gap-4 mt-6'>
                               {TabData["BACKGROUND"].word.map((word) => {
                                 return (
                                   <div
                                     key={word}
-                                    className="rounded-md border-2 border-black p-2 flex justify-between items-center"
-                                  >
-                                    <p className="text-lg font-bold">{word}</p>
+                                    className='rounded-md border-2 border-black p-2 flex justify-between items-center'>
+                                    <p className='text-lg font-bold'>{word}</p>
                                     {handleSwitchInput(word)}
                                   </div>
                                 );
@@ -415,61 +374,34 @@ const Home = () => {
 
       {/* Introduction Modal */}
       <Transition appear show={isIntro} as={Fragment}>
-        <Dialog as="div" className="relative z-[32]" onClose={closeIntro}>
+        <Dialog as='div' className='relative z-[32]' onClose={closeIntro}>
           <Transition.Child
             as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-purple bg-opacity-95" />
+            enter='ease-out duration-300'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='ease-in duration-200'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'>
+            <div className='fixed inset-0 bg-purple bg-opacity-95' />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-x-hidden overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center text-center md:bg-cloud bg-no-repeat bg-center bg-contain">
+          <div className='fixed inset-0 overflow-x-hidden overflow-y-auto'>
+            <div className='flex min-h-full items-center justify-center text-center'>
               <Transition.Child
                 as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
+                enter='ease-out duration-300'
+                enterFrom='opacity-0 scale-95'
+                enterTo='opacity-100 scale-100'
+                leave='ease-in duration-200'
+                leaveFrom='opacity-100 scale-100'
+                leaveTo='opacity-0 scale-95'>
                 <Dialog.Panel
-                  className="w-full transform md:overflow-hidden p-6 text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900"
-                  onClick={closeIntro}
-                >
-                  <img
-                    className="md:hidden scale-[1.5] absolute z-[-1] top-0 inset-x-0 "
-                    src={Cloud}
-                    alt="cloud"
-                  />
-                  <p className=" p-1">歡迎來到一隻羊兩隻羊！</p>
-                  <p className=" p-1">這裡除了有解夢卡專區之外</p>
-                  <p className=" p-1">還有更多值得你探索的地方～</p>
-
-                  <p className="mt-2 md:mt-6">
-                    快動動手指製作屬於自己的桌布及解夢卡吧！
-                  </p>
-                  <img
-                    className="md:hidden scale-[1.5] absolute z-[-1] -bottom-3  inset-x-0 -scale-x-[1.5]"
-                    src={Cloud}
-                    alt="cloud"
-                  />
-                  <p className="p-1 mt-24 md:mt-8">
-                    Welcome to the website of ONE SHEEP, TWO SLEEP.
-                  </p>
-                  <p className=" p-1">Aside from our DREAMCARD area,</p>
-                  <p className=" p-1">
-                    here’s more to explore. GO make yourself
-                  </p>
-                  <p className="mt-2 md:mt-6">
-                    own “DREAMCARD” and “wallpaper”
-                  </p>
+                  className='w-full transform md:overflow-hidden text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900'
+                  onClick={closeIntro}>
+                  <img className='scale-[0.8] hidden md:block' src={Cloud} alt='cloud' />
+                  <img className='scale-90 md:hidden' src={CloudMobileCH} alt='cloud' />
+                  <img className='scale-90 md:hidden' src={CloudMobileEn} alt='cloud' />
                 </Dialog.Panel>
               </Transition.Child>
               <ToggleText />

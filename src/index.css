@@ -7,14 +7,17 @@
 @layer base {
   @font-face {
     font-family: "Adobe Myungjo";
-    src: local("Adobe Myungjo"),
-      url(./fonts/adobe-myungjo-std-M.otf) format("otf");
+    src: local("Adobe Myungjo"), url(./fonts/adobe-myungjo-std-M.otf) format("otf");
   }
   html {
-    font-family: "PingFang TC", "Noto Sans TC", Noto Serif TC, serif, system-ui,
-      sans-serif;
+    font-family: "PingFang TC", "Noto Sans TC", Noto Serif TC, serif, system-ui, sans-serif;
   }
   body {
     cursor: url(/src/assets/images/cursor-default.png), default;
+  }
+}
+@layer components {
+  .cursor-custom {
+    @apply cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer];
   }
 }
