@@ -403,9 +403,8 @@ const Home = () => {
                 <Dialog.Panel
                   className='w-full transform md:overflow-hidden text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900'
                   onClick={closeIntro}>
-                  <img className='w-full hidden md:block md:scale-95' src={Cloud} alt='cloud' />
-                  <img className='w-full ' src={CloudMobileCH} alt='cloud' />
-                  <img className='w-full ' src={CloudMobileEn} alt='cloud' />
+                  <img className='w-full md:hidden' src={CloudMobileCH} alt='cloud' />
+                  <img className='w-full md:hidden' src={CloudMobileEn} alt='cloud' />
                 </Dialog.Panel>
               </Transition.Child>
               <ToggleText />
