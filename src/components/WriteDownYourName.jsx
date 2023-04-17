@@ -1,13 +1,13 @@
 import { Stage, Layer, Line } from "react-konva";
-import Title from "../images/writeDownYourName/writedownyourname.svg";
-import TitleM from "../images/writeDownYourName/titleM.svg";
+import Title from "../assets/images/writeDownYourName/writedownyourname.svg";
+import TitleM from "../assets/images/writeDownYourName/titleM.svg";
 import { useState, useRef, useEffect } from "react";
-import Reset from "../images/sign/reset.svg";
-import Save from "../images/sign/save.svg";
-import PrevStep from "../images/sign/prevStep.svg";
-import HoverReset from "../images/sign/hoverReset.svg";
-import HoverSave from "../images/sign/hoverSave.svg";
-import HoverPrevStep from "../images/sign/hoverPrevStep.svg";
+import Reset from "../assets/images/sign/reset.svg";
+import Save from "../assets/images/sign/save.svg";
+import PrevStep from "../assets/images/sign/prevStep.svg";
+import HoverReset from "../assets/images/sign/hoverReset.svg";
+import HoverSave from "../assets/images/sign/hoverSave.svg";
+import HoverPrevStep from "../assets/images/sign/hoverPrevStep.svg";
 
 const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
   const [lines, setLines] = useState([]);
@@ -70,15 +70,12 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
   return (
     <div
-      className="w-[90%] md:w-[100%] min-h-inherit mx-auto relative bottom-5"
-      ref={backgroundRef}
-    >
-      <div className="bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative">
+      className='w-[90%] md:w-[100%] min-h-inherit mx-auto relative bottom-5 touch-none'
+      ref={backgroundRef}>
+      <div className='bg-signBlock bg-no-repeat bg-center bg-contain mt-6 relative'>
         <Stage
           width={canvaWidth}
-          height={
-            window.innerWidth < 768 ? `${180}` : `${window.innerHeight * 0.6}`
-          }
+          height={window.innerWidth < 768 ? `${180}` : `${window.innerHeight * 0.6}`}
           ref={stageRef}
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
@@ -86,8 +83,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
           onMouseMove={handleMouseMove}
           onTouchEnd={handleMouseUp}
           onMouseUp={handleMouseUp}
-          className="mx-auto"
-        >
+          className='mx-auto'>
           <Layer>
             {lines.map((line, i) => (
               <Line
@@ -96,7 +92,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
                 stroke={line.color}
                 strokeWidth={5}
                 tension={0.5}
-                lineCap="round"
+                lineCap='round'
               />
             ))}
           </Layer>
@@ -104,130 +100,104 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         <p
           className={`absolute inset-0 text-center h-min m-auto text-gray-300 z-[-1] ${
             lines.length !== 0 && "hidden"
-          }`}
-        >
+          }`}>
           （ 寫 下 你 的 名 字 ）
         </p>
       </div>
-      <div className="flex gap-16 justify-center items-center mt-4">
-        <div className="md:flex gap-2 hidden">
+      <div className='flex gap-16 justify-center items-center mt-4'>
+        <div className='md:flex gap-2 hidden'>
           <div
             className={`${
               color === "#004943" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] p-[0.2rem] bg-darkgreen cursor-custom`}
             onClick={() => handleColorChange("#004943")}
           />
           <div
             className={`${
               color === "#ff00c9" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-lightpurple cursor-custom`}
             onClick={() => handleColorChange("#ff00c9")}
           />
           <div
             className={`${
               color === "#0073f7" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-blue cursor-custom`}
             onClick={() => handleColorChange("#0073f7")}
           />
           <div
             className={`${
               color === "#a6e2c5" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-lakegreen cursor-custom`}
             onClick={() => handleColorChange("#a6e2c5")}
           />
           <div
-            className="w-[1.5rem] h-[1.5rem] bg-white"
+            className='w-[1.5rem] h-[1.5rem] bg-white'
             onClick={() => handleColorChange("#fff")}
           />
         </div>
-        <div className="flex gap-4">
-          <div
-            className="w-[3.5rem] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] group"
-            onClick={handleClear}
-          >
-            <img className={`group-hover:hidden`} src={Reset} alt="reset" />
-            <img
-              className={`hidden group-hover:block`}
-              src={HoverReset}
-              alt="reset"
-            />
+        <div className='flex gap-4'>
+          <div className='w-[3.5rem] cursor-custom group' onClick={handleClear}>
+            <img className={`group-hover:hidden`} src={Reset} alt='reset' />
+            <img className={`hidden group-hover:block`} src={HoverReset} alt='reset' />
           </div>
-          <div
-            className="w-[3.5rem] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] group"
-            onClick={returnPrevStep}
-          >
-            <img
-              className={`group-hover:hidden`}
-              src={PrevStep}
-              alt="prevStep"
-            />
-            <img
-              className={`hidden group-hover:block`}
-              src={HoverPrevStep}
-              alt="prevStep"
-            />
+          <div className='w-[3.5rem] cursor-custom group' onClick={returnPrevStep}>
+            <img className={`group-hover:hidden`} src={PrevStep} alt='prevStep' />
+            <img className={`hidden group-hover:block`} src={HoverPrevStep} alt='prevStep' />
           </div>
-          <div
-            className="w-[3.5rem] cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] group"
-            onClick={handleSave}
-          >
-            <img className={`group-hover:hidden`} src={Save} alt="save" />
-            <img
-              className={`hidden group-hover:block`}
-              src={HoverSave}
-              alt="save"
-            />
+          <div className='w-[3.5rem] cursor-custom group' onClick={handleSave}>
+            <img className={`group-hover:hidden`} src={Save} alt='save' />
+            <img className={`hidden group-hover:block`} src={HoverSave} alt='save' />
           </div>
         </div>
-        <div className="md:flex gap-2 hidden">
+        <div className='md:flex gap-2 hidden'>
           <div
             className={`${
               color === "#fffa6f" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-yellow cursor-custom`}
             onClick={() => handleColorChange("#fffa6f")}
           />
           <div
             className={`${
               color === "#20d371" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-lightgreen cursor-custom`}
             onClick={() => handleColorChange("#20d371")}
           />
           <div
             className={`${
               color === "#ff4a03" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-red cursor-custom`}
             onClick={() => handleColorChange("#ff4a03")}
           />
           <div
             className={`${
               color === "#a9a9ff" && "border-4 p-2 border-black border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-purple cursor-custom`}
             onClick={() => handleColorChange("#a9a9ff")}
           />
           <div
             className={`${
               color === "#000000" && "border-4 p-2 border-grey border-solid"
-            } w-[1.5rem] h-[1.5rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+            } w-[1.5rem] h-[1.5rem] bg-black cursor-custom`}
             onClick={() => handleColorChange("#000000")}
           />
         </div>
       </div>
 
-      <div className="w-[85%] m-auto flex md:hidden flex-wrap mt-12 gap-8 justify-around">
+      <div className='w-[85%] m-auto flex md:hidden flex-wrap mt-12 gap-8 justify-around'>
         <div
           className={`${
             color === "#004943" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] bg-darkgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] `}
+          } w-[2rem] h-[2rem] bg-darkgreen cursor-custom `}
           onClick={() => handleColorChange("#004943")}
         />
         <div
-          className={`w-[2rem] h-[2rem] bg-lightpurple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ${
+          className={`w-[2rem] h-[2rem] bg-lightpurple cursor-custom ${
             color === "#ff00c9" && "border-4 border-black border-solid"
           }`}
           onClick={() => handleColorChange("#ff00c9")}
         />
         <div
-          className={`w-[2rem] h-[2rem] bg-blue cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ${
+          className={`w-[2rem] h-[2rem] bg-blue cursor-custom ${
             color === "#0073f7" && "border-4 border-black border-solid"
           }`}
           onClick={() => handleColorChange("#0073f7")}
@@ -235,37 +205,37 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         <div
           className={`${
             color === "#a6e2c5" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] bg-lakegreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          } w-[2rem] h-[2rem] bg-lakegreen cursor-custom`}
           onClick={() => handleColorChange("#a6e2c5")}
         />
         <div
           className={`${
             color === "#fffa6f" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] bg-yellow cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          } w-[2rem] h-[2rem] bg-yellow cursor-custom`}
           onClick={() => handleColorChange("#fffa6f")}
         />
         <div
           className={`${
             color === "#20d371" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] bg-lightgreen cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          } w-[2rem] h-[2rem] bg-lightgreen cursor-custom`}
           onClick={() => handleColorChange("#20d371")}
         />
         <div
           className={`${
             color === "#ff4a03" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] bg-red cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          } w-[2rem] h-[2rem] bg-red cursor-custom`}
           onClick={() => handleColorChange("#ff4a03")}
         />
         <div
           className={`${
             color === "#a9a9ff" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] bg-purple cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          } w-[2rem] h-[2rem] bg-purple cursor-custom`}
           onClick={() => handleColorChange("#a9a9ff")}
         />
         <div
           className={`${
             color === "#000000" && "border-4 p-2 border-grey border-solid"
-          } w-[2rem] h-[2rem] bg-black cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]`}
+          } w-[2rem] h-[2rem] bg-black cursor-custom`}
           onClick={() => handleColorChange("#000000")}
         />
         <div className={` w-[2rem] h-[2rem] bg-transparent`} />
@@ -276,17 +246,17 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
 
 const WriteDownYourName = ({ nextStep, setSignImgPath }) => {
   return (
-    <div className="w-full h-safe-screen flex flex-col relative justify-center items-center overflow-hidden">
-      <div className="w-full min-h-inherit">
+    <div className='w-full h-safe-screen flex flex-col relative justify-center items-center overflow-hidden'>
+      <div className='w-full min-h-inherit'>
         <img
-          className="max-w-[90%] mx-auto hidden md:block"
+          className='max-w-[90%] mx-auto hidden md:block'
           src={Title}
-          alt="Write Down Your Name"
+          alt='Write Down Your Name'
         />
         <img
-          className="max-w-[90%] mx-auto mb-12 md:hidden"
+          className='max-w-[90%] mx-auto mb-12 md:hidden'
           src={TitleM}
-          alt="Write Down Your Name"
+          alt='Write Down Your Name'
         />
         <SignatureCanvas nextStep={nextStep} setSignImgPath={setSignImgPath} />
       </div>

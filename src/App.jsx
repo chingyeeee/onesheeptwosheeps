@@ -2,24 +2,27 @@ import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Loading from "./assets/components/Loading";
+import Loading from "./components/Loading";
+import { IntroProvider } from "./context/useIntro";
 
-const Home = lazy(() => import("./assets/pages/Home"));
-const AboutUs = lazy(() => import("./assets/pages/AboutUs"));
-const DreamCard = lazy(() => import("./assets/pages/DreamCard"));
+const Home = lazy(() => import("./pages/Home"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const DreamCard = lazy(() => import("./pages/DreamCard"));
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" index element={<Home />} />
-            <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/dreamcard" element={<DreamCard />} />
-            <Route path="/undefined" element={<Home />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
+          <IntroProvider>
+            <Routes>
+              <Route path='/' index element={<Home />} />
+              <Route path='aboutus' element={<AboutUs />} />
+              <Route path='dreamcard' element={<DreamCard />} />
+              <Route path='undefined' element={<Home />} />
+              <Route path='*' element={<Home />} />
+            </Routes>
+          </IntroProvider>
         </Suspense>
       </BrowserRouter>
     </div>

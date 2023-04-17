@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 import MyImage from "./CardImage";
 import Logo from "./Logo";
 import Emotion from "./Emotion";
-import { ReactComponent as Finger } from "../images/icons/icon-finger.svg";
+import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg";
 import { useNavigate } from "react-router-dom";
 
 const Background = ({
@@ -92,28 +92,26 @@ const Background = ({
       } ${
         color === "color6.svg" &&
         "before:bg-darkgreen before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
-      }`}
-    >
+      }`}>
       {welcomeToEnabled && (
-        <div className="absolute z-[10] w-full md:w-[55%]">
+        <div className='absolute z-[10] w-full md:w-[55%]'>
           <Welcome color={color} />
         </div>
       )}
       {logoEnabled && (
-        <div className="absolute z-[10] right-2 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16">
+        <div className='absolute z-[10] right-2 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16'>
           <Logo color={color} />
         </div>
       )}
 
       {emotionEnabled && <Emotion />}
 
-      <div className="relative z-[20] -top-6 -left-6">
+      <div className='relative z-[20] -top-6 -left-6'>
         <Stage
           width={windowWidth}
           height={windowHeight}
           onMouseDown={checkDeselect}
-          onTouchStart={checkDeselect}
-        >
+          onTouchStart={checkDeselect}>
           <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
             {cardItems.map((item, index) => {
               return (
@@ -139,9 +137,8 @@ const Background = ({
 
       {aboutUsEnabled && (
         <div
-          className={`absolute z-[21] left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] ml-auto w-min`}
-          onClick={() => navigate("/aboutus")}
-        >
+          className={`absolute z-[21] left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom ml-auto w-min`}
+          onClick={() => navigate("/aboutus")}>
           <Finger
             className={`w-[2.5rem] md:w-[6.5rem] h-auto animate-finger-shake ${handleNavItemStyle(
               color
@@ -151,17 +148,15 @@ const Background = ({
           <p
             className={`underline-offset-8 md:decoration-4 decoration-solid underline w-max text-2xl md:text-5xl lg:text-[4rem] ${handleNavItemStyle(
               color
-            )}`}
-          >
+            )}`}>
             ABOUT US
           </p>
         </div>
       )}
       {dreamCardEnabled && (
         <div
-          className="absolute z-[21] top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer] w-min mr-auto"
-          onClick={() => navigate("/dreamcard")}
-        >
+          className='absolute z-[21] top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom w-min mr-auto'
+          onClick={() => navigate("/dreamcard")}>
           <Finger
             className={`w-[2.5rem] md:w-[6.5rem] h-auto animate-finger-shake ${handleNavItemStyle(
               color
@@ -170,8 +165,7 @@ const Background = ({
           <p
             className={`underline-offset-8 md:decoration-4 decoration-solid underline w-max text-2xl md:text-5xl lg:text-[4rem] ${handleNavItemStyle(
               color
-            )}`}
-          >
+            )}`}>
             DREAM CARD
           </p>
         </div>

@@ -33,15 +33,13 @@ module.exports = {
         lightening: {
           "0%": { boxShadow: "0 0 12px rgba(0, 115, 247, 0.5)" },
           "100%": {
-            boxShadow:
-              "0 0 5px rgba(0, 115, 247, 0.9),0 0 18px rgba(0, 115, 247, 0.9)",
+            boxShadow: "0 0 5px rgba(0, 115, 247, 0.9),0 0 18px rgba(0, 115, 247, 0.9)",
           },
         },
         lightening2: {
           "0%": { boxShadow: "0 0 12px rgba(0, 73, 67, 0.2)" },
           "100%": {
-            boxShadow:
-              "0 0 5px rgba(0, 73, 67, 0.5),0 0 18px rgba(0, 73, 67, 0.5)",
+            boxShadow: "0 0 5px rgba(0, 73, 67, 0.5),0 0 18px rgba(0, 73, 67, 0.5)",
           },
         },
         zoomIn: {
@@ -163,13 +161,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      adobe: [
-        "Adobe Myungjo",
-        "Noto Serif TC",
-        "serif",
-        "system-ui",
-        "sans-serif",
-      ],
+      adobe: ["Adobe Myungjo", "Noto Serif TC", "serif", "system-ui", "sans-serif"],
       chakra: ["Chakra Petch", "sans-serif"],
       padyakke: ["Padyakke Expanded One", "cursive"],
       nanum: ["Nanum Myeongjo", "serif"],
