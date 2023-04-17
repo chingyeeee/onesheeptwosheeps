@@ -434,7 +434,7 @@ const ShowResultCard = ({ signImgPath, quizAns }) => {
             type: blob.type,
           }),
         ],
-        text: "快來超神準心理測驗one sheep two sheep，6個問題測出你的真實模樣&隱藏性格特質",
+        text: "一隻羊兩隻羊，祝你日日是好夢！",
         url: "https://onesheeptwosleep.farm/",
       });
     });
