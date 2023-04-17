@@ -46,11 +46,6 @@ const Home = () => {
     }
   }, []);
 
-  //關閉introduction
-  // function closeIntro() {
-  //   setIsIntro(false);
-  // }
-
   //開啓menu
   function openMenu() {
     setIsOpenMenu(true);
@@ -393,7 +388,7 @@ const Home = () => {
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-x-hidden overflow-y-auto'>
-            <div className='flex min-h-full items-center justify-center text-center md:bg-cloud bg-no-repeat bg-center bg-contain'>
+            <div className='flex min-h-full items-center justify-center text-center'>
               <Transition.Child
                 as={Fragment}
                 enter='ease-out duration-300'
@@ -405,7 +400,8 @@ const Home = () => {
                 <Dialog.Panel
                   className='w-full transform md:overflow-hidden text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900'
                   onClick={closeIntro}>
-                  <img className='scale-90 md:scale-75 md:hidden' src={CloudMobileCH} alt='cloud' />
+                  <img className='scale-[0.8] hidden md:block' src={Cloud} alt='cloud' />
+                  <img className='scale-90 md:hidden' src={CloudMobileCH} alt='cloud' />
                   <img className='scale-90 md:hidden' src={CloudMobileEn} alt='cloud' />
                 </Dialog.Panel>
               </Transition.Child>
