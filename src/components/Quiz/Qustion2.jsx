@@ -1,11 +1,9 @@
-import { ReactComponent as No } from "../../assets/images/quiz/2/no.svg";
 import { ReactComponent as Title2 } from "../../assets/images/quiz/2/title.svg";
-import { ReactComponent as Yes } from "../../assets/images/quiz/2/yes.svg";
-
+import { Q2options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, otherAns }) => {
   return (
     <div
-      className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-2 md:py-4 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-2 md:py-4 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         otherAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
@@ -28,10 +26,6 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, otherAns }) =>
 };
 
 const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => {
-  const options = [
-    { opt: "Y", optText: "是", optTextEng: "yes", Image: Yes },
-    { opt: "N", optText: "否", optTextEng: "no", Image: No },
-  ];
   return (
     <div
       className={` bg-lightgreen flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[19] ${
@@ -60,8 +54,8 @@ const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
             </div>
           </div>
           <div className='flex justify-between md:h-[35%]'>
-            <div className='w-[70%] md:w-[20%] md:mr-12 ml-auto h-full justify-between flex flex-col font-semibold'>
-              {options.map((option) => {
+            <div className='flex flex-col w-[70%] md:w-[20%] md:mr-12 ml-auto h-full justify-between divide-y-2 divide-black border-y-2 border-black font-semibold'>
+              {Q2options.map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
                   <Option

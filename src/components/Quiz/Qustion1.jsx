@@ -1,13 +1,6 @@
 import React from "react";
-import { ReactComponent as Choice1 } from "../../assets/images/quiz/1/choice1.svg";
-import { ReactComponent as Choice2 } from "../../assets/images/quiz/1/choice2.svg";
-import { ReactComponent as Choice3 } from "../../assets/images/quiz/1/choice3.svg";
-import { ReactComponent as Choice4 } from "../../assets/images/quiz/1/choice4.svg";
-import { ReactComponent as Choice5 } from "../../assets/images/quiz/1/choice5.svg";
-import { ReactComponent as Choice6 } from "../../assets/images/quiz/1/choice6.svg";
-import { ReactComponent as Choice7 } from "../../assets/images/quiz/1/choice7.svg";
-import { ReactComponent as Choice8 } from "../../assets/images/quiz/1/choice8.svg";
 import { ReactComponent as Title1 } from "../../assets/images/quiz/1/title.svg";
+import { Q1options } from "./options";
 
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
@@ -35,17 +28,6 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 };
 
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
-  const options = [
-    { opt: "A", optText: "悲傷", optTextEng: "sad", Image: Choice1 },
-    { opt: "B", optText: "無感", optTextEng: "feel nothing", Image: Choice2 },
-    { opt: "C", optText: "恐懼", optTextEng: "fear", Image: Choice3 },
-    { opt: "D", optText: "性歡愉", optTextEng: "sexual pleasure", Image: Choice4 },
-    { opt: "E", optText: "厭惡", optTextEng: "disgust", Image: Choice5 },
-    { opt: "F", optText: "憤怒", optTextEng: "angry", Image: Choice6 },
-    { opt: "G", optText: "驚嚇", optTextEng: "terrified", Image: Choice7 },
-    { opt: "H", optText: "幸福滿足", optTextEng: "happy satisfied", Image: Choice8 },
-  ];
-
   return (
     <div
       className={` bg-red flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
@@ -76,7 +58,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           </div>
           <div className='md:flex justify-between mt-3 md:mt-0 md:h-[62%] overflow-x-scroll'>
             <div className='w-full md:w-[45%] flex flex-col font-medium md:font-semibold divide-y-2 divide-black border-t-2 md:border-b-2 border-black'>
-              {options.slice(0, 4).map((option) => {
+              {Q1options.slice(0, 4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
                   <Option
@@ -92,7 +74,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
               })}
             </div>
             <div className='w-full md:w-[45%] flex flex-col font-semibold divide-y-2 divide-black border-t-2 border-b-2 border-black'>
-              {options.slice(4).map((option) => {
+              {Q1options.slice(4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
                   <Option

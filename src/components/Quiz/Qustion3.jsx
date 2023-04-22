@@ -1,13 +1,9 @@
-import { ReactComponent as Animal } from "../../assets/images/quiz/3/animal.svg";
-import { ReactComponent as Ghost } from "../../assets/images/quiz/3/ghost.svg";
-import { ReactComponent as Nonexisted } from "../../assets/images/quiz/3/nonexisted.svg";
-import { ReactComponent as Person } from "../../assets/images/quiz/3/person.svg";
 import { ReactComponent as Title3 } from "../../assets/images/quiz/3/title.svg";
-
+import { Q3options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl p-2 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl p-2 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[1] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(1, opt)}>
@@ -30,17 +26,6 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 };
 
 const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
-  const options = [
-    { opt: "2", optText: "鬼神", optTextEng: "ghost", Image: Ghost },
-    {
-      opt: "3",
-      optText: "不存在的生物",
-      optTextEng: "undefined mysterious animal",
-      Image: Nonexisted,
-    },
-    { opt: "1", optText: "人", optTextEng: "people", Image: Person },
-    { opt: "4", optText: "動物", optTextEng: "animal", Image: Animal },
-  ];
   return (
     <div
       className={`bg-lakegreen flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[18] ${
@@ -74,8 +59,8 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             <Title3 className='w-[25%] mr-6 md:w-[10%]' />
           </div>
           <div className='flex justify-between md:h-[62%] mt-6 md:mt-0'>
-            <div className='w-full md:w-[60%] flex flex-col font-semibold'>
-              {options.map((option) => {
+            <div className='w-full md:w-[60%] flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
+              {Q3options.map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
                   <Option

@@ -1,9 +1,28 @@
 import { ReactComponent as Finger } from "../../assets/images/icons/icon-finger.svg";
-import { ReactComponent as Notrecognized } from "../../assets/images/quiz/6/notrecognized.svg";
-import { ReactComponent as Open } from "../../assets/images/quiz/6/open.svg";
-import { ReactComponent as Recognized } from "../../assets/images/quiz/6/recognized.svg";
-import { ReactComponent as Sealed } from "../../assets/images/quiz/6/sealed.svg";
+
 import { ReactComponent as Title6 } from "../../assets/images/quiz/6/title.svg";
+import { Q6options } from "./options";
+
+const Option = ({ opt, optText, Image, handleSaveAns, otherAns, i }) => {
+  return (
+    <div
+      className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-custom group hover:bg-black items-center md:flex-1 transition duration-500 ${
+        otherAns[i] === opt && "bg-black"
+      }`}
+      onClick={() => handleSaveAns(i, opt)}>
+      <span className={`group-hover:hidden  md:text-2xl ${otherAns[i] === opt && "hidden"}`}>
+        {opt}
+      </span>
+      <Image
+        className={`w-[46%] group-hover:block group-hover:fill-yellow ${
+          otherAns[i] === opt ? "block fill-yellow" : "hidden"
+        }`}
+      />
+      <p className={`group-hover:text-yellow ${otherAns[i] === opt && "text-yellow"}`}>{optText}</p>
+    </div>
+  );
+};
+
 const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => {
   function checkNotEmptyAns() {
     otherAns[2] !== undefined && otherAns[3] !== undefined && setQuestionNum(questionNum + 1);
@@ -12,7 +31,7 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
   return (
     <div
       className={`bg-yellow flex px-4 md:px-20 flex-col md:justify-between overflow-hidden absolute w-full z-[15] ${
-        questionNum <= 6 ? "h-[100%] pt-44 md:pt-64 pb-16 animate-slideDown" : "h-[24%] md:h-[25%]"
+        questionNum <= 6 ? "h-[100%] pt-44 md:pt-72 pb-16 animate-slideDown" : "h-[24%] md:h-[25%]"
       }`}>
       <div
         className={`${
@@ -37,57 +56,37 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
             <Title6 className='w-[30%] md:w-[15%] ml-auto md:ml-0' />
           </div>
           <div className='md:flex items-end justify-between md:h-[36%] mt-8 md:mt-0'>
-            <div className='w-[60%] md:w-[30%] flex flex-col font-semibold md:h-full'>
-              <div
-                className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
-                  otherAns[2] === "recognize" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(2, "recognize")}>
-                <span
-                  className={`group-hover:hidden  md:text-2xl ${
-                    otherAns[2] === "recognize" && "hidden"
-                  }`}>
-                  recognize
-                </span>
-                <Recognized
-                  className={`w-[46%] group-hover:block group-hover:fill-yellow ${
-                    otherAns[2] === "recognize" ? "block fill-yellow" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-yellow ${
-                    otherAns[2] === "recognize" && "text-yellow"
-                  }`}>
-                  認得
-                </p>
-              </div>
-              <div
-                className={`flex justify-between  md:text-xl px-2 md:px-4 py-3 cursor-custom border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
-                  otherAns[2] === "not recognized" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(2, "not recognized")}>
-                <span
-                  className={`group-hover:hidden  md:text-2xl ${
-                    otherAns[2] === "not recognized" && "hidden"
-                  }`}>
-                  not recognized
-                </span>
-                <Notrecognized
-                  className={`w-[46%] group-hover:block group-hover:fill-yellow ${
-                    otherAns[2] === "not recognized" ? "block fill-yellow" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-yellow ${
-                    otherAns[2] === "not recognized" && "text-yellow"
-                  }`}>
-                  不認得
-                </p>
-              </div>
+            <div className='w-[60%] md:w-[30%] flex flex-col font-semibold md:h-full divide-y-2 divide-black border-y-2 border-black'>
+              {Q6options.slice(0, 2).map((option) => {
+                const { opt, optText, Image } = option;
+                return (
+                  <Option
+                    opt={opt}
+                    optText={optText}
+                    Image={Image}
+                    handleSaveAns={handleSaveAns}
+                    otherAns={otherAns}
+                    i={2}
+                  />
+                );
+              })}
             </div>
-            {otherAns[2] !== undefined && (
-              <div className='w-[60%] md:w-[30%] md:ml-[5%] flex flex-col font-semibold md:h-full'>
-                <div
+            {!!otherAns[2] && (
+              <div className='w-[60%] md:w-[30%] md:ml-[5%] flex flex-col font-semibold md:h-full divide-y-2 divide-black border-y-2 border-black'>
+                {Q6options.slice(2, 4).map((option) => {
+                  const { opt, optText, Image } = option;
+                  return (
+                    <Option
+                      opt={opt}
+                      optText={optText}
+                      Image={Image}
+                      handleSaveAns={handleSaveAns}
+                      otherAns={otherAns}
+                      i={3}
+                    />
+                  );
+                })}
+                {/* <div
                   className={`flex justify-between  md:text-xl px-2 md:px-4 py-3 cursor-custom md:border-t-2 border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
                     otherAns[3] === "open" && "bg-black"
                   }`}
@@ -109,8 +108,8 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
                     }`}>
                     開放
                   </p>
-                </div>
-                <div
+                </div> */}
+                {/* <div
                   className={`flex justify-between  md:text-xl px-2 py-3 cursor-custom border-b-2 border-black group hover:bg-black items-center md:flex-1 transition duration-500 ${
                     otherAns[3] === "sealed" && "bg-black"
                   }`}
@@ -132,7 +131,7 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
                     }`}>
                     密閉
                   </p>
-                </div>
+                </div> */}
               </div>
             )}
             <div

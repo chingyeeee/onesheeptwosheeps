@@ -1,7 +1,28 @@
-import { ReactComponent as Natural } from "../../assets/images/quiz/5/natural.svg";
-import { ReactComponent as Normal } from "../../assets/images/quiz/5/normal.svg";
-import { ReactComponent as Novel } from "../../assets/images/quiz/5/novel.svg";
 import { ReactComponent as Title5 } from "../../assets/images/quiz/5/title.svg";
+import { Q5options } from "./options";
+
+const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
+  return (
+    <div
+      className={`flex justify-between md:text-xl px-2 md:px-4 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+        quizAns[2] === opt && "bg-black"
+      }`}
+      onClick={() => handleSaveAns(2, opt)}>
+      <span className={`group-hover:hidden  md:text-2xl ${quizAns[2] === opt && "hidden"}`}>
+        {optTextEng}
+      </span>
+      {
+        <Image
+          className={`w-[20%] group-hover:block group-hover:fill-blue translate-y-2 ${
+            quizAns[2] === opt ? "block fill-blue" : "hidden"
+          }`}
+        />
+      }
+      <p className={`group-hover:text-blue ${quizAns[2] === opt && "text-blue"}`}>{optText}</p>
+    </div>
+  );
+};
+
 const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
@@ -27,61 +48,21 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <div className='flex flex-col-reverse items-start md:flex-row md:items-end justify-center md:justify-between gap-16 md:gap-24 w-[100%] mx-auto md:h-[48%]'>
               <Title5 className='w-[25%] ml-auto md:w-[15%] md:ml-0' />
-              <div className='w-full md:w-[55%] h-full justify-between flex flex-col font-semibold mt-4 md:mt-0'>
-                <div
-                  className={`flex justify-between md:text-xl px-2 md:px-4 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                    quizAns[2] === "Y" && "bg-black"
-                  }`}
-                  onClick={() => handleSaveAns(2, "Y")}>
-                  <span
-                    className={`group-hover:hidden  md:text-2xl ${quizAns[2] === "Y" && "hidden"}`}>
-                    daily
-                  </span>
-                  <Normal
-                    className={`w-[20%] group-hover:block group-hover:fill-blue translate-y-2 ${
-                      quizAns[2] === "Y" ? "block fill-blue" : "hidden"
-                    }`}
-                  />
-                  <p className={`group-hover:text-blue ${quizAns[2] === "Y" && "text-blue"}`}>
-                    日常生活
-                  </p>
-                </div>
-                <div
-                  className={`flex justify-between  md:text-xl px-2 md:px-4 cursor-custom border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                    quizAns[2] === "X" && "bg-black"
-                  }`}
-                  onClick={() => handleSaveAns(2, "X")}>
-                  <span
-                    className={`group-hover:hidden  md:text-2xl ${quizAns[2] === "X" && "hidden"}`}>
-                    natural
-                  </span>
-                  <Natural
-                    className={`w-[25%] group-hover:block group-hover:fill-blue ${
-                      quizAns[2] === "X" ? "block fill-blue" : "hidden"
-                    }`}
-                  />
-                  <p className={`group-hover:text-blue ${quizAns[2] === "X" && "text-blue"}`}>
-                    自然現象
-                  </p>
-                </div>
-                <div
-                  className={`flex justify-between  md:text-xl px-2 md:px-4 cursor-custom border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                    quizAns[2] === "Z" && "bg-black"
-                  }`}
-                  onClick={() => handleSaveAns(2, "Z")}>
-                  <span
-                    className={`group-hover:hidden  md:text-2xl ${quizAns[2] === "Z" && "hidden"}`}>
-                    unrealistic
-                  </span>
-                  <Novel
-                    className={`w-[45%] group-hover:block group-hover:fill-blue ${
-                      quizAns[2] === "Z" ? "block fill-blue" : "hidden"
-                    }`}
-                  />
-                  <p className={`group-hover:text-blue ${quizAns[2] === "Z" && "text-blue"}`}>
-                    小說情節
-                  </p>
-                </div>
+              <div className='w-full md:w-[55%] h-full justify-between flex flex-col font-semibold mt-4 md:mt-0 divide-y-2 divide-black border-y-2 border-black'>
+                {Q5options.map((option) => {
+                  const { opt, optText, optTextEng, Image } = option;
+                  return (
+                    <Option
+                      key={opt}
+                      opt={opt}
+                      optText={optText}
+                      optTextEng={optTextEng}
+                      Image={Image}
+                      handleSaveAns={handleSaveAns}
+                      quizAns={quizAns}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
