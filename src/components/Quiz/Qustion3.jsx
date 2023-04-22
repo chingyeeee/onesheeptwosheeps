@@ -3,7 +3,44 @@ import { ReactComponent as Ghost } from "../../assets/images/quiz/3/ghost.svg";
 import { ReactComponent as Nonexisted } from "../../assets/images/quiz/3/nonexisted.svg";
 import { ReactComponent as Person } from "../../assets/images/quiz/3/person.svg";
 import { ReactComponent as Title3 } from "../../assets/images/quiz/3/title.svg";
+
+const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
+  return (
+    <div
+      className={`flex justify-between text-base md:text-xl p-2 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+        quizAns[1] === opt && "bg-black"
+      }`}
+      onClick={() => handleSaveAns(1, opt)}>
+      <span
+        className={`group-hover:hidden text-base md:text-2xl ${quizAns[1] === opt && "hidden"}`}>
+        {optTextEng}
+      </span>
+      {
+        <Image
+          className={`w-[25%] group-hover:block group-hover:fill-lakegreen ${
+            quizAns[1] === opt ? "block fill-lakegreen" : "hidden"
+          }`}
+        />
+      }
+      <p className={`group-hover:text-lakegreen ${quizAns[1] === opt && "text-lakegreen"}`}>
+        {optText}
+      </p>
+    </div>
+  );
+};
+
 const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
+  const options = [
+    { opt: "2", optText: "鬼神", optTextEng: "ghost", Image: Ghost },
+    {
+      opt: "3",
+      optText: "不存在的生物",
+      optTextEng: "undefined mysterious animal",
+      Image: Nonexisted,
+    },
+    { opt: "1", optText: "人", optTextEng: "people", Image: Person },
+    { opt: "4", optText: "動物", optTextEng: "animal", Image: Animal },
+  ];
   return (
     <div
       className={`bg-lakegreen flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[18] ${
@@ -38,98 +75,20 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
           </div>
           <div className='flex justify-between md:h-[62%] mt-6 md:mt-0'>
             <div className='w-full md:w-[60%] flex flex-col font-semibold'>
-              <div
-                className={`flex justify-between text-base md:text-xl p-2 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  quizAns[1] === "2" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(1, "2")}>
-                <span
-                  className={`group-hover:hidden text-base md:text-2xl ${
-                    quizAns[1] === "2" && "hidden"
-                  }`}>
-                  ghost
-                </span>
-                <Ghost
-                  className={`w-[25%] group-hover:block group-hover:fill-lakegreen ${
-                    quizAns[1] === "2" ? "block fill-lakegreen" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-lakegreen ${
-                    quizAns[1] === "2" && "text-lakegreen"
-                  }`}>
-                  鬼神
-                </p>
-              </div>
-              <div
-                className={`flex justify-between text-sm md:text-xl p-2 cursor-custom border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  quizAns[1] === "3" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(1, "3")}>
-                <span
-                  className={`group-hover:hidden text-sm md:text-2xl ${
-                    quizAns[1] === "3" && "hidden"
-                  }`}>
-                  undefined mysterious animal
-                </span>
-                <Nonexisted
-                  className={`w-[70%] group-hover:block group-hover:fill-lakegreen ${
-                    quizAns[1] === "3" ? "block fill-lakegreen" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-lakegreen ${
-                    quizAns[1] === "3" && "text-lakegreen"
-                  }`}>
-                  不存在的生物
-                </p>
-              </div>
-              <div
-                className={`flex justify-between text-base md:text-xl p-2 cursor-custom border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  quizAns[1] === "1" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(1, "1")}>
-                <span
-                  className={`group-hover:hidden text-base md:text-2xl ${
-                    quizAns[1] === "1" && "hidden"
-                  }`}>
-                  people
-                </span>
-                <Person
-                  className={`w-[15%] group-hover:block group-hover:fill-lakegreen ${
-                    quizAns[1] === "1" ? "block fill-lakegreen" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-lakegreen ${
-                    quizAns[1] === "1" && "text-lakegreen"
-                  }`}>
-                  人
-                </p>
-              </div>
-              <div
-                className={`flex justify-between text-base md:text-xl p-2 cursor-custom border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  quizAns[1] === "4" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(1, "4")}>
-                <span
-                  className={`group-hover:hidden text-base md:text-2xl ${
-                    quizAns[1] === "4" && "hidden"
-                  }`}>
-                  animal
-                </span>
-                <Animal
-                  className={`w-[18%] group-hover:block group-hover:fill-lakegreen ${
-                    quizAns[1] === "4" ? "block fill-lakegreen" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-lakegreen ${
-                    quizAns[1] === "4" && "text-lakegreen"
-                  }`}>
-                  動物
-                </p>
-              </div>
+              {options.map((option) => {
+                const { opt, optText, optTextEng, Image } = option;
+                return (
+                  <Option
+                    key={opt}
+                    opt={opt}
+                    optText={optText}
+                    optTextEng={optTextEng}
+                    Image={Image}
+                    handleSaveAns={handleSaveAns}
+                    quizAns={quizAns}
+                  />
+                );
+              })}
             </div>
           </div>
         </>

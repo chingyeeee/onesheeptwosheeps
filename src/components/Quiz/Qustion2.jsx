@@ -2,7 +2,36 @@ import { ReactComponent as No } from "../../assets/images/quiz/2/no.svg";
 import { ReactComponent as Title2 } from "../../assets/images/quiz/2/title.svg";
 import { ReactComponent as Yes } from "../../assets/images/quiz/2/yes.svg";
 
+const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, otherAns }) => {
+  return (
+    <div
+      className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-2 md:py-4 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
+        otherAns[0] === opt && "bg-black"
+      }`}
+      onClick={() => handleSaveAns(0, opt)}>
+      <span
+        className={`group-hover:hidden  text-base md:text-2xl ${otherAns[0] === opt && "hidden"}`}>
+        {optTextEng}
+      </span>
+      {
+        <Image
+          className={`w-[40%] group-hover:fill-lightgreen group-hover:block ${
+            otherAns[0] === opt ? "block fill-lightgreen" : "hidden"
+          }`}
+        />
+      }
+      <p className={`group-hover:text-lightgreen ${otherAns[0] === opt && "text-lightgreen"}`}>
+        {optText}
+      </p>
+    </div>
+  );
+};
+
 const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => {
+  const options = [
+    { opt: "Y", optText: "是", optTextEng: "yes", Image: Yes },
+    { opt: "N", optText: "否", optTextEng: "no", Image: No },
+  ];
   return (
     <div
       className={` bg-lightgreen flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[19] ${
@@ -32,52 +61,20 @@ const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
           </div>
           <div className='flex justify-between md:h-[35%]'>
             <div className='w-[70%] md:w-[20%] md:mr-12 ml-auto h-full justify-between flex flex-col font-semibold'>
-              <div
-                className={`flex justify-between  text-base md:text-xl px-2 md:px-4 py-2 md:py-4 cursor-custom border-t-2 border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  otherAns[0] === "Y" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(0, "Y")}>
-                <span
-                  className={`group-hover:hidden  text-base md:text-2xl ${
-                    otherAns[0] === "Y" && "hidden"
-                  }`}>
-                  yes
-                </span>
-                <Yes
-                  className={`w-[40%] group-hover:fill-lightgreen group-hover:block ${
-                    otherAns[0] === "Y" ? "block fill-lightgreen" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-lightgreen ${
-                    otherAns[0] === "Y" && "text-lightgreen"
-                  }`}>
-                  是
-                </p>
-              </div>
-              <div
-                className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 cursor-custom border-b-2 border-black group hover:bg-black items-center flex-1 transition duration-500 ${
-                  otherAns[0] === "N" && "bg-black"
-                }`}
-                onClick={() => handleSaveAns(0, "N")}>
-                <span
-                  className={`group-hover:hidden text-base md:text-2xl ${
-                    otherAns[0] === "N" && "hidden"
-                  }`}>
-                  no
-                </span>
-                <No
-                  className={`w-[40%] group-hover:fill-lightgreen group-hover:block ${
-                    otherAns[0] === "N" ? "block fill-lightgreen" : "hidden"
-                  }`}
-                />
-                <p
-                  className={`group-hover:text-lightgreen ${
-                    otherAns[0] === "N" && "text-lightgreen"
-                  }`}>
-                  否
-                </p>
-              </div>
+              {options.map((option) => {
+                const { opt, optText, optTextEng, Image } = option;
+                return (
+                  <Option
+                    key={opt}
+                    opt={opt}
+                    optText={optText}
+                    optTextEng={optTextEng}
+                    Image={Image}
+                    handleSaveAns={handleSaveAns}
+                    otherAns={otherAns}
+                  />
+                );
+              })}
             </div>
           </div>
         </>
