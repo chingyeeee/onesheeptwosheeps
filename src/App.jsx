@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "./components/Loading";
 import { IntroProvider } from "./context/useIntro";
+import DownloadAndShare from "./components/Download";
 
 const Home = lazy(() => import("./pages/Home"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
@@ -19,7 +20,7 @@ function App() {
               <Route path='/' index element={<Home />} />
               <Route path='aboutus' element={<AboutUs />} />
               <Route path='dreamcard' element={<DreamCard />} />
-              <Route path='undefined' element={<Home />} />
+              <Route path='download' element={<DownloadAndShare />} />
               <Route path='*' element={<Home />} />
             </Routes>
           </IntroProvider>
