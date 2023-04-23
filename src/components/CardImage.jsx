@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, Fragment } from "react";
 import { Image, Transformer, Text, Circle, Group } from "react-konva";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
@@ -6,7 +6,7 @@ import { getImageUrl } from "../utils/getImageUrl";
 const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelectedCardItem }) => {
   const shapeRef = useRef();
   const trRef = useRef();
-  const deleteButtonRef = useRef(null);
+  // const deleteButtonRef = useRef(null);
 
   const imagePath = getImageUrl(shapeProps.folder, shapeProps.image);
   const [imageItem] = useImage(imagePath);
@@ -25,23 +25,19 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
         onClick={onSelect}
         onTap={onSelect}
         ref={shapeRef}
-        x={shapeProps.x}
-        y={shapeProps.y}
-        width={shapeProps.width}
-        height={shapeProps.height}
+        {...shapeProps}
         draggable
         image={imageItem}
-        onDragStart={(e) => {
-          e.target.moveToTop();
-          document.body.style.cursor = "url(/src/assets/images/cursor-move.png),move";
-        }}
+        // onDragStart={(e) => {
+        //   e.target.moveToTop();
+        //   document.body.style.cursor = "url(/src/assets/images/cursor-move.png),move";
+        // }}
         onDragEnd={(e) => {
           onChange({
             ...shapeProps,
             x: e.target.x(),
             y: e.target.y(),
           });
-          document.body.style.cursor = "url(/src/assets/images/cursor-default.png),default";
         }}
         onTransformEnd={(e) => {
           // transformer is changing scale of the node
@@ -63,39 +59,23 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
             width: Math.max(5, node.width() * scaleX),
             height: Math.max(node.height() * scaleY),
           });
-          document.body.style.cursor = "url(/src/assets/images/cursor-default.png),default";
         }}
+        onDblTap={() => handleDeleteSelectedCardItem()}
+        onDblClick={() => handleDeleteSelectedCardItem()}
       />
       {isSelected && (
-        <>
-          <Transformer
-            ref={trRef}
-            keepRatio
-            resizeEnabled
-            boundBoxFunc={(oldBox, newBox) => {
-              // limit resize
-              if (newBox.width < 50 || newBox.height < 50) {
-                return oldBox;
-              }
-              return newBox;
-            }}
-          />
-          <Group ref={deleteButtonRef}>
-            <Circle x={shapeProps.x} y={shapeProps.y} radius={15} fill='black' />
-            <Text
-              text='X'
-              fontSize={16}
-              fill='white'
-              onClick={handleDeleteSelectedCardItem}
-              onTap={handleDeleteSelectedCardItem}
-              fontStyle='bold'
-              width={150}
-              height={150}
-              x={shapeProps.x - 5}
-              y={shapeProps.y - 6}
-            />
-          </Group>
-        </>
+        <Transformer
+          ref={trRef}
+          keepRatio
+          resizeEnabled
+          boundBoxFunc={(oldBox, newBox) => {
+            // limit resize
+            if (newBox.width < 5 || newBox.height < 5) {
+              return oldBox;
+            }
+            return newBox;
+          }}
+        />
       )}
     </Group>
   );

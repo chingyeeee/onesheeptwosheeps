@@ -112,7 +112,7 @@ const Background = ({
           height={windowHeight}
           onMouseDown={checkDeselect}
           onTouchStart={checkDeselect}>
-          <Layer onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
+          <Layer>
             {cardItems.map((item, index) => {
               return (
                 <MyImage
