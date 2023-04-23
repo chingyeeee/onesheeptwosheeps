@@ -1,24 +1,16 @@
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import TabData from "../../assets/data/TabList.json";
-import { v4 as uuidv4 } from "uuid";
 
+import clsx from "clsx";
 import { Fragment } from "react";
-import { getImageUrl } from "../../utils/getImageUrl";
-const Items = ({
-  isOpenMenu,
-  setIsOpenMenu,
-  posX,
-  posY,
-  handleSwitchInput,
-  setColor,
-  setCardItems,
-}) => {
+import LogoTab from "./LogoTab";
+import StickersTab from "./StickersTab";
+import SettingsTab from "./SettingsTab";
+const Items = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems, toggles }) => {
   function closeMenu() {
     setIsOpenMenu(false);
   }
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
+
   return (
     <Transition appear show={isOpenMenu} as={Fragment}>
       <Dialog as='div' className='relative z-[31]' onClose={closeMenu}>
@@ -50,13 +42,14 @@ const Items = ({
                       <Tab
                         key={tab}
                         className={({ selected }) =>
-                          classNames(
-                            "w-full py-1 md:py-2.5 text-xs md:text-lg font-medium leading-5",
-                            "ring-white ring-opacity-60 focus:outline-none focus:ring-2",
-                            selected
-                              ? "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.65] relative inline-block text-white"
-                              : "text-black",
-                            `${tab === "1SHEEP2SLEEP" && "border-x-2 md:border-x-4 border-black "}`
+                          clsx(
+                            "w-full py-1 md:py-2.5 text-xs md:text-lg font-medium leading-5 ring-white ring-opacity-60 focus:outline-none focus:ring-2",
+                            {
+                              "before:block before:absolute before:-inset-1 before:bg-lightpurple before:rounded-md before:z-[-1] before:scale-[0.65] relative inline-block text-white":
+                                selected,
+                              "text-black": !selected,
+                              "border-x-2 md:border-x-4 border-black": tab === "1SHEEP2SLEEP",
+                            }
                           )
                         }>
                         {tab}
@@ -64,95 +57,9 @@ const Items = ({
                     ))}
                   </Tab.List>
                   <Tab.Panels className='p-6 max-h-[40vh] md:max-h-[65vh] overflow-y-auto'>
-                    <Tab.Panel>
-                      <div className='mt-6 columns-3 md:columns-4'>
-                        {TabData["STiCKERS"].map((sticker, idx) => {
-                          return (
-                            <img
-                              className={`w-full cursor-custom hover:bg-[#a9a9ff40] place-self-start`}
-                              key={sticker}
-                              src={getImageUrl("stickers", sticker)}
-                              onClick={(e) => {
-                                setCardItems((cardItems) => [
-                                  ...cardItems,
-                                  {
-                                    image: sticker,
-                                    x: posX,
-                                    y: posY,
-                                    width: e.target.width,
-                                    height: e.target.height,
-                                    id: uuidv4(),
-                                    folder: "stickers",
-                                  },
-                                ]);
-                              }}
-                            />
-                          );
-                        })}
-                      </div>
-                    </Tab.Panel>
-                    <Tab.Panel>
-                      <h3 className='text-5xl text-left font-semibold'>LOGOTYPES_</h3>
-                      <div className='flex flex-col gap-12 mt-6'>
-                        {TabData["1SHEEP2SLEEP"].map((logo) => {
-                          return (
-                            <img
-                              className='w-[80%] cursor-custom hover:bg-[#a9a9ff40] m-auto'
-                              key={logo}
-                              src={getImageUrl("cardLogos", logo)}
-                              onClick={(e) =>
-                                setCardItems((cardItems) => [
-                                  ...cardItems,
-                                  {
-                                    image: logo,
-                                    x: posX,
-                                    y: posY,
-                                    width: e.target.width,
-                                    height: e.target.height,
-                                    id: uuidv4(),
-                                    folder: "cardLogos",
-                                  },
-                                ])
-                              }
-                            />
-                          );
-                        })}
-                      </div>
-                    </Tab.Panel>
-                    <Tab.Panel>
-                      <h3 className='text-5xl text-left font-semibold'>
-                        COLOR <br />
-                        CHANGE_
-                      </h3>
-                      <div className='flex flex-wrap gap-4 mt-6'>
-                        {TabData["BACKGROUND"].color.map((background) => {
-                          return (
-                            <img
-                              className='w-[10%] cursor-custom'
-                              key={background}
-                              src={getImageUrl("cardColors", background)}
-                              onClick={() => setColor(background)}
-                            />
-                          );
-                        })}
-                      </div>
-                      <h3 className='text-5xl font-semibold text-left mt-12'>
-                        BACKGROUND <br />
-                        WORDS_
-                      </h3>
-                      <div className='flex flex-col gap-4 mt-6'>
-                        {TabData["BACKGROUND"].word.map((word) => {
-                          return (
-                            <div
-                              key={word}
-                              className='rounded-md border-2 border-black p-2 flex justify-between items-center'>
-                              <p className='text-lg font-bold'>{word}</p>
-                              {handleSwitchInput(word)}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </Tab.Panel>
+                    <StickersTab setCardItems={setCardItems} closeMenu={closeMenu} />
+                    <LogoTab setCardItems={setCardItems} closeMenu={closeMenu} />
+                    <SettingsTab setColor={setColor} closeMenu={closeMenu} toggles={toggles} />
                   </Tab.Panels>
                 </Tab.Group>
               </Dialog.Panel>

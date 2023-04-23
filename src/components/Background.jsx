@@ -7,17 +7,9 @@ import Emotion from "./Emotion";
 import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg";
 import { useNavigate } from "react-router-dom";
 
-const Background = ({
-  logoEnabled,
-  welcomeToEnabled,
-  color,
-  cardItems,
-  setCardItems,
-  stageRef,
-  emotionEnabled,
-  aboutUsEnabled,
-  dreamCardEnabled,
-}) => {
+const Background = ({ color, cardItems, setCardItems, stageRef, toggles }) => {
+  const { logoEnabled, welcomeToEnabled, emotionEnabled, aboutUsEnabled, dreamCardEnabled } =
+    toggles;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
@@ -137,10 +129,10 @@ const Background = ({
 
       {aboutUsEnabled && (
         <div
-          className={`absolute z-[21] left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom ml-auto w-min`}
+          className='absolute left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom ml-auto w-min'
           onClick={() => navigate("/aboutus")}>
           <Finger
-            className={`w-[2.5rem] md:w-[6.5rem] h-auto animate-finger-shake ${handleNavItemStyle(
+            className={`w-[2.5rem] md:w-[5rem] h-auto animate-finger-shake ${handleNavItemStyle(
               color
             )}`}
           />
@@ -155,10 +147,10 @@ const Background = ({
       )}
       {dreamCardEnabled && (
         <div
-          className='absolute z-[21] top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom w-min mr-auto'
+          className='absolute top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom w-min mr-auto'
           onClick={() => navigate("/dreamcard")}>
           <Finger
-            className={`w-[2.5rem] md:w-[6.5rem] h-auto animate-finger-shake ${handleNavItemStyle(
+            className={`w-[2.5rem] md:w-[5rem] h-auto animate-finger-shake ${handleNavItemStyle(
               color
             )}`}
           />
