@@ -6,7 +6,7 @@ import { Fragment } from "react";
 import LogoTab from "./LogoTab";
 import StickersTab from "./StickersTab";
 import SettingsTab from "./SettingsTab";
-const Items = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems, toggles }) => {
+const ItemsTab = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems }) => {
   function closeMenu() {
     setIsOpenMenu(false);
   }
@@ -57,9 +57,9 @@ const Items = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems, toggles }) =
                     ))}
                   </Tab.List>
                   <Tab.Panels className='p-6 max-h-[40vh] md:max-h-[65vh] overflow-y-auto'>
-                    <StickersTab setCardItems={setCardItems} closeMenu={closeMenu} />
-                    <LogoTab setCardItems={setCardItems} closeMenu={closeMenu} />
-                    <SettingsTab setColor={setColor} closeMenu={closeMenu} toggles={toggles} />
+                    <StickersTab setCardItems={setCardItems} />
+                    <LogoTab setCardItems={setCardItems} />
+                    <SettingsTab setColor={setColor} />
                   </Tab.Panels>
                 </Tab.Group>
               </Dialog.Panel>
@@ -70,4 +70,4 @@ const Items = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems, toggles }) =
     </Transition>
   );
 };
-export default Items;
+export default ItemsTab;

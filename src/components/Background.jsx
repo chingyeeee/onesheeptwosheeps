@@ -1,43 +1,17 @@
-import { useEffect, useState } from "react";
-import { Stage, Layer } from "react-konva";
-import Welcome from "./Welcome";
+import { useState } from "react";
+import { Layer, Stage } from "react-konva";
 import MyImage from "./CardImage";
-import Logo from "./Logo";
 import Emotion from "./Emotion";
-import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg";
-import { useNavigate } from "react-router-dom";
-
-const Background = ({ color, cardItems, setCardItems, stageRef, toggles }) => {
-  const { logoEnabled, welcomeToEnabled, emotionEnabled, aboutUsEnabled, dreamCardEnabled } =
-    toggles;
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+import Logo from "./Logo";
+import ShortCut from "./ShortCut";
+import Welcome from "./Welcome";
+import { useToggle } from "../context/useToggle";
+const Background = ({ cardItems, setCardItems, stageRef }) => {
+  const { color, logoEnabled, welcomeToEnabled, emotionEnabled, aboutUsEnabled, dreamCardEnabled } =
+    useToggle();
 
   //selectedItem
   const [selectedId, selectShape] = useState(null);
-
-  const navigate = useNavigate();
-
-  //配合螢幕調整canvas
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
-    };
-
-    const handleKeyDown = (e) => {
-      if (e.key === "Backspace") {
-        handleDeleteSelectedCardItem();
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selectedId]);
 
   const checkDeselect = (e) => {
     // deselect when clicked on empty area
@@ -47,121 +21,67 @@ const Background = ({ color, cardItems, setCardItems, stageRef, toggles }) => {
     }
   };
 
-  //根據color傳入對應style
-  function handleNavItemStyle(color) {
-    switch (color) {
-      case "color-default.svg":
-        return "decoration-black text-black border-black";
-      case "color1.svg":
-        return "decoration-lightgreen text-lightgreen border-lightgreen stroke-lightgreen fill-lightgreen";
-      case "color2.svg":
-        return "decoration-black text-black border-black";
-      case "color3.svg":
-        return "decoration-lightpurple text-lightpurple border-lightpurple stroke-lightpurple fill-lightpurple";
-      case "color4.svg":
-        return "decoration-yellow text-yellow border-yellow stroke-yellow fill-yellow";
-      case "color5.svg":
-        return "decoration-yellow text-yellow border-yellow stroke-yellow fill-yellow";
-      case "color6.svg":
-        return "decoration-lakegreen text-lakegreen border-lakegreen stroke-lakegreen fill-lakegreen";
-    }
-  }
-
   //刪除選擇的cardItem
   function handleDeleteSelectedCardItem() {
     setCardItems(cardItems.filter((item) => item.id !== selectedId));
   }
 
   return (
-    <div
-      ref={stageRef}
-      className={`relative before:block before:absolute before:-inset-1 before:z-[-1] ${
-        color === "color4.svg" &&
-        "before:bg-purple before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
-      } ${
-        color === "color5.svg" &&
-        "before:bg-lightpurple before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
-      } ${
-        color === "color6.svg" &&
-        "before:bg-darkgreen before:w-[100%] before:mx-auto before:h-[95%] before:mt-1"
-      }`}>
+    <div ref={stageRef}>
+      <Stage
+        className='absolute top-0 left-0 z-10'
+        width={window.innerWidth}
+        height={window.innerHeight}
+        onMouseDown={checkDeselect}
+        onTouchStart={checkDeselect}>
+        <Layer>
+          {cardItems.map((item, index) => {
+            return (
+              <MyImage
+                key={index}
+                shapeProps={item}
+                isSelected={item.id === selectedId}
+                onSelect={() => {
+                  selectShape(item.id);
+                }}
+                onChange={(newAttrs) => {
+                  const items = cardItems.slice();
+                  items[index] = newAttrs;
+                  setCardItems(items);
+                }}
+                handleDeleteSelectedCardItem={handleDeleteSelectedCardItem}
+              />
+            );
+          })}
+        </Layer>
+      </Stage>
       {welcomeToEnabled && (
-        <div className='absolute z-[10] w-full md:w-[55%]'>
+        <div className='absolute top-0 left-0 w-full md:w-[55%]'>
           <Welcome color={color} />
         </div>
       )}
       {logoEnabled && (
-        <div className='absolute z-[10] right-2 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16'>
+        <div className='absolute right-2 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16'>
           <Logo color={color} />
         </div>
       )}
-
       {emotionEnabled && <Emotion />}
-
-      <div className='relative z-[20] -top-6 -left-6'>
-        <Stage
-          width={windowWidth}
-          height={windowHeight}
-          onMouseDown={checkDeselect}
-          onTouchStart={checkDeselect}>
-          <Layer>
-            {cardItems.map((item, index) => {
-              return (
-                <MyImage
-                  key={index}
-                  shapeProps={item}
-                  isSelected={item.id === selectedId}
-                  onSelect={() => {
-                    selectShape(item.id);
-                  }}
-                  onChange={(newAttrs) => {
-                    const items = cardItems.slice();
-                    items[index] = newAttrs;
-                    setCardItems(items);
-                  }}
-                  handleDeleteSelectedCardItem={handleDeleteSelectedCardItem}
-                />
-              );
-            })}
-          </Layer>
-        </Stage>
+      <div className='absolute w-full bottom-[58%] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-4 z-10'>
+        <ShortCut
+          key='aboutus'
+          toggle={aboutUsEnabled}
+          path={"aboutus"}
+          text='ABOUT US'
+          colorObj={color}
+        />
+        <ShortCut
+          key='dreamcard'
+          toggle={dreamCardEnabled}
+          path={"dreamcard"}
+          text='DREAM CARD'
+          colorObj={color}
+        />
       </div>
-
-      {aboutUsEnabled && (
-        <div
-          className='absolute left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom ml-auto w-min'
-          onClick={() => navigate("/aboutus")}>
-          <Finger
-            className={`w-[2.5rem] md:w-[5rem] h-auto animate-finger-shake ${handleNavItemStyle(
-              color
-            )}`}
-          />
-
-          <p
-            className={`underline-offset-8 md:decoration-4 decoration-solid underline w-max text-2xl md:text-5xl lg:text-[4rem] ${handleNavItemStyle(
-              color
-            )}`}>
-            ABOUT US
-          </p>
-        </div>
-      )}
-      {dreamCardEnabled && (
-        <div
-          className='absolute top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom w-min mr-auto'
-          onClick={() => navigate("/dreamcard")}>
-          <Finger
-            className={`w-[2.5rem] md:w-[5rem] h-auto animate-finger-shake ${handleNavItemStyle(
-              color
-            )}`}
-          />
-          <p
-            className={`underline-offset-8 md:decoration-4 decoration-solid underline w-max text-2xl md:text-5xl lg:text-[4rem] ${handleNavItemStyle(
-              color
-            )}`}>
-            DREAM CARD
-          </p>
-        </div>
-      )}
     </div>
   );
 };

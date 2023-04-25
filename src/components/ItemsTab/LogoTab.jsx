@@ -3,7 +3,7 @@ import TabData from "../../assets/data/TabList.json";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { v4 as uuidv4 } from "uuid";
 
-const LogoTab = ({ setCardItems, closeMenu }) => {
+const LogoTab = ({ setCardItems }) => {
   return (
     <Tab.Panel>
       <h3 className='text-5xl text-left font-semibold'>LOGOTYPES_</h3>
@@ -19,7 +19,7 @@ const LogoTab = ({ setCardItems, closeMenu }) => {
                   ...cardItems,
                   {
                     image: logo,
-                    x: window.screen.width / 3,
+                    x: (window.screen.width * 2) / 3,
                     y: window.screen.height / 3,
                     width: e.target.width,
                     height: e.target.height,
@@ -27,7 +27,6 @@ const LogoTab = ({ setCardItems, closeMenu }) => {
                     folder: "cardLogos",
                   },
                 ]);
-                closeMenu();
               }}
             />
           );

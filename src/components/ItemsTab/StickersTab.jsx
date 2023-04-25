@@ -3,7 +3,7 @@ import TabData from "../../assets/data/TabList.json";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { v4 as uuidv4 } from "uuid";
 
-const StickersTab = ({ setCardItems, closeMenu }) => {
+const StickersTab = ({ setCardItems }) => {
   return (
     <Tab.Panel>
       <div className='mt-6 columns-3 md:columns-4'>
@@ -18,7 +18,7 @@ const StickersTab = ({ setCardItems, closeMenu }) => {
                   ...cardItems,
                   {
                     image: sticker,
-                    x: window.screen.width / 3,
+                    x: (window.screen.width * 2) / 3,
                     y: window.screen.height / 3,
                     width: e.target.width,
                     height: e.target.height,
@@ -26,7 +26,6 @@ const StickersTab = ({ setCardItems, closeMenu }) => {
                     folder: "stickers",
                   },
                 ]);
-                closeMenu();
               }}
             />
           );

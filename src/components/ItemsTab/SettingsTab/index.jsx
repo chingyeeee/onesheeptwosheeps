@@ -2,55 +2,11 @@ import { Tab } from "@headlessui/react";
 import TabData from "../../../assets/data/TabList.json";
 import { getImageUrl } from "../../../utils/getImageUrl";
 import Setting from "./Setting";
+import { useToggle } from "../../../context/useToggle";
 
-const Settings = ({ setColor, closeMenu, toggles }) => {
-  const {
-    logoEnabled,
-    setLogoEnabled,
-    welcomeToEnabled,
-    setWelcomeToEnabled,
-    aboutUsEnabled,
-    setAboutUsEnabled,
-    dreamCardEnabled,
-    setDreamCardEnabled,
-    emotionEnabled,
-    setEmotionEnabled,
-    addItemsEnabled,
-    setAddItemsEnabled,
-    downloadEnabled,
-    setDownloadEnabled,
-  } = toggles;
+const Settings = () => {
+  const { toggleMap, setColor } = useToggle();
 
-  const toggleMap = {
-    LOGOTYPE: {
-      toggle: logoEnabled,
-      setToggle: setLogoEnabled,
-    },
-    "WELCOME TO": {
-      toggle: welcomeToEnabled,
-      setToggle: setWelcomeToEnabled,
-    },
-    "DREAM CARD": {
-      toggle: dreamCardEnabled,
-      setToggle: setDreamCardEnabled,
-    },
-    "ABOUT US": {
-      toggle: aboutUsEnabled,
-      setToggle: setAboutUsEnabled,
-    },
-    EMOTIONS: {
-      toggle: emotionEnabled,
-      setToggle: setEmotionEnabled,
-    },
-    "ADD ITEMS": {
-      toggle: addItemsEnabled,
-      setToggle: setAddItemsEnabled,
-    },
-    DOWNLOAD: {
-      toggle: downloadEnabled,
-      setToggle: setDownloadEnabled,
-    },
-  };
   return (
     <Tab.Panel>
       <h3 className='text-5xl text-left font-semibold'>
@@ -59,14 +15,14 @@ const Settings = ({ setColor, closeMenu, toggles }) => {
       </h3>
       <div className='flex flex-wrap gap-4 mt-6'>
         {TabData["BACKGROUND"].color.map((background) => {
+          const { name, file } = background;
           return (
             <img
               className='w-[10%] cursor-custom'
-              key={background}
-              src={getImageUrl("cardColors", background)}
+              key={name}
+              src={getImageUrl("cardColors", file)}
               onClick={() => {
                 setColor(background);
-                closeMenu();
               }}
             />
           );

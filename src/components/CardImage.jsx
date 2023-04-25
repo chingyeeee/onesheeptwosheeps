@@ -2,12 +2,13 @@ import { useRef, useEffect, Fragment } from "react";
 import { Image, Transformer, Text, Circle, Group } from "react-konva";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
+import CancelIcon from "@mui/icons-material/Cancel";
+import { Html } from "react-konva-utils";
+import { IconButton } from "@mui/material";
 
 const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelectedCardItem }) => {
   const shapeRef = useRef();
   const trRef = useRef();
-  // const deleteButtonRef = useRef(null);
-
   const imagePath = getImageUrl(shapeProps.folder, shapeProps.image);
   const [imageItem] = useImage(imagePath);
 
@@ -20,7 +21,16 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
   }, [isSelected]);
 
   return (
-    <Group>
+    <Fragment>
+      <Html>
+        {isSelected && (
+          <IconButton
+            onClick={handleDeleteSelectedCardItem}
+            sx={{ top: shapeProps.y - 23, left: shapeProps.x - 23 }}>
+            <CancelIcon fontSize='large' />
+          </IconButton>
+        )}
+      </Html>
       <Image
         onClick={onSelect}
         onTap={onSelect}
@@ -28,11 +38,7 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
         {...shapeProps}
         draggable
         image={imageItem}
-        // onDragStart={(e) => {
-        //   e.target.moveToTop();
-        //   document.body.style.cursor = "url(/src/assets/images/cursor-move.png),move";
-        // }}
-        onDragEnd={(e) => {
+        onDragMove={(e) => {
           onChange({
             ...shapeProps,
             x: e.target.x(),
@@ -40,14 +46,9 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
           });
         }}
         onTransformEnd={(e) => {
-          // transformer is changing scale of the node
-          // and NOT its width or height
-          // but in the store we have only width and height
-          // to match the data better we will reset scale on transform end
           const node = shapeRef.current;
           const scaleX = node.scaleX();
           const scaleY = node.scaleY();
-
           // we will reset it back
           node.scaleX(1);
           node.scaleY(1);
@@ -60,8 +61,6 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
             height: Math.max(node.height() * scaleY),
           });
         }}
-        onDblTap={() => handleDeleteSelectedCardItem()}
-        onDblClick={() => handleDeleteSelectedCardItem()}
       />
       {isSelected && (
         <Transformer
@@ -77,7 +76,7 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
           }}
         />
       )}
-    </Group>
+    </Fragment>
   );
 };
 export default MyImage;

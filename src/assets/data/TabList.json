@@ -32,13 +32,37 @@
   ],
   "BACKGROUND": {
     "color": [
-      "color4.svg",
-      "color3.svg",
-      "color2.svg",
-      "color5.svg",
-      "color6.svg",
-      "color1.svg",
-      "color-default.svg"
+      { "name": "default", "file": "default.svg", "color": "balck" },
+      {
+        "name": "color1",
+        "file": "color1.svg",
+        "color": "lightgreen"
+      },
+      {
+        "name": "color2",
+        "file": "color2.svg",
+        "color": "balck"
+      },
+      {
+        "name": "color3",
+        "file": "color3.svg",
+        "color": "lightpurple"
+      },
+      {
+        "name": "color4",
+        "file": "color4.svg",
+        "color": "yellow"
+      },
+      {
+        "name": "color5",
+        "file": "color5.svg",
+        "color": "yellow"
+      },
+      {
+        "name": "color6",
+        "file": "color6.svg",
+        "color": "lakegreen"
+      }
     ],
     "word": [
       "LOGOTYPE",

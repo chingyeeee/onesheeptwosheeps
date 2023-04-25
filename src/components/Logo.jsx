@@ -2,36 +2,36 @@ import { getImageUrl } from "../utils/getImageUrl";
 
 const Logo = ({ color }) => {
   function handleLogoColor(color) {
-    switch (color) {
-      case "color-default.svg":
-      case "color2.svg":
+    switch (color.name) {
+      case "default":
+      case "color2":
         return "logo-default.png";
-      case "color1.svg":
+      case "color1":
         return "logo-1.png";
-      case "color3.svg":
-      case "color4.svg":
+      case "color3":
+      case "color4":
         return "logo-3.png";
-      case "color5.svg":
+      case "color5":
         return "logo-5.png";
-      case "color6.svg":
+      case "color6":
         return "logo-6.png";
     }
   }
 
   function handleMobileLogoColor(color) {
-    switch (color) {
-      case "color-default.svg":
+    switch (color.name) {
+      case "default":
         return "logo-default.png";
-      case "color2.svg":
+      case "color2":
         return "logo-2.png";
-      case "color1.svg":
+      case "color1":
         return "logo-1.png";
-      case "color3.svg":
-      case "color4.svg":
+      case "color3":
+      case "color4":
         return "logo-3.png";
-      case "color5.svg":
+      case "color5":
         return "logo-5.png";
-      case "color6.svg":
+      case "color6":
         return "logo-6.png";
     }
   }
@@ -42,8 +42,8 @@ const Logo = ({ color }) => {
 
   return (
     <>
-      <img className="hidden md:block" src={logoImg} alt="logo" />
-      <img className="md:hidden block" src={logoImgM} alt="logo" />
+      <img className='hidden md:block' src={logoImg} alt='logo' />
+      <img className='md:hidden block' src={logoImgM} alt='logo' />
     </>
   );
 };
