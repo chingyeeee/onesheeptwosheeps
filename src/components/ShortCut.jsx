@@ -2,11 +2,11 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg";
 
-const ShortCut = ({ toggle, path, text, colorObj }) => {
+const ShortCut = ({ toggle, path, text, className, colorObj }) => {
   const { color } = colorObj;
   return (
     toggle && (
-      <div className='flex gap-4 items-center cursor-custom'>
+      <div className={clsx("flex gap-4 items-center cursor-custom", className)}>
         <Finger
           className={clsx(
             "w-[2.5rem] md:w-[5rem] h-auto animate-finger-shake",

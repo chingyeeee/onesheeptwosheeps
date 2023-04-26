@@ -67,19 +67,20 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      <div className='absolute w-full bottom-[58%] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-4 z-10'>
+      <div className='absolute w-full bottom-[72%] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-4 z-10'>
+        <ShortCut
+          key='dreamcard'
+          className='pl-20'
+          toggle={dreamCardEnabled}
+          path={"dreamcard"}
+          text='DREAM CARD'
+          colorObj={color}
+        />
         <ShortCut
           key='aboutus'
           toggle={aboutUsEnabled}
           path={"aboutus"}
           text='ABOUT US'
-          colorObj={color}
-        />
-        <ShortCut
-          key='dreamcard'
-          toggle={dreamCardEnabled}
-          path={"dreamcard"}
-          text='DREAM CARD'
           colorObj={color}
         />
       </div>
