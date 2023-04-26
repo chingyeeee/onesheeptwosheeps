@@ -61,6 +61,7 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
                 const { opt, optText, Image } = option;
                 return (
                   <Option
+                    key={opt}
                     opt={opt}
                     optText={optText}
                     Image={Image}

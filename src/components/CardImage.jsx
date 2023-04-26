@@ -1,10 +1,10 @@
-import { useRef, useEffect, Fragment } from "react";
-import { Image, Transformer, Text, Circle, Group } from "react-konva";
+import CancelIcon from "@mui/icons-material/Cancel";
+import { IconButton } from "@mui/material";
+import { Fragment, useEffect, useRef } from "react";
+import { Image, Transformer } from "react-konva";
+import { Html } from "react-konva-utils";
 import useImage from "use-image";
 import { getImageUrl } from "../utils/getImageUrl";
-import CancelIcon from "@mui/icons-material/Cancel";
-import { Html } from "react-konva-utils";
-import { IconButton } from "@mui/material";
 
 const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelectedCardItem }) => {
   const shapeRef = useRef();
@@ -26,8 +26,8 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
         {isSelected && (
           <IconButton
             onClick={handleDeleteSelectedCardItem}
-            sx={{ top: shapeProps.y - 23, left: shapeProps.x - 23 }}>
-            <CancelIcon fontSize='large' />
+            sx={{ top: shapeProps.y - 29, left: shapeProps.x - 25 }}>
+            <CancelIcon fontSize='large' color='primary' />
           </IconButton>
         )}
       </Html>

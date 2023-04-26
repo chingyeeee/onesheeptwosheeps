@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Layer, Stage } from "react-konva";
 import MyImage from "./CardImage";
 import Emotion from "./Emotion";
@@ -27,9 +27,10 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
   }
 
   return (
-    <div ref={stageRef}>
+    <Fragment>
       <Stage
-        className='absolute top-0 left-0 z-10'
+        ref={stageRef}
+        className='z-10'
         width={window.innerWidth}
         height={window.innerHeight}
         onMouseDown={checkDeselect}
@@ -82,7 +83,7 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
           colorObj={color}
         />
       </div>
-    </div>
+    </Fragment>
   );
 };
 

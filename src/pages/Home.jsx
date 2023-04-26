@@ -16,8 +16,6 @@ const Home = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { color, addItemsEnabled, downloadEnabled } = useToggle();
 
-  //color
-
   //cardItems
   const [cardItems, setCardItems] = useState([]);
   //stage Ref
@@ -47,7 +45,7 @@ const Home = () => {
     <Fragment>
       <BrowserAlert open={openDrawer} setOpen={setOpenDrawer} />
       <div
-        className={clsx("relative min-safe-h-screen md:h-screen overflow-hidden touch-none", {
+        className={clsx("relative min-safe-h-screen md:h-full m-5 overflow-hidden touch-none", {
           "bg-purple": color.name === "color4",
           "bg-lightpurple": color.name === "color5",
           "bg-darkgreen": color.name === "color6",
@@ -71,9 +69,6 @@ const Home = () => {
               <p className='text-[8px] md:text-base underline underline-black w-max'>download</p>
             </div>
           )}
-          {/* <DndContext>
-            <Delete fontSize='large' />
-          </DndContext> */}
         </div>
         <ItemsTab
           isOpenMenu={isOpenMenu}

@@ -18,7 +18,7 @@ const DownloadAndShare = () => {
   const [resultCardPath, setResultCardPath] = useState(null);
   const [promoteFirstOpen, setPromoteFirstOpen] = useState(false);
   const [promoteSecOpen, setPromoteSecOpen] = useState(false);
-  //   const [cardNo, setCardNo] = useState(1);
+  const [cardNo, setCardNo] = useState(1);
   const navigate = useNavigate();
 
   function getResultCard() {
@@ -30,12 +30,14 @@ const DownloadAndShare = () => {
     const element = document.getElementById("combinedImg");
     element.classList.remove("animate-rotate360");
     html2canvas(element, { backgroundColor: null, scale: 2 }).then((canvas) => {
-      canvas.toBlob((blob) => saveAs(blob, "card.png"));
+      canvas.toBlob((blob) => saveAs(blob, `card_${cardNo}.png`));
+      setCardNo((no) => no + 1);
     });
     element.classList.add("animate-rotate360");
   };
 
   //長按儲存
+
   const onLongPressDownload = useLongPress(() => {
     downloadImage();
   });
@@ -59,9 +61,32 @@ const DownloadAndShare = () => {
     element.classList.add("animate-rotate360");
   }
 
+  function imageToDataUri(img, width) {
+    // create an off-screen canvas
+    var canvas = document.createElement("canvas"),
+      ctx = canvas.getContext("2d");
+
+    // set its dimension to target size
+    canvas.width = width;
+    canvas.height = 200;
+
+    // draw source image into the off-screen canvas:
+    ctx.drawImage(img, 0, 0, width, 200);
+
+    // encode image to data-uri with base64 version of compressed image
+    return canvas.toDataURL();
+  }
+
+  function resizeImage(width) {
+    const img = new Image();
+    img.onload = resizeImage;
+    img.src = signImgPath;
+    const newDataUri = imageToDataUri(img, width);
+    return newDataUri;
+  }
   mergeImages([
     { src: getImageUrl("resultCards", resultCardPath), x: 0, y: 0 },
-    { src: signImgPath, x: -450, y: 75 },
+    { src: resizeImage(400), x: 50, y: 200 },
   ]).then((b64) => {
     document.getElementById("combinedImg").src = b64;
   });
@@ -79,16 +104,15 @@ const DownloadAndShare = () => {
         setPromoteSecOpen={setPromoteSecOpen}
       />
       <PromoteSec promoteSecOpen={promoteSecOpen} setPromoteSecOpen={setPromoteSecOpen} />
-
-      <img className='m-auto' src={signImgPath} />
-
-      <img
-        className={clsx("py-8 rotate-6", {
-          "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
-        })}
-        id='combinedImg'
-      />
-
+      <div className='flex flex-col items-center'>
+        <img className='p-3' src={resizeImage(400)} />
+        <img
+          className={clsx("w-1/2 md:w-[35%] lg:w-[15%] py-5 z-10", {
+            "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
+          })}
+          id='combinedImg'
+        />
+      </div>
       <div className='absolute bottom-[5%] md:bottom-[10%] right-[5%] flex flex-col md:flex-row gap-2 md:gap-8 items-center z-10'>
         <div
           className='h-[3.5rem] md:h-[4.5rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base'

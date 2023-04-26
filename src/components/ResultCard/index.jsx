@@ -63,27 +63,26 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
         }
       />
 
-      <div className='w-[80%] mx-auto md:w-full px-4 md:pt-6 pb-12 min-safe-h-screen overflow-scroll'>
+      <div className='w-[80%] mx-auto md:w-full px-2 md:pt-6 pb-12 min-safe-h-screen overflow-scroll'>
         <img className='m-auto h-[8rem] md:h-[12rem] mb-2' src={signImgPath} alt='yourName' />
         <div className='mx-auto w-full max-w-3xl bg-white px-2 pb-8'>
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left text-sm font-medium focus:outline-none relative z-[20]'>
-                  <p className='md:text-lg text-blue'>
-                    (1) <br />有{percentageArray[0]}%的人也跟你一樣做了（ {getEmotion(quizAns)[0]}{" "}
+                <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left font-medium focus:outline-none relative'>
+                  <p className='md:text-lg text-[8pt] text-blue'>
+                    (1) <br />有{percentageArray[0]}%的人也跟你一樣做了 （ {getEmotion(quizAns)[0]}{" "}
                     ）的夢 <br />
                     BASED ON YOUR CHOICE, <br />
                     YOU HAVE A{" "}
-                    <span className='font-padyakke text-red'>({getEmotion(quizAns)[1]})</span>
-                    <span className='text-red'> {getEmotion(quizAns)[0]} </span>
+                    <span className='font-padyakke text-red'>({getEmotion(quizAns)[1]})</span>{" "}
                     DREAM.
                   </p>
                   <ChevronUp
                     className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className='p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end z-[10]'>
+                <Disclosure.Panel className='p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end'>
                   <img
                     className='md:scale-100 scale-[1.4]'
                     src={getImageUrl("quiz/showResult", `${quizAns[0]}.svg`)}
@@ -103,17 +102,15 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left text-sm font-medium focus:outline-none relative z-[20]'>
-                  <p className='md:text-lg text-blue'>
+                <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left text-[10px] font-medium focus:outline-none relative z-[20]'>
+                  <p className='md:text-lg text-[8pt] text-blue'>
                     (2) <br />而{percentageArray[1]}%的人夢境中的主角是（
                     {getCharacter(quizAns, otherAns)[0]}） <br />
-                    WITH
+                    WITH{" "}
                     <span className='font-padyakke text-red'>
                       ({getCharacter(quizAns, otherAns)[1]})
-                    </span>
-                    <span className='text-red'>{getCharacter(quizAns, otherAns)[0]}</span>
-                    BECOMING YOUR DREAM’S <br />
-                    MAIN OBJECT.
+                    </span>{" "}
+                    BECOMING YOUR DREAM’S MAIN OBJECT.
                   </p>
                   <ChevronUp
                     className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-purple-500`}
@@ -137,16 +134,15 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  className={`flex w-full justify-between border-t-2  border-blue p-3 text-left text-sm font-medium focus:outline-none relative z-[20] ${
+                  className={`flex w-full justify-between border-t-2  border-blue p-3 text-left text-[10px] font-medium focus:outline-none relative z-[20] ${
                     !open && "border-b-2"
                   }`}>
-                  <p className='md:text-lg text-blue'>
+                  <p className='md:text-lg text-[8pt] text-blue'>
                     (3) <br />
                     {percentageArray[1]}%的人做了有關（
                     {getLifeStyle(quizAns)[0]}） 的夢
-                    <br /> AND YOUR DREAM IS ALL ABOUT{""}
+                    <br /> AND YOUR DREAM IS ALL ABOUT{" "}
                     <span className='font-padyakke text-red'>({getLifeStyle(quizAns)[1]})</span>
-                    <span className='text-red'>{getLifeStyle(quizAns)[0]}</span>
                   </p>
                   <ChevronUp
                     className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-purple-500`}
