@@ -9,7 +9,7 @@ export default function Marquee({ image, className, vertical = true }) {
       )}>
       <div
         className={clsx(
-          vertical ? "animate-marqueeV h-[200%] flex-col" : "animate-marquee w-[200%]",
+          vertical ? "animate-marqueeV h-[200%] flex-col w-full" : "animate-marquee w-[200%]",
           "absolute m-auto flex"
         )}>
         <img className={clsx(vertical ? "h-1/2 md:h-full w-auto" : "w-1/2 h-auto")} src={image} />
