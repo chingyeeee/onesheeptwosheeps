@@ -73,11 +73,12 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
               })}
             </div>
             {!!otherAns[2] && (
-              <div className='w-[60%] md:w-[30%] md:ml-[5%] flex flex-col font-semibold md:h-full divide-y-2 divide-black border-y-2 border-black'>
+              <div className='w-[60%] md:w-[30%] md:ml-[5%] flex flex-col font-semibold md:h-full divide-y-2 divide-black md:border-y-2 border-b-2 border-black'>
                 {Q6options.slice(2, 4).map((option) => {
                   const { opt, optText, Image } = option;
                   return (
                     <Option
+                      key={opt}
                       opt={opt}
                       optText={optText}
                       Image={Image}

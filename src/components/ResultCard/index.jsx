@@ -1,10 +1,6 @@
 import { Disclosure } from "@headlessui/react";
-import Loading2 from "../../assets/images/quiz/loading/loading2.svg";
-import Loading5 from "../../assets/images/quiz/loading/loading5.svg";
 import { ReactComponent as ChevronUp } from "../../assets/images/quiz/showResult/chevronUp.svg";
-import LeftMarquee from "../../assets/images/quiz/showResult/left-marquee.svg";
-import Marquee from "../../assets/images/quiz/showResult/marquee.svg";
-import RightMarquee from "../../assets/images/quiz/showResult/right-marquee.svg";
+import Frame from "./Frame";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { getEmotion, getCharacter, getLifeStyle } from "./EmotionAlgorithm";
 import { useNavigate } from "react-router-dom";
@@ -25,45 +21,10 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
   }
 
   return (
-    <div className='relative min-safe-h-screen overflow-hidden'>
-      <div className='bg-blue h-[2rem] md:h-[5rem] relative overflow-hidden'>
-        <div className='absolute inset-y-0 m-auto flex animate-marquee w-[200%]'>
-          <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} />
-          <img className='w-[50%] h-auto' src={Marquee} />
-        </div>
-      </div>
-      <div className='bg-yellow absolute left-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
-        <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={LeftMarquee} />
-        </div>
-      </div>
-      <div className='bg-purple absolute right-0 w-[2rem] md:w-[5rem] min-h-inherit h-full overflow-hidden'>
-        <div className='absolute inset-x-0 m-auto flex flex-col animate-marqueeV h-[200%]'>
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-          <img className='h-[50%] md:h-[100%] w-auto' src={RightMarquee} />
-        </div>
-      </div>
-      <img
-        src={Loading5}
-        className={
-          "absolute -right-[0.1rem] -top-[0.1rem] w-[2.13rem] h-[2.13rem] md:w-[5.1rem] md:h-[5.2rem]"
-        }
-      />
-      <img
-        src={Loading2}
-        className={
-          "absolute -left-[0.1rem] -top-[0.1rem] w-[2.13rem] h-[2.13rem] md:w-[5.13rem] md:h-[5.2rem]"
-        }
-      />
+    <div className='relative h-screen'>
+      <Frame />
 
-      <div className='w-[80%] mx-auto md:w-full px-2 md:pt-6 pb-12 min-safe-h-screen overflow-scroll'>
+      <div className='w-[80%] mx-auto md:w-full px-2 md:pt-6 pb-12'>
         <img className='m-auto h-[8rem] md:h-[12rem] mb-2' src={signImgPath} alt='yourName' />
         <div className='mx-auto w-full max-w-3xl bg-white px-2 pb-8'>
           <Disclosure>

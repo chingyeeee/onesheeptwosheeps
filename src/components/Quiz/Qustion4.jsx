@@ -82,7 +82,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
                   );
                 })}
               </div>
-              <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
+              <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black md:border-y-2 border-b-2 border-black'>
                 {optionsArray.slice(optLength / 2, optLength + 1).map((option) => {
                   const { opt, optText, Image } = option;
                   return (

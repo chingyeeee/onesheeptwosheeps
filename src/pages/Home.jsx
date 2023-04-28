@@ -45,7 +45,7 @@ const Home = () => {
     <Fragment>
       <BrowserAlert open={openDrawer} setOpen={setOpenDrawer} />
       <div
-        className={clsx("relative min-safe-h-screen md:h-full m-5 overflow-hidden touch-none", {
+        className={clsx("relative min-safe-h-screen md:h-full overflow-hidden touch-none", {
           "bg-purple": color.name === "color4",
           "bg-lightpurple": color.name === "color5",
           "bg-darkgreen": color.name === "color6",

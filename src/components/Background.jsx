@@ -57,7 +57,7 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </Layer>
       </Stage>
       {welcomeToEnabled && (
-        <div className='absolute top-0 left-0 w-full md:w-[55%]'>
+        <div className='absolute top-5 left-5 w-full md:w-[55%]'>
           <Welcome color={color} />
         </div>
       )}
@@ -67,10 +67,10 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      <div className='absolute w-full bottom-[72%] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-4 z-10'>
+      <div className='absolute w-full bottom-[65%] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-10 z-10'>
         <ShortCut
           key='dreamcard'
-          className='pl-20'
+          className='pl-20 md:pl-0'
           toggle={dreamCardEnabled}
           path={"dreamcard"}
           text='DREAM CARD'
