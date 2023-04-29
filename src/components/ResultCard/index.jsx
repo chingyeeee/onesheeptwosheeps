@@ -46,7 +46,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 <Disclosure.Panel className='p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end'>
                   <img
                     className='md:scale-100 scale-[1.4]'
-                    src={getImageUrl("quiz/showResult", `${quizAns[0]}.png`)}
+                    src={getImageUrl("quiz/showResult", `${quizAns[0]}.svg`)}
                   />
 
                   <p className='w-full underline-offset-1 decoration-red decoration-solid underline'>
@@ -80,7 +80,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 <Disclosure.Panel className='p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end z-[10] w-full'>
                   <img
                     className='md:scale-100 scale-[1.4]'
-                    src={getImageUrl("quiz/showResult", `${quizAns[1]}.png`)}
+                    src={getImageUrl("quiz/showResult", `${quizAns[1]}.svg`)}
                   />
                   <p className='w-full underline-offset-1 decoration-red decoration-solid underline'>
                     {otherAns[1] === "significant other"
@@ -115,7 +115,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   }`}>
                   <img
                     className='md:scale-100 scale-[1.4]'
-                    src={getImageUrl("quiz/showResult", `${quizAns[2]}.png`)}
+                    src={getImageUrl("quiz/showResult", `${quizAns[2]}.svg`)}
                   />
 
                   <p className='w-full underline-offset-1 decoration-red decoration-solid underline'>
