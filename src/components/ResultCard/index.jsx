@@ -43,9 +43,9 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className='p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end'>
+                <Disclosure.Panel className='p-3 space-y-2 text-sm md:text-md text-red relative flex flex-col items-center'>
                   <img
-                    className='md:scale-100 scale-[1.4]'
+                    className='md:w-3/4 w-full'
                     src={getImageUrl("quiz/showResult", `${quizAns[0]}.svg`)}
                   />
 
@@ -77,9 +77,9 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                     className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className='p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end z-[10] w-full'>
+                <Disclosure.Panel className='p-3 space-y-2 text-sm md:text-md text-red relative flex flex-col items-center z-[10] w-full'>
                   <img
-                    className='md:scale-100 scale-[1.4]'
+                    className='md:w-3/4 w-full'
                     src={getImageUrl("quiz/showResult", `${quizAns[1]}.svg`)}
                   />
                   <p className='w-full underline-offset-1 decoration-red decoration-solid underline'>
@@ -110,11 +110,11 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel
-                  className={`p-3 space-y-8 text-sm md:text-md text-red relative flex flex-col items-end  ${
+                  className={`p-3 space-y-2 text-sm md:text-md text-red relative flex flex-col items-center  ${
                     open && "border-b-2 border-blue"
                   }`}>
                   <img
-                    className='md:scale-100 scale-[1.4]'
+                    className='md:w-3/4 w-full'
                     src={getImageUrl("quiz/showResult", `${quizAns[2]}.svg`)}
                   />
 
