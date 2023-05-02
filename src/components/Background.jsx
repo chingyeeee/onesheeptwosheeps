@@ -67,7 +67,7 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      <div className='absolute w-full bottom-[35rem] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row justify-between p-10 z-10'>
+      <div className='absolute w-full top-[21%] md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row-reverse justify-between p-10 z-10'>
         <ShortCut
           key='dreamcard'
           className='pl-16 md:pl-0'
