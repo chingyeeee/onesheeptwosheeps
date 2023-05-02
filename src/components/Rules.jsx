@@ -11,10 +11,12 @@ const Rules = ({ nextStep }) => {
           <br />
           不管傷心難過、開心快樂甚至是難以啟齒的夢，都請回答接下來的問題！
           <br />
-          Please try to recall a dream that impressed you, it can be any situation,
-          <br />
-          Regardless of whether you are sad, happy or even unspeakable dreams, <br />
-          please answer the following questions!
+          <p className='py-3 text-sm'>
+            Please try to recall a dream that impressed you, it can be any situation,
+            <br />
+            Regardless of whether you are sad, happy or even unspeakable dreams, <br />
+            please answer the following questions!
+          </p>
         </p>
         <div
           className={`bg-blue mt-8 w-min m-auto px-6 py-3 rounded-full cursor-custom animate-remind-lightening transition hover:animate-lightening opacity-1`}
