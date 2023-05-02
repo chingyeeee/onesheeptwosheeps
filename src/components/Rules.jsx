@@ -5,14 +5,14 @@ const Rules = ({ nextStep }) => {
   return (
     <div className='h-full flex justify-center items-center animate-zoomIn min-h-inherit'>
       <div className='flex flex-col space-y-10 w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-24 px-12 text-center min-h-[50%]'>
-        <RulesLogo className='w-[40%] m-auto' />
-        <p>
+        <RulesLogo className='md:w-[50%] w-[80%] m-auto' />
+        <p className='py-5'>
           請試著回想一個讓你印象深刻的夢，可以是任何的情境
           <br />
           不管傷心難過、開心快樂甚至是難以啟齒的夢，都請回答接下來的問題！
           <br />
           <p className='py-3 text-sm'>
-            Please try to recall a dream that impressed you, it can be any situation,
+            Please try to recall a dream that impressed you, it can be any situation.
             <br />
             Regardless of whether you are sad, happy or even unspeakable dreams, <br />
             please answer the following questions!
