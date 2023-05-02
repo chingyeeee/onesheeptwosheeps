@@ -109,7 +109,7 @@ const DownloadAndShare = () => {
       </div>
       <div className='absolute w-full h-full flex justify-center items-center'>
         <img
-          className={clsx("w-[40%] md:w-1/3 lg:w-[20%] py-5 z-10", {
+          className={clsx("w-[40%] md:w-[28%] lg:w-[17%] py-5 z-10", {
             "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
           })}
           id='combinedImg'
