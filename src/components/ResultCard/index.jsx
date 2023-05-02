@@ -31,7 +31,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left font-medium focus:outline-none relative'>
-                  <p className='md:text-lg text-[8pt] text-blue'>
+                  <p className='md:text-lg text-[10pt] text-blue'>
                     (1) <br />有{percentageArray[0]}%的人也跟你一樣做了
                     {window.screen.width < 768 ? <br /> : ""}（ {getEmotion(quizAns)[0]} ）的夢{" "}
                     <br />
@@ -65,7 +65,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left text-[10px] font-medium focus:outline-none relative z-[20]'>
-                  <p className='md:text-lg text-[8pt] text-blue'>
+                  <p className='md:text-lg text-[10pt] text-blue'>
                     (2) <br />而{percentageArray[1]}%的人夢境中的主角是（
                     {getCharacter(quizAns, otherAns)[0]}） <br />
                     WITH{" "}
@@ -99,7 +99,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   className={`flex w-full justify-between border-t-2  border-blue p-3 text-left text-[10px] font-medium focus:outline-none relative z-[20] ${
                     !open && "border-b-2"
                   }`}>
-                  <p className='md:text-lg text-[8pt] text-blue'>
+                  <p className='md:text-lg text-[10pt] text-blue'>
                     (3) <br />
                     {percentageArray[1]}%的人做了有關（
                     {getLifeStyle(quizAns)[0]}） 的夢
