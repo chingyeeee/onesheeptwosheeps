@@ -4,7 +4,7 @@ import { ReactComponent as Finger } from "../assets/images/icons/icon-finger.svg
 const Rules = ({ nextStep }) => {
   return (
     <div className='h-full flex justify-center items-center animate-zoomIn min-h-inherit'>
-      <div className='flex flex-col space-y-10 w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-24 md:py-24 md:p-12 text-center min-h-[50%]'>
+      <div className='flex flex-col space-y-10 w-[90%] md:w-[70%] bg-yellow rounded-[150px] md:rounded-full py-24 px-12 text-center min-h-[50%]'>
         <RulesLogo className='w-[40%] m-auto' />
         <p>
           請試著回想一個讓你印象深刻的夢，可以是任何的情境
