@@ -33,7 +33,8 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                 <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left font-medium focus:outline-none relative'>
                   <p className='md:text-lg text-[8pt] text-blue'>
                     (1) <br />有{percentageArray[0]}%的人也跟你一樣做了
-                    <br />（ {getEmotion(quizAns)[0]} ）的夢 <br />
+                    {window.screen.width < 768 ? <br /> : ""}（ {getEmotion(quizAns)[0]} ）的夢{" "}
+                    <br />
                     BASED ON YOUR CHOICE, <br />
                     YOU HAVE A{" "}
                     <span className='font-padyakke text-red'>({getEmotion(quizAns)[1]})</span>{" "}
