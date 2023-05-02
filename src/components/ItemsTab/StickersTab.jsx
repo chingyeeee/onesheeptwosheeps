@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 const StickersTab = ({ setCardItems }) => {
   return (
     <Tab.Panel>
-      <div className='mt-6 columns-3 md:columns-4'>
+      <div className='mt-6 columns-3'>
         {TabData["STiCKERS"].map((sticker) => {
           return (
             <img
