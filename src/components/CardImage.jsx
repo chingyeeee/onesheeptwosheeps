@@ -1,4 +1,4 @@
-import CancelTwoToneIcon from "@mui/icons-material/CancelTwoTone";
+import CancelIcon from "@mui/icons-material/Cancel";
 import { IconButton } from "@mui/material";
 import { Fragment, useEffect, useRef } from "react";
 import { Image, Transformer } from "react-konva";
@@ -27,7 +27,7 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
           <IconButton
             onClick={handleDeleteSelectedCardItem}
             sx={{ top: shapeProps.y - 20, left: shapeProps.x - 20 }}>
-            <CancelTwoToneIcon sx={{ color: "blue", background: "#fff" }} />
+            <CancelIcon sx={{ color: "#000" }} />
           </IconButton>
         )}
       </Html>
