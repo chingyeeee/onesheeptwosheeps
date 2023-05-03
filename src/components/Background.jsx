@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Layer, Stage } from "react-konva";
 import MyImage from "./CardImage";
 import Emotion from "./Emotion";
@@ -9,7 +9,8 @@ import { useToggle } from "../context/useToggle";
 const Background = ({ cardItems, setCardItems, stageRef }) => {
   const { color, logoEnabled, welcomeToEnabled, emotionEnabled, aboutUsEnabled, dreamCardEnabled } =
     useToggle();
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   //selectedItem
   const [selectedId, selectShape] = useState(null);
 
@@ -25,14 +26,24 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
   function handleDeleteSelectedCardItem() {
     setCardItems(cardItems.filter((item) => item.id !== selectedId));
   }
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
 
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [selectedId]);
   return (
     <Fragment>
       <Stage
         ref={stageRef}
         className='z-10'
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width={windowWidth}
+        height={windowHeight}
         onMouseDown={checkDeselect}
         onTouchStart={checkDeselect}>
         <Layer>
@@ -57,20 +68,20 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </Layer>
       </Stage>
       {welcomeToEnabled && (
-        <div className='absolute top-5 w-full md:w-[55%] px-5'>
+        <div className='absolute top-5 w-full md:w-[55%] px-5 tv:w-full tv:top-5'>
           <Welcome color={color} />
         </div>
       )}
       {logoEnabled && (
-        <div className='absolute right-3 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16'>
+        <div className='absolute right-3 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16 tv:w-[35%] tv:right-3 tv:top-[35%]'>
           <Logo color={color} />
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      <div className='absolute w-full top-[23%] md:top-auto md:bottom-10 flex flex-col gap-5 md:gap-0 md:flex-row-reverse justify-between md:px-10 px-6 z-10'>
+      <div className='absolute w-full tv:w-full top-[23%] tv:top-[22%] md:top-auto md:bottom-10 tv:bottom-auto flex flex-col gap-5 md:gap-0 tv:gap-16 md:flex-row-reverse tv:flex-col justify-between md:px-10 px-6 tv:px-6 z-10'>
         <ShortCut
           key='dreamcard'
-          className='pl-28 md:pl-0'
+          className='pl-28 md:pl-0 tv:pl-[20rem]'
           toggle={dreamCardEnabled}
           path={"dreamcard"}
           text='DREAM CARD'
@@ -78,7 +89,7 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         />
         <ShortCut
           key='aboutus'
-          className='pl-3 md:pl-0'
+          className='pl-3 md:pl-0 tv:pl-[5rem]'
           toggle={aboutUsEnabled}
           path={"aboutus"}
           text='ABOUT US'
