@@ -2,8 +2,21 @@ import { Tab } from "@headlessui/react";
 import TabData from "../../assets/data/TabList.json";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { v4 as uuidv4 } from "uuid";
+import { useState, useEffect } from "react";
 
 const StickersTab = ({ setCardItems }) => {
+  const [posX, setPosX] = useState(0);
+  const [posY, setPosY] = useState(0);
+  useEffect(() => {
+    if (window.screen.width > 1024) {
+      setPosX(window.screen.width / 2 + 200);
+      setPosY(300);
+    } else {
+      setPosX(50);
+      setPosY(270);
+    }
+  }, []);
+
   return (
     <Tab.Panel>
       <div className='mt-6 columns-3'>
@@ -18,8 +31,8 @@ const StickersTab = ({ setCardItems }) => {
                   ...cardItems,
                   {
                     image: sticker,
-                    x: window.screen.width / 3,
-                    y: window.screen.height / 3,
+                    x: posX,
+                    y: posY,
                     width: e.target.width * 2,
                     height: e.target.height * 2,
                     id: uuidv4(),
