@@ -6,12 +6,12 @@ const Rules = ({ nextStep }) => {
     <div className='h-full flex justify-center items-center animate-zoomIn min-h-inherit'>
       <div className='relative flex flex-col space-y-10 w-[90%] md:w-[70%] tv:w-[90%] bg-yellow rounded-[150px] md:rounded-full tv:rounded-[150px] py-24 px-12 text-center min-h-[50%]'>
         <RulesLogo className='md:w-[50%] w-[90%] tv:w-[90%] m-auto translate-x-3 md:translate-x-0 translate-y-3' />
-        <p className='py-4 text-sm tv:text-2xl'>
+        <p className='py-4 text-sm md:text-base tv:text-2xl'>
           請試著回想一個讓你印象深刻的夢，可以是任何的情境
           <br />
           不管傷心難過、開心快樂甚至是難以啟齒的夢，都請回答接下來的問題！
           <br />
-          <p className='py-3 text-sm tv:text-xl'>
+          <p className='py-3 text-sm md:text-base tv:text-xl'>
             Please try to recall a dream that impressed you, it can be any situation.
             <br />
             Regardless of whether you are sad, happy or even unspeakable dreams, <br />
