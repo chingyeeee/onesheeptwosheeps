@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { ReactComponent as Acquaintance } from "../../assets/images/quiz/4/acquaintance.svg";
 import { ReactComponent as Myself } from "../../assets/images/quiz/4/myself.svg";
 import { ReactComponent as Negative } from "../../assets/images/quiz/4/negative.svg";
@@ -67,36 +68,57 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
               quizAns[1] === "1" ? "md:h-[35%]" : "md:h-[16%] md:mb-[3%]"
             } `}>
             <>
-              <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
-                {optionsArray.slice(0, optLength / 2).map((option) => {
-                  const { opt, optText, Image } = option;
-                  return (
-                    <Option
-                      key={opt}
-                      opt={opt}
-                      optText={optText}
-                      Image={Image}
-                      handleSaveAns={handleSaveAns}
-                      otherAns={otherAns}
-                    />
-                  );
-                })}
-              </div>
-              <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black md:border-y-2 border-b-2 border-black'>
-                {optionsArray.slice(optLength / 2, optLength + 1).map((option) => {
-                  const { opt, optText, Image } = option;
-                  return (
-                    <Option
-                      key={opt}
-                      opt={opt}
-                      optText={optText}
-                      Image={Image}
-                      handleSaveAns={handleSaveAns}
-                      otherAns={otherAns}
-                    />
-                  );
-                })}
-              </div>
+              {optionsArray.length > 1 ? (
+                <Fragment>
+                  <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
+                    {optionsArray.slice(0, optLength / 2).map((option) => {
+                      const { opt, optText, Image } = option;
+                      return (
+                        <Option
+                          key={opt}
+                          opt={opt}
+                          optText={optText}
+                          Image={Image}
+                          handleSaveAns={handleSaveAns}
+                          otherAns={otherAns}
+                        />
+                      );
+                    })}
+                  </div>
+
+                  <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black md:border-y-2 border-b-2 border-black'>
+                    {optionsArray.slice(optLength / 2, optLength + 1).map((option) => {
+                      const { opt, optText, Image } = option;
+                      return (
+                        <Option
+                          key={opt}
+                          opt={opt}
+                          optText={optText}
+                          Image={Image}
+                          handleSaveAns={handleSaveAns}
+                          otherAns={otherAns}
+                        />
+                      );
+                    })}
+                  </div>
+                </Fragment>
+              ) : (
+                <div className='w-[90%] mx-auto md:w-[40%] flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
+                  {optionsArray.map((option) => {
+                    const { opt, optText, Image } = option;
+                    return (
+                      <Option
+                        key={opt}
+                        opt={opt}
+                        optText={optText}
+                        Image={Image}
+                        handleSaveAns={handleSaveAns}
+                        otherAns={otherAns}
+                      />
+                    );
+                  })}
+                </div>
+              )}
             </>
           </div>
         </>

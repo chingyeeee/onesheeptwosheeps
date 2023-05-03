@@ -18,10 +18,10 @@ const StickersTab = ({ setCardItems }) => {
                   ...cardItems,
                   {
                     image: sticker,
-                    x: (window.screen.width * 2) / 3,
+                    x: window.screen.width / 3,
                     y: window.screen.height / 3,
-                    width: e.target.width,
-                    height: e.target.height,
+                    width: e.target.width * 2,
+                    height: e.target.height * 2,
                     id: uuidv4(),
                     folder: "stickers",
                   },

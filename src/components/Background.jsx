@@ -57,20 +57,20 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </Layer>
       </Stage>
       {welcomeToEnabled && (
-        <div className='absolute top-5 left-5 w-full md:w-[55%]'>
+        <div className='absolute top-5 w-full md:w-[55%] px-5'>
           <Welcome color={color} />
         </div>
       )}
       {logoEnabled && (
-        <div className='absolute right-2 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16'>
+        <div className='absolute right-3 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16'>
           <Logo color={color} />
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      <div className='absolute w-full top-[18%] md:top-auto md:bottom-2 flex flex-col gap-5 md:gap-0 md:flex-row-reverse justify-between p-10 z-10'>
+      <div className='absolute w-full top-[20%] md:top-auto md:bottom-2 flex flex-col gap-4 md:gap-0 md:flex-row-reverse justify-between p-10 z-10'>
         <ShortCut
           key='dreamcard'
-          className='pl-20 md:pl-0'
+          className='pl-28 md:pl-0'
           toggle={dreamCardEnabled}
           path={"dreamcard"}
           text='DREAM CARD'

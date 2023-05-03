@@ -84,7 +84,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>website/</p>
                     <a
-                      className='text-sm md:text-base break-words cursor-custom underline decoration-yellow decoration-solid underline-offset-4'
+                      className='text-sm md:text-base break-words cursor-custom underline text-yellow decoration-yellow decoration-solid underline-offset-4'
                       href='https://www.instagram.com/j_wei_wei/'
                       target='_blank'>
                       https://www.instagram.com/j_wei_wei/
@@ -140,7 +140,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>website/</p>
                     <a
-                      className='text-sm md:text-base break-words cursor-custom underline decoration-blue decoration-solid underline-offset-4'
+                      className='text-sm md:text-base break-words cursor-custom underline text-blue decoration-blue decoration-solid underline-offset-4'
                       href='https://www.instagram.com/uxwn.n/'
                       target='_blank'>
                       https://www.instagram.com/uxwn.n/
@@ -196,7 +196,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>website/</p>
                     <a
-                      className='text-sm md:text-base break-words cursor-custom underline decoration-lightpurple decoration-solid underline-offset-4'
+                      className='text-sm md:text-base break-words cursor-custom underline text-lightpurple decoration-lightpurple decoration-solid underline-offset-4'
                       href='https://www.instagram.com/t1ddey/'
                       target='_blank'>
                       https://www.instagram.com/t1ddey/
@@ -256,7 +256,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>website/</p>
                     <a
-                      className='text-sm md:text-base break-words cursor-custom underline decoration-purple decoration-solid underline-offset-4'
+                      className='text-sm md:text-base break-words cursor-custom underline text-purple decoration-purple decoration-solid underline-offset-4'
                       href='https://www.instagram.com/o6.ycww_11/'
                       target='_blank'>
                       https://www.instagram.com/o6.ycww_11/

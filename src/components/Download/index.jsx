@@ -1,7 +1,6 @@
 import html2canvas from "html2canvas";
 import { Fragment, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useLongPress } from "use-long-press";
 import { ReactComponent as Download } from "../../assets/images/resultCards/nav/icon-download.svg";
 import { ReactComponent as Home } from "../../assets/images/resultCards/nav/icon-home.svg";
 import { saveAs } from "file-saver";
@@ -36,29 +35,40 @@ const DownloadAndShare = () => {
     element.classList.add("animate-rotate360");
   };
 
-  //長按儲存
-
-  const onLongPressDownload = useLongPress(() => {
-    downloadImage();
-  });
-
+  function isMobileDevice() {
+    const mobileDevice = [
+      "Android",
+      "webOS",
+      "iPhone",
+      "iPad",
+      "iPod",
+      "BlackBerry",
+      "Windows Phone",
+    ];
+    let isMobileDevice = mobileDevice.some((e) => navigator.userAgent.match(e));
+    return isMobileDevice;
+  }
   //  分享至社交平台
   async function share() {
-    const element = document.getElementById("combinedImg");
-    element.classList.remove("animate-rotate360");
-    const canvas = await html2canvas(element, { backgroundColor: "black" });
-    canvas.toBlob((blob) => {
-      navigator.share({
-        files: [
-          new File([blob], "share.png", {
-            type: blob.type,
-          }),
-        ],
-        text: "一隻羊兩隻羊，祝你日日是好夢！\n點擊以下連結來獲得獨一無二的解夢卡！",
-        url: "https://onesheeptwosleep.farm/",
+    if (isMobileDevice()) {
+      const element = document.getElementById("combinedImg");
+      element.classList.remove("animate-rotate360");
+      const canvas = await html2canvas(element, { backgroundColor: "black" });
+      canvas.toBlob((blob) => {
+        navigator.share({
+          files: [
+            new File([blob], "share.png", {
+              type: blob.type,
+            }),
+          ],
+          text: "一隻羊兩隻羊，祝你日日是好夢！\n點擊以下連結來獲得獨一無二的解夢卡！",
+          url: "https://onesheeptwosleep.farm/",
+        });
       });
-    });
-    element.classList.add("animate-rotate360");
+      element.classList.add("animate-rotate360");
+    } else {
+      window.location.replace("https://instagram.com/onesheep_twosleep?igshid=YmMyMTA2M2Y=");
+    }
   }
 
   function imageToDataUri(img, width) {
@@ -109,7 +119,7 @@ const DownloadAndShare = () => {
       </div>
       <div className='absolute w-full h-full flex justify-center items-center'>
         <img
-          className={clsx("w-[40%] md:w-[28%] lg:w-[17%] py-5 z-10", {
+          className={clsx("w-[44%] md:w-[28%] lg:w-[17%] py-5 z-10", {
             "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
           })}
           id='combinedImg'
