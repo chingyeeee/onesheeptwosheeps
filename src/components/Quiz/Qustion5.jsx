@@ -48,7 +48,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <div className='flex flex-col-reverse items-start md:flex-row md:items-end justify-center md:justify-between gap-16 md:gap-24 w-[100%] mx-auto md:h-[48%]'>
               <Title5 className='w-[25%] ml-auto md:w-[15%] md:ml-0' />
-              <div className='w-full h-full md:w-[55%] justify-between flex flex-col font-semibold mt-4 md:mt-0 divide-y-2 divide-black border-y-2 border-black'>
+              <div className='w-full md:w-[55%] justify-between flex flex-col font-semibold mt-4 md:mt-0 divide-y-2 divide-black border-y-2 border-black'>
                 {Q5options.map((option) => {
                   const { opt, optText, optTextEng, Image } = option;
                   return (
