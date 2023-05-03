@@ -32,8 +32,8 @@ const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
     <div
       className={` bg-lightgreen flex px-6 md:px-20 tv:px-6 flex-col justify-between overflow-hidden absolute w-full z-[19] ${
         questionNum <= 2
-          ? "h-[84%] md:h-[80%] pt-24 md:pt-28 pb-16 animate-slideDown"
-          : "h-[8%] md:h-[10%] animate-slideUp"
+          ? "h-[84%] md:h-[80%] tv:h-[84%] pt-24 md:pt-28 pb-16 animate-slideDown"
+          : "h-[8%] md:h-[10%] tv:h-[8%] animate-slideUp"
       }`}>
       <div
         className={`${

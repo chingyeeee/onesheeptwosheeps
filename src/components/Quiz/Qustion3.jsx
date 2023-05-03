@@ -30,10 +30,10 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`bg-lakegreen flex px-6 md:px-20 tv:px-6 flex-col justify-between overflow-hidden absolute w-full z-[18] ${
+      className={`absolute flex flex-col w-full bg-lakegreen px-6 md:px-20 tv:px-6 justify-between overflow-hidden z-[18] ${
         questionNum <= 3
-          ? "h-[88%] md:h-[85%] pt-20 md:pt-36 pb-16 tv:pt-20 animate-slideDown"
-          : "h-[12%] md:h-[15%] animate-slideUp"
+          ? "h-[88%] md:h-[85%] tv:h-[88%] pt-20 md:pt-36 pb-16 tv:pt-20 animate-slideDown"
+          : "h-[12%] md:h-[15%] tv:h-[12%] animate-slideUp"
       }`}>
       <div
         className={`${
@@ -46,7 +46,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
 
       {questionNum === 3 && (
         <>
-          <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse gap-6 items-end md:items-center tv:items-end justify-between'>
+          <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse tv:mt-28 gap-6 items-end md:items-center tv:items-end justify-between'>
             <div className='text-sm md:text-xl tv:text-3xl'>
               <p className='font-medium'>
                 該夢境中的主角是？
@@ -60,7 +60,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <Title3 className='w-[25%] mr-6 md:w-[10%] tv:w-[25%]' />
           </div>
-          <div className='flex justify-between md:h-[62%] mt-6 md:mt-0'>
+          <div className='flex justify-between md:h-[62%] tv:h-auto mt-6 md:mt-0'>
             <div className='w-full md:w-[60%] tv:w-full flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
               {Q3options.map((option) => {
                 const { opt, optText, optTextEng, Image } = option;

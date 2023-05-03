@@ -17,7 +17,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       </span>
       {
         <Image
-          className={`w-[28%] fill-red group-hover:block ${
+          className={`w-[80%] fill-red group-hover:block ${
             quizAns[0] === opt ? "block " : "hidden"
           }`}
         />
@@ -32,13 +32,13 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
     <div
       className={` bg-red flex px-6 md:px-20 tv:px-6 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
         questionNum === 1
-          ? "h-[80%] md:h-[75%] py-6 md:py-16 animate-slideDown"
-          : "h-[4%] md:h-[5%] animate-slideUp"
+          ? "h-[80%] md:h-[75%] tv:h-[80%] py-6 md:py-16 animate-slideDown"
+          : "h-[4%] md:h-[5%] tv:h-[4%] animate-slideUp"
       }`}>
       <div
         className={`${
           questionNum === 1 && "hidden"
-        } flex justify-between md:text-xl absolute inset-0 h-min m-auto font-chakra px-4 md:px-8 hover:italic cursor-custom`}
+        } flex justify-between md:text-xl tv:text-3xl absolute inset-0 h-min m-auto font-chakra px-4 md:px-8 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(1)}>
         <p>I.</p>
         <p>FIRST</p>
