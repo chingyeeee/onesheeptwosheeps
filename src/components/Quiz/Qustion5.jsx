@@ -4,7 +4,7 @@ import { Q5options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between md:text-xl px-2 md:px-4 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between md:text-xl p-2 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[2] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(2, opt)}>
@@ -13,7 +13,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       </span>
       {
         <Image
-          className={`w-[20%] group-hover:block group-hover:fill-blue translate-y-2 ${
+          className={`w-[30%] group-hover:block group-hover:fill-blue ${
             quizAns[2] === opt ? "block fill-blue" : "hidden"
           }`}
         />
@@ -48,7 +48,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             </div>
             <div className='flex flex-col-reverse items-start md:flex-row md:items-end justify-center md:justify-between gap-16 md:gap-24 w-[100%] mx-auto md:h-[48%]'>
               <Title5 className='w-[25%] ml-auto md:w-[15%] md:ml-0' />
-              <div className='w-full md:w-[55%] h-full justify-between flex flex-col font-semibold mt-4 md:mt-0 divide-y-2 divide-black border-y-2 border-black'>
+              <div className='w-full md:w-[55%] justify-between flex flex-col font-semibold mt-4 md:mt-0 divide-y-2 divide-black border-y-2 border-black'>
                 {Q5options.map((option) => {
                   const { opt, optText, optTextEng, Image } = option;
                   return (

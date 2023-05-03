@@ -6,7 +6,7 @@ import { Q6options } from "./options";
 const Option = ({ opt, optText, Image, handleSaveAns, otherAns, i }) => {
   return (
     <div
-      className={`flex justify-between md:text-xl px-2 md:px-4 py-3 cursor-custom group hover:bg-black items-center md:flex-1 transition duration-500 ${
+      className={`flex justify-between md:text-xl p-2 cursor-custom group hover:bg-black items-center md:flex-1 transition duration-500 ${
         otherAns[i] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(i, opt)}>
