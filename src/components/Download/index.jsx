@@ -114,7 +114,7 @@ const DownloadAndShare = () => {
         setPromoteSecOpen={setPromoteSecOpen}
       />
       <PromoteSec promoteSecOpen={promoteSecOpen} setPromoteSecOpen={setPromoteSecOpen} />
-      <div className='absolute w-full flex top-[35%] md:top-5'>
+      <div className='absolute w-full flex top-[35%]'>
         <img className='flex-auto' src={signImgPath} />
       </div>
       <div className='absolute w-full top-[12%] md:top-auto md:h-full flex justify-center items-center'>
