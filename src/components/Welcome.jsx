@@ -28,8 +28,8 @@ const Welcome = ({ color }) => {
 
   return (
     <>
-      <img className='hidden md:block' src={welcomeImg} alt='welcome' />
-      <img className='md:hidden block' src={welcomeImgM} alt='welcome' />
+      <img className='hidden md:block tv:hidden' src={welcomeImg} alt='welcome' />
+      <img className='md:hidden block tv:block' src={welcomeImgM} alt='welcome' />
     </>
   );
 };

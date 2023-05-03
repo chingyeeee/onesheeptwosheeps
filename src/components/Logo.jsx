@@ -42,8 +42,8 @@ const Logo = ({ color }) => {
 
   return (
     <>
-      <img className='hidden md:block' src={logoImg} alt='logo' />
-      <img className='md:hidden block' src={logoImgM} alt='logo' />
+      <img className='hidden md:block tv:hidden' src={logoImg} alt='logo' />
+      <img className='md:hidden block tv:block' src={logoImgM} alt='logo' />
     </>
   );
 };

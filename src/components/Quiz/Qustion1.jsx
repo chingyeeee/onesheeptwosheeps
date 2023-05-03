@@ -5,12 +5,12 @@ import { Q1options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl tv:text-3xl px-2 md:px-4 py-2 md:py-3 tv:py-5 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
       <span
-        className={`group-hover:hidden text-base md:text-2xl ${
+        className={`group-hover:hidden text-base md:text-2xl tv:text-3xl ${
           quizAns[0] === opt ? "hidden" : ""
         }`}>
         <div>{optTextEng}</div>
@@ -30,7 +30,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={` bg-red flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
+      className={` bg-red flex px-6 md:px-20 tv:px-6 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
         questionNum === 1
           ? "h-[80%] md:h-[75%] py-6 md:py-16 animate-slideDown"
           : "h-[4%] md:h-[5%] animate-slideUp"
@@ -46,9 +46,9 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
 
       {questionNum === 1 && (
         <>
-          <div className='md:flex gap-6 md:max-w-1/2 items-end'>
+          <div className='md:flex gap-6 md:max-w-1/2 tv:block items-end'>
             <Title1 className='w-[25%] md:w-[10%]' />
-            <div className='text-sm mt-4 md:mt-0 md:text-xl font-medium'>
+            <div className='text-sm mt-4 md:mt-0 md:text-xl tv:text-3xl font-medium'>
               <p>請試著回憶你的夢境，當下的情緒是？</p>
               <p className='font-medium mt-2'>
                 TRY TO RECALL YOUR DREAM, <br />
@@ -56,8 +56,8 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
               </p>
             </div>
           </div>
-          <div className='md:flex justify-between mt-3 md:mt-0 md:h-[62%] overflow-x-scroll'>
-            <div className='w-full md:w-[45%] flex flex-col font-medium md:font-semibold divide-y-2 divide-black border-t-2 md:border-b-2 border-black'>
+          <div className='md:flex tv:block justify-between mt-3 md:mt-0 md:h-[62%] tv:mt-3 tv:h-auto overflow-x-scroll'>
+            <div className='w-full md:w-[45%] tv:w-full flex flex-col font-medium md:font-semibold tv:font-medium divide-y-2 divide-black border-t-2 md:border-b-2 tv:md:border-b-0 border-black'>
               {Q1options.slice(0, 4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (
@@ -73,7 +73,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 );
               })}
             </div>
-            <div className='w-full md:w-[45%] flex flex-col font-semibold divide-y-2 divide-black border-t-2 border-b-2 border-black'>
+            <div className='w-full md:w-[45%] tv:w-full flex flex-col font-semibold divide-y-2 divide-black border-t-2 border-b-2 border-black'>
               {Q1options.slice(4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
                 return (

@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from "tailwindcss/defaultTheme";
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        ...defaultTheme.screens,
+        tv: { raw: "(min-width: 1080px) and (orientation: portrait)" },
+      },
       backgroundImage: {
         cloud: "url('/src/assets/images/icons/icon-cloud.svg')",
         signBlock: "url('/src/assets/images/sign/signBlock.svg')",

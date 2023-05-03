@@ -35,9 +35,9 @@ const Introduction = () => {
               <Dialog.Panel
                 className='w-full transform md:overflow-hidden text-center align-middle transition-all text-sm md:text-lg font-medium leading-6 text-gray-900'
                 onClick={closeIntro}>
-                <img className='scale-[0.8] hidden md:block' src={Cloud} alt='cloud' />
-                <img className='scale-90 md:hidden' src={CloudMobileCH} alt='cloud' />
-                <img className='scale-90 md:hidden' src={CloudMobileEn} alt='cloud' />
+                <img className='scale-[0.8] hidden md:block tv:hidden' src={Cloud} alt='cloud' />
+                <img className='scale-90 md:hidden tv:block' src={CloudMobileCH} alt='cloud' />
+                <img className='scale-90 md:hidden tv:block' src={CloudMobileEn} alt='cloud' />
               </Dialog.Panel>
             </Transition.Child>
             <ToggleText />

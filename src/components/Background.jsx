@@ -78,6 +78,7 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </div>
       )}
       {emotionEnabled && <Emotion />}
+      {console.log(windowWidth)}
       <div className='absolute w-full tv:w-full top-[23%] tv:top-[22%] md:top-auto md:bottom-10 tv:bottom-auto flex flex-col gap-5 md:gap-0 tv:gap-16 md:flex-row-reverse tv:flex-col justify-between md:px-10 px-6 tv:px-6 z-10'>
         <ShortCut
           key='dreamcard'
