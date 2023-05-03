@@ -67,24 +67,24 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      {/* <div className='absolute w-full top-[23%] md:top-auto md:bottom-10 flex flex-col gap-5 md:gap-0 md:flex-row-reverse justify-between md:px-10 px-6 z-10'> */}
-      <ShortCut
-        key='dreamcard'
-        className='absolute z-[21] top-[21%] right-[5%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom w-min mr-auto'
-        toggle={dreamCardEnabled}
-        path={"dreamcard"}
-        text='DREAM CARD'
-        colorObj={color}
-      />
-      <ShortCut
-        key='aboutus'
-        className='absolute z-[21] left-0 top-[27%] md:top-auto md:bottom-14 flex gap-4 items-center cursor-custom ml-auto w-min'
-        toggle={aboutUsEnabled}
-        path={"aboutus"}
-        text='ABOUT US'
-        colorObj={color}
-      />
-      {/* </div> */}
+      <div className='absolute w-full top-[23%] md:top-auto md:bottom-10 flex flex-col gap-5 md:gap-0 md:flex-row-reverse justify-between md:px-10 px-6 z-10'>
+        <ShortCut
+          key='dreamcard'
+          className='pl-28 md:pl-0'
+          toggle={dreamCardEnabled}
+          path={"dreamcard"}
+          text='DREAM CARD'
+          colorObj={color}
+        />
+        <ShortCut
+          key='aboutus'
+          className='pl-3 md:pl-0'
+          toggle={aboutUsEnabled}
+          path={"aboutus"}
+          text='ABOUT US'
+          colorObj={color}
+        />
+      </div>
     </Fragment>
   );
 };
