@@ -29,7 +29,7 @@ const DownloadAndShare = () => {
     const element = document.getElementById("combinedImg");
     element.classList.remove("animate-rotate360");
     html2canvas(element, { backgroundColor: null, scale: 2 }).then((canvas) => {
-      canvas.toBlob((blob) => saveAs(blob, `card_${cardNo}.png`));
+      canvas.toBlob((blob) => saveAs(blob, `dreamcard_${cardNo}.png`));
       setCardNo((no) => no + 1);
     });
     element.classList.add("animate-rotate360");
@@ -114,10 +114,10 @@ const DownloadAndShare = () => {
         setPromoteSecOpen={setPromoteSecOpen}
       />
       <PromoteSec promoteSecOpen={promoteSecOpen} setPromoteSecOpen={setPromoteSecOpen} />
-      <div className='absolute w-full flex top-[20%] md:top-20 lg:top-10'>
+      <div className='absolute w-full flex top-[20%] md:top-5'>
         <img className='flex-auto' src={signImgPath} />
       </div>
-      <div className='absolute w-full top-[15%] md:top-20 lg:top-10 flex justify-center items-center'>
+      <div className='absolute w-full top-[15%] md:top-auto md:h-full flex justify-center items-center'>
         <img
           className={clsx("w-[44%] md:w-[38%] lg:w-[15%] py-5 z-10", {
             "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
