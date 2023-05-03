@@ -117,7 +117,7 @@ const DownloadAndShare = () => {
       <div className='absolute w-full flex top-[35%] md:top-5'>
         <img className='flex-auto' src={signImgPath} />
       </div>
-      <div className='absolute w-full top-[15%] md:top-auto md:h-full flex justify-center items-center'>
+      <div className='absolute w-full top-[12%] md:top-auto md:h-full flex justify-center items-center'>
         <img
           className={clsx("w-[48%] md:w-[38%] lg:w-[15%] py-5 z-10", {
             "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
