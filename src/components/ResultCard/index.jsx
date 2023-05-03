@@ -64,7 +64,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left text-[10px] font-medium focus:outline-none relative z-[20]'>
+                <Disclosure.Button className='flex w-full justify-between border-t-2 border-blue p-3 text-left  font-medium focus:outline-none relative z-[20]'>
                   <p className='md:text-lg text-blue'>
                     (2) <br />而{percentageArray[1]}%的人夢境中的主角是（
                     {getCharacter(quizAns, otherAns)[0]}） <br />
@@ -96,7 +96,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
             {({ open }) => (
               <>
                 <Disclosure.Button
-                  className={`flex w-full justify-between border-t-2  border-blue p-3 text-left text-[10px] font-medium focus:outline-none relative z-[20] ${
+                  className={`flex w-full justify-between border-t-2  border-blue p-3 text-left  font-medium focus:outline-none relative z-[20] ${
                     !open && "border-b-2"
                   }`}>
                   <p className='md:text-lg text-blue'>
