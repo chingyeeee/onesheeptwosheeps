@@ -5,7 +5,7 @@ import { Q1options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-[url('/src/assets/images/cursor-pointer.png'),_pointer]  group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl px-2 md:px-4 py-2 md:py-3 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
@@ -17,7 +17,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       </span>
       {
         <Image
-          className={`w-[40%] fill-red group-hover:block ${
+          className={`w-[28%] fill-red group-hover:block ${
             quizAns[0] === opt ? "block " : "hidden"
           }`}
         />
