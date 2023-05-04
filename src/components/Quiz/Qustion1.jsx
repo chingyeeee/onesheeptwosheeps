@@ -17,7 +17,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       </span>
       {
         <Image
-          className={`w-[45%] md:w-[63%] tv:w-[20%] -translate-x-3  fill-red group-hover:block ${
+          className={`w-[45%] md:w-[63%] tv:w-[20%] -translate-x-3 md:-translate-x-4  fill-red group-hover:block ${
             quizAns[0] === opt ? "block " : "hidden"
           }`}
         />
