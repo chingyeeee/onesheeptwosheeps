@@ -5,7 +5,7 @@ import { Q4options } from "./options";
 const Option = ({ opt, optText, Image, handleSaveAns, otherAns }) => {
   return (
     <div
-      className={`flex justify-between md:text-xl tv:text-4xl p-2 md:p-4 tv:p-7 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between md:text-xl tv:text-4xl p-2 tv:p-7 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         otherAns[1] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(1, opt)}>
@@ -15,7 +15,7 @@ const Option = ({ opt, optText, Image, handleSaveAns, otherAns }) => {
       </span>
       {
         <Image
-          className={`w-[46%] md:w-[63%] tv:w-[38%] group-hover:block group-hover:fill-purple ${
+          className={`w-[85%] md:w-[63%] tv:w-[38%] -translate-x-2 group-hover:block group-hover:fill-purple ${
             otherAns[1] === opt ? "block fill-purple" : "hidden"
           }`}
         />
