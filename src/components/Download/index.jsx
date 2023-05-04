@@ -114,12 +114,12 @@ const DownloadAndShare = () => {
         setPromoteSecOpen={setPromoteSecOpen}
       />
       <PromoteSec promoteSecOpen={promoteSecOpen} setPromoteSecOpen={setPromoteSecOpen} />
-      <div className='absolute w-full flex top-[35%] md:top-[20%] tv:top-[35%]'>
+      <div className='absolute w-full flex top-[35%] md:top-12 tv:top-[35%]'>
         <img className='flex-auto' src={signImgPath} />
       </div>
       <div className='absolute w-full top-[12%] md:top-auto md:h-full flex justify-center items-center'>
         <img
-          className={clsx("w-[48%] md:w-[38%] tv:w-[45%] py-5 z-10", {
+          className={clsx("w-[48%] md:w-[20%] tv:w-[45%] py-5 z-10", {
             "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
           })}
           id='combinedImg'
