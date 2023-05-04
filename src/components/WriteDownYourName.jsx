@@ -189,7 +189,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </div>
       </div>
 
-      <div className='w-[85%] m-auto flex md:hidden tv:flex tv:flex-col tv:w-[90%] mt-12 tv:mt-20 gap-8 justify-around'>
+      <div className='w-[85%] m-auto flex flex-col md:hidden tv:flex tv:flex-col tv:w-[90%] mt-12 tv:mt-20 gap-8 tv:gap-12 justify-around'>
         <div className='flex justify-between'>
           <div
             className={`${
