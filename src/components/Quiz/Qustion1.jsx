@@ -30,7 +30,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={` bg-red flex px-6 md:px-20 tv:px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
+      className={` bg-red flex px-6 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
         questionNum === 1
           ? "h-[80%] md:h-[75%] tv:h-[80%] py-6 md:py-16 animate-slideDown"
           : "h-[4%] md:h-[5%] tv:h-[4%] animate-slideUp"
