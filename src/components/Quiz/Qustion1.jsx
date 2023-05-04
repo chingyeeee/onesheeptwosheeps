@@ -46,7 +46,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
 
       {questionNum === 1 && (
         <>
-          <div className='md:flex gap-6 md:max-w-1/2 tv:block items-end'>
+          <div className='md:flex gap-6 md:max-w-1/2 tv:block items-end tv:pt-10 tv:pl-10'>
             <Title1 className='w-[25%] md:w-[10%] tv:w-[25%]' />
             <div className='text-sm mt-4 md:mt-0 tv:mt-6 md:text-xl tv:text-4xl font-medium'>
               <p>請試著回憶你的夢境，當下的情緒是？</p>

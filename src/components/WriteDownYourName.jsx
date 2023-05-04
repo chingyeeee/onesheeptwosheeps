@@ -189,7 +189,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </div>
       </div>
 
-      <div className='w-[85%] m-auto flex md:hidden tv:flex tv:w-[95%] flex-wrap mt-12 tv:mt-20 gap-8 justify-around'>
+      <div className='w-[85%] m-auto flex md:hidden tv:flex tv:w-[55%] flex-wrap mt-12 tv:mt-20 gap-8 justify-around'>
         <div
           className={`${
             color === "#004943" && "border-4 p-2 border-black border-solid"
