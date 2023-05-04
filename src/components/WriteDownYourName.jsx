@@ -189,62 +189,66 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
         </div>
       </div>
 
-      <div className='w-[85%] m-auto flex md:hidden tv:flex tv:w-[55%] flex-wrap mt-12 tv:mt-20 gap-8 justify-around'>
-        <div
-          className={`${
-            color === "#004943" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-darkgreen cursor-custom `}
-          onClick={() => handleColorChange("#004943")}
-        />
-        <div
-          className={`w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-lightpurple cursor-custom ${
-            color === "#ff00c9" && "border-4 border-black border-solid"
-          }`}
-          onClick={() => handleColorChange("#ff00c9")}
-        />
-        <div
-          className={`w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-blue cursor-custom ${
-            color === "#0073f7" && "border-4 border-black border-solid"
-          }`}
-          onClick={() => handleColorChange("#0073f7")}
-        />
-        <div
-          className={`${
-            color === "#a6e2c5" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-lakegreen cursor-custom`}
-          onClick={() => handleColorChange("#a6e2c5")}
-        />
-        <div
-          className={`${
-            color === "#fffa6f" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-yellow cursor-custom`}
-          onClick={() => handleColorChange("#fffa6f")}
-        />
-        <div
-          className={`${
-            color === "#20d371" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-lightgreen cursor-custom`}
-          onClick={() => handleColorChange("#20d371")}
-        />
-        <div
-          className={`${
-            color === "#ff4a03" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-red cursor-custom`}
-          onClick={() => handleColorChange("#ff4a03")}
-        />
-        <div
-          className={`${
-            color === "#a9a9ff" && "border-4 p-2 border-black border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-purple cursor-custom`}
-          onClick={() => handleColorChange("#a9a9ff")}
-        />
-        <div
-          className={`${
-            color === "#000000" && "border-4 p-2 border-grey border-solid"
-          } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-black cursor-custom`}
-          onClick={() => handleColorChange("#000000")}
-        />
-        <div className={` w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-transparent`} />
+      <div className='w-[85%] m-auto flex md:hidden tv:flex tv:flex-col tv:w-[90%] mt-12 tv:mt-20 gap-8 justify-around'>
+        <div className='flex justify-between'>
+          <div
+            className={`${
+              color === "#004943" && "border-4 p-2 border-black border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-darkgreen cursor-custom `}
+            onClick={() => handleColorChange("#004943")}
+          />
+          <div
+            className={`w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-lightpurple cursor-custom ${
+              color === "#ff00c9" && "border-4 border-black border-solid"
+            }`}
+            onClick={() => handleColorChange("#ff00c9")}
+          />
+          <div
+            className={`w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-blue cursor-custom ${
+              color === "#0073f7" && "border-4 border-black border-solid"
+            }`}
+            onClick={() => handleColorChange("#0073f7")}
+          />
+          <div
+            className={`${
+              color === "#a6e2c5" && "border-4 p-2 border-black border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-lakegreen cursor-custom`}
+            onClick={() => handleColorChange("#a6e2c5")}
+          />
+          <div
+            className={`${
+              color === "#fffa6f" && "border-4 p-2 border-black border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-yellow cursor-custom`}
+            onClick={() => handleColorChange("#fffa6f")}
+          />
+        </div>
+        <div className='flex justify-between'>
+          <div
+            className={`${
+              color === "#20d371" && "border-4 p-2 border-black border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-lightgreen cursor-custom`}
+            onClick={() => handleColorChange("#20d371")}
+          />
+          <div
+            className={`${
+              color === "#ff4a03" && "border-4 p-2 border-black border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-red cursor-custom`}
+            onClick={() => handleColorChange("#ff4a03")}
+          />
+          <div
+            className={`${
+              color === "#a9a9ff" && "border-4 p-2 border-black border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-purple cursor-custom`}
+            onClick={() => handleColorChange("#a9a9ff")}
+          />
+          <div
+            className={`${
+              color === "#000000" && "border-4 p-2 border-grey border-solid"
+            } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-black cursor-custom`}
+            onClick={() => handleColorChange("#000000")}
+          />
+          <div className={` w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-transparent`} />
+        </div>
       </div>
     </div>
   );
