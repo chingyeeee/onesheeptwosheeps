@@ -30,7 +30,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
   const optLength = optionsArray.length;
   return (
     <div
-      className={`bg-purple flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
+      className={`bg-purple flex px-4 md:px-20 tv:py-44 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
         questionNum <= 4
           ? "h-[92%] md:h-[90%] tv:h-[92%] pt-36 md:pt-48 pb-16 animate-slideDown"
           : "h-[16%] md:h-[20%] tv:h-[16%] animate-slideUp"
@@ -46,7 +46,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
 
       {questionNum === 4 && (
         <>
-          <div className='flex flex-col gap-6 tv:mt-28 items-center justify-center text-center'>
+          <div className='flex flex-col gap-6 tv:mt-56 items-center justify-center text-center'>
             <Title4 className='w-[40%] md:w-[12%] tv:w-[40%]' />
             <div className='text-sm md:text-xl tv:text-4xl font-medium'>
               <p>承上題，請選擇以下項目</p>
