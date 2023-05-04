@@ -2,20 +2,20 @@ import { getImageUrl } from "../utils/getImageUrl";
 
 const Welcome = ({ color }) => {
   function handleWelcomeColor(color) {
-    switch (color) {
-      case "color-default.svg":
+    switch (color.name) {
+      case "default":
         return "welcome-default.png";
-      case "color1.svg":
+      case "color1":
         return "welcome-1.png";
-      case "color2.svg":
+      case "color2":
         return "welcome-2.png";
-      case "color3.svg":
+      case "color3":
         return "welcome-3.png";
-      case "color4.svg":
+      case "color4":
         return "welcome-4.png";
-      case "color5.svg":
+      case "color5":
         return "welcome-5.png";
-      case "color6.svg":
+      case "color6":
         return "welcome-6.png";
     }
   }
@@ -28,8 +28,8 @@ const Welcome = ({ color }) => {
 
   return (
     <>
-      <img className="hidden md:block" src={welcomeImg} alt="welcome" />
-      <img className="md:hidden block" src={welcomeImgM} alt="welcome" />
+      <img className='hidden md:block tv:hidden' src={welcomeImg} alt='welcome' />
+      <img className='md:hidden block tv:block' src={welcomeImgM} alt='welcome' />
     </>
   );
 };
