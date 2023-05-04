@@ -244,6 +244,7 @@ const SignatureCanvas = ({ nextStep, setSignImgPath }) => {
           } w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-black cursor-custom`}
           onClick={() => handleColorChange("#000000")}
         />
+        <div className={` w-[2rem] h-[2rem] tv:w-[4.5rem] tv:h-[4.5rem] bg-transparent`} />
       </div>
     </div>
   );
