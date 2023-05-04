@@ -5,19 +5,19 @@ import { Q1options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl tv:text-3xl px-2 md:px-4 py-2 md:py-3 tv:py-5 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl tv:text-4xl p-2 tv:p-7 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
       <span
-        className={`group-hover:hidden text-base md:text-2xl tv:text-3xl ${
+        className={`group-hover:hidden text-base md:text-2xl tv:text-4xl ${
           quizAns[0] === opt ? "hidden" : ""
         }`}>
         <div>{optTextEng}</div>
       </span>
       {
         <Image
-          className={`w-[80%] md:w-[66%] -translate-x-3 fill-red group-hover:block ${
+          className={`w-[45%] md:w-[63%] tv:w-[20%] -translate-x-3  fill-red group-hover:block ${
             quizAns[0] === opt ? "block " : "hidden"
           }`}
         />
@@ -30,7 +30,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={` bg-red flex px-6 md:px-20 tv:px-6 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
+      className={` bg-red flex px-6 md:px-20 tv:px-20 flex-col justify-between overflow-hidden absolute w-full z-[20] ${
         questionNum === 1
           ? "h-[80%] md:h-[75%] tv:h-[80%] py-6 md:py-16 animate-slideDown"
           : "h-[4%] md:h-[5%] tv:h-[4%] animate-slideUp"
@@ -38,7 +38,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 1 && "hidden"
-        } flex justify-between md:text-xl tv:text-3xl absolute inset-0 h-min m-auto font-chakra px-4 md:px-8 hover:italic cursor-custom`}
+        } absolute inset-0 flex justify-between items-center h-full md:text-xl tv:text-4xl font-chakra px-4 md:px-8 tv:px-4 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(1)}>
         <p>I.</p>
         <p>FIRST</p>
@@ -47,10 +47,10 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 1 && (
         <>
           <div className='md:flex gap-6 md:max-w-1/2 tv:block items-end'>
-            <Title1 className='w-[25%] md:w-[10%]' />
-            <div className='text-sm mt-4 md:mt-0 md:text-xl tv:text-3xl font-medium'>
+            <Title1 className='w-[25%] md:w-[10%] tv:w-[25%]' />
+            <div className='text-sm mt-4 md:mt-0 tv:mt-6 md:text-xl tv:text-4xl font-medium'>
               <p>請試著回憶你的夢境，當下的情緒是？</p>
-              <p className='font-medium mt-2'>
+              <p className='font-medium mt-2 tv:mt-6'>
                 TRY TO RECALL YOUR DREAM, <br />
                 WHAT’S YOUR MOOD IN THE MOMENT?
               </p>

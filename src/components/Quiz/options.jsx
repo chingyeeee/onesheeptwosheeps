@@ -42,7 +42,7 @@ export const Q1options = [
   { opt: "E", optText: "厭惡", optTextEng: "disgust", Image: Choice5 },
   { opt: "F", optText: "憤怒", optTextEng: "angry", Image: Choice6 },
   { opt: "G", optText: "驚嚇", optTextEng: "terrified", Image: Choice7 },
-  { opt: "H", optText: "幸福滿足", optTextEng: "happy satisfied", Image: Choice8 },
+  { opt: "H", optText: "幸福滿足", optTextEng: "happy, satisfied", Image: Choice8 },
 ];
 
 export const Q2options = [
