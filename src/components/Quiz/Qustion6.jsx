@@ -15,7 +15,7 @@ const Option = ({ opt, optText, Image, handleSaveAns, otherAns, i }) => {
         {opt}
       </span>
       <Image
-        className={`w-[79%] md:w-[83%] tv:w-[85%] -translate-x-2 md:-translate-x-4 group-hover:block group-hover:fill-yellow ${
+        className={`w-[79%] md:w-[83%] tv:w-[83%] -translate-x-2 md:-translate-x-4 group-hover:block group-hover:fill-yellow ${
           otherAns[i] === opt ? "block fill-yellow" : "hidden"
         }`}
       />
@@ -57,7 +57,7 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
             <Title6 className='w-[30%] md:w-[15%] tv:w-[30%] ml-auto md:ml-0' />
           </div>
           <div className='md:flex items-end justify-between md:h-[36%] tv:block tv:mt-40 tv:h-[20%] mt-8 md:mt-0'>
-            <div className='w-[70%] md:w-[30%] tv:w-[70%] flex flex-col font-semibold md:h-full tv:h-[70%] divide-y-2 divide-black border-y-2 border-black'>
+            <div className='w-[70%] md:w-[30%] tv:w-[75%] flex flex-col font-semibold md:h-full tv:h-[70%] divide-y-2 divide-black border-y-2 border-black'>
               {Q6options.slice(0, 2).map((option) => {
                 const { opt, optText, Image } = option;
                 return (
@@ -74,7 +74,7 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
               })}
             </div>
             {!!otherAns[2] && (
-              <div className='w-[70%] md:w-[30%] md:ml-[5%] tv:w-[60%] tv:ml-0 flex flex-col font-semibold md:h-full tv:h-[70%] divide-y-2 divide-black md:border-y-2 border-b-2 border-black'>
+              <div className='w-[70%] md:w-[30%] md:ml-[5%] tv:w-[75%] tv:ml-0 flex flex-col font-semibold md:h-full tv:h-[70%] divide-y-2 divide-black md:border-y-2 border-b-2 border-black'>
                 {Q6options.slice(2, 4).map((option) => {
                   const { opt, optText, Image } = option;
                   return (
