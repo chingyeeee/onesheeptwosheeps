@@ -15,7 +15,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       </span>
       {
         <Image
-          className={`w-[50%] md:w-[50%] -translate-x-2 md:-translate-x-4 group-hover:block group-hover:fill-lakegreen ${
+          className={`w-[50%] md:w-[50%] tv:w-[70%] -translate-x-2 md:-translate-x-4 group-hover:block group-hover:fill-lakegreen ${
             quizAns[1] === opt ? "block fill-lakegreen" : "hidden"
           }`}
         />
@@ -47,7 +47,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       {questionNum === 3 && (
         <>
           <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse tv:mt-28 gap-6 items-end md:items-center tv:items-end justify-between'>
-            <div className='text-sm md:text-xl tv:text-4xl'>
+            <div className='text-sm md:text-xl tv:text-4xl '>
               <p className='font-medium'>
                 該夢境中的主角是？
                 <br /> 可以是自己、物品或動物。
@@ -58,7 +58,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
                 IT COULD BE YOURSELF, AN OBJECT OR ANIMAL.
               </p>
             </div>
-            <Title3 className='w-[25%] mr-6 md:w-[10%] tv:w-[25%]' />
+            <Title3 className='w-[25%] mr-6 md:w-[10%] tv:w-[25%] tv:pt-32' />
           </div>
           <div className='flex justify-between md:h-[62%] tv:h-[35%] mt-6 md:mt-0'>
             <div className='w-full md:w-[60%] tv:w-full flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>

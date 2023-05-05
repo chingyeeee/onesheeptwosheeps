@@ -101,7 +101,7 @@ const Result = ({ signImgPath, quizAns, otherAns, setQuestionNum }) => {
                   }`}>
                   <p className='md:text-lg tv:text-xl text-blue'>
                     (3) <br />
-                    {percentageArray[1]}%的人做了有關（
+                    {percentageArray[2]}%的人做了有關（
                     {getLifeStyle(quizAns)[0]}） 的夢
                     <br /> AND YOUR DREAM IS ALL ABOUT{" "}
                     <span className='font-padyakke text-red'>({getLifeStyle(quizAns)[1]})</span>

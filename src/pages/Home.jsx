@@ -23,7 +23,11 @@ const Home = () => {
   const pngRef = useRef();
 
   useEffect(() => {
-    if (navigator.userAgent.match(/FB/i) || navigator.userAgent.match(/LINE/i)) {
+    if (
+      navigator.userAgent.match(/FB/i) ||
+      navigator.userAgent.match(/LINE/i) ||
+      navigator.userAgent.match(/Instagram/i)
+    ) {
       setOpenDrawer(true);
     }
   }, []);

@@ -3,7 +3,7 @@ import { Q2options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, otherAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl tv:text-4xl p-2 tv:p-7 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl tv:text-4xl p-2 tv:p-2 tv:hover:p-2 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         otherAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
@@ -15,7 +15,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, otherAns }) =>
       </span>
       {
         <Image
-          className={`w-[70%] md:w-[63%] -translate-x-2 md:-translate-x-3 group-hover:fill-lightgreen group-hover:block ${
+          className={`w-[70%] md:w-[63%] tv:w-[80%] -translate-x-2 md:-translate-x-3 group-hover:fill-lightgreen group-hover:block ${
             otherAns[0] === opt ? "block fill-lightgreen" : "hidden"
           }`}
         />

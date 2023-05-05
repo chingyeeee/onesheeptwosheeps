@@ -5,7 +5,7 @@ import { Q4options } from "./options";
 const Option = ({ opt, optText, Image, handleSaveAns, otherAns }) => {
   return (
     <div
-      className={`flex justify-between md:text-xl tv:text-4xl p-2 tv:p-7 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between md:text-xl tv:text-4xl p-2 tv:p-7 tv:hover:p-2 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         otherAns[1] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(1, opt)}>
@@ -15,7 +15,7 @@ const Option = ({ opt, optText, Image, handleSaveAns, otherAns }) => {
       </span>
       {
         <Image
-          className={`w-[73%] md:w-[75%] tv:w-[38%] -translate-x-2 md:-translate-x-4 group-hover:block group-hover:fill-purple ${
+          className={`w-[73%] md:w-[55%] tv:w-[70%] -translate-x-2 md:-translate-x-3 group-hover:block group-hover:fill-purple ${
             otherAns[1] === opt ? "block fill-purple" : "hidden"
           }`}
         />
@@ -30,7 +30,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
   const optLength = optionsArray.length;
   return (
     <div
-      className={`bg-purple flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
+      className={`bg-purple flex px-4 md:px-20 tv:py-44 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
         questionNum <= 4
           ? "h-[92%] md:h-[90%] tv:h-[92%] pt-36 md:pt-48 pb-16 animate-slideDown"
           : "h-[16%] md:h-[20%] tv:h-[16%] animate-slideUp"
@@ -46,7 +46,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
 
       {questionNum === 4 && (
         <>
-          <div className='flex flex-col gap-6 tv:mt-28 items-center justify-center text-center'>
+          <div className='flex flex-col gap-6 tv:mt-56 items-center justify-center text-center'>
             <Title4 className='w-[40%] md:w-[12%] tv:w-[40%]' />
             <div className='text-sm md:text-xl tv:text-4xl font-medium'>
               <p>承上題，請選擇以下項目</p>
@@ -62,7 +62,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
             <>
               {optionsArray.length > 1 ? (
                 <Fragment>
-                  <div className='w-[90%] mx-auto md:w-[40%] tv:w-[90%] flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
+                  <div className='w-[90%] mx-auto md:w-[40%] tv:w-full flex flex-col font-semibold divide-y-2 divide-black border-y-2 border-black'>
                     {optionsArray.slice(0, optLength / 2).map((option) => {
                       const { opt, optText, Image } = option;
                       return (
@@ -78,7 +78,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
                     })}
                   </div>
 
-                  <div className='w-[90%] mx-auto md:w-[40%] tv:w-[90%] flex flex-col font-semibold divide-y-2 divide-black md:border-t-2 border-b-2 tv:border-t-0 border-black'>
+                  <div className='w-[90%] mx-auto md:w-[40%] tv:w-full flex flex-col font-semibold divide-y-2 divide-black md:border-t-2 border-b-2 tv:border-t-0 border-black'>
                     {optionsArray.slice(optLength / 2, optLength + 1).map((option) => {
                       const { opt, optText, Image } = option;
                       return (
