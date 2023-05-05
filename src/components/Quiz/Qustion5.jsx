@@ -44,8 +44,8 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
         <>
           <div className='flex flex-col justify-between tv:justify-normal h-full tv:mt-80'>
             <div className='text-sm md:text-xl tv:text-4xl font-medium'>
-              <p>該夢境的主要走向是?</p>
-              <p className='font-medium mt-2 tv:mt-6'>HOW DOES THE DREAM’S PLOT DEVELOPES?</p>
+              <p>該夢境的主要走向是？</p>
+              <p className='font-medium mt-2 tv:mt-6'>HOW DOES THE DREAM’S PLOT DEVELOPES？</p>
             </div>
             <div className='flex flex-col-reverse tv:flex-col-reverse items-start tv:items-start md:flex-row md:items-end justify-center tv:justify-center md:justify-between gap-16 md:gap-24 tv:gap-72 tv:pt-10 w-full mx-auto md:h-[48%] tv:h-auto'>
               <Title5 className='w-[23%] ml-auto md:w-[15%] md:ml-0 tv:ml-auto tv:w-[28%]' />
