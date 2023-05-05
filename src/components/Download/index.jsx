@@ -128,19 +128,19 @@ const DownloadAndShare = () => {
 
       <div className='absolute bottom-[10%] right-[5%] flex flex-col md:flex-row tv:flex-col gap-2 md:gap-8 items-center z-10'>
         <div
-          className='h-[3.5rem] md:h-[4.5rem] tv:h-[6rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
+          className='h-[3.5rem] md:h-[4.5rem] tv:h-[8rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
           onClick={downloadImage}>
           <Download />
           <p className='underline-offset-1 decoration-black decoration-solid underline'>DOWNLOAD</p>
         </div>
         <div
-          className='h-[3.5rem] md:h-[4.5rem] tv:h-[6rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
+          className='h-[3.5rem] md:h-[4.5rem] tv:h-[8rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
           onClick={() => navigate("/")}>
           <Home />
           <p className='underline-offset-1 decoration-black decoration-solid underline'>HOME</p>
         </div>
         <div
-          className='h-[3.5rem] md:h-[4.5rem] tv:h-[6rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
+          className='h-[3.5rem] md:h-[4.5rem] tv:h-[8rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
           onClick={share}>
           <Share />
           <p className='underline-offset-1 decoration-black decoration-solid underline'>SHARE</p>

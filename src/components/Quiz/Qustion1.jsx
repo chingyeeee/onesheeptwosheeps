@@ -5,7 +5,7 @@ import { Q1options } from "./options";
 const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`flex justify-between text-base md:text-xl tv:text-4xl p-2 tv:p-7 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
+      className={`flex justify-between text-base md:text-xl tv:text-4xl p-2 tv:p-7 tv:hover:p-2 cursor-custom group hover:bg-black items-center flex-1 transition duration-500 ${
         quizAns[0] === opt && "bg-black"
       }`}
       onClick={() => handleSaveAns(0, opt)}>
@@ -17,7 +17,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
       </span>
       {
         <Image
-          className={`w-[45%] md:w-[63%] tv:w-[50%] -translate-x-1 md:-translate-x-4 fill-red group-hover:block ${
+          className={`w-[45%] md:w-[63%] tv:w-[70%] -translate-x-1 md:-translate-x-4 fill-red group-hover:block ${
             quizAns[0] === opt ? "block " : "hidden"
           }`}
         />
