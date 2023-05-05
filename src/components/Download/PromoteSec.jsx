@@ -31,7 +31,7 @@ const PromoteSec = ({ promoteSecOpen, setPromoteSecOpen }) => {
               leave='ease-in duration-200'
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
-              <Dialog.Panel className='w-full max-w-2xl tv:max-w-[90%]  transform rounded-2xl bg-white px-6 pt-16 md:pt-24 pb-12 align-middle shadow-xl transition-all text-center relative z-[10]'>
+              <Dialog.Panel className='w-full max-w-2xl tv:max-w-[90%] transform rounded-2xl bg-white px-6 pt-16 md:pt-24 pb-12 tv:pt-36 tv:pb-32 align-middle shadow-xl transition-all text-center relative z-[10]'>
                 <img
                   className='w-[80%] absolute left-0 right-0 mx-auto -top-[10%] md:-top-[20%] z-[20] tv:-top-[25%]'
                   src={Logo}

@@ -38,7 +38,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 1 && "hidden"
-        } absolute inset-0 flex justify-between items-center h-full md:text-xl tv:text-4xl font-chakra px-4 md:px-8 tv:px-4 hover:italic cursor-custom`}
+        } absolute inset-0 flex justify-between items-center h-full md:text-xl tv:text-4xl font-chakra px-4 md:px-8 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(1)}>
         <p>I.</p>
         <p>FIRST</p>
