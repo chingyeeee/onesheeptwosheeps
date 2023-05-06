@@ -31,12 +31,12 @@ const PromoteSec = ({ promoteSecOpen, setPromoteSecOpen }) => {
               leave='ease-in duration-200'
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
-              <Dialog.Panel className=' w-full max-w-2xl tv:max-w-[85%] transform rounded-2xl bg-white px-6 pt-16 md:pt-24 pb-12 tv:pt-44 tv:pb-40 align-middle shadow-xl transition-all text-center relative z-[10]'>
+              <Dialog.Panel className=' w-full max-w-2xl tv:max-w-[85%] transform rounded-2xl bg-white px-6 pt-16 md:pt-24 pb-12 tv:pt-40 tv:pb-36 align-middle shadow-xl transition-all text-center relative z-[10]'>
                 <img
-                  className='w-[80%] absolute left-0 right-0 mx-auto -top-[10%] md:-top-[20%] z-[20] tv:-top-[17%]'
+                  className='w-[80%] absolute left-0 right-0 mx-auto -top-[10%] md:-top-[20%] z-[20] tv:-top-[16%]'
                   src={Logo}
                 />
-                <div className='flex flex-col gap-4 items-center'>
+                <div className='flex flex-col gap-4 tv:gap-8 items-center'>
                   <p className='text-md tv:text-2xl font-medium'>
                     1.下載屬於你的解夢卡 <br />
                     CLICK BUTTON TO DOWNLOAD THE DREAMCARD.
