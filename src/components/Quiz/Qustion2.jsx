@@ -38,7 +38,7 @@ const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
       <div
         className={`${
           questionNum === 2 && "hidden"
-        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
+        } flex justify-between items-center md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 tv:bottom-4 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(2)}>
         <p>II.</p>
         <p>SECOND</p>
@@ -49,7 +49,7 @@ const Question2 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
             <Title2 className='w-[20%] md:w-[10%] tv:w-[20%]' />
             <div className='text-sm mt-6 md:mt-0 tv:mt-6 md:text-xl font-medium tv:text-4xl'>
               <p>是否曾經發生在現實生活中，這個夢是你的真實回憶嗎？</p>
-              <p className='font-medium mt-2 tv:mt-6'>
+              <p className='font-medium mt-2 tv:mt-6 leading-relaxed'>
                 HAS IT EVER HAPPENED IN THE REAL LIFE? <br />
                 IS IT A REAL MEMORY OF YOURS?
               </p>

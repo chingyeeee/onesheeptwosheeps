@@ -50,7 +50,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
             <Title1 className='w-[25%] md:w-[10%] tv:w-[25%]' />
             <div className='text-sm mt-4 md:mt-0 tv:mt-6 md:text-xl tv:text-4xl font-medium'>
               <p>請試著回憶你的夢境，當下的情緒是？</p>
-              <p className='font-medium mt-2 tv:mt-6'>
+              <p className='font-medium mt-2 tv:mt-6 leading-relaxed'>
                 TRY TO RECALL YOUR DREAM, <br />
                 WHAT’S YOUR MOOD IN THE MOMENT?
               </p>

@@ -6,7 +6,7 @@ export const useToggle = () => useContext(ToggleContext);
 export const ToggleProvider = ({ children }) => {
   const [color, setColor] = useState({
     name: "default",
-    color: "balck",
+    color: "black",
     file: "default.svg",
   });
   const [logoEnabled, setLogoEnabled] = useState(true);

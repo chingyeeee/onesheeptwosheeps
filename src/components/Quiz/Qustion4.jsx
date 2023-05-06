@@ -30,7 +30,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
   const optLength = optionsArray.length;
   return (
     <div
-      className={`bg-purple flex px-4 md:px-20 tv:py-44 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
+      className={`bg-purple flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[17] ${
         questionNum <= 4
           ? "h-[92%] md:h-[90%] tv:h-[92%] pt-36 md:pt-48 pb-16 animate-slideDown"
           : "h-[16%] md:h-[20%] tv:h-[16%] animate-slideUp"
@@ -38,7 +38,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
       <div
         className={`${
           questionNum === 4 && "hidden"
-        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
+        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 tv:bottom-4 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(4)}>
         <p>IV.</p>
         <p>FOURTH</p>
@@ -50,7 +50,7 @@ const Question4 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns, quizA
             <Title4 className='w-[40%] md:w-[12%] tv:w-[40%]' />
             <div className='text-sm md:text-xl tv:text-4xl font-medium'>
               <p>承上題，請選擇以下項目</p>
-              <p className='font-medium mt-2 tv:mt-6'>
+              <p className='font-medium mt-2 tv:mt-6 leading-relaxed'>
                 FOLLOWING THE PREVIOUS QUESTION, WHAT SPECIFIC IT IS?
               </p>
             </div>

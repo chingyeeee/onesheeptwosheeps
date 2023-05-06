@@ -44,10 +44,12 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
       </div>
       {questionNum === 6 && (
         <>
-          <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse gap-2 md:gap-6 items-start justify-between tv:mt-60'>
+          <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse gap-2 md:gap-6 items-start justify-between mt-10 tv:mt-60'>
             <div className='text-sm md:text-xl tv:text-4xl font-medium tv:leading-relaxed tv:mt-6'>
-              <p>該夢境發生在什麼樣的場景?是認得的空間嗎？開放或是密閉的？（四選二）</p>
-              <p className='font-medium mt-2'>
+              <p className='mt-2 md:mt-0'>
+                該夢境發生在什麼樣的場景?是認得的空間嗎？開放或是密閉的？（四選二）
+              </p>
+              <p className='font-medium mt-2 leading-relaxed'>
                 WHAT DOES THE SCENE LOOK LIKE？
                 <br />
                 IS IT FAMILIAR OR RECONGNIZED？ OPEN OR SEALED？ <br />

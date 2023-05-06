@@ -38,7 +38,7 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 3 && "hidden"
-        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
+        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 tv:bottom-4 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(3)}>
         <p>III.</p>
         <p>THIRD</p>
@@ -46,13 +46,13 @@ const Question3 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
 
       {questionNum === 3 && (
         <>
-          <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse tv:mt-28 gap-6 items-end md:items-center tv:items-end justify-between'>
+          <div className='flex flex-col-reverse md:flex-row tv:flex-col-reverse mt-7 tv:mt-28 gap-6 items-end md:items-center tv:items-end justify-between'>
             <div className='text-sm md:text-xl tv:text-4xl '>
-              <p className='font-medium'>
+              <p className='font-medium leading-relaxed'>
                 該夢境中的主角是？
                 <br /> 可以是自己、物品或動物。
               </p>
-              <p className='font-medium mt-2'>
+              <p className='font-medium mt-2 leading-relaxed'>
                 WHAT IS THE MAIN PROTAGONIST OF THIS DREAM?
                 <br />
                 IT COULD BE YOURSELF, AN OBJECT OR ANIMAL.
