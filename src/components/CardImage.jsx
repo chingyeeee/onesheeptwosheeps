@@ -33,7 +33,7 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
               left: shapeProps.x - (isTV ? 35 : 20),
               color: "#000",
             }}>
-            <CancelIcon className='bg-white tv:!w-[65px] tv:!h-[65px]' />
+            <CancelIcon className='bg-transparen tv:!w-[65px] tv:!h-[65px]' />
           </IconButton>
         )}
       </Html>
