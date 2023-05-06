@@ -34,7 +34,7 @@ const StickersTab = ({ setCardItems }) => {
                   {
                     image: sticker,
                     x: isTV ? posX - 300 : posX,
-                    y: isTV ? posY + 150 : posY,
+                    y: isTV ? posY + 200 : posY - 50,
                     width: e.target.width * 2,
                     height: e.target.height * 2,
                     id: uuidv4(),
