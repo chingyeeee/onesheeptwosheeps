@@ -1,5 +1,5 @@
 import CancelIcon from "@mui/icons-material/Cancel";
-import { IconButton } from "@mui/material";
+import { IconButton, useMediaQuery } from "@mui/material";
 import { Fragment, useEffect, useRef } from "react";
 import { Image, Transformer } from "react-konva";
 import { Html } from "react-konva-utils";
@@ -20,14 +20,20 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
     }
   }, [isSelected]);
 
+  const isTV = useMediaQuery("(min-width: 1080px) and (orientation: portrait)");
+
   return (
     <Fragment>
       <Html>
         {isSelected && (
           <IconButton
             onClick={handleDeleteSelectedCardItem}
-            sx={{ top: shapeProps.y - 20, left: shapeProps.x - 20 }}>
-            <CancelIcon sx={{ color: "#000" }} />
+            sx={{
+              top: shapeProps.y - (isTV ? 35 : 20),
+              left: shapeProps.x - (isTV ? 35 : 20),
+              color: "#000",
+            }}>
+            <CancelIcon className='bg-white tv:!w-[65px] tv:!h-[65px]' />
           </IconButton>
         )}
       </Html>
