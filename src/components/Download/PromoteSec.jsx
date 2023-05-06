@@ -37,18 +37,18 @@ const PromoteSec = ({ promoteSecOpen, setPromoteSecOpen }) => {
                   src={Logo}
                 />
                 <div className='flex flex-col gap-4 tv:gap-8 items-center'>
-                  <p className='text-md tv:text-xl font-medium'>
+                  <p className='text-sm tv:text-2xl font-medium'>
                     1.下載屬於你的解夢卡 <br />
                     CLICK BUTTON TO DOWNLOAD THE DREAMCARD.
                   </p>
                   <img className='w-[1.5rem]' src={Arrow} />
-                  <p className='text-md tv:text-xl font-medium'>
+                  <p className='text-sm tv:text-2xl font-medium'>
                     2.追蹤「一隻羊，兩隻羊」IG <br />
                     FOLLOW OUR INSTARGRAM.
                   </p>
 
                   <img className='w-[1.5rem]' src={Arrow} />
-                  <p className='text-md tv:text-xl font-medium'>
+                  <p className='text-sm tv:text-2xl font-medium'>
                     3.分享出去並標記我們！
                     <br />
                     REMEMBER TO SHARE AND TAG US!
