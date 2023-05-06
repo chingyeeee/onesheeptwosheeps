@@ -44,6 +44,13 @@ const MyImage = ({ shapeProps, isSelected, onSelect, onChange, handleDeleteSelec
         {...shapeProps}
         draggable
         image={imageItem}
+        onTransform={(e) => {
+          onChange({
+            ...shapeProps,
+            x: e.target.x(),
+            y: e.target.y(),
+          });
+        }}
         onDragMove={(e) => {
           onChange({
             ...shapeProps,
