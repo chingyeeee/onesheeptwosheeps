@@ -31,7 +31,7 @@ const PromoteSec = ({ promoteSecOpen, setPromoteSecOpen }) => {
               leave='ease-in duration-200'
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
-              <Dialog.Panel className=' w-full max-w-2xl tv:max-w-[85%] transform rounded-2xl bg-white px-6 pt-16 md:pt-24 pb-12 tv:pt-40 tv:pb-36 align-middle shadow-xl transition-all text-center relative z-[10]'>
+              <Dialog.Panel className=' w-full max-w-2xl tv:max-w-[85%] transform rounded-2xl bg-white px-6 pt-16 md:pt-24 pb-14 tv:pt-40 tv:pb-36 align-middle shadow-xl transition-all text-center relative z-[10]'>
                 <img
                   className='w-[80%] absolute left-0 right-0 mx-auto -top-[10%] md:-top-[20%] z-[20] tv:-top-[16%]'
                   src={Logo}
@@ -53,7 +53,9 @@ const PromoteSec = ({ promoteSecOpen, setPromoteSecOpen }) => {
                     <br />
                     REMEMBER TO SHARE AND TAG US!
                   </p>
-                  <p className='absolute bottom-5 text-sm tv:text-base'>@onesheep_twosleep</p>
+                  <p className='absolute bottom-2 tv:bottom-5 text-[10px] tv:text-base'>
+                    @onesheep_twosleep
+                  </p>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

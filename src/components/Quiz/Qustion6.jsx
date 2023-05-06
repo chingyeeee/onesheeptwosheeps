@@ -1,7 +1,9 @@
+import { useMediaQuery } from "@mui/material";
 import { ReactComponent as Finger } from "../../assets/images/icons/icon-finger.svg";
 
 import { ReactComponent as Title6 } from "../../assets/images/quiz/6/title.svg";
 import { Q6options } from "./options";
+import clsx from "clsx";
 
 const Option = ({ opt, optText, Image, handleSaveAns, otherAns, i }) => {
   return (
@@ -28,12 +30,17 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
   function checkNotEmptyAns() {
     otherAns[2] !== undefined && otherAns[3] !== undefined && setQuestionNum(questionNum + 1);
   }
-
+  const isSE = useMediaQuery("(max-height: 667px)");
   return (
     <div
-      className={`bg-yellow flex px-4 md:px-20 flex-col md:justify-between tv:justify-normal overflow-hidden absolute w-full z-[15] ${
-        questionNum <= 6 ? "h-[100%] pt-44 md:pt-72 pb-16 animate-slideDown" : "h-[24%] md:h-[25%]"
-      }`}>
+      // className={`bg-yellow flex px-4 md:px-20 flex-col md:justify-between tv:justify-normal overflow-hidden absolute w-full z-[15] ${
+      //   questionNum <= 6 ? "h-[100%] pt-44 md:pt-72 pb-16 animate-slideDown" : "h-[24%] md:h-[25%]"
+      // }`}
+      className={clsx(
+        "bg-yellow flex px-4 md:px-20 flex-col md:justify-between tv:justify-normal overflow-hidden absolute w-full z-[15] md:pt-72",
+        questionNum <= 6 ? "h-[100%] pb-16 animate-slideDown" : "h-[24%] md:h-[25%]",
+        isSE ? "pt-36" : "pt-48"
+      )}>
       <div
         className={`${
           questionNum === 6 && "hidden"
@@ -56,9 +63,9 @@ const Question6 = ({ questionNum, setQuestionNum, handleSaveAns, otherAns }) => 
                 (CHOOSE 2 OPTIONS)
               </p>
             </div>
-            <Title6 className='w-[30%] md:w-[15%] tv:w-[35%] ml-auto md:ml-0 tv:ml-auto' />
+            <Title6 className='w-[25%] md:w-[15%] tv:w-[35%] ml-auto md:ml-0 tv:ml-auto' />
           </div>
-          <div className='md:flex items-end justify-between md:h-[36%] tv:block tv:mt-8 tv:h-[20%] mt-8 md:mt-0  '>
+          <div className='md:flex items-end justify-between md:h-[36%] tv:block tv:mt-8 tv:h-[20%] mt-5 md:mt-0  '>
             <div className='w-[70%] md:w-[30%] tv:w-[72%] flex flex-col font-semibold md:h-full tv:h-[70%] divide-y-2 divide-black border-y-2 border-black'>
               {Q6options.slice(0, 2).map((option) => {
                 const { opt, optText, Image } = option;
