@@ -1,11 +1,11 @@
-import Marquee from "../assets/images/aboutus/marquee.png";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as BackFinger } from "../assets/images/aboutus/icon-back.svg";
+import Marquee from "../assets/images/aboutus/marquee.png";
 import Profile1 from "../assets/images/aboutus/profile-1.jpg";
 import Profile2 from "../assets/images/aboutus/profile-2.jpg";
 import Profile3 from "../assets/images/aboutus/profile-3.jpg";
 import Profile4 from "../assets/images/aboutus/profile-4.jpg";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -78,7 +78,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>role assignment/</p>
                     <p className='text-sm md:text-base break-words'>
-                      主視覺、標準字及變體字設計、 解夢書製作
+                      主視覺、標準字及變體字設計、 解夢書製作、商品拍攝修圖
                     </p>
                   </div>
                   <div className='flex flex-col gap'>
@@ -135,7 +135,9 @@ const AboutUs = () => {
                   </div>
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>role assignment/</p>
-                    <p className='text-sm md:text-base break-words'>轉卡小卡製作、企劃文案、報告</p>
+                    <p className='text-sm md:text-base break-words'>
+                      轉卡小卡製作、企劃文案、社群管理
+                    </p>
                   </div>
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>website/</p>
@@ -190,7 +192,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>role assignment/</p>
                     <p className='text-sm md:text-base break-words'>
-                      網頁介面設計、企劃發想、影片剪輯
+                      網頁介面設計、企劃發想、影片動畫剪輯、商品拍攝
                     </p>
                   </div>
                   <div className='flex flex-col gap'>
@@ -250,7 +252,7 @@ const AboutUs = () => {
                   <div className='flex flex-col gap'>
                     <p className='text-xs md:text-sm'>role assignment/</p>
                     <p className='text-sm md:text-base break-words'>
-                      組長、解夢卡、許願包製作、文案撰寫
+                      專案統籌、解夢卡、許願包製作、文案撰寫、展櫃規劃設計
                     </p>
                   </div>
                   <div className='flex flex-col gap'>
