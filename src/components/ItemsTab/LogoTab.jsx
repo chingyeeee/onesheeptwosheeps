@@ -34,7 +34,7 @@ const LogoTab = ({ setCardItems }) => {
                   {
                     image: logo,
                     x: isTV ? posX - 500 : posX,
-                    y: isTV ? posY + 400 : posY,
+                    y: isTV ? posY + 350 : posY,
                     width: e.target.width,
                     height: e.target.height,
                     id: uuidv4(),
