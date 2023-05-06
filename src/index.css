@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Courier+Prime&family=Nanum+Myeongjo&family=Noto+Sans+TC:wght@700&family=Padyakke+Expanded+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne");
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +11,8 @@
     src: local("Adobe Myungjo"), url(./fonts/adobe-myungjo-std-M.otf) format("otf");
   }
   html {
-    font-family: "PingFang TC", "Noto Sans TC", Noto Serif TC, serif, system-ui, sans-serif;
+    font-family: "PingFang TC", "Syne", "Noto Sans TC", "Noto Serif TC", serif, system-ui,
+      sans-serif;
   }
   body {
     cursor: url(/src/assets/images/cursor-default.png), default;

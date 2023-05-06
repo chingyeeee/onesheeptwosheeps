@@ -30,9 +30,9 @@ const PromoteFirst = ({ promoteFirstOpen, setPromoteFirstOpen, setPromoteSecOpen
               leave='ease-in duration-200'
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
-              <Dialog.Panel className='w-full max-w-2xl transform rounded-2xl bg-white px-6  py-8 align-middle shadow-xl transition-all text-center relative z-[10]'>
+              <Dialog.Panel className='w-full max-w-2xl tv:max-w-[90%] transform rounded-2xl bg-white px-6  py-8 align-middle shadow-xl transition-all text-center relative z-[10]'>
                 <div className='flex flex-col gap-4 items-center'>
-                  <p className='text-md font-medium'>
+                  <p className='text-md tv:text-2xl font-medium'>
                     獨一無二の解夢卡出爐啦！ <br />
                     YOUR ONE AND ONLY DREAMCARD IS NOW READY!
                   </p>

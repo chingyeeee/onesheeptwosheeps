@@ -3,6 +3,7 @@ import TabData from "../../assets/data/TabList.json";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "@mui/material";
 
 const StickersTab = ({ setCardItems }) => {
   const [posX, setPosX] = useState(0);
@@ -16,6 +17,7 @@ const StickersTab = ({ setCardItems }) => {
       setPosY(270);
     }
   }, []);
+  const isTV = useMediaQuery("(min-width: 1080px) and (orientation: portrait)");
 
   return (
     <Tab.Panel>
@@ -31,8 +33,8 @@ const StickersTab = ({ setCardItems }) => {
                   ...cardItems,
                   {
                     image: sticker,
-                    x: posX,
-                    y: posY,
+                    x: isTV ? posX - 300 : posX,
+                    y: isTV ? posY + 200 : posY - 50,
                     width: e.target.width * 2,
                     height: e.target.height * 2,
                     id: uuidv4(),

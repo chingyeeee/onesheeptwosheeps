@@ -114,12 +114,12 @@ const DownloadAndShare = () => {
         setPromoteSecOpen={setPromoteSecOpen}
       />
       <PromoteSec promoteSecOpen={promoteSecOpen} setPromoteSecOpen={setPromoteSecOpen} />
-      <div className='absolute w-full flex top-[35%] md:top-12 tv:top-[35%]'>
-        <img className='flex-auto' src={signImgPath} />
+      <div className='absolute w-full h-full flex justify-center items-center'>
+        <img className='flex-auto scale-90' src={signImgPath} />
       </div>
-      <div className='absolute w-full top-[12%] md:top-auto md:h-full flex justify-center items-center'>
+      <div className='absolute mx-auto w-full top-[12%] md:top-auto md:h-full flex justify-center items-center'>
         <img
-          className={clsx("w-[48%] md:w-[20%] tv:w-[45%] py-5 z-10", {
+          className={clsx("w-[48%] md:w-[17%] tv:w-[45%] py-5 z-10", {
             "animate-rotate360": !promoteFirstOpen && !promoteSecOpen,
           })}
           id='combinedImg'
@@ -128,19 +128,19 @@ const DownloadAndShare = () => {
 
       <div className='absolute bottom-[10%] right-[5%] flex flex-col md:flex-row tv:flex-col gap-2 md:gap-8 items-center z-10'>
         <div
-          className='h-[3.5rem] md:h-[4.5rem] tv:h-[6rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
+          className='h-[3.5rem] md:h-[4.5rem] tv:h-[8rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
           onClick={downloadImage}>
           <Download />
           <p className='underline-offset-1 decoration-black decoration-solid underline'>DOWNLOAD</p>
         </div>
         <div
-          className='h-[3.5rem] md:h-[4.5rem] tv:h-[6rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
+          className='h-[3.5rem] md:h-[4.5rem] tv:h-[8rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
           onClick={() => navigate("/")}>
           <Home />
           <p className='underline-offset-1 decoration-black decoration-solid underline'>HOME</p>
         </div>
         <div
-          className='h-[3.5rem] md:h-[4.5rem] tv:h-[6rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
+          className='h-[3.5rem] md:h-[4.5rem] tv:h-[8rem] flex flex-col items-center justify-between cursor-custom text-sm md:text-base tv:text-3xl'
           onClick={share}>
           <Share />
           <p className='underline-offset-1 decoration-black decoration-solid underline'>SHARE</p>

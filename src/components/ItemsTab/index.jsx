@@ -35,7 +35,7 @@ const ItemsTab = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems }) => {
               leave='ease-in duration-200'
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
-              <Dialog.Panel className='w-[110%] md:w-[50%] max-h-[50vh] md:min-h-[75vh] mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 md:bottom-auto md:top-[20%] -left-[5%] border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4'>
+              <Dialog.Panel className='w-[110%] md:w-[50%] tv:w-screen max-h-[50vh] tv:max-h-[50vh] md:min-h-[75vh] tv:min-h-0 mr-auto transform overflow-hidden text-center align-middle transition-all absolute bottom-0 tv:bottom-0 tv:top-auto md:bottom-auto md:top-[20%] -left-[5%] tv:left-0 border-2 md:left-[12%] md:border-4 border-black rounded-xl bg-white px-4'>
                 <Tab.Group>
                   <Tab.List className='flex py-2 md:py-4 border-b-2 md:border-b-4 border-black space-x-0.5'>
                     {Object.keys(TabData).map((tab) => (
@@ -56,7 +56,7 @@ const ItemsTab = ({ isOpenMenu, setIsOpenMenu, setColor, setCardItems }) => {
                       </Tab>
                     ))}
                   </Tab.List>
-                  <Tab.Panels className='p-6 max-h-[40vh] md:max-h-[65vh] overflow-y-auto'>
+                  <Tab.Panels className='p-6 max-h-[40vh] md:max-h-[65vh] tv:max-h-[40vh] overflow-y-auto'>
                     <StickersTab setCardItems={setCardItems} />
                     <LogoTab setCardItems={setCardItems} />
                     <SettingsTab setColor={setColor} />

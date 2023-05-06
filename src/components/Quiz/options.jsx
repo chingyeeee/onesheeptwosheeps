@@ -77,7 +77,7 @@ export const Q4options = {
     },
     {
       opt: "significant other",
-      optText: "重要他人（家人、伴侶、照顧者、生命中重要的人、前任）",
+      optText: "生命中重要的人",
       Image: Other,
     },
   ],
