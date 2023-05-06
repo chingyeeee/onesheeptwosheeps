@@ -1,8 +1,11 @@
+import { useMediaQuery } from "@mui/material";
 import Loading1 from "../../assets/images/quiz/loading/loading1.svg";
 import Loading2 from "../../assets/images/quiz/loading/loading2.svg";
 import Loading3 from "../../assets/images/quiz/loading/loading3.svg";
 import Loading4 from "../../assets/images/quiz/loading/loading4.svg";
 const GenerateProccess = ({ setQuestionNum }) => {
+  const isTV = useMediaQuery("(min-width: 1080px) and (orientation: portrait)");
+
   setTimeout(() => setQuestionNum(8), 3000);
   return (
     <div className='w-[75%] md:max-w-[50%] tv:max-w-[80%] m-auto text-center'>
@@ -14,10 +17,7 @@ const GenerateProccess = ({ setQuestionNum }) => {
       </div>
       <p className='md:text-lg mt-4 tv:text-4xl'>
         WHAT YOU DREAM
-        {window.innerWidth == 1080 && window.screen.orientation.type == "portrait-primary" && (
-          <br />
-        )}{" "}
-        LEADS YOU BECOMING A BETTER MAN.
+        {isTV && <br />} LEADS YOU BECOMING A BETTER MAN.
       </p>
       <span className='block animate-loaded h-[1rem] tv:h-[2rem] bg-blue mt-4' />
     </div>

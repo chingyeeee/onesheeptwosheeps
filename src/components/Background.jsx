@@ -68,21 +68,20 @@ const Background = ({ cardItems, setCardItems, stageRef }) => {
         </Layer>
       </Stage>
       {welcomeToEnabled && (
-        <div className='absolute top-5 w-full md:w-[55%] px-5 tv:w-full tv:top-5'>
+        <div className='absolute top-5 w-full md:w-[55%] px-5 tv:w-full tv:top-20 tv:px-14'>
           <Welcome color={color} />
         </div>
       )}
       {logoEnabled && (
-        <div className='absolute right-3 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16 tv:w-[35%] tv:right-3 tv:top-[35%]'>
+        <div className='absolute right-3 top-[35%] w-[35%] md:w-[45%] md:right-2 md:top-16 tv:w-[35%] tv:right-16 tv:top-[35%]'>
           <Logo color={color} />
         </div>
       )}
       {emotionEnabled && <Emotion />}
-      {console.log(windowWidth)}
-      <div className='absolute w-full tv:w-full top-[23%] tv:top-[22%] md:top-auto md:bottom-10 tv:bottom-auto flex flex-col gap-5 md:gap-0 tv:gap-16 md:flex-row-reverse tv:flex-col justify-between md:px-10 px-6 tv:px-6 z-10'>
+      <div className='absolute w-full tv:w-full top-[23%] tv:top-[24%] md:top-auto md:bottom-10 tv:bottom-auto flex flex-col gap-5 md:gap-0 tv:gap-20 md:flex-row-reverse tv:flex-col justify-between md:px-10 px-6 tv:px-6 z-10'>
         <ShortCut
           key='dreamcard'
-          className='pl-28 md:pl-0 tv:pl-[20rem]'
+          className='pl-28 md:pl-0 tv:pl-[24rem]'
           toggle={dreamCardEnabled}
           path={"dreamcard"}
           text='DREAM CARD'

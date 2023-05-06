@@ -27,7 +27,7 @@ const Option = ({ opt, optText, optTextEng, Image, handleSaveAns, quizAns }) => 
 const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
   return (
     <div
-      className={`bg-blue flex px-4 md:px-20 tv:py-56 flex-col justify-between overflow-hidden absolute w-full z-[16] ${
+      className={`bg-blue flex px-4 md:px-20 flex-col justify-between overflow-hidden absolute w-full z-[16] ${
         questionNum <= 5
           ? "h-[96%] md:h-[95%] tv:h-[96%] pt-40 md:pt-56 pb-16 animate-slideDown"
           : "h-[20%] md:h-[25%] tv:h-[20%] animate-slideUp"
@@ -35,7 +35,7 @@ const Question5 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
       <div
         className={`${
           questionNum === 5 && "hidden"
-        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
+        } flex justify-between md:text-xl tv:text-4xl absolute inset-x-0 h-min bottom-1 md:bottom-1.5 tv:bottom-4 font-chakra px-4 md:px-8 hover:italic cursor-custom`}
         onClick={() => setQuestionNum(5)}>
         <p>V.</p>
         <p>FIFTH</p>

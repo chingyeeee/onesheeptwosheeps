@@ -2,8 +2,22 @@ import { Tab } from "@headlessui/react";
 import TabData from "../../assets/data/TabList.json";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { v4 as uuidv4 } from "uuid";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "@mui/material";
 
 const LogoTab = ({ setCardItems }) => {
+  const [posX, setPosX] = useState(0);
+  const [posY, setPosY] = useState(0);
+  useEffect(() => {
+    if (window.screen.width > 1024) {
+      setPosX(window.screen.width / 2 + 200);
+      setPosY(300);
+    } else {
+      setPosX(50);
+      setPosY(270);
+    }
+  }, []);
+  const isTV = useMediaQuery("(min-width: 1080px) and (orientation: portrait)");
   return (
     <Tab.Panel>
       <h3 className='text-5xl text-left font-semibold'>LOGOTYPES_</h3>
@@ -19,8 +33,8 @@ const LogoTab = ({ setCardItems }) => {
                   ...cardItems,
                   {
                     image: logo,
-                    x: (window.screen.width * 2) / 3,
-                    y: window.screen.height / 3,
+                    x: isTV ? posX - 500 : posX,
+                    y: isTV ? posY + 350 : posY,
                     width: e.target.width,
                     height: e.target.height,
                     id: uuidv4(),
