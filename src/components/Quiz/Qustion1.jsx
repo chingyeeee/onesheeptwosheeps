@@ -56,7 +56,7 @@ const Question1 = ({ questionNum, setQuestionNum, handleSaveAns, quizAns }) => {
               </p>
             </div>
           </div>
-          <div className='md:flex tv:block justify-between mt-3 md:mt-0 md:h-[62%] tv:mt-3 tv:h-auto overflow-x-scroll'>
+          <div className='md:flex tv:block justify-between mt-3 md:mt-0 md:h-[62%] tv:mt-3 tv:h-auto overflow-x-hidden'>
             <div className='w-full md:w-[45%] tv:w-[90%] flex flex-col font-medium md:font-semibold tv:font-medium divide-y-2 divide-black border-t-2 md:border-b-2 tv:md:border-b-0 border-black'>
               {Q1options.slice(0, 4).map((option) => {
                 const { opt, optText, optTextEng, Image } = option;
