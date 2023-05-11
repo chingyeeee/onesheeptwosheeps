@@ -31,8 +31,7 @@ const AboutUs = () => {
             WITH SOME UNCONSTRAINED IDEAS, LIKE FREEDOM, TRAVEL AND SLEEP. LONGING FOR SLEEP AND
             CURIOSITY ABOUT DREAMS, WE LAUNCHED THIS DREAM PROJECT. WE HOPE THAT IN ADDITION TO
             EXPLORING THE BACKGROUND AND MEANING OF THE DREAM FIELD, WE CAN ALSO MAKE A GRADUATION
-            PROJECT WITH THE CHARACTERISTICS OF THE FOUR OF US IN THE LAST YEAR OF UNIVERSITY.
-            TOPIC.
+            PROJECT WITH THE CHARACTERISTICS OF THE FOUR OF US IN THE LAST YEAR OF UNIVERSITY TOPIC.
           </p>
           <div className='bg-yellow max-w-[75%] md:max-w-[50%] m-auto absolute inset-0 text-sm md:text-xl font-medium h-min md:tracking-[0.5rem] -translate-y-8'>
             <p className='text-justify mb-6'>
